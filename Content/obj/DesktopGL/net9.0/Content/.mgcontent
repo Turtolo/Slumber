@@ -4,24 +4,24 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Animations/Enemies/grassspidersheet.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Animations/Player/PlayerAtlasNoBody.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Animations/Player/PlayerAtlasNoFeet.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Animations/Player/PlayerModel3Atlas.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Animations/rollingeye1.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Backgrounds/Clouds1.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Backgrounds/Clouds2.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Backgrounds/Clouds3.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Backgrounds/Clouds4.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Backgrounds/Clouds5.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Backgrounds/Main.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Backgrounds/streetsbg.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Fonts/Font.spritefont</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Tileset/SlumberTilesetAtlas.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Tileset/WoodPrototype.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/UI/ButtonBorderFromKenny.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/UI/CheckButton.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/UI/CheckButtonPress.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Animations/Enemies/grassspidersheet.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Animations/Player/PlayerAtlasNoBody.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Animations/Player/PlayerAtlasNoFeet.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Animations/Player/PlayerModel3Atlas.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Animations/rollingeye1.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Backgrounds/Clouds1.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Backgrounds/Clouds2.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Backgrounds/Clouds3.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Backgrounds/Clouds4.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Backgrounds/Clouds5.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Backgrounds/Main.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Backgrounds/streetsbg.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Fonts/Font.spritefont</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Tileset/SlumberTilesetAtlas.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Tileset/WoodPrototype.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/UI/ButtonBorderFromKenny.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/UI/CheckButton.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/UI/CheckButtonPress.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

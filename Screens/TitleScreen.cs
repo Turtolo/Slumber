@@ -37,7 +37,7 @@ namespace Slumber.Screens
                 Settings.MasterSlider.IsFocused = true;
             };
 
-            Settings.Back.Click += (_, _) =>
+            Settings.BackButton.Click += (_, _) =>
             {
                 Settings.IsVisible = false;
                 Main.Visible = true;

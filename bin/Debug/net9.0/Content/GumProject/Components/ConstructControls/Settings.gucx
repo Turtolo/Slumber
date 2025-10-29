@@ -6,49 +6,49 @@
     <Name>Default</Name>
     <Variable>
       <Type>string</Type>
-      <Name>Back.Parent</Name>
-      <Value xsi:type="xsd:string">NonPanel</Value>
+      <Name>BackButton.Parent</Name>
+      <Value xsi:type="xsd:string">Wrapper</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>Back.Text</Name>
+      <Name>BackButton.Text</Name>
       <Value xsi:type="xsd:string">Back</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>Back.X</Name>
+      <Name>BackButton.X</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
-      <Name>Back.XOrigin</Name>
+      <Name>BackButton.XOrigin</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>Back.XUnits</Name>
+      <Name>BackButton.XUnits</Name>
       <Value xsi:type="xsd:int">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>Back.Y</Name>
-      <Value xsi:type="xsd:float">110</Value>
+      <Name>BackButton.Y</Name>
+      <Value xsi:type="xsd:float">56</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>Back.YOrigin</Name>
+      <Name>BackButton.YOrigin</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>Back.YUnits</Name>
+      <Name>BackButton.YUnits</Name>
       <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -153,6 +153,126 @@
       <Type>PositionUnitType</Type>
       <Name>BackgroundPanel.YUnits</Name>
       <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ControlButton.Parent</Name>
+      <Value xsi:type="xsd:string">Wrapper</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ControlButton.Text</Name>
+      <Value xsi:type="xsd:string">Control</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ControlButton.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>ControlButton.XOrigin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>ControlButton.XUnits</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ControlButton.Y</Name>
+      <Value xsi:type="xsd:float">-100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>ControlButton.YOrigin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>ControlButton.YUnits</Name>
+      <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenCheckbox.Height</Name>
+      <Value xsi:type="xsd:float">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FullscreenCheckbox.Parent</Name>
+      <Value xsi:type="xsd:string">NonPanel</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenCheckbox.Width</Name>
+      <Value xsi:type="xsd:float">32</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenCheckbox.X</Name>
+      <Value xsi:type="xsd:float">-14</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>FullscreenCheckbox.XOrigin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FullscreenCheckbox.XUnits</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenCheckbox.Y</Name>
+      <Value xsi:type="xsd:float">-4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>FullscreenCheckbox.YOrigin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FullscreenCheckbox.YUnits</Name>
+      <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FullscreenLabel.Parent</Name>
+      <Value xsi:type="xsd:string">NonPanel</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FullscreenLabel.Text</Name>
+      <Value xsi:type="xsd:string">Fullscreen</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>FullscreenLabel.Visible</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -332,7 +452,7 @@
     <Variable>
       <Type>float</Type>
       <Name>NonPanel.Height</Name>
-      <Value xsi:type="xsd:float">-0</Value>
+      <Value xsi:type="xsd:float">-19</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -399,7 +519,7 @@
     <Variable>
       <Type>float</Type>
       <Name>NonPanel.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">10</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -420,6 +540,78 @@
       <Value xsi:type="xsd:float">40</Value>
       <SetsValue>true</SetsValue>
       <IsCustomVariable>true</IsCustomVariable>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ScreenshakeCheckbox.Height</Name>
+      <Value xsi:type="xsd:float">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ScreenshakeCheckbox.Parent</Name>
+      <Value xsi:type="xsd:string">NonPanel</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ScreenshakeCheckbox.Width</Name>
+      <Value xsi:type="xsd:float">32</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ScreenshakeCheckbox.X</Name>
+      <Value xsi:type="xsd:float">-14</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>ScreenshakeCheckbox.XOrigin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>ScreenshakeCheckbox.XUnits</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ScreenshakeCheckbox.Y</Name>
+      <Value xsi:type="xsd:float">-4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>ScreenshakeCheckbox.YOrigin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>ScreenshakeCheckbox.YUnits</Name>
+      <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ScreenshakeLabel.Parent</Name>
+      <Value xsi:type="xsd:string">NonPanel</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ScreenshakeLabel.Text</Name>
+      <Value xsi:type="xsd:string">Screenshake</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ScreenshakeLabel.Visible</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
@@ -703,8 +895,33 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
+    <Name>ControlButton</Name>
+    <BaseType>ConstructControls/ConstructButton</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
     <Name>NonPanel</Name>
     <BaseType>Container</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>ScreenshakeLabel</Name>
+    <BaseType>ConstructControls/ConstructLabel</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>ScreenshakeCheckbox</Name>
+    <BaseType>ConstructControls/ConstructCheckBox</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>FullscreenLabel</Name>
+    <BaseType>ConstructControls/ConstructLabel</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>FullscreenCheckbox</Name>
+    <BaseType>ConstructControls/ConstructCheckBox</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
@@ -748,7 +965,7 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>Back</Name>
+    <Name>BackButton</Name>
     <BaseType>ConstructControls/ConstructButton</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>

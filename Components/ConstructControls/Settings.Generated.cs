@@ -4,7 +4,6 @@ using System.Linq;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
 using Slumber.Components.ConstructControls;
-using Slumber.Components.Controls;
 using Gum.Converters;
 using Gum.DataTypes;
 using Gum.Managers;
@@ -39,17 +38,33 @@ if(element == null) throw new System.InvalidOperationException("Could not find a
         });
     }
     public NineSliceRuntime BackgroundPanel { get; protected set; }
+    public ConstructButton ControlButton { get; protected set; }
     public ContainerRuntime NonPanel { get; protected set; }
+    public ConstructLabel ScreenshakeLabel { get; protected set; }
+    public ConstructCheckBox ScreenshakeCheckbox { get; protected set; }
+    public ConstructLabel FullscreenLabel { get; protected set; }
+    public ConstructCheckBox FullscreenCheckbox { get; protected set; }
+    public ConstructLabel VsyncLabel { get; protected set; }
+    public ConstructCheckBox VsyncCheckbox { get; protected set; }
     public ConstructLabel SFXLabel { get; protected set; }
     public ConstructSlider SFXSlider { get; protected set; }
     public ConstructLabel MusicLabel { get; protected set; }
     public ConstructSlider MusicSlider { get; protected set; }
     public ConstructLabel MasterLabel { get; protected set; }
     public ConstructSlider MasterSlider { get; protected set; }
-    public ConstructLabel VsyncLabel { get; protected set; }
-    public ConstructCheckBox VsyncCheckbox { get; protected set; }
-    public ContainerRuntime HorizontalGrid { get; protected set; }
-    public ConstructButton Back { get; protected set; }
+    public ConstructButton BackButton { get; protected set; }
+    public ContainerRuntime Wrapper { get; protected set; }
+
+    public float Padding
+    {
+        get;
+        set;
+    }
+    public float NonPanelStackSpacing
+    {
+        get => NonPanel.StackSpacing;
+        set => NonPanel.StackSpacing = value;
+    }
 
     public Settings(InteractiveGue visual) : base(visual)
     {
@@ -64,17 +79,22 @@ if(element == null) throw new System.InvalidOperationException("Could not find a
     {
         base.ReactToVisualChanged();
         BackgroundPanel = this.Visual?.GetGraphicalUiElementByName("BackgroundPanel") as global::MonoGameGum.GueDeriving.NineSliceRuntime;
+        ControlButton = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructButton>(this.Visual,"ControlButton");
         NonPanel = this.Visual?.GetGraphicalUiElementByName("NonPanel") as global::MonoGameGum.GueDeriving.ContainerRuntime;
+        ScreenshakeLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"ScreenshakeLabel");
+        ScreenshakeCheckbox = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructCheckBox>(this.Visual,"ScreenshakeCheckbox");
+        FullscreenLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"FullscreenLabel");
+        FullscreenCheckbox = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructCheckBox>(this.Visual,"FullscreenCheckbox");
+        VsyncLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"VsyncLabel");
+        VsyncCheckbox = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructCheckBox>(this.Visual,"VsyncCheckbox");
         SFXLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"SFXLabel");
         SFXSlider = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructSlider>(this.Visual,"SFXSlider");
         MusicLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"MusicLabel");
         MusicSlider = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructSlider>(this.Visual,"MusicSlider");
         MasterLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"MasterLabel");
         MasterSlider = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructSlider>(this.Visual,"MasterSlider");
-        VsyncLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"VsyncLabel");
-        VsyncCheckbox = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructCheckBox>(this.Visual,"VsyncCheckbox");
-        HorizontalGrid = this.Visual?.GetGraphicalUiElementByName("HorizontalGrid") as global::MonoGameGum.GueDeriving.ContainerRuntime;
-        Back = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructButton>(this.Visual,"Back");
+        BackButton = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructButton>(this.Visual,"BackButton");
+        Wrapper = this.Visual?.GetGraphicalUiElementByName("Wrapper") as global::MonoGameGum.GueDeriving.ContainerRuntime;
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
