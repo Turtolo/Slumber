@@ -41,11 +41,11 @@ if(element == null) throw new System.InvalidOperationException("Could not find a
     public NineSliceRuntime BackgroundPanel { get; protected set; }
     public ContainerRuntime NonPanel { get; protected set; }
     public ConstructLabel SFXLabel { get; protected set; }
-    public Slider SFXSlider { get; protected set; }
+    public ConstructSlider SFXSlider { get; protected set; }
     public ConstructLabel MusicLabel { get; protected set; }
-    public Slider MusicSlider { get; protected set; }
+    public ConstructSlider MusicSlider { get; protected set; }
     public ConstructLabel MasterLabel { get; protected set; }
-    public Slider MasterSlider { get; protected set; }
+    public ConstructSlider MasterSlider { get; protected set; }
     public ConstructLabel VsyncLabel { get; protected set; }
     public ConstructCheckBox VsyncCheckbox { get; protected set; }
     public ContainerRuntime HorizontalGrid { get; protected set; }
@@ -66,11 +66,11 @@ if(element == null) throw new System.InvalidOperationException("Could not find a
         BackgroundPanel = this.Visual?.GetGraphicalUiElementByName("BackgroundPanel") as global::MonoGameGum.GueDeriving.NineSliceRuntime;
         NonPanel = this.Visual?.GetGraphicalUiElementByName("NonPanel") as global::MonoGameGum.GueDeriving.ContainerRuntime;
         SFXLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"SFXLabel");
-        SFXSlider = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Slider>(this.Visual,"SFXSlider");
+        SFXSlider = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructSlider>(this.Visual,"SFXSlider");
         MusicLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"MusicLabel");
-        MusicSlider = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Slider>(this.Visual,"MusicSlider");
+        MusicSlider = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructSlider>(this.Visual,"MusicSlider");
         MasterLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"MasterLabel");
-        MasterSlider = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Slider>(this.Visual,"MasterSlider");
+        MasterSlider = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructSlider>(this.Visual,"MasterSlider");
         VsyncLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"VsyncLabel");
         VsyncCheckbox = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructCheckBox>(this.Visual,"VsyncCheckbox");
         HorizontalGrid = this.Visual?.GetGraphicalUiElementByName("HorizontalGrid") as global::MonoGameGum.GueDeriving.ContainerRuntime;

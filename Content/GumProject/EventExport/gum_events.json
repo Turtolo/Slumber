@@ -3330,13 +3330,6 @@
     "bf7e9c9416dbbfa56951c8f06d5481c475badbcac0debd9483928f196aace3b2": [
       {
         "NewName": null,
-        "OldName": "TitleScreen.Controls/Button ButtonInstance in TitleScreen",
-        "ElementType": "Screens",
-        "EventType": 6,
-        "TimestampUtc": "2025-10-15T10:20:27.551603Z"
-      },
-      {
-        "NewName": null,
         "OldName": "Controls/Button",
         "ElementType": "Components",
         "EventType": 1,
@@ -3621,6 +3614,195 @@
         "ElementType": "Screens",
         "EventType": 7,
         "TimestampUtc": "2025-10-24T19:32:34.51697Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).ConstructSliderInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-29T11:22:28.906879Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).ConstructSliderInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-29T11:22:41.6642Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).ConstructSliderInstance2",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-29T11:22:43.004154Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).SFXSlider1",
+        "OldName": "ConstructControls/Settings (Container).SFXSlider",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T11:22:51.17009Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).MusicSlider1",
+        "OldName": "ConstructControls/Settings (Container).MusicSlider",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T11:22:55.610825Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).MasterSlider1",
+        "OldName": "ConstructControls/Settings (Container).MasterSlider",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T11:23:07.806882Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).SFXSlider",
+        "OldName": "ConstructControls/Settings (Container).ConstructSliderInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T11:23:13.701579Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).MusicSlider",
+        "OldName": "ConstructControls/Settings (Container).ConstructSliderInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T11:23:19.432967Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).MasterSlider",
+        "OldName": "ConstructControls/Settings (Container).ConstructSliderInstance2",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T11:23:30.561758Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/Settings (Container).Controls/Slider SFXSlider1 in ConstructControls/Settings (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-29T11:23:50.278269Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/Settings (Container).Controls/Slider MusicSlider1 in ConstructControls/Settings (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-29T11:24:05.205432Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/Settings (Container).Controls/Slider MasterSlider1 in ConstructControls/Settings (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-29T11:24:09.218358Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ConstructSlider (Container).NineSlice FocusedIndicator in ConstructControls/ConstructSlider (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-29T11:39:21.811945Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).ContainerInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-29T11:49:52.753946Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).Wrapper",
+        "OldName": "ConstructControls/Settings (Container).ContainerInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T11:49:56.626933Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/Settings (Container).Container HorizontalGrid in ConstructControls/Settings (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-29T12:16:28.694921Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).ConstructLabelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-29T12:26:48.188362Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/Settings (Container).ConstructControls/ConstructLabel ConstructLabelInstance in ConstructControls/Settings (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-29T12:27:03.635555Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).VsyncLabel1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-29T12:27:10.067463Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).VsyncLabel2",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-29T12:27:13.178433Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).ScreenShakeLabel",
+        "OldName": "ConstructControls/Settings (Container).VsyncLabel1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T12:27:26.11192Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).FullscreenLabel",
+        "OldName": "ConstructControls/Settings (Container).ScreenShakeLabel",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T12:27:34.187596Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).F",
+        "OldName": "ConstructControls/Settings (Container).VsyncLabel2",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T12:27:38.41001Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).ScreenshakeLabel",
+        "OldName": "ConstructControls/Settings (Container).FullscreenLabel",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T12:27:47.805544Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).FullscreenLabel",
+        "OldName": "ConstructControls/Settings (Container).ScreenshakeLabel",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T12:27:57.708053Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).ScreenshakeLabel",
+        "OldName": "ConstructControls/Settings (Container).FullscreenLabel",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T12:28:11.208028Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).FullscreenLabel",
+        "OldName": "ConstructControls/Settings (Container).F",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-29T12:28:15.928257Z"
       }
     ]
   }

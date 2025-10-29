@@ -533,11 +533,7 @@
         <Name>Background.VariableReferences</Name>
         <IsFile>false</IsFile>
         <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-        <Value>
-          <string>Red=Components/Styles.Primary.Red</string>
-          <string>Green=Components/Styles.Primary.Green</string>
-          <string>Blue=Components/Styles.Primary.Blue</string>
-        </Value>
+        <Value />
       </VariableList>
     </State>
     <State>

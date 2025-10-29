@@ -46,7 +46,7 @@ namespace Slumber
 
             SceneManager.AddScene(new MainMenu());
 
-            ToggleFullscreen();
+            //ToggleFullscreen();
 
         }
 

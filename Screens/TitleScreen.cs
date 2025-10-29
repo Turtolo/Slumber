@@ -44,7 +44,7 @@ namespace Slumber.Screens
                 StartButton.IsFocused = true;
             };
 
-            Settings.MusicSlider.Value = 10;
+            
         
 
             
