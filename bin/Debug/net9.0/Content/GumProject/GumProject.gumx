@@ -55,6 +55,11 @@
     <LinkType>ReferenceOriginal</LinkType>
   </ComponentReference>
   <ComponentReference>
+    <Name>ConstructControls/ControlComponent</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>ConstructControls/Settings</Name>
     <ElementType>Component</ElementType>
     <LinkType>ReferenceOriginal</LinkType>

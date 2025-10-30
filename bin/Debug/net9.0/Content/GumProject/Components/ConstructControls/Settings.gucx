@@ -37,19 +37,19 @@
     <Variable>
       <Type>float</Type>
       <Name>BackButton.Y</Name>
-      <Value xsi:type="xsd:float">56</Value>
+      <Value xsi:type="xsd:float">16</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
       <Name>BackButton.YOrigin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>BackButton.YUnits</Name>
-      <Value xsi:type="xsd:int">7</Value>
+      <Value xsi:type="xsd:int">5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -622,7 +622,7 @@
     <Variable>
       <Type>string</Type>
       <Name>SFXLabel.Text</Name>
-      <Value xsi:type="xsd:string">Music</Value>
+      <Value xsi:type="xsd:string">SFX</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

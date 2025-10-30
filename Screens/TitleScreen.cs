@@ -34,7 +34,13 @@ namespace Slumber.Screens
             {
                 Settings.IsVisible = true;
                 Main.Visible = false;
-                Settings.MasterSlider.IsFocused = true;
+                Settings.ControlButton.IsFocused = true;
+            };
+
+            Settings.ControlButton.Click += (_, _) =>
+            {
+                Settings.IsVisible = false;
+                Controls.IsVisible = true;
             };
 
             Settings.BackButton.Click += (_, _) =>

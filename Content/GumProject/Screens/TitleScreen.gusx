@@ -4,6 +4,18 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>string</Type>
+      <Name>Controls.Parent</Name>
+      <Value xsi:type="xsd:string">Root</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>Controls.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>Main.ChildrenLayout</Name>
       <Value xsi:type="xsd:int">1</Value>
@@ -350,6 +362,11 @@
   <Instance>
     <Name>Settings</Name>
     <BaseType>ConstructControls/Settings</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>Controls</Name>
+    <BaseType>ConstructControls/ControlComponent</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

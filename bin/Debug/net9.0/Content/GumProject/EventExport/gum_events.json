@@ -3710,6 +3710,384 @@
         "ElementType": "Components",
         "EventType": 7,
         "TimestampUtc": "2025-10-29T13:48:42.7172071Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-10-30T08:04:37.8971025Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).BackgroundPanel",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:49.9199718Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).ControlButton",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:49.9669713Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).NonPanel",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.0049709Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).ScreenshakeLabel",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.0399705Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).ScreenshakeCheckbox",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.0799701Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).FullscreenLabel",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.1159697Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).FullscreenCheckbox",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.1519693Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).VsyncLabel",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.1879689Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).VsyncCheckbox",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.2249685Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).SFXLabel",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.2609681Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).SFXSlider",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.2969677Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).MusicLabel",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.3329673Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).MusicSlider",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.368967Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).MasterLabel",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.4049666Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).MasterSlider",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.4419662Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).BackButton",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.4779658Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).Wrapper",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:04:50.5139654Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructLabel ScreenshakeLabel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:04:56.3619024Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructCheckBox ScreenshakeCheckbox in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:04:56.3639023Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructLabel FullscreenLabel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:04:56.3659023Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructCheckBox FullscreenCheckbox in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:04:56.3669023Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructLabel VsyncLabel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:04:56.3679023Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructCheckBox VsyncCheckbox in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:04:56.3689023Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructLabel SFXLabel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:04:56.3709023Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructSlider SFXSlider in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:04:56.3719022Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructLabel MusicLabel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:04:56.3729022Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructSlider MusicSlider in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:04:56.3749022Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructLabel MasterLabel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:04:56.3769022Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructSlider MasterSlider in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:04:56.3779022Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructLabel ScreenshakeLabel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:48.3443555Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructCheckBox ScreenshakeCheckbox in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:48.3453555Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructLabel FullscreenLabel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:48.3463555Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructCheckBox FullscreenCheckbox in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:48.3503555Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructLabel VsyncLabel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:48.3513555Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructCheckBox VsyncCheckbox in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:48.3523554Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructLabel SFXLabel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:48.3533554Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructSlider SFXSlider in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:48.3553554Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructLabel MusicLabel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:48.3563554Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructSlider MusicSlider in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:48.3573554Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructLabel MasterLabel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:48.3593554Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructSlider MasterSlider in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:48.3603554Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).ConstructControls/ConstructButton ControlButton in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:05:54.8692885Z"
+      },
+      {
+        "NewName": "TitleScreen.SettingsViewInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:06:35.3908789Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TitleScreen.Controls/SettingsView SettingsViewInstance in TitleScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:07:02.0316155Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).ScrollViewerInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:07:57.4610804Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).Container NonPanel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-30T08:08:03.497023Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).ConstructButtonInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:09:31.6162029Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).ConstructButtonInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:09:48.6840472Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).ConstructButtonInstance2",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:09:49.815037Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).ConstructButtonInstance3",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:09:50.7020289Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).ConstructButtonInstance4",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:09:51.67902Z"
+      },
+      {
+        "NewName": "TitleScreen.ControlComponentInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-30T08:10:25.9137107Z"
+      },
+      {
+        "NewName": "TitleScreen.Controls",
+        "OldName": "TitleScreen.ControlComponentInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-30T08:10:32.3266532Z"
       }
     ],
     "bf7e9c9416dbbfa56951c8f06d5481c475badbcac0debd9483928f196aace3b2": [
