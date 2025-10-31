@@ -680,7 +680,7 @@
       <Variable>
         <Type>bool</Type>
         <Name>FocusIndicator.Visible</Name>
-        <Value xsi:type="xsd:boolean">false</Value>
+        <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>

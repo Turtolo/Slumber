@@ -1,9 +1,8 @@
-//Code for ConstructControls/ControlComponent (Container)
+//Code for ConstructControls/Wrapper (Container)
 using GumRuntime;
 using System.Linq;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
-using Slumber.Components.ConstructControls;
 using Gum.Converters;
 using Gum.DataTypes;
 using Gum.Managers;
@@ -14,7 +13,7 @@ using RenderingLibrary.Graphics;
 using System.Linq;
 
 namespace Slumber.Components.ConstructControls;
-partial class ControlComponent : MonoGameGum.Forms.Controls.FrameworkElement
+partial class Wrapper : MonoGameGum.Forms.Controls.FrameworkElement
 {
     [System.Runtime.CompilerServices.ModuleInitializer]
     public static void RegisterRuntimeType()
@@ -22,27 +21,32 @@ partial class ControlComponent : MonoGameGum.Forms.Controls.FrameworkElement
         var template = new global::Gum.Forms.VisualTemplate((vm, createForms) =>
         {
             var visual = new global::MonoGameGum.GueDeriving.ContainerRuntime();
-            var element = ObjectFinder.Self.GetElementSave("ConstructControls/ControlComponent");
+            var element = ObjectFinder.Self.GetElementSave("ConstructControls/Wrapper");
 #if DEBUG
-if(element == null) throw new System.InvalidOperationException("Could not find an element named ConstructControls/ControlComponent - did you forget to load a Gum project?");
+if(element == null) throw new System.InvalidOperationException("Could not find an element named ConstructControls/Wrapper - did you forget to load a Gum project?");
 #endif
             element.SetGraphicalUiElement(visual, RenderingLibrary.SystemManagers.Default);
-            if(createForms) visual.FormsControlAsObject = new ControlComponent(visual);
+            if(createForms) visual.FormsControlAsObject = new Wrapper(visual);
             return visual;
         });
-        global::Gum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(ControlComponent)] = template;
-        ElementSaveExtensions.RegisterGueInstantiation("ConstructControls/ControlComponent", () => 
+        global::Gum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(Wrapper)] = template;
+        ElementSaveExtensions.RegisterGueInstantiation("ConstructControls/Wrapper", () => 
         {
             var gue = template.CreateContent(null, true) as InteractiveGue;
             return gue;
         });
     }
-    public Wrapper WrapperInstance { get; protected set; }
+    public NineSliceRuntime BackgroundPanel { get; protected set; }
 
-    public ControlComponent(InteractiveGue visual) : base(visual)
+    public float Padding
+    {
+        get;
+        set;
+    }
+    public Wrapper(InteractiveGue visual) : base(visual)
     {
     }
-    public ControlComponent()
+    public Wrapper()
     {
 
 
@@ -51,7 +55,7 @@ if(element == null) throw new System.InvalidOperationException("Could not find a
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        WrapperInstance = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Wrapper>(this.Visual,"WrapperInstance");
+        BackgroundPanel = this.Visual?.GetGraphicalUiElementByName("BackgroundPanel") as global::MonoGameGum.GueDeriving.NineSliceRuntime;
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

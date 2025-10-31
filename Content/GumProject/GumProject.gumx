@@ -65,6 +65,11 @@
     <LinkType>ReferenceOriginal</LinkType>
   </ComponentReference>
   <ComponentReference>
+    <Name>ConstructControls/Wrapper</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>Controls/ButtonClose</Name>
     <ElementType>Component</ElementType>
     <LinkType>ReferenceOriginal</LinkType>

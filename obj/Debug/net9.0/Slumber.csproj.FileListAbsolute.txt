@@ -446,3 +446,4 @@
 /Users/nilslauvstad/Documents/Project/Slumber/obj/Debug/net9.0/Slumber.genruntimeconfig.cache
 /Users/nilslauvstad/Documents/Project/Slumber/obj/Debug/net9.0/ref/Slumber.dll
 /home/nils/Documents/Project/Slumber/bin/Debug/net9.0/Content/GumProject/Components/ConstructControls/ControlComponent.gucx
+/home/nils/Documents/Project/Slumber/bin/Debug/net9.0/Content/GumProject/Components/ConstructControls/Wrapper.gucx

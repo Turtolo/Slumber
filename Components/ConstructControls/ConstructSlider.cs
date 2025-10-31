@@ -6,6 +6,7 @@ using Gum.Wireframe;
 using RenderingLibrary.Graphics;
 using System;
 using System.Linq;
+using System.Numerics;
 
 namespace Slumber.Components.ConstructControls
 {
@@ -13,11 +14,11 @@ namespace Slumber.Components.ConstructControls
     {
         partial void CustomInitialize()
         {
-            TrackPercentOverlay.Width = Convert.ToSingle(Value);
+            TrackPercentOverlay.Width = (float)(Value * (Width / 100));
 
             ValueChanged += (_, _) =>
             {
-                TrackPercentOverlay.Width = Convert.ToSingle(Value);
+                TrackPercentOverlay.Width = (float)(Value * (Width / 100));
             };
         }
     }

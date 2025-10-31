@@ -265,13 +265,19 @@
     <Variable>
       <Type>float</Type>
       <Name>TrackInstance.Width</Name>
-      <Value xsi:type="xsd:float">-32</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>TrackInstance.WidthUnits</Name>
       <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TrackInstance.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -284,6 +290,12 @@
       <Type>PositionUnitType</Type>
       <Name>TrackInstance.XUnits</Name>
       <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TrackInstance.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -343,7 +355,8 @@
     <Variable>
       <Type>float</Type>
       <Name>TrackPercentOverlay.Width</Name>
-      <Value xsi:type="xsd:float">25</Value>
+      <Value xsi:type="xsd:float">0</Value>
+      <ExposedAsName>TrackPercentOverlayWidth</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -391,7 +404,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">128</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <VariableList xsi:type="VariableListSaveOfString">
@@ -410,9 +423,7 @@
       <Name>TrackPercentOverlay.VariableReferences</Name>
       <IsFile>false</IsFile>
       <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-      <Value>
-        <string>Width=ThumbInstance.X</string>
-      </Value>
+      <Value />
     </VariableList>
   </State>
   <Category>

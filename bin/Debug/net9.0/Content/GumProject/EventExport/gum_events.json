@@ -4578,6 +4578,76 @@
         "ElementType": "Components",
         "EventType": 6,
         "TimestampUtc": "2025-10-31T07:36:30.1420448Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).ConstructButtonInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-31T17:06:27.2799279Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).LanguageButton",
+        "OldName": "ConstructControls/Settings (Container).ConstructButtonInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-10-31T17:06:40.4557258Z"
+      },
+      {
+        "NewName": "ConstructControls/Wrapper",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-10-31T17:07:19.165132Z"
+      },
+      {
+        "NewName": "ConstructControls/Wrapper (Container).BackgroundPanel",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-31T17:07:24.0500571Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).Container Wrapper in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-31T17:09:01.1395675Z"
+      },
+      {
+        "NewName": "ConstructControls/ControlComponent (Container).WrapperInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-31T17:09:06.1374909Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/ControlComponent (Container).NineSlice BackgroundPanel in ConstructControls/ControlComponent (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-31T17:09:08.4604552Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/Settings (Container).Container Wrapper in ConstructControls/Settings (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-31T17:09:32.0110939Z"
+      },
+      {
+        "NewName": "ConstructControls/Settings (Container).WrapperInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-10-31T17:09:38.3109972Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "ConstructControls/Settings (Container).NineSlice BackgroundPanel in ConstructControls/Settings (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-10-31T17:09:48.4768412Z"
       }
     ],
     "bf7e9c9416dbbfa56951c8f06d5481c475badbcac0debd9483928f196aace3b2": [

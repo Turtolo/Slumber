@@ -84,6 +84,12 @@ if(element == null) throw new System.InvalidOperationException("Could not find a
         set => ThumbInstance.Visual.X = value;
     }
 
+    public float TrackPercentOverlayWidth
+    {
+        get => TrackPercentOverlay.Width;
+        set => TrackPercentOverlay.Width = value;
+    }
+
     public ConstructSlider(InteractiveGue visual) : base(visual)
     {
     }

@@ -16,8 +16,7 @@ namespace Slumber.Screens
     partial class TitleScreen
     {
         partial void CustomInitialize()
-        {
-            
+        {   
             StartButton.IsFocused = true;
             Main.Visible = true;
             Settings.IsVisible = false;

@@ -48,6 +48,9 @@ public class MainMenu : Scene, Scene.IScene
 
     public void Update(GameTime gameTime)
     {
+
+
+
         if (Core.Input.Keyboard.WasKeyJustPressed(Microsoft.Xna.Framework.Input.Keys.X))
         {
             if (titleScreen.Settings.IsVisible)
@@ -63,14 +66,6 @@ public class MainMenu : Scene, Scene.IScene
                 titleScreen.Settings.ControlButton.IsFocused = true;
             }
         }
-
-        if (titleScreen.Settings.MasterSlider.IsFocused)
-        {
-            Console.WriteLine($"Focused: Slider Value={titleScreen.Settings.MasterSlider.SliderPercent}");
-        }
-
-        
-        
     }
 
     public void Draw(SpriteBatch spriteBatch)

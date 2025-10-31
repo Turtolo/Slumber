@@ -5,112 +5,9 @@
   <State>
     <Name>Default</Name>
     <Variable>
-      <Type>int</Type>
-      <Name>BackgroundPanel.Alpha</Name>
-      <Value xsi:type="xsd:int">189</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>BackgroundPanel.Height</Name>
-      <Value xsi:type="xsd:float">40</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>BackgroundPanel.HeightUnits</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>BackgroundPanel.Parent</Name>
-      <Value xsi:type="xsd:string">Wrapper</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>BackgroundPanel.SourceFile</Name>
-      <Value xsi:type="xsd:string">ConstructUISheet.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>BackgroundPanel.TextureHeight</Name>
-      <Value xsi:type="xsd:int">24</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>BackgroundPanel.TextureLeft</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>BackgroundPanel.TextureTop</Name>
-      <Value xsi:type="xsd:int">16</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>BackgroundPanel.TextureWidth</Name>
-      <Value xsi:type="xsd:int">24</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>BackgroundPanel.Width</Name>
-      <Value xsi:type="xsd:float">40</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>BackgroundPanel.WidthUnits</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>BackgroundPanel.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>BackgroundPanel.XOrigin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>BackgroundPanel.XUnits</Name>
-      <Value xsi:type="xsd:int">6</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>BackgroundPanel.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>BackgroundPanel.YOrigin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>BackgroundPanel.YUnits</Name>
-      <Value xsi:type="xsd:int">7</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>string</Type>
       <Name>ControlButton.Parent</Name>
-      <Value xsi:type="xsd:string">Wrapper</Value>
+      <Value xsi:type="xsd:string">WrapperInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -176,7 +73,7 @@
     <Variable>
       <Type>float</Type>
       <Name>FullscreenCheckbox.X</Name>
-      <Value xsi:type="xsd:float">-14</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -241,6 +138,54 @@
     </Variable>
     <Variable>
       <Type>string</Type>
+      <Name>LanguageButton.Parent</Name>
+      <Value xsi:type="xsd:string">WrapperInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LanguageButton.Text</Name>
+      <Value xsi:type="xsd:string">Language</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LanguageButton.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>LanguageButton.XOrigin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>LanguageButton.XUnits</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LanguageButton.Y</Name>
+      <Value xsi:type="xsd:float">13</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>LanguageButton.YOrigin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>LanguageButton.YUnits</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
       <Name>MasterLabel.Parent</Name>
       <Value xsi:type="xsd:string">NonPanel</Value>
       <SetsValue>true</SetsValue>
@@ -271,8 +216,14 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>MasterSlider.TrackPercentOverlayWidth</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>MasterSlider.Width</Name>
-      <Value xsi:type="xsd:float">80</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -343,8 +294,20 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>MusicSlider.SliderPercent</Name>
+      <Value xsi:type="xsd:float">25</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>MusicSlider.TrackPercentOverlayWidth</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>MusicSlider.Width</Name>
-      <Value xsi:type="xsd:float">80</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -416,7 +379,7 @@
     <Variable>
       <Type>string</Type>
       <Name>NonPanel.Parent</Name>
-      <Value xsi:type="xsd:string">Wrapper</Value>
+      <Value xsi:type="xsd:string">WrapperInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -453,7 +416,7 @@
     <Variable>
       <Type>float</Type>
       <Name>NonPanel.X</Name>
-      <Value xsi:type="xsd:float">7</Value>
+      <Value xsi:type="xsd:float">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -471,7 +434,7 @@
     <Variable>
       <Type>float</Type>
       <Name>NonPanel.Y</Name>
-      <Value xsi:type="xsd:float">10</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -514,7 +477,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ScreenshakeCheckbox.X</Name>
-      <Value xsi:type="xsd:float">-14</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -598,7 +561,7 @@
     <Variable>
       <Type>float</Type>
       <Name>SFXSlider.Width</Name>
-      <Value xsi:type="xsd:float">80</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -671,7 +634,7 @@
     <Variable>
       <Type>float</Type>
       <Name>VsyncCheckbox.X</Name>
-      <Value xsi:type="xsd:float">-14</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -736,62 +699,26 @@
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>Wrapper.Height</Name>
-      <Value xsi:type="xsd:float">-0</Value>
+      <Name>WrapperInstance.Height</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>Wrapper.HeightUnits</Name>
+      <Name>WrapperInstance.HeightUnits</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>Wrapper.Width</Name>
-      <Value xsi:type="xsd:float">-0</Value>
+      <Name>WrapperInstance.Width</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>Wrapper.WidthUnits</Name>
+      <Name>WrapperInstance.WidthUnits</Name>
       <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wrapper.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>Wrapper.XOrigin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>Wrapper.XUnits</Name>
-      <Value xsi:type="xsd:int">6</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wrapper.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>Wrapper.YOrigin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>Wrapper.YUnits</Name>
-      <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -830,22 +757,7 @@
       <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
-    <VariableList xsi:type="VariableListSaveOfString">
-      <Type>string</Type>
-      <Name>BackgroundPanel.VariableReferences</Name>
-      <IsFile>false</IsFile>
-      <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-      <Value>
-        <string>Width=Components/ConstructControls/Settings.Padding</string>
-        <string>Height=Components/ConstructControls/Settings.Padding</string>
-      </Value>
-    </VariableList>
   </State>
-  <Instance>
-    <Name>BackgroundPanel</Name>
-    <BaseType>NineSlice</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
   <Instance>
     <Name>ControlButton</Name>
     <BaseType>ConstructControls/ConstructButton</BaseType>
@@ -912,13 +824,18 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>Wrapper</Name>
-    <BaseType>Container</BaseType>
+    <Name>MasterSlider</Name>
+    <BaseType>ConstructControls/ConstructSlider</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>MasterSlider</Name>
-    <BaseType>ConstructControls/ConstructSlider</BaseType>
+    <Name>LanguageButton</Name>
+    <BaseType>ConstructControls/ConstructButton</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>WrapperInstance</Name>
+    <BaseType>ConstructControls/Wrapper</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

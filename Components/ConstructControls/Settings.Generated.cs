@@ -37,7 +37,6 @@ if(element == null) throw new System.InvalidOperationException("Could not find a
             return gue;
         });
     }
-    public NineSliceRuntime BackgroundPanel { get; protected set; }
     public ConstructButton ControlButton { get; protected set; }
     public ContainerRuntime NonPanel { get; protected set; }
     public ConstructLabel ScreenshakeLabel { get; protected set; }
@@ -51,8 +50,9 @@ if(element == null) throw new System.InvalidOperationException("Could not find a
     public ConstructLabel MusicLabel { get; protected set; }
     public ConstructSlider MusicSlider { get; protected set; }
     public ConstructLabel MasterLabel { get; protected set; }
-    public ContainerRuntime Wrapper { get; protected set; }
     public ConstructSlider MasterSlider { get; protected set; }
+    public ConstructButton LanguageButton { get; protected set; }
+    public Wrapper WrapperInstance { get; protected set; }
 
     public float Padding
     {
@@ -77,7 +77,6 @@ if(element == null) throw new System.InvalidOperationException("Could not find a
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        BackgroundPanel = this.Visual?.GetGraphicalUiElementByName("BackgroundPanel") as global::MonoGameGum.GueDeriving.NineSliceRuntime;
         ControlButton = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructButton>(this.Visual,"ControlButton");
         NonPanel = this.Visual?.GetGraphicalUiElementByName("NonPanel") as global::MonoGameGum.GueDeriving.ContainerRuntime;
         ScreenshakeLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"ScreenshakeLabel");
@@ -91,8 +90,9 @@ if(element == null) throw new System.InvalidOperationException("Could not find a
         MusicLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"MusicLabel");
         MusicSlider = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructSlider>(this.Visual,"MusicSlider");
         MasterLabel = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructLabel>(this.Visual,"MasterLabel");
-        Wrapper = this.Visual?.GetGraphicalUiElementByName("Wrapper") as global::MonoGameGum.GueDeriving.ContainerRuntime;
         MasterSlider = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructSlider>(this.Visual,"MasterSlider");
+        LanguageButton = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructButton>(this.Visual,"LanguageButton");
+        WrapperInstance = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Wrapper>(this.Visual,"WrapperInstance");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
