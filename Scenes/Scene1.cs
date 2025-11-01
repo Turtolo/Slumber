@@ -54,7 +54,8 @@ public class Scene1 : Scene, Scene.IScene
             "Assets/Backgrounds/Clouds1"
         ], 0.2f, _camera);
 
-        
+
+
     }
 
 

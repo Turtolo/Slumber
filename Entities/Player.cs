@@ -7,6 +7,7 @@ using System.Timers;
 using ConstructEngine;
 using ConstructEngine.Components.Entity;
 using ConstructEngine.Components.Physics;
+using ConstructEngine.Directory;
 using ConstructEngine.Graphics;
 using ConstructEngine.Gum;
 using ConstructEngine.Physics;
@@ -22,30 +23,7 @@ using Timer = ConstructEngine.Util.Timer;
 namespace Slumber.Entities;
 
 public class Player : Entity, Entity.IEntity
-{
- 
-    private bool attacking;
-    
-    public float Gravity = 1300f;
-    public float JumpForce = -350f;
-    public float MoveSpeed = 100f;
-
-
-    private float bufferTimer = 0.2f;
-    private float WallJumpHorizontalSpeed = 200;
-    private float WallJumpVerticalSpeed = 300;
-
-    
-    
-    private bool bufferActivated;
-    private bool dir = true;
-    private int AttackCount = 0;
-    private int textureOffset;
-    private bool _upwardAir;
-    private bool canMove = true;
-    private bool wallSlide;
-    private bool falling;
-    
+{   
     private TextureAtlas _atlas;
     private TextureAtlas _atlasFeet;
 
@@ -54,7 +32,8 @@ public class Player : Entity, Entity.IEntity
     Animation _idleAnim;
     Animation _fallAnim;
 
-    
+    string FileSavePath = "PlayerData.json";
+
     private Vector2 AnimatedSpriteRenderingPosition;
 
     Keys MoveRightKey = Keys.Right;
@@ -68,7 +47,8 @@ public class Player : Entity, Entity.IEntity
 
     HealthComponent HealthComponent;
 
-
+    PlayerInfo PlayerInfo = new();
+    PlayerData PlayerData = new();
 
     private PlayerUI Screen;
     private Pausemenu pauseMenu;
@@ -103,7 +83,7 @@ public class Player : Entity, Entity.IEntity
         DamageArea = new Collider(AttackCircle, false, this);
 
         HealthComponent = new HealthComponent(this, 5, KinematicBase.Collider);
-        
+
     
     }
 
@@ -111,12 +91,15 @@ public class Player : Entity, Entity.IEntity
     {
         if (KinematicBase.Velocity.Y < 0)
         {
-            falling = false;
+            PlayerInfo.falling = false;
         }
         else
         {
-            falling = true;
+            PlayerInfo.falling = true;
         }
+
+    
+
 
         HealthComponent.Update(gameTime);
 
@@ -143,16 +126,43 @@ public class Player : Entity, Entity.IEntity
         HandleWall();
         HandleWallJump();
         Animation();
-        
+
         AnimatedSprite.Update(gameTime);
+        
+        if (Core.Input.Keyboard.WasKeyJustPressed(Keys.K))
+        {
+            SaveData();
+        }
+
+        if (Core.Input.Keyboard.WasKeyJustPressed(Keys.L))
+        {
+            LoadDataFromSave();
+        }
     }
 
     public void Draw(SpriteBatch spriteBatch)
     {
-        DrawSprites(spriteBatch, AnimatedSpriteRenderingPosition, textureOffset);
+        DrawSprites(spriteBatch, AnimatedSpriteRenderingPosition, PlayerInfo.textureOffset);
 
         //ColliderDraw.DrawCircle(AttackCollider.Circ, Color.Red, 2);
         //DrawHelper.DrawRectangle(KinematicBase.Collider.Rect, Color.Red, 2, 0.6f);
+    }
+    
+    private void SaveData()
+    {
+        PlayerData.CurrentPosition = KinematicBase.Collider.GetPosition();
+        PlayerData.CurrentHealth = HealthComponent.CurrentHealth;
+
+        FileSaver.SaveDataToJson(PlayerData, "", FileSavePath);
+    }
+
+    private void LoadDataFromSave()
+    {
+        FileSaver.LoadDataFromJson(PlayerData, FileSavePath);
+
+        KinematicBase.Collider.Rect.X = (int)PlayerData.CurrentPosition.X;
+        KinematicBase.Collider.Rect.Y = (int)PlayerData.CurrentPosition.Y;
+        HealthComponent.CurrentHealth = PlayerData.CurrentHealth;
     }
     
     //Functions
@@ -160,15 +170,15 @@ public class Player : Entity, Entity.IEntity
     {
         if (KinematicBase.IsOnWall())
         {
-            wallSlide = true;
+            PlayerInfo.wallSlide = true;
         }
 
         if (!KinematicBase.IsOnWall() || KinematicBase.IsOnGround() || KinematicBase.Velocity.Y < 0)
         {
-            wallSlide = false;
+            PlayerInfo.wallSlide = false;
         }
         
-        if (wallSlide)
+        if (PlayerInfo.wallSlide)
         {
             KinematicBase.Velocity.Y = 0;
         }
@@ -176,57 +186,57 @@ public class Player : Entity, Entity.IEntity
 
     private void HandleWallJump()
     {
-        if (KinematicBase.IsOnWall() && !KinematicBase.IsOnGround() && wallSlide)
+        if (KinematicBase.IsOnWall() && !KinematicBase.IsOnGround() && PlayerInfo.wallSlide)
         {
             if (Core.Input.Keyboard.WasKeyJustPressed(JumpKey))
             {
-                canMove = false;
+                PlayerInfo.canMove = false;
 
-                if (dir)
+                if (PlayerInfo.dir)
                 {
-                    KinematicBase.Velocity.X = -WallJumpHorizontalSpeed;
+                    KinematicBase.Velocity.X = -PlayerInfo.WallJumpHorizontalSpeed;
                 }
                 else
                 {
-                    KinematicBase.Velocity.X = WallJumpHorizontalSpeed;
+                    KinematicBase.Velocity.X = PlayerInfo.WallJumpHorizontalSpeed;
                 }
 
-                KinematicBase.Velocity.Y = -WallJumpVerticalSpeed;
+                KinematicBase.Velocity.Y = -PlayerInfo.WallJumpVerticalSpeed;
 
-                Timer.Wait(0.12f, () => { canMove = true; });
+                Timer.Wait(0.12f, () => { PlayerInfo.canMove = true; });
             }
         }
     }
 
     private void HandleGravity(GameTime gameTime)
     {
-        KinematicBase.Velocity.Y += Gravity * Core.DeltaTime;
+        KinematicBase.Velocity.Y += PlayerInfo.Gravity * Core.DeltaTime;
     }
 
     private void HandleInput(GameTime gameTime)
     {
-        if (canMove) 
+        if (PlayerInfo.canMove) 
         {
             KinematicBase.Velocity.X = 0;
             
             if (Core.Input.Keyboard.IsKeyDown(MoveLeftKey) && !Core.Input.Keyboard.IsKeyDown(MoveRightKey))
             {
-                KinematicBase.Velocity.X = -MoveSpeed;
-                dir = false;
+                KinematicBase.Velocity.X = -PlayerInfo.MoveSpeed;
+                PlayerInfo.dir = false;
             }
 
             if (Core.Input.Keyboard.IsKeyDown(MoveRightKey) && !Core.Input.Keyboard.IsKeyDown(MoveLeftKey))
             { 
-                KinematicBase.Velocity.X = MoveSpeed;
-                dir = true;
+                KinematicBase.Velocity.X = PlayerInfo.MoveSpeed;
+                PlayerInfo.dir = true;
             }
         }
         
         //HandleAttack();
 
-        if (AttackCount == 3)
+        if (PlayerInfo.AttackCount == 3)
         {
-            AttackCount = 0;
+            PlayerInfo.AttackCount = 0;
         }
         
         Jump(gameTime);
@@ -234,13 +244,13 @@ public class Player : Entity, Entity.IEntity
 
     private void HandleAttack()
     {
-        if (!attacking)
+        if (!PlayerInfo.attacking)
         {
             if (Core.Input.Keyboard.WasKeyJustPressed(AttackKey))
             {
-                AttackCount++;
+                PlayerInfo.AttackCount++;
 
-                attacking = true;
+                PlayerInfo.attacking = true;
 
                 DamageArea.Enabled = true;
 
@@ -251,7 +261,7 @@ public class Player : Entity, Entity.IEntity
         {
             if (AnimatedSprite.finished)
             {
-                attacking = false;
+                PlayerInfo.attacking = false;
                 DamageArea.Enabled = false;
             }
         }
@@ -259,51 +269,51 @@ public class Player : Entity, Entity.IEntity
 
     private void Jump(GameTime gameTime)
     {
-        if (Core.Input.Keyboard.WasKeyJustPressed(JumpKey) || bufferActivated)
+        if (Core.Input.Keyboard.WasKeyJustPressed(JumpKey) || PlayerInfo.bufferActivated)
         {
             if (KinematicBase.IsOnGround())
             {
-                _upwardAir = true;
-                bufferActivated = false;
-                KinematicBase.Velocity.Y = JumpForce;
+                PlayerInfo._upwardAir = true;
+                PlayerInfo.bufferActivated = false;
+                KinematicBase.Velocity.Y = PlayerInfo.JumpForce;
             }
             else
             {
-                bufferActivated = true;
-                Timer.Wait(bufferTimer, () => bufferActivated = false);
+                PlayerInfo.bufferActivated = true;
+                Timer.Wait(PlayerInfo.bufferTimer, () => PlayerInfo.bufferActivated = false);
             }
         }
 
         if (Core.Input.Keyboard.WasKeyJustReleased(JumpKey) && KinematicBase.Velocity.Y < 0)
         {
-            KinematicBase.Velocity.Y = (JumpForce / 4);
+            KinematicBase.Velocity.Y = PlayerInfo.JumpForce / 4;
         }
 
-        if (_upwardAir && KinematicBase.Velocity.Y > 0)
+        if (PlayerInfo._upwardAir && KinematicBase.Velocity.Y > 0)
         {
-            _upwardAir = false;
+            PlayerInfo._upwardAir = false;
         }
     }
 
     private void FlipSprite()
     {
-        if (dir)
+        if (PlayerInfo.dir)
         {
             AttackColliderOffset = 15;
-            textureOffset = 0;
+            PlayerInfo.textureOffset = 0;
             AnimatedSprite.Effects = SpriteEffects.None;
         }
         else
         {
             AttackColliderOffset = -38;
-            textureOffset = 4;
+            PlayerInfo.textureOffset = 4;
             AnimatedSprite.Effects = SpriteEffects.FlipHorizontally;
         }
     }
     
     private void Animation()
     {
-        if (!attacking)
+        if (!PlayerInfo.attacking)
         {
             if (KinematicBase.IsOnGround())
             {
