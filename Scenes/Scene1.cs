@@ -87,10 +87,12 @@ public class Scene1 : Scene, Scene.IScene
         ParallaxBackground.DrawParallaxBackgrounds(spriteBatch, Core.GraphicsDevice, SamplerState.LinearWrap);
 
         spriteBatch.Begin(
-            SpriteSortMode.BackToFront, 
+            SpriteSortMode.BackToFront,
             samplerState: SamplerState.PointClamp,
             transformMatrix: _camera.Transform
         );
+
+        
 
         foreach (Collider col in Collider.ColliderList)
         {
