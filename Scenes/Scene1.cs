@@ -14,6 +14,7 @@ using ConstructEngine.Gum;
 using Slumber.Screens;
 using ConstructEngine.Directory;
 using ConstructEngine.Area;
+using ConstructEngine.Helpers;
 
 namespace Slumber;
 

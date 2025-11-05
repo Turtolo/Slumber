@@ -7,7 +7,7 @@ using MonoGameGum;
 using Microsoft.Xna.Framework.Input;
 
 namespace Slumber
-{  
+{
     public class Main : Core
     {
 
@@ -24,7 +24,7 @@ namespace Slumber
 
             Graphics.PreferredBackBufferWidth = displayMode.Width;
             Graphics.PreferredBackBufferHeight = displayMode.Height;
-            
+
             IsFixedTimeStep = false;
             Graphics.SynchronizeWithVerticalRetrace = true;
             Graphics.ApplyChanges();
@@ -43,10 +43,6 @@ namespace Slumber
             UpdateGumCamera();
 
             SceneManager.AddScene(new MainMenu());
-
-
-            //ToggleFullscreen();
-
         }
 
         protected override void LoadContent()
@@ -58,7 +54,7 @@ namespace Slumber
         {
             if (Input.Keyboard.WasKeyJustPressed(Keys.F1))
                 bloomEnabled = !bloomEnabled;
-        
+
             SceneManager.UpdateCurrentScene(gameTime);
 
             GumUI.Update(this, gameTime);
@@ -78,7 +74,7 @@ namespace Slumber
 
             SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.Additive, SamplerState.PointClamp);
             SpriteBatch.Draw(RenderTarget, new Rectangle(offsetX, offsetY, finalWidth, finalHeight), Color.White);
-            
+
             SpriteBatch.End();
 
             GumUI.Draw();

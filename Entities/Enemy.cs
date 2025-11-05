@@ -64,8 +64,8 @@ public class Enemy : Entity, Entity.IEntity
             KinematicBase.Collider.Rect.Bottom
         );
 
-        EnemyRay = new Ray2D(RayPos, 90, 5);
-        EnemyRayNotDown = new Ray2D(RayPos, 0, 50);
+        EnemyRay = new Ray2D(RayPos, 90, 50);
+        EnemyRayNotDown = new Ray2D(RayPos, 0, 5);
     }
 
     public void Update(GameTime gameTime)
@@ -75,11 +75,11 @@ public class Enemy : Entity, Entity.IEntity
         RayPos.X = KinematicBase.Collider.Rect.Center.X + forwardOffset * Direction;
         RayPos.Y = KinematicBase.Collider.Rect.Bottom;
 
-        EnemyRay.Update(RayPos, 90);
-        EnemyRayNotDown.Update(RayPos, 0);
+        EnemyRay.Update(RayPos, 90, 50);
+        EnemyRayNotDown.Update(RayPos, 0, 5);
 
-        RayColliding = EnemyRay.Raycast(Area2D.AreaList, typeof(CollisionObject));
-        RayCollidingNotDown = EnemyRayNotDown.Raycast(Area2D.AreaList, typeof(CollisionObject));
+        EnemyRay.CheckIntersection(Area2D.AreaList, typeof(CollisionObject));
+        EnemyRayNotDown.CheckIntersection(Area2D.AreaList, typeof(CollisionObject));
 
         HandleDamage();
 
@@ -111,8 +111,6 @@ public class Enemy : Entity, Entity.IEntity
     public void Draw(SpriteBatch spriteBatch)
     {
         DrawSprites(spriteBatch, SpritePosition, TextureOffset);
-        //DrawHelper.DrawRay(EnemyRay, Color.Blue, 2f);
-        //DrawHelper.DrawRectangle(KinematicBase.Collider.Rect, Color.Red, 2);
     }
 
     private void FlipSprite(int direction)
@@ -137,7 +135,7 @@ public class Enemy : Entity, Entity.IEntity
     private void HandleMovement()
     {
         
-        if (!RayColliding || RayCollidingNotDown)
+        if (!EnemyRay.HasHit || EnemyRayNotDown.HasHit)
         {
             Direction = -Direction;
         }

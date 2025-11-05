@@ -3,7 +3,7 @@ using ConstructEngine.Components.Entity;
 using ConstructEngine.Components.Physics;
 using ConstructEngine.Graphics;
 using ConstructEngine.Area;
-using ConstructEngine.Util;
+using ConstructEngine.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
