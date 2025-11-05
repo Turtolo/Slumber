@@ -14,11 +14,11 @@ using Timer = ConstructEngine.Util.Timer;
 namespace Slumber.Entities;
 
 public class Player : Entity, Entity.IEntity
-{   
+{
     private TextureAtlas _atlas;
     private TextureAtlas _atlasFeet;
 
-    
+
     Animation _runAnim;
     Animation _idleAnim;
     Animation _fallAnim;
@@ -50,14 +50,12 @@ public class Player : Entity, Entity.IEntity
         Screen = new PlayerUI();
         pauseMenu = new Pausemenu();
 
-        
-
         _atlas = TextureAtlas.FromFile(Core.Content, "Assets/Atlas/Player/player-atlas.xml", "Assets/Animations/Player/PlayerModel3Atlas");
-                
+
         _runAnim = _atlas.CreateAnimatedSprite("run-animation").Animation;
         _idleAnim = _atlas.CreateAnimatedSprite("idle-animation").Animation;
         _fallAnim = _atlas.CreateAnimatedSprite("fall-animation").Animation;
-    
+
 
         AnimatedSprite = _atlas.CreateAnimatedSprite("idle-animation");
         AnimatedSprite.LayerDepth = 0.5f;
@@ -72,7 +70,7 @@ public class Player : Entity, Entity.IEntity
 
         HealthComponent = new HealthComponent(this, 5, KinematicBase.Collider);
 
-    
+
     }
 
     public void Update(GameTime gameTime)
@@ -94,29 +92,29 @@ public class Player : Entity, Entity.IEntity
         DamageArea.Circ.X = KinematicBase.Collider.Rect.X + AttackColliderOffset;
         DamageArea.Circ.Y = KinematicBase.Collider.Rect.Y - 10;
 
-        
-        Screen.LabelInstance.Text = "Health: " + HealthComponent.CurrentHealth + " Colliding: " + KinematicBase.Collider.IsIntersectingAny() + " Type: "  + KinematicBase.Collider.GetCurrentlyIntersectingArea()?.GetType();
-        
+
+        Screen.LabelInstance.Text = "Health: " + HealthComponent.CurrentHealth + " Colliding: " + KinematicBase.Collider.IsIntersectingAny() + " Type: " + KinematicBase.Collider.GetCurrentlyIntersectingArea()?.GetType();
+
         HandleInput(gameTime);
 
         HandleGravity(gameTime);
-        
+
         KinematicBase.UpdateCollider(gameTime);
-            
+
         if (KinematicBase.IsOnGround())
         {
             KinematicBase.Velocity.Y = 0;
         }
-        
-        AnimatedSpriteRenderingPosition = new Vector2(KinematicBase.Collider.Rect.X - 45, KinematicBase.Collider.Rect.Y - 39);
-        
+
+        AnimatedSpriteRenderingPosition = new Vector2(KinematicBase.Collider.Rect.X - 64, KinematicBase.Collider.Rect.Y - 55);
+
         FlipSprite();
         HandleWall();
         HandleWallJump();
         Animation();
 
         AnimatedSprite.Update(gameTime);
-        
+
         if (Core.Input.Keyboard.WasKeyJustPressed(Keys.K))
         {
             SaveManager.SaveData();
@@ -133,11 +131,11 @@ public class Player : Entity, Entity.IEntity
         DrawSprites(spriteBatch, AnimatedSpriteRenderingPosition, PlayerInfo.textureOffset);
 
 
-        DrawHelper.DrawString(HealthComponent.CurrentHealth.ToString(), Color.Red, Camera.CurrentCamera.GetScreenEdges().TopLeft) ;    
+        DrawHelper.DrawString(HealthComponent.CurrentHealth.ToString(), Color.Red, Camera.CurrentCamera.GetScreenEdges().TopLeft);
         //ColliderDraw.DrawCircle(AttackCollider.Circ, Color.Red, 2);
-        //DrawHelper.DrawRectangle(KinematicBase.Collider.Rect, Color.Red, 2, 0.6f);
+        DrawHelper.DrawRectangle(KinematicBase.Collider.Rect, Color.Red, 2, 0.6f);
     }
-    
+
 
     //Functions
     private void HandleWall()
@@ -151,7 +149,7 @@ public class Player : Entity, Entity.IEntity
         {
             PlayerInfo.wallSlide = false;
         }
-        
+
         if (PlayerInfo.wallSlide)
         {
             KinematicBase.Velocity.Y = 0;
@@ -189,10 +187,10 @@ public class Player : Entity, Entity.IEntity
 
     private void HandleInput(GameTime gameTime)
     {
-        if (PlayerInfo.canMove) 
+        if (PlayerInfo.canMove)
         {
             KinematicBase.Velocity.X = 0;
-            
+
             if (Core.Input.Keyboard.IsKeyDown(MoveLeftKey) && !Core.Input.Keyboard.IsKeyDown(MoveRightKey))
             {
                 KinematicBase.Velocity.X = -PlayerInfo.MoveSpeed;
@@ -200,19 +198,19 @@ public class Player : Entity, Entity.IEntity
             }
 
             if (Core.Input.Keyboard.IsKeyDown(MoveRightKey) && !Core.Input.Keyboard.IsKeyDown(MoveLeftKey))
-            { 
+            {
                 KinematicBase.Velocity.X = PlayerInfo.MoveSpeed;
                 PlayerInfo.dir = true;
             }
         }
-        
+
         //HandleAttack();
 
         if (PlayerInfo.AttackCount == 3)
         {
             PlayerInfo.AttackCount = 0;
         }
-        
+
         Jump(gameTime);
     }
 
@@ -284,7 +282,7 @@ public class Player : Entity, Entity.IEntity
             AnimatedSprite.Effects = SpriteEffects.FlipHorizontally;
         }
     }
-    
+
     private void Animation()
     {
         if (!PlayerInfo.attacking)
@@ -300,7 +298,7 @@ public class Player : Entity, Entity.IEntity
                     AnimatedSprite.PlayAnimation(_idleAnim, false);
                 }
             }
-            
+
             else
             {
                 AnimatedSprite.PlayAnimation(_fallAnim, false);
