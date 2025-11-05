@@ -126,7 +126,7 @@ public class Enemy : Entity, Entity.IEntity
             if (AnimatedSpriteFeet != null) AnimatedSpriteFeet.Effects = SpriteEffects.FlipHorizontally;
         }
     }
-        
+
     private void HandleGravity()
     {
         KinematicBase.Velocity.Y += Gravity * Core.DeltaTime;
@@ -134,7 +134,7 @@ public class Enemy : Entity, Entity.IEntity
 
     private void HandleMovement()
     {
-        
+
         if (!EnemyRay.HasHit || EnemyRayNotDown.HasHit)
         {
             Direction = -Direction;
@@ -164,7 +164,7 @@ public class Enemy : Entity, Entity.IEntity
 
 
     }
-    
+
 
     public void TakeDamage(int DamageAmount)
     {
