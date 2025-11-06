@@ -67,5 +67,16 @@
       <Frame region="player-fall-4"/>
       <Frame region="player-fall-5"/>
     </Animation>
+
+    <Animation name="attack-animation" delay="80">
+      <Frame region="player-attack-1"/>
+      <Frame region="player-attack-2"/>
+      <Frame region="player-attack-3"/>
+      <Frame region="player-attack-4"/>
+      <Frame region="player-attack-5"/>
+      <Frame region="player-attack-6"/>
+      <Frame region="player-attack-7"/>
+      <Frame region="player-attack-8"/>
+    </Animation>
   </Animations>
 </TextureAtlas>

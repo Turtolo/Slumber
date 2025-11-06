@@ -22,6 +22,7 @@ public class Player : Entity, Entity.IEntity
     Animation _runAnim;
     Animation _idleAnim;
     Animation _fallAnim;
+    Animation _attackAnim;
 
     private Vector2 AnimatedSpriteRenderingPosition;
 
@@ -52,10 +53,10 @@ public class Player : Entity, Entity.IEntity
 
         _atlas = TextureAtlas.FromFile(Core.Content, "Assets/Atlas/Player/player-atlas.xml", "Assets/Animations/Player/PlayerModel3Atlas");
 
-        _runAnim = _atlas.CreateAnimatedSprite("run-animation").Animation;
-        _idleAnim = _atlas.CreateAnimatedSprite("idle-animation").Animation;
-        _fallAnim = _atlas.CreateAnimatedSprite("fall-animation").Animation;
-
+        _runAnim = _atlas.GetAnimation("run-animation");
+        _idleAnim = _atlas.GetAnimation("idle-animation");
+        _fallAnim = _atlas.GetAnimation("fall-animation");
+        _attackAnim = _atlas.GetAnimation("attack-animation");
 
         AnimatedSprite = _atlas.CreateAnimatedSprite("idle-animation");
         AnimatedSprite.LayerDepth = 0.5f;
@@ -68,7 +69,7 @@ public class Player : Entity, Entity.IEntity
 
         DamageArea = new Area2D(AttackCircle, false, this);
 
-        HealthComponent = new HealthComponent(this, 5, KinematicBase.Collider);
+        HealthComponent = new HealthComponent(this, 5, KinematicBase.Collider, this);
 
 
     }
@@ -111,6 +112,7 @@ public class Player : Entity, Entity.IEntity
         FlipSprite();
         HandleWall();
         HandleWallJump();
+        HandleAttack();
         Animation();
 
         AnimatedSprite.Update(gameTime);
@@ -132,7 +134,7 @@ public class Player : Entity, Entity.IEntity
 
 
         DrawHelper.DrawString(HealthComponent.CurrentHealth.ToString(), Color.Red, Camera.CurrentCamera.GetScreenEdges().TopLeft);
-        //ColliderDraw.DrawCircle(AttackCollider.Circ, Color.Red, 2);
+        DrawHelper.DrawCircle(DamageArea.Circ, Color.Red, 2);
         DrawHelper.DrawRectangle(KinematicBase.Collider.Rect, Color.Red, 2, 0.6f);
     }
 
@@ -303,6 +305,11 @@ public class Player : Entity, Entity.IEntity
             {
                 AnimatedSprite.PlayAnimation(_fallAnim, false);
             }
+        }
+
+        else
+        {
+            AnimatedSprite.PlayAnimation(_attackAnim, false);
         }
     }
 }

@@ -10,6 +10,8 @@ using ConstructEngine.Area;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Timer = ConstructEngine.Util.Timer;
+using ConstructEngine.Helpers;
+using System.Net.Http.Headers;
 
 namespace Slumber.Entities;
 
@@ -35,6 +37,8 @@ public class Enemy : Entity, Entity.IEntity
     private Texture2D AltasTexture;
 
     private Animation RunAnimation;
+
+    private Area2D TakeDamageArea;
 
     Vector2 RayPos;
 
@@ -66,6 +70,8 @@ public class Enemy : Entity, Entity.IEntity
 
         EnemyRay = new Ray2D(RayPos, 90, 50);
         EnemyRayNotDown = new Ray2D(RayPos, 0, 5);
+
+        TakeDamageArea = KinematicBase.Collider;
     }
 
     public void Update(GameTime gameTime)
@@ -111,6 +117,8 @@ public class Enemy : Entity, Entity.IEntity
     public void Draw(SpriteBatch spriteBatch)
     {
         DrawSprites(spriteBatch, SpritePosition, TextureOffset);
+
+        DrawHelper.DrawString(Health.ToString(), Color.DarkBlue, new Vector2(KinematicBase.Position.X, KinematicBase.Position.Y - 10));
     }
 
     private void FlipSprite(int direction)
@@ -145,33 +153,24 @@ public class Enemy : Entity, Entity.IEntity
 
     private void HandleDamage()
     {
-        for (int i = 0; i < Area2D.AreaList.Count; i++)
+        if (KinematicBase.Collider.IsIntersectingAny())
         {
-            Area2D collider = Area2D.AreaList[i];
 
-            if (collider.Circ != null)
-            {
-                if (collider.Enabled)
-                {
-                    if (CanTakeDamage)
-                    {
-                        TakeDamage(1);
-                    }
-                }
-            }
+            Entity OtherEntity = (Entity)KinematicBase.Collider.GetCurrentlyIntersectingArea().Root;
+            
+            if (OtherEntity.GetType() != typeof(Enemy))
+                TakeDamage(OtherEntity.DamageAmount);
         }
-
-
 
     }
 
 
     public void TakeDamage(int DamageAmount)
     {
+        if (!CanTakeDamage) return;
         CanTakeDamage = false;
         Health -= DamageAmount;
 
-        Console.WriteLine(Health);
         Timer.Wait(0.7f, () => { CanTakeDamage = true; });
     }
 

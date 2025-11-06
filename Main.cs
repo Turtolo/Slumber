@@ -10,7 +10,6 @@ namespace Slumber
 {
     public class Main : Core
     {
-
         bool bloomEnabled = true;
 
         private GumService GumUI;
@@ -18,7 +17,7 @@ namespace Slumber
         public Main() : base("Platformer", 640, 360, false, "Assets/Fonts/Font")
         {
             Window.AllowUserResizing = true;
-            Window.IsBorderless = true;
+            Window.IsBorderless = false;
 
             var displayMode = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode;
 
