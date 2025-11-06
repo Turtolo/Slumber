@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ComponentSave xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>ConstructControls/Blur</Name>
+  <BaseType>Container</BaseType>
+  <State>
+    <Name>Default</Name>
+    <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Alpha</Name>
+      <Value xsi:type="xsd:int">160</Value>
+      <ExposedAsName>ColoredRectangleInstanceAlpha</ExposedAsName>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>Blend</Type>
+      <Name>ColoredRectangleInstance.Blend</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Blue</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ColoredRectangleInstance.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>State</Type>
+      <Name>State</Name>
+      <Value xsi:type="xsd:string">Default</Value>
+      <Category>States and Visibility</Category>
+      <SetsValue>false</SetsValue>
+    </Variable>
+  </State>
+  <Instance>
+    <Name>ColoredRectangleInstance</Name>
+    <BaseType>ColoredRectangle</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Behaviors />
+</ComponentSave>

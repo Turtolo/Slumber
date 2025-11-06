@@ -132,10 +132,6 @@ public class Player : Entity, Entity.IEntity
     {
         DrawSprites(spriteBatch, AnimatedSpriteRenderingPosition, PlayerInfo.textureOffset);
 
-
-        DrawHelper.DrawString(HealthComponent.CurrentHealth.ToString(), Color.Red, Camera.CurrentCamera.GetScreenEdges().TopLeft);
-        DrawHelper.DrawCircle(DamageArea.Circ, Color.Red, 2);
-        DrawHelper.DrawRectangle(KinematicBase.Collider.Rect, Color.Red, 2, 0.6f);
     }
 
 

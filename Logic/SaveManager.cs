@@ -20,7 +20,6 @@ public class SaveManager
 
         PlayerData.CurrentScene = Core.SceneManager.GetCurrentScene().GetType().Name;
         
-
         FileSaver.SaveDataToJson(PlayerData, "", SaveLocation);
     }
 

@@ -118,7 +118,7 @@ public class Enemy : Entity, Entity.IEntity
     {
         DrawSprites(spriteBatch, SpritePosition, TextureOffset);
 
-        DrawHelper.DrawString(Health.ToString(), Color.DarkBlue, new Vector2(KinematicBase.Position.X, KinematicBase.Position.Y - 10));
+        //DrawHelper.DrawString(Health.ToString(), Color.DarkBlue, new Vector2(KinematicBase.Position.X, KinematicBase.Position.Y - 10));
     }
 
     private void FlipSprite(int direction)

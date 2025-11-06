@@ -76,7 +76,6 @@
       <Frame region="player-attack-5"/>
       <Frame region="player-attack-6"/>
       <Frame region="player-attack-7"/>
-      <Frame region="player-attack-8"/>
     </Animation>
   </Animations>
 </TextureAtlas>

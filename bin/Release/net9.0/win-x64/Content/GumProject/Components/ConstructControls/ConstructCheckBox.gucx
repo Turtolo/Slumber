@@ -1,0 +1,1143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ComponentSave xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>ConstructControls/ConstructCheckBox</Name>
+  <BaseType>Container</BaseType>
+  <State>
+    <Name>Default</Name>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>CheckboxBackground.SourceFile</Name>
+      <Value xsi:type="xsd:string">ConstructUISheet.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CheckboxBackground.TextureHeight</Name>
+      <Value xsi:type="xsd:int">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CheckboxBackground.TextureLeft</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CheckboxBackground.TextureTop</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CheckboxBackground.TextureWidth</Name>
+      <Value xsi:type="xsd:int">32</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>CheckboxBackground.Visible</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>CheckBoxCategory</Type>
+      <Name>CheckBoxCategoryState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FocusIndicator.Height</Name>
+      <Value xsi:type="xsd:float">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>FocusIndicator.IgnoredByParentSize</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>FocusIndicator.SourceFile</Name>
+      <Value xsi:type="xsd:string">ConstructUISheet.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FocusIndicator.TextureHeight</Name>
+      <Value xsi:type="xsd:int">32</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FocusIndicator.TextureLeft</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FocusIndicator.TextureTop</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FocusIndicator.TextureWidth</Name>
+      <Value xsi:type="xsd:int">96</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>FocusIndicator.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FocusIndicator.Width</Name>
+      <Value xsi:type="xsd:float">14</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FocusIndicator.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FocusIndicator.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Height</Name>
+      <Value xsi:type="xsd:float">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>IsOverrideInCodeGen</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <Category>Xamarin Forms</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>IsXamarinFormsControl</Name>
+      <Category>Xamarin Forms</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>State</Type>
+      <Name>State</Name>
+      <Category>States and Visibility</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.Alpha</Name>
+      <Value xsi:type="xsd:int">159</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.Blue</Name>
+      <Value xsi:type="xsd:int">15</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ColorCategory</Type>
+      <Name>TextInstance.ColorCategoryState</Name>
+      <Value xsi:type="xsd:string">White</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>TextInstance.CustomFontFile</Name>
+      <Value xsi:type="xsd:string">RainHearts.fnt</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.FontScale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.Green</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.Height</Name>
+      <Value xsi:type="xsd:float">32</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TextInstance.HeightUnits</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>TextInstance.HorizontalAlignment</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.LineHeightMultiplier</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.Red</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>SizeCategory</Type>
+      <Name>TextInstance.SizeCategoryState</Name>
+      <Value xsi:type="xsd:string">Normal</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>StyleCategory</Type>
+      <Name>TextInstance.StyleCategoryState</Name>
+      <Value xsi:type="xsd:string">Normal</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TextInstance.Text</Name>
+      <Value xsi:type="xsd:string"></Value>
+      <ExposedAsName>Text</ExposedAsName>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>TextInstance.UseCustomFont</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>TextInstance.VerticalAlignment</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.Width</Name>
+      <Value xsi:type="xsd:float">21</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TextInstance.WidthUnits</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.X</Name>
+      <Value xsi:type="xsd:float">49</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>TextInstance.XOrigin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TextInstance.XUnits</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.Y</Name>
+      <Value xsi:type="xsd:float">-5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>TextInstance.YOrigin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TextInstance.YUnits</Name>
+      <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Width</Name>
+      <Value xsi:type="xsd:float">32</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <VariableList xsi:type="VariableListSaveOfString">
+      <Type>string</Type>
+      <Name>TextInstance.VariableReferences</Name>
+      <IsFile>false</IsFile>
+      <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
+      <Value />
+    </VariableList>
+  </State>
+  <Category>
+    <Name>CheckBoxCategory</Name>
+    <State>
+      <Name>EnabledOn</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>EnabledOff</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>EnabledIndeterminate</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>DisabledOn</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">Gray</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>DisabledOff</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">Gray</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>DisabledIndeterminate</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">Gray</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>HighlightedOn</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>HighlightedOff</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>HighlightedIndeterminate</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>PushedOn</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>PushedOff</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>PushedIndeterminate</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>FocusedOn</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>FocusedOff</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>FocusedIndeterminate</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>HighlightedFocusedOn</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>HighlightedFocusedOff</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>HighlightedFocusedIndeterminate</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">White</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>DisabledFocusedOn</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">Gray</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>DisabledFocusedOff</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">Gray</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>DisabledFocusedIndeterminate</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureHeight</Name>
+        <Value xsi:type="xsd:int">16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureLeft</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureTop</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CheckboxBackground.TextureWidth</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FocusIndicator.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ColorCategory</Type>
+        <Name>TextInstance.ColorCategoryState</Name>
+        <Value xsi:type="xsd:string">Gray</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Instance>
+    <Name>TextInstance</Name>
+    <BaseType>Text</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>CheckboxBackground</Name>
+    <BaseType>NineSlice</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>FocusIndicator</Name>
+    <BaseType>NineSlice</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Behaviors>
+    <ElementBehaviorReference>
+      <BehaviorName>CheckBoxBehavior</BehaviorName>
+    </ElementBehaviorReference>
+  </Behaviors>
+</ComponentSave>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+  <Texture>Assets/Player/Animations/playermodel2Atlas</Texture>
+  <Regions>
+    <Region name="eye-1" x="0" y="0" width="16" height="16" />
+    <Region name="eye-2" x="16" y="0" width="16" height="16" />
+    <Region name="eye-3" x="32" y="0" width="16" height="16" />
+    <Region name="eye-4" x="48" y="0" width="16" height="16" />
+</Regions>
+ 
+  <Animations>
+    <Animation name="run-animation" delay="100">
+      <Frame region="eye-1"/>
+      <Frame region="eye-2"/>
+      <Frame region="eye-3"/>
+      <Frame region="eye-4"/>
+    </Animation>
+  </Animations>
+</TextureAtlas>
