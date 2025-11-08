@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/home/nils/Documents/Project/Slumber/Content/Assets/Tileset/SlumberTilesetAtlas.png</SourceFile>
-  <SourceTime>2025-11-07T17:35:52.8341032+01:00</SourceTime>
-  <DestFile>/home/nils/Documents/Project/Slumber/Content/bin/DesktopGL/Content/Assets/Tileset/SlumberTilesetAtlas.xnb</DestFile>
-  <DestTime>2025-11-07T17:36:16.9710288+01:00</DestTime>
+  <SourceFile>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Tileset/SlumberTilesetAtlas.png</SourceFile>
+  <SourceTime>2025-11-08T17:38:08.0452466+01:00</SourceTime>
+  <DestFile>/Users/nilslauvstad/Documents/Project/Slumber/Content/bin/DesktopGL/Content/Assets/Tileset/SlumberTilesetAtlas.xnb</DestFile>
+  <DestTime>2025-11-08T19:07:59.5461202+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-10-20T16:25:32+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

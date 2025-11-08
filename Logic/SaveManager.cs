@@ -1,4 +1,6 @@
 using System;
+using System.Diagnostics.Contracts;
+using System.IO;
 using System.Linq;
 using ConstructEngine;
 using ConstructEngine.Components.Entity;
@@ -10,7 +12,10 @@ namespace Slumber;
 public class SaveManager
 {
     public static PlayerData PlayerData = new();
-    public static string SaveLocation = "PlayerData.json";
+    public static string FileName = "PlayerData.json";
+    public static string Library = Path.Combine(FileSaver.ApplicationData, "Slumber");
+
+    public static string FileSavePath { get => Path.Combine(Library, FileName); }
 
     public static void SaveData()
     {
@@ -19,13 +24,14 @@ public class SaveManager
         player = Entity.EntityList.OfType<Player>().FirstOrDefault();
 
         PlayerData.CurrentScene = Core.SceneManager.GetCurrentScene().GetType().Name;
-        
-        FileSaver.SaveDataToJson(PlayerData, "", SaveLocation);
+
+        FileSaver.SaveDataToJson(PlayerData, FileSavePath);
+
     }
 
     public static void LoadData()
     {
-        FileSaver.LoadDataFromJson(PlayerData, SaveLocation);
+        FileSaver.LoadDataFromJson(PlayerData, FileSavePath);
 
         Core.SceneManager.AddSceneFromString(PlayerData.CurrentScene);
 

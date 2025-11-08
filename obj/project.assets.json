@@ -261,213 +261,6 @@
           "bin/placeholder/Construct.dll": {}
         }
       }
-    },
-    "net9.0/win-x64": {
-      "FlatRedBall.GumCommon/2025.9.27.1": {
-        "type": "package",
-        "dependencies": {
-          "FlatRedBall.InterpolationCore": "2025.4.22.1",
-          "System.Numerics.Vectors": "4.5.0"
-        },
-        "compile": {
-          "lib/net6.0/GumCommon.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/GumCommon.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "FlatRedBall.InterpolationCore/2025.4.22.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "System.Data.DataSetExtensions": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/FlatRedBall.InterpolationCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/FlatRedBall.InterpolationCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "contentFiles": {
-          "contentFiles/any/any/_._": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          }
-        }
-      },
-      "Gum.MonoGame/2025.9.27.1": {
-        "type": "package",
-        "dependencies": {
-          "FlatRedBall.GumCommon": "2025.9.27.1",
-          "TextCopy": "6.2.1"
-        },
-        "compile": {
-          "lib/net8.0/MonoGameGum.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/MonoGameGum.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.CSharp/4.7.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "MonoGame.Content.Builder.Task/3.8.4.1": {
-        "type": "package",
-        "build": {
-          "build/MonoGame.Content.Builder.Task.props": {},
-          "build/MonoGame.Content.Builder.Task.targets": {}
-        }
-      },
-      "MonoGame.Framework.DesktopGL/3.8.4.1": {
-        "type": "package",
-        "dependencies": {
-          "MonoGame.Library.OpenAL": "1.24.3.2",
-          "MonoGame.Library.SDL": "2.32.2.1",
-          "NVorbis": "0.10.4"
-        },
-        "compile": {
-          "lib/net8.0/MonoGame.Framework.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/MonoGame.Framework.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "build/MonoGame.Framework.DesktopGL.targets": {}
-        }
-      },
-      "MonoGame.Library.OpenAL/1.24.3.2": {
-        "type": "package",
-        "native": {
-          "runtimes/win-x64/native/openal.dll": {}
-        }
-      },
-      "MonoGame.Library.SDL/2.32.2.1": {
-        "type": "package",
-        "native": {
-          "runtimes/win-x64/native/SDL2.dll": {}
-        }
-      },
-      "NVorbis/0.10.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/NVorbis.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/NVorbis.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Data.DataSetExtensions/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Data.DataSetExtensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Numerics.Vectors/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
-      },
-      "TextCopy/6.2.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
-        },
-        "compile": {
-          "lib/net6.0/TextCopy.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/TextCopy.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Construct/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Gum.MonoGame": "2025.9.27.1"
-        },
-        "compile": {
-          "bin/placeholder/Construct.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Construct.dll": {}
-        }
-      }
     }
   },
   "libraries": {
@@ -872,19 +665,19 @@
     ]
   },
   "packageFolders": {
-    "/home/nils/.nuget/packages/": {}
+    "/Users/nilslauvstad/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/nils/Documents/Project/Slumber/Slumber.csproj",
+      "projectUniqueName": "/Users/nilslauvstad/Documents/Project/Slumber/Slumber.csproj",
       "projectName": "Slumber",
-      "projectPath": "/home/nils/Documents/Project/Slumber/Slumber.csproj",
-      "packagesPath": "/home/nils/.nuget/packages/",
-      "outputPath": "/home/nils/Documents/Project/Slumber/obj/",
+      "projectPath": "/Users/nilslauvstad/Documents/Project/Slumber/Slumber.csproj",
+      "packagesPath": "/Users/nilslauvstad/.nuget/packages/",
+      "outputPath": "/Users/nilslauvstad/Documents/Project/Slumber/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/nils/.nuget/NuGet/NuGet.Config"
+        "/Users/nilslauvstad/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -896,8 +689,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/nils/Documents/Project/Libraries/Construct-Engine/Construct.csproj": {
-              "projectPath": "/home/nils/Documents/Project/Libraries/Construct-Engine/Construct.csproj"
+            "/Users/nilslauvstad/Documents/Project/Libraries/Construct-Engine/Construct.csproj": {
+              "projectPath": "/Users/nilslauvstad/Documents/Project/Libraries/Construct-Engine/Construct.csproj"
             }
           }
         }
@@ -912,7 +705,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -942,35 +735,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[9.0.9, 9.0.9]"
-          },
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[9.0.9, 9.0.9]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[9.0.9, 9.0.9]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[9.0.9, 9.0.9]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
