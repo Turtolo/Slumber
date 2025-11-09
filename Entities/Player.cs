@@ -113,6 +113,7 @@ public class Player : Entity, Entity.IEntity
         DrawHelper.DrawRectangle(KinematicBase.Collider.Rect, Color.Red, 2);
     }
 
+    
 
     //Functions
     private void HandleWall()
@@ -236,7 +237,7 @@ public class Player : Entity, Entity.IEntity
     {
         if ((Core.Input.Keyboard.WasKeyJustPressed(JumpKey) || PlayerInfo.bufferActivated) && KinematicBase.IsOnGround())
         {
-            KinematicBase.Velocity.Y = -PlayerInfo.JumpForce;
+            KinematicBase.Velocity.Y = PlayerInfo.JumpForce;
             PlayerInfo.bufferActivated = false;
         }
 
