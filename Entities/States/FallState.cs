@@ -20,6 +20,8 @@ public class FallState : State
 
     public override void Update(GameTime gameTime)
     {
+        player.ApplyGravity();
+        
         if (Core.Input.Keyboard.IsKeyDown(player.MoveLeftKey) || Core.Input.Keyboard.IsKeyDown(player.MoveRightKey))
         {
             RequestTransition("FallMoveState");
@@ -29,6 +31,10 @@ public class FallState : State
         {
             RequestTransition("IdleState");
         }
+
+
+        float accel = (MathF.Abs(0) > 0) ? player.PlayerInfo.Acceleration : player.PlayerInfo.Deceleration;
+        player.KinematicBase.Velocity.X = player.MoveToward(player.KinematicBase.Velocity.X, 0, accel * Core.DeltaTime);
     }
     
     public override void OnExit()

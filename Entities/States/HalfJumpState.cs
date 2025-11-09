@@ -3,20 +3,19 @@ using ConstructEngine;
 using Microsoft.Xna.Framework;
 using Slumber.Entities;
 
-public class JumpState : State
+public class HalfJumpState : State
 {
 
     Player player;
 
-    public JumpState (Player player)
+    public HalfJumpState (Player player)
     {
         this.player = player;
     }
 
     public override void OnEnter()
     {
-        player.KinematicBase.Velocity.Y = player.PlayerInfo.JumpForce;
-        player.PlayerInfo.bufferActivated = false;
+        player.KinematicBase.Velocity.Y *= 0.5f;
     }
 
     public override void Update(GameTime gameTime)
@@ -33,23 +32,11 @@ public class JumpState : State
             {
                 RequestTransition("FallState");
             }
-
-
-        }
-        
-        else
-        {
-            if (Core.Input.Keyboard.WasKeyJustReleased(player.JumpKey))
-            {
-
-                RequestTransition("HalfJumpState");
-            }
         }
 
         HandleHorizontalInput();
 
     }
-    
     
     
     private void HandleHorizontalInput()

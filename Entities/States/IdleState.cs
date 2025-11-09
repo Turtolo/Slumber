@@ -20,12 +20,14 @@ public class IdleState : State
 
     public override void Update(GameTime gameTime)
     {
+        player.ApplyGravity();
+        
         if (Core.Input.Keyboard.IsKeyDown(player.MoveLeftKey) || Core.Input.Keyboard.IsKeyDown(player.MoveRightKey))
         {
             RequestTransition("RunState");
         }
 
-        if (Core.Input.Keyboard.WasKeyJustPressed(player.JumpKey))
+        if ((Core.Input.Keyboard.WasKeyJustPressed(player.JumpKey) || player.PlayerInfo.bufferActivated) && player.KinematicBase.IsOnGround())
         {
             RequestTransition("JumpState");
         }

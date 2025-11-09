@@ -20,6 +20,8 @@ public class RunState : State
 
     public override void Update(GameTime gameTime)
     {
+        player.ApplyGravity();
+
         HandleHorizontalInput();
 
         if (Core.Input.Keyboard.IsKeyDown(player.MoveLeftKey) || Core.Input.Keyboard.IsKeyDown(player.MoveRightKey)) { }
@@ -29,9 +31,14 @@ public class RunState : State
             RequestTransition("IdleState");
         }
 
-        if (Core.Input.Keyboard.WasKeyJustPressed(player.JumpKey))
+        if ((Core.Input.Keyboard.WasKeyJustPressed(player.JumpKey) || player.PlayerInfo.bufferActivated) && player.KinematicBase.IsOnGround())
         {
             RequestTransition("JumpState");
+        }
+
+        if (player.PlayerInfo.VariableJump && Core.Input.Keyboard.WasKeyJustReleased(player.JumpKey) && player.KinematicBase.Velocity.Y < 0)
+        {
+            RequestTransition("HalfJumpState");
         }
     }
     
@@ -42,12 +49,12 @@ public class RunState : State
         if (Core.Input.Keyboard.IsKeyDown(player.MoveLeftKey) && !Core.Input.Keyboard.IsKeyDown(player.MoveRightKey))
         {
             targetSpeed = -player.PlayerInfo.MoveSpeed;
-            player.PlayerInfo.dir = false;
+            player.PlayerInfo.dir = -1;
         }
         else if (Core.Input.Keyboard.IsKeyDown(player.MoveRightKey) && !Core.Input.Keyboard.IsKeyDown(player.MoveLeftKey))
         {
             targetSpeed = player.PlayerInfo.MoveSpeed;
-            player.PlayerInfo.dir = true;
+            player.PlayerInfo.dir = 1;
         }
 
         float accel = (MathF.Abs(targetSpeed) > 0) ? player.PlayerInfo.Acceleration : player.PlayerInfo.Deceleration;

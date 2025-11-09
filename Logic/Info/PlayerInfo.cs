@@ -22,7 +22,7 @@ public class PlayerInfo
 
     public float WallJumpHorizontalSpeed = 200;
     public float WallJumpVerticalSpeed = 300;
-    public bool dir = true;
+    public int dir = 1;
     public int AttackCount = 0;
     public int textureOffset;
     public bool canMove = true;

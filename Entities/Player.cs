@@ -73,11 +73,12 @@ public class Player : Entity, Entity.IEntity
         var idleState = new IdleState(this);
         var runState = new RunState(this);
         var jumpState = new JumpState(this);
+        var halfJumpState = new HalfJumpState(this);
         var fallState = new FallState(this);
         var fallMoveState = new FallMoveState(this);
+        var takeDamageState = new TakeDamageState(this);
 
-        StateMachine = new(idleState, [idleState, runState, jumpState, fallState, fallMoveState]);
-
+        StateMachine = new(idleState, [idleState, runState, jumpState, halfJumpState, fallState, fallMoveState, takeDamageState]);
 
         DamageArea = new Area2D(AttackCircle, false, this);
 
@@ -96,14 +97,16 @@ public class Player : Entity, Entity.IEntity
         StateMachine.Update(gameTime);
         Console.WriteLine(StateMachine.CurrentState);
 
-
-        ApplyGravity();
-        HandleJump();
         HandleWall();
         HandleWallJump();
 
         KinematicBase.UpdateCollider(gameTime);
         SaveManager.PlayerData.CurrentPosition = KinematicBase.Position;
+
+        if (HealthComponent.TakingDamage)
+        {
+            StateMachine.RequestTransition("TakeDamageState");
+        }
 
 
         FlipSprite();
@@ -153,7 +156,7 @@ public class Player : Entity, Entity.IEntity
             {
                 PlayerInfo.canMove = false;
 
-                if (PlayerInfo.dir)
+                if (PlayerInfo.dir == 1)
                 {
                     KinematicBase.Velocity.X = -PlayerInfo.WallJumpHorizontalSpeed;
                 }
@@ -169,7 +172,7 @@ public class Player : Entity, Entity.IEntity
         }
     }
 
-    private void ApplyGravity()
+    public void ApplyGravity()
     {
         if (!KinematicBase.IsOnGround())
         {
@@ -227,24 +230,12 @@ public class Player : Entity, Entity.IEntity
         DamageArea.Enabled = true;
     }
 
-    private void HandleJump()
-    {
-        if ((Core.Input.Keyboard.WasKeyJustPressed(JumpKey) || PlayerInfo.bufferActivated) && KinematicBase.IsOnGround())
-        {
-            KinematicBase.Velocity.Y = PlayerInfo.JumpForce;
-            PlayerInfo.bufferActivated = false;
-        }
 
-        if (PlayerInfo.VariableJump && Core.Input.Keyboard.WasKeyJustReleased(JumpKey) && KinematicBase.Velocity.Y < 0)
-        {
-            KinematicBase.Velocity.Y *= 0.5f;
-        }
-    }
 
 
     private void FlipSprite()
     {
-        if (PlayerInfo.dir)
+        if (PlayerInfo.dir == 1)
         {
             AttackColliderOffset = 15;
             PlayerInfo.textureOffset = 0;
