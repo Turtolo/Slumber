@@ -8,17 +8,14 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Slumber.Logic;
 using Slumber.Screens;
-using Timer = ConstructEngine.Util.Timer;
 using System;
 using ConstructEngine.Helpers;
-using System.Runtime.CompilerServices;
 
 namespace Slumber.Entities;
 
 public class Player : Entity, Entity.IEntity
 {
     private TextureAtlas _atlas;
-    private TextureAtlas _atlasFeet;
 
     public Animation _runAnim;
     public Animation _idleAnim;
@@ -36,22 +33,20 @@ public class Player : Entity, Entity.IEntity
     public int AttackColliderOffset;
 
     public Area2D DamageArea;
-
     public HealthComponent HealthComponent;
 
     public PlayerInfo PlayerInfo = new();
 
-    public StateController StateMachine;
-
+    private PlayerUI Screen;
     private Pausemenu pauseMenu;
 
-    public Player() : base(4)
-    {
+    private StateController _stateController;
 
-    }
+    public Player() : base(4) { }
 
     public override void Load()
     {
+        Screen = new PlayerUI();
         pauseMenu = new Pausemenu();
 
         _atlas = TextureAtlas.FromFile(Core.Content, "Assets/Atlas/Player/player-atlas.xml", "Assets/Animations/Player/PlayerModel3Atlas");
@@ -67,116 +62,64 @@ public class Player : Entity, Entity.IEntity
 
         KinematicBase.Collider = new Area2D(new Rectangle(400, 150, 10, 25), true, this);
 
-
-        Circle AttackCircle = new(0, 0, 30);
-
-        var idleState = new IdleState(this);
-        var runState = new RunState(this);
-        var jumpState = new JumpState(this);
-        var halfJumpState = new HalfJumpState(this);
-        var fallState = new FallState(this);
-        var fallMoveState = new FallMoveState(this);
-        var takeDamageState = new TakeDamageState(this);
-
-        StateMachine = new(idleState, [idleState, runState, jumpState, halfJumpState, fallState, fallMoveState, takeDamageState]);
-
-        DamageArea = new Area2D(AttackCircle, false, this);
+        Circle attackCircle = new(0, 0, 30);
+        DamageArea = new Area2D(attackCircle, false, this);
 
         HealthComponent = new HealthComponent(this, 5, KinematicBase.Collider, this);
 
+        var grounded = new PlayerGroundedState(this);
+        var idle = new PlayerIdleState(this);
+        var run = new PlayerRunState(this);
+        var attack = new PlayerAttackState(this);
+        var jump = new PlayerJumpState(this);
+        var fall = new PlayerFallState(this);
+        var wallSlide = new PlayerWallSlideState(this);
+        var wallJump = new PlayerWallJumpState(this);
 
+        idle.SetParent(grounded);
+        run.SetParent(grounded);
+        attack.SetParent(grounded);
+
+        _stateController = new StateController(idle, new IState[]
+        {
+            grounded, idle, run, attack, jump, fall, wallSlide, wallJump
+        });
     }
-
 
     public void Update(GameTime gameTime)
     {
         HealthComponent.Update(gameTime);
+
         DamageArea.Circ.X = KinematicBase.Collider.Rect.X + AttackColliderOffset;
         DamageArea.Circ.Y = KinematicBase.Collider.Rect.Y - 10;
 
-        StateMachine.Update(gameTime);
-        Console.WriteLine(StateMachine.CurrentState);
+        ApplyGravity();
 
-        HandleWall();
-        HandleWallJump();
+        _stateController.Update(gameTime);
 
         KinematicBase.UpdateCollider(gameTime);
         SaveManager.PlayerData.CurrentPosition = KinematicBase.Position;
 
-        if (HealthComponent.TakingDamage)
-        {
-            StateMachine.RequestTransition("TakeDamageState");
-        }
-
-
         FlipSprite();
-        Animation();
 
         AnimatedSpriteRenderingPosition = new Vector2(KinematicBase.Collider.Rect.X - 64, KinematicBase.Collider.Rect.Y - 55);
-
         AnimatedSprite.Update(gameTime);
-
-        if (Core.Input.Keyboard.WasKeyJustPressed(Keys.K)) SaveManager.SaveData();
-        if (Core.Input.Keyboard.WasKeyJustPressed(Keys.L)) SaveManager.LoadData();
     }
 
     public void Draw(SpriteBatch spriteBatch)
     {
         DrawSprites(spriteBatch, AnimatedSpriteRenderingPosition, PlayerInfo.textureOffset);
-        DrawHelper.DrawString(StateMachine.CurrentState.ToString(), Color.White, Camera.CurrentCamera.GetScreenEdges().TopLeft);
-        //DrawHelper.DrawRectangle(KinematicBase.Collider.Rect, Color.Red, 2);
-    }
-
-    
-
-    //Functions
-    private void HandleWall()
-    {
-        if (KinematicBase.IsOnWall())
-        {
-            PlayerInfo.wallSlide = true;
-        }
-
-        if (!KinematicBase.IsOnWall() || KinematicBase.IsOnGround() || KinematicBase.Velocity.Y < 0)
-        {
-            PlayerInfo.wallSlide = false;
-        }
-
-        if (PlayerInfo.wallSlide)
-        {
-            KinematicBase.Velocity.Y = 0;
-        }
-    }
-
-    private void HandleWallJump()
-    {
-        if (KinematicBase.IsOnWall() && !KinematicBase.IsOnGround() && PlayerInfo.wallSlide)
-        {
-            if (Core.Input.Keyboard.WasKeyJustPressed(JumpKey))
-            {
-                PlayerInfo.canMove = false;
-
-                if (PlayerInfo.dir == 1)
-                {
-                    KinematicBase.Velocity.X = -PlayerInfo.WallJumpHorizontalSpeed;
-                }
-                else
-                {
-                    KinematicBase.Velocity.X = PlayerInfo.WallJumpHorizontalSpeed;
-                }
-
-                KinematicBase.Velocity.Y = -PlayerInfo.WallJumpVerticalSpeed;
-
-                Timer.Wait(0.12f, () => { PlayerInfo.canMove = true; });
-            }
-        }
+        DrawHelper.DrawString(_stateController.CurrentState.ToString(), Color.White, Camera.CurrentCamera.GetScreenEdges().TopLeft);
     }
 
     public void ApplyGravity()
     {
         if (!KinematicBase.IsOnGround())
         {
-            KinematicBase.Velocity.Y = MathF.Min(KinematicBase.Velocity.Y + PlayerInfo.Gravity * Core.DeltaTime, PlayerInfo.TerminalVelocity);
+            KinematicBase.Velocity.Y = MathF.Min(
+                KinematicBase.Velocity.Y + PlayerInfo.Gravity * Core.DeltaTime,
+                PlayerInfo.TerminalVelocity
+            );
         }
         else if (KinematicBase.Velocity.Y > 0)
         {
@@ -184,56 +127,32 @@ public class Player : Entity, Entity.IEntity
         }
     }
 
+    public void HandleHorizontalInput()
+    {
+        float targetSpeed = 0f;
 
+        if (Core.Input.Keyboard.IsKeyDown(MoveLeftKey) && !Core.Input.Keyboard.IsKeyDown(MoveRightKey))
+        {
+            targetSpeed = -PlayerInfo.MoveSpeed;
+            PlayerInfo.dir = -1;
+        }
+        else if (Core.Input.Keyboard.IsKeyDown(MoveRightKey) && !Core.Input.Keyboard.IsKeyDown(MoveLeftKey))
+        {
+            targetSpeed = PlayerInfo.MoveSpeed;
+            PlayerInfo.dir = 1;
+        }
 
+        float accel = (MathF.Abs(targetSpeed) > 0) ? PlayerInfo.Acceleration : PlayerInfo.Deceleration;
+        KinematicBase.Velocity.X = MoveToward(KinematicBase.Velocity.X, targetSpeed, accel * Core.DeltaTime);
+    }
 
-    public float MoveToward(float current, float target, float maxDelta)
+    private float MoveToward(float current, float target, float maxDelta)
     {
         if (MathF.Abs(target - current) <= maxDelta) return target;
         return current + MathF.Sign(target - current) * maxDelta;
     }
 
-
-    private void HandleAttack()
-    {
-
-        if (PlayerInfo.attackBufferTimer > 0)
-            PlayerInfo.attackBufferTimer -= Core.DeltaTime;
-
-        if (Core.Input.Keyboard.WasKeyJustPressed(AttackKey))
-        {
-            PlayerInfo.attackBufferTimer = PlayerInfo.attackBufferTime;
-        }
-
-        if (!PlayerInfo.attacking)
-        {
-            if (PlayerInfo.attackBufferTimer > 0)
-            {
-                StartAttack();
-                PlayerInfo.attackBufferTimer = 0;
-            }
-        }
-        else
-        {
-            if (AnimatedSprite.finished)
-            {
-                PlayerInfo.attacking = false;
-                DamageArea.Enabled = false;
-            }
-        }
-    }
-
-    private void StartAttack()
-    {
-        PlayerInfo.AttackCount++;
-        PlayerInfo.attacking = true;
-        DamageArea.Enabled = true;
-    }
-
-
-
-
-    private void FlipSprite()
+    public void FlipSprite()
     {
         if (PlayerInfo.dir == 1)
         {
@@ -246,35 +165,6 @@ public class Player : Entity, Entity.IEntity
             AttackColliderOffset = -38;
             PlayerInfo.textureOffset = 8;
             AnimatedSprite.Effects = SpriteEffects.FlipHorizontally;
-        }
-    }
-
-    private void Animation()
-    {
-        if (!PlayerInfo.attacking)
-        {
-            if (KinematicBase.IsOnGround())
-            {
-                if (KinematicBase.Velocity != Vector2.Zero && !KinematicBase.IsOnWall())
-                {
-                    AnimatedSprite.PlayAnimation(_runAnim, false);
-                }
-                else
-                {
-                    AnimatedSprite.PlayAnimation(_idleAnim, false);
-                }
-            }
-
-            else
-            {
-                AnimatedSprite.PlayAnimation(_fallAnim, false);
-            }
-        }
-
-        else
-        {
-            if (PlayerInfo.AttackCount == 1) AnimatedSprite.PlayAnimation(_attackAnim1, false);
-            if (PlayerInfo.AttackCount == 2) AnimatedSprite.PlayAnimation(_attackAnim2, false);
         }
     }
 }
