@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ConstructEngine.Util;
-using ConstructEngine.Gum;
+using ConstructEngine.UI;
 using MonoGameGum;
 using Slumber.Screens;
 using System;

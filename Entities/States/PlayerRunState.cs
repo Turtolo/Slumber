@@ -18,13 +18,13 @@ public class PlayerRunState : PlayerGroundedState
         
         p.AnimatedSprite.PlayAnimation(p._runAnim, false);
 
-        if (!Core.Input.Keyboard.IsKeyDown(p.MoveLeftKey) && !Core.Input.Keyboard.IsKeyDown(p.MoveRightKey))
+        if (!Core.Input.IsActionPressed("MoveLeft") && !Core.Input.IsActionPressed("MoveRight"))
         {
             RequestTransition(nameof(PlayerIdleState));
             return;
         }
 
-        if (Core.Input.Keyboard.WasKeyJustPressed(p.AttackKey))
+        if (Core.Input.IsActionJustPressed("Attack"))
         {
             RequestTransition(nameof(PlayerAttackState));
             return;

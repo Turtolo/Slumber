@@ -12,10 +12,12 @@ public class PlayerAttackState : PlayerGroundedState
         p.PlayerInfo.attacking = true;
         p.DamageArea.Enabled = true;
 
-        if (p.PlayerInfo.AttackCount == 1)
-            p.AnimatedSprite.PlayAnimation(p._attackAnim1, false);
-        else
-            p.AnimatedSprite.PlayAnimation(p._attackAnim2, false);
+        p.AnimatedSprite.PlayAnimation(p._attackAnim1, false);
+
+        //if (p.PlayerInfo.AttackCount == 1)
+            //p.AnimatedSprite.PlayAnimation(p._attackAnim1, false);
+        //else
+            //p.AnimatedSprite.PlayAnimation(p._attackAnim2, false);
     }
 
     public override void Update(GameTime gameTime)
@@ -34,6 +36,5 @@ public class PlayerAttackState : PlayerGroundedState
     {
         p.PlayerInfo.attacking = false;
         p.DamageArea.Enabled = false;
-        p.PlayerInfo.canMove = true;
     }
 }

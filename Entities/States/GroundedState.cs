@@ -1,4 +1,5 @@
 using ConstructEngine;
+using ConstructEngine.Util;
 using Microsoft.Xna.Framework;
 
 namespace Slumber.Entities;
@@ -18,7 +19,7 @@ public class PlayerGroundedState : State
             return;
         }
 
-        if (Core.Input.Keyboard.WasKeyJustPressed(p.JumpKey))
+        if (Core.Input.IsActionJustPressed("Jump"))
         {
             RequestTransition(nameof(PlayerJumpState));
             return;

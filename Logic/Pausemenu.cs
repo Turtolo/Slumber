@@ -1,7 +1,7 @@
 using System;
 using ConstructEngine;
 using ConstructEngine.Components;
-using ConstructEngine.Gum;
+using ConstructEngine.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Slumber.Components.ConstructControls;

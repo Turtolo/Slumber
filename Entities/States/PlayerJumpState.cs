@@ -1,3 +1,4 @@
+using ConstructEngine.Util;
 using Microsoft.Xna.Framework;
 
 namespace Slumber.Entities;

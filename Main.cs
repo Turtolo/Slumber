@@ -1,10 +1,14 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ConstructEngine;
-using ConstructEngine.Gum;
+using ConstructEngine.UI;
 using ConstructEngine.Util;
+using ConstructEngine.Input;
 using MonoGameGum;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
+using System;
+using System.ComponentModel;
 
 namespace Slumber
 {
@@ -24,6 +28,7 @@ namespace Slumber
             Graphics.PreferredBackBufferWidth = displayMode.Width;
             Graphics.PreferredBackBufferHeight = displayMode.Height;
 
+
             IsFixedTimeStep = false;
             Graphics.SynchronizeWithVerticalRetrace = true;
             Graphics.ApplyChanges();
@@ -40,6 +45,12 @@ namespace Slumber
 
             UpdateRenderTargetTransform();
             UpdateGumCamera();
+
+            Input.Binds.Add("MoveLeft", [new InputAction(Keys.Left), new InputAction(Buttons.LeftStick)]);
+            Input.Binds.Add("MoveRight", [new InputAction(Keys.Right), new InputAction(Buttons.RightStick)]);
+            Input.Binds.Add("Jump", [new InputAction(Keys.Z), new InputAction(Buttons.A)]);
+            Input.Binds.Add("Attack", [new InputAction(Keys.X), new InputAction(Buttons.Y)]);
+
 
             SceneManager.AddScene(new MainMenu());
         }

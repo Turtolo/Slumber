@@ -10,6 +10,8 @@ using Slumber.Logic;
 using Slumber.Screens;
 using System;
 using ConstructEngine.Helpers;
+using ConstructEngine.Util;
+using System.Security.Cryptography;
 
 namespace Slumber.Entities;
 

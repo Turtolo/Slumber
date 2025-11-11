@@ -1,4 +1,5 @@
 using ConstructEngine;
+using ConstructEngine.Util;
 using Microsoft.Xna.Framework;
 
 namespace Slumber.Entities;
@@ -24,7 +25,7 @@ public class PlayerWallSlideState : State
             return;
         }
 
-        if (Core.Input.Keyboard.WasKeyJustPressed(p.JumpKey))
+        if (Core.Input.IsActionJustPressed("Jump"))
         {
             RequestTransition(nameof(PlayerWallJumpState));
             return;

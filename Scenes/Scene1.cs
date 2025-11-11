@@ -10,7 +10,7 @@ using ConstructEngine.Util;
 using System.Linq;
 using Slumber.Entities;
 using ConstructEngine.Components.Entity;
-using ConstructEngine.Gum;
+using ConstructEngine.UI;
 using Slumber.Screens;
 using ConstructEngine.Directory;
 using ConstructEngine.Area;
