@@ -424,3 +424,5 @@
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Data/Slumber.ogmo
 /home/nils/Documents/Project/Slumber/bin/Debug/net9.0/Data/Scene1.json
 /home/nils/Documents/Project/Slumber/bin/Debug/net9.0/Data/Slumber.ogmo
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/GumProject/Components/ConstructControls/ConstructButtonAnimationsDuo.ganx
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/GumProject/Components/ConstructControls/ConstructButtonDuo.gucx

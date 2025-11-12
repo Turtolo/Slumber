@@ -11,6 +11,9 @@ using ConstructEngine;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System.IO;
+using MonoGameGum;
+using Gum.Forms.Controls;
+using Slumber.Components.ConstructControls;
 
 namespace Slumber.Screens
 {
@@ -22,6 +25,7 @@ namespace Slumber.Screens
             Main.Visible = true;
             Settings.IsVisible = false;
 
+        
 
             if (File.Exists(SaveManager.FileSavePath)) StartButton.Text = "Resume";
             else StartButton.Text = "Start";
@@ -55,6 +59,7 @@ namespace Slumber.Screens
             {
                 Settings.IsVisible = false;
                 Controls.IsVisible = true;
+                Controls.ResetBindsButton.IsFocused = true;
             };
 
             Settings.MasterSlider.ValueChanged += (_, _) =>

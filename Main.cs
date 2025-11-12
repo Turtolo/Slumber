@@ -48,10 +48,13 @@ namespace Slumber
 
             var binds = new Dictionary<string, List<InputAction>>
             {
-                {"MoveLeft", [new InputAction(Keys.Left), new InputAction(Buttons.LeftStick)]},
-                {"MoveRight", [new InputAction(Keys.Right), new InputAction(Buttons.RightStick)]},
+                {"MoveLeft", [new InputAction(Keys.Left), new InputAction(Buttons.DPadLeft)]},
+                {"MoveRight", [new InputAction(Keys.Right), new InputAction(Buttons.DPadRight)]},
                 {"Jump", [new InputAction(Keys.Z), new InputAction(Buttons.A)]},
-                {"Attack", [new InputAction(Keys.X), new InputAction(Buttons.Y)]}
+                {"Attack", [new InputAction(Keys.X), new InputAction(Buttons.Y)]},
+                {"Pause", [new InputAction(Keys.Escape), new InputAction(Buttons.Start)]},
+                {"Back", [new InputAction(Keys.X), new InputAction(Buttons.B)]}
+                
             };
 
             Input.AddBinds(binds);

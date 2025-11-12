@@ -40,6 +40,11 @@
     <LinkType>ReferenceOriginal</LinkType>
   </ComponentReference>
   <ComponentReference>
+    <Name>ConstructControls/ConstructButtonDuo</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>ConstructControls/ConstructCheckBox</Name>
     <ElementType>Component</ElementType>
     <LinkType>ReferenceOriginal</LinkType>

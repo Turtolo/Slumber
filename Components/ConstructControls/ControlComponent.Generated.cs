@@ -38,6 +38,8 @@ if(element == null) throw new System.InvalidOperationException("Could not find a
         });
     }
     public Wrapper WrapperInstance { get; protected set; }
+    public ContainerRuntime KeybindButtons { get; protected set; }
+    public ConstructButton ResetBindsButton { get; protected set; }
 
     public ControlComponent(InteractiveGue visual) : base(visual)
     {
@@ -52,6 +54,8 @@ if(element == null) throw new System.InvalidOperationException("Could not find a
     {
         base.ReactToVisualChanged();
         WrapperInstance = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Wrapper>(this.Visual,"WrapperInstance");
+        KeybindButtons = this.Visual?.GetGraphicalUiElementByName("KeybindButtons") as global::MonoGameGum.GueDeriving.ContainerRuntime;
+        ResetBindsButton = global::Gum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ConstructButton>(this.Visual,"ResetBindsButton");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

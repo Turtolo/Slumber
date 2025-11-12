@@ -8,6 +8,12 @@ using Slumber.Screens;
 using System;
 using ConstructEngine;
 using ConstructEngine.Graphics;
+using Gum.Forms.Controls;
+using Slumber.Components.ConstructControls;
+using ConstructEngine.Input;
+using System.Security.Cryptography;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework.Input;
 
 
 namespace Slumber;
@@ -15,11 +21,7 @@ namespace Slumber;
 
 public class MainMenu : Scene, Scene.IScene
 {
-
-    bool backPressed;
-
     TitleScreen titleScreen;
-    
     
     public MainMenu()
     {
@@ -34,7 +36,6 @@ public class MainMenu : Scene, Scene.IScene
         titleScreen = new TitleScreen();
 
         GumHelper.AddScreenToRoot(titleScreen);
-        
 
         ParallaxBackground.AddBackground(new("Assets/Backgrounds/streetsbg", 0.1f,  ParallaxBackground.RepeatX, new Vector2(0,0)));
 
