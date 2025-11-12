@@ -25,8 +25,6 @@ namespace Slumber.Screens
             Main.Visible = true;
             Settings.IsVisible = false;
 
-        
-
             if (File.Exists(SaveManager.FileSavePath)) StartButton.Text = "Resume";
             else StartButton.Text = "Start";
 

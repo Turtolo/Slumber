@@ -67,6 +67,8 @@ public class MainMenu : Scene, Scene.IScene
                 titleScreen.Settings.ControlButton.IsFocused = true;
             }
         }
+
+        titleScreen.Controls.Update();
     }
 
     public void Draw(SpriteBatch spriteBatch)

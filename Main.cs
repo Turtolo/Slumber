@@ -12,7 +12,7 @@ using System.ComponentModel;
 
 namespace Slumber
 {
-    public class Main : Core
+    public class Main : Core 
     {
         bool bloomEnabled = true;
         
