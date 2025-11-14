@@ -48,10 +48,7 @@ namespace Slumber.Components.ConstructControls
 
             ResetBindsButton.Click += (_, _) =>
             {
-                Core.Input.Binds = Core.Input.InitialBinds.ToDictionary(
-                    kvp => kvp.Key,
-                    kvp => kvp.Value.Select(action => action.Clone()).ToList()
-                );    
+                Core.Input.ResetBinds();  
                 resetBinds = true;
             };
         }
@@ -73,8 +70,8 @@ namespace Slumber.Components.ConstructControls
 
             if (isRebinding)
             {
-                var key = Core.Input.Keyboard.GetCurrentlyReleasedKey();
-                var mouse = Core.Input.Mouse.CurrentlyReleasedButtons;
+                var key = Core.Input.Keyboard.GetFirstKeyDown();
+                var mouse = Core.Input.Mouse.GetFirstButtonDown;
 
 
                 if (key != Keys.None)

@@ -25,12 +25,6 @@ public class Player : Entity, Entity.IEntity
     public Animation _attackAnim2;
 
     private Vector2 AnimatedSpriteRenderingPosition;
-
-    public Keys MoveRightKey = Keys.Right;
-    public Keys MoveLeftKey = Keys.Left;
-    public Keys JumpKey = Keys.Z;
-    public Keys AttackKey = Keys.X;
-
     public int AttackColliderOffset;
 
     public Area2D DamageArea;

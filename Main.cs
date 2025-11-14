@@ -8,6 +8,7 @@ using MonoGameGum;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using ConstructEngine.Helpers;
+using System;
 
 namespace Slumber
 {
@@ -47,21 +48,16 @@ namespace Slumber
 
             var binds = new Dictionary<string, List<InputAction>>
             {
-                {"MoveLeft", [new InputAction(Keys.Left), new InputAction(Buttons.DPadLeft)]},
-                {"MoveRight", [new InputAction(Keys.Right), new InputAction(Buttons.DPadRight)]},
-                {"Jump", [new InputAction(Keys.Z), new InputAction(Buttons.A)]},
+                {"MoveLeft", [new InputAction(Keys.A), new InputAction(Buttons.DPadLeft)]},
+                {"MoveRight", [new InputAction(Keys.D), new InputAction(Buttons.DPadRight)]},
+                {"Jump", [new InputAction(Keys.Space), new InputAction(Buttons.A)]},
                 {"Attack", [new InputAction(Keys.X), new InputAction(Buttons.Y), new InputAction(MouseButton.Left)]},
                 {"Pause", [new InputAction(Keys.Escape), new InputAction(Buttons.Start)]},
                 {"Back", [new InputAction(Keys.X), new InputAction(Buttons.B)]}
                 
             };
 
-            Input.AddBinds(binds);
-
-            Input.InitialBinds = DictionaryHelper.CloneDictionaryOfLists(
-                Input.Binds,
-                action => action.Clone()
-            );
+            Input.InitializeBinds(binds);
 
 
             SceneManager.AddScene(new MainMenu());
@@ -81,6 +77,7 @@ namespace Slumber
 
             GumManager.UpdateAll(gameTime);
             GumUI.Update(this, gameTime);
+
 
             base.Update(gameTime);
         }
