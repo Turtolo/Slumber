@@ -19,8 +19,6 @@
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/Assets/UI/ButtonBorderFromKenny.xnb
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/Assets/UI/CheckButton.xnb
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/Assets/UI/CheckButtonPress.xnb
-/home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/Data/Scene1.json
-/home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/Data/Slumber.ogmo
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/.gumfcs
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/42725-1.png
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/Behaviors/ButtonBehavior.behx
@@ -57,6 +55,8 @@
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/Components/ConstructControls/Blur.gucx
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/Components/ConstructControls/ConstructButton.gucx
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/Components/ConstructControls/ConstructButtonAnimations.ganx
+/home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/Components/ConstructControls/ConstructButtonAnimationsDuo.ganx
+/home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/Components/ConstructControls/ConstructButtonDuo.gucx
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/Components/ConstructControls/ConstructCheckBox.gucx
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/Components/ConstructControls/ConstructCheckBoxAnimations.ganx
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/Components/ConstructControls/ConstructLabel.gucx
@@ -171,6 +171,8 @@
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/Standards/Text.gutx
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/streetsbg.png
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Content/GumProject/UISpriteSheet.png
+/home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Data/Scene1.json
+/home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Data/Slumber.ogmo
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Slumber.dll
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Slumber.deps.json
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/publish/Slumber.runtimeconfig.json

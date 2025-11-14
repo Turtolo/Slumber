@@ -18,8 +18,6 @@
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Content/Assets/UI/ButtonBorderFromKenny.xnb
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Content/Assets/UI/CheckButton.xnb
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Content/Assets/UI/CheckButtonPress.xnb
-/home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Content/Data/Scene1.json
-/home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Content/Data/Slumber.ogmo
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Content/GumProject/.gumfcs
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Content/GumProject/42725-1.png
 /home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Content/GumProject/Behaviors/ButtonBehavior.behx
@@ -770,3 +768,7 @@
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Data/Slumber.ogmo
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Content/GumProject/Components/ConstructControls/ConstructButtonAnimationsDuo.ganx
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Content/GumProject/Components/ConstructControls/ConstructButtonDuo.gucx
+/home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Content/GumProject/Components/ConstructControls/ConstructButtonAnimationsDuo.ganx
+/home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Content/GumProject/Components/ConstructControls/ConstructButtonDuo.gucx
+/home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Data/Scene1.json
+/home/nils/Documents/Project/Slumber/bin/Release/net9.0/win-x64/Data/Slumber.ogmo
