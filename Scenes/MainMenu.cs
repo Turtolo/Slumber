@@ -58,7 +58,7 @@ public class MainMenu : Scene, Scene.IScene
                 titleScreen.Main.Visible = true;
                 titleScreen.StartButton.IsFocused = true;
             }
-            else if (titleScreen.Settings.Controls.IsVisible)
+            if (titleScreen.Settings.Controls.IsVisible)
             {
                 titleScreen.Settings.Controls.IsVisible = false;
                 titleScreen.Settings.Main.IsVisible = true;

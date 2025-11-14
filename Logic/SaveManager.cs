@@ -14,7 +14,6 @@ public class SaveManager
     public static PlayerData PlayerData = new();
     public static string FileName = "PlayerData.json";
     public static string Library = Path.Combine(FileSaver.ApplicationData, "Slumber");
-
     public static string FileSavePath { get => Path.Combine(Library, FileName); }
 
     public static void SaveData()
