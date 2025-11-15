@@ -24,7 +24,7 @@ public class Pausemenu : BackseatComponent
         
         if (Engine.Input.IsActionJustPressed("Pause"))
         {
-            Engine.SceneManager.QueeFreezeCurrentScene();
+            Engine.SceneManager.QueueFreezeCurrentScene();
             Menu.Root.Visible = true;
         }
 
@@ -32,7 +32,7 @@ public class Pausemenu : BackseatComponent
         {
             if (Menu.Main.Visible)
             {
-                Engine.SceneManager.UnFreezeCurrentScene();
+                Engine.SceneManager.UnfreezeCurrentScene();
                 Menu.Root.Visible = false;
             }
             if (Menu.Settings.Main.IsVisible)

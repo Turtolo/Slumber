@@ -14,7 +14,6 @@ namespace Slumber
 {
     public class Main : Engine 
     {
-        
         public Main() : base(new EngineConfig
         {
             Title = "Slumber",

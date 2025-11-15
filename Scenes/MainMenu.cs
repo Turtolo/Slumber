@@ -42,11 +42,8 @@ public class MainMenu : Scene, Scene.IScene
 
     }
 
-    public void Load()
-    {
-
-        
-    }
+    public void Load() { }
+    public void Unload() { }
 
     public void Update(GameTime gameTime)
     {

@@ -56,6 +56,8 @@ public class Scene1 : Scene, Scene.IScene
 
     }
 
+    public void Unload() {  }
+
     public void Update(GameTime gameTime)
     {
   
