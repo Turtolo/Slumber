@@ -21,9 +21,14 @@ namespace Slumber
             VirtualWidth = 640,
             VirtualHeight = 360,
             Fullscreen = false,
-            FontPath = "Assets/Fonts/Font",
             IntegerScaling = true,
-            GumProject = "GumProject/GumProject.gumx"
+            AllowUserResizing = true,
+            IsBorderless = true,
+            IsFixedTimeStep = false,
+            SynchronizeWithVerticalRetrace = true,
+            FontPath = "Assets/Fonts/Font",
+            GumProject = "GumProject/GumProject.gumx",
+
         }) {  }
 
         protected override void Initialize()
