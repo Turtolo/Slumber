@@ -14,84 +14,32 @@ namespace Slumber
 {
     public class Main : Engine 
     {
-        bool bloomEnabled = true;
         
-        private GumService GumUI;
-
-        public Main() : base("Platformer", 640, 360, false, "Assets/Fonts/Font")
+        public Main() : base(new EngineConfig
         {
-            Window.AllowUserResizing = true;
-            Window.IsBorderless = false;
-
-            var displayMode = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode;
-
-            Graphics.PreferredBackBufferWidth = displayMode.Width;
-            Graphics.PreferredBackBufferHeight = displayMode.Height;
-
-
-            IsFixedTimeStep = false;
-            Graphics.SynchronizeWithVerticalRetrace = true;
-            Graphics.ApplyChanges();
-
-            Window.Position = new Point(0, 0);
-        }
-
+            Title = "Slumber",
+            VirtualWidth = 640,
+            VirtualHeight = 360,
+            Fullscreen = false,
+            FontPath = "Assets/Fonts/Font",
+            IntegerScaling = true,
+            GumProject = "GumProject/GumProject.gumx"
+        }) {  }
 
         protected override void Initialize()
         {
-            GumUI = GumHelper.GumInitialize(this, "GumProject/GumProject.gumx");
-
             base.Initialize();
-
-            UpdateRenderTargetTransform();
-            UpdateGumCamera();
-
-            var binds = new Dictionary<string, List<InputAction>>
-            {
-                {"MoveLeft", [new InputAction(Keys.Left), new InputAction(Buttons.DPadLeft)]},
-                {"MoveRight", [new InputAction(Keys.Right), new InputAction(Buttons.DPadRight)]},
-                {"Jump", [new InputAction(Keys.Z), new InputAction(Buttons.A)]},
-                {"Attack", [new InputAction(Keys.X), new InputAction(Buttons.Y), new InputAction(MouseButton.Left)]},
-                {"Pause", [new InputAction(Keys.Escape), new InputAction(Buttons.Start)]},
-                {"Back", [new InputAction(Keys.X), new InputAction(Buttons.B)]}
-                
-            };
-
-            Input.InitializeBinds(binds);
-
-
             SceneManager.AddScene(new MainMenu());
-        }
-
-        protected override void LoadContent()
-        {
-            base.LoadContent();
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (Input.Keyboard.WasKeyJustPressed(Keys.F1))
-                bloomEnabled = !bloomEnabled;
-
-            SceneManager.UpdateCurrentScene(gameTime);
-
-            GumManager.UpdateAll(gameTime);
-            GumUI.Update(this, gameTime);
-
-
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            SetRenderTarget();
-            GraphicsDevice.Clear(Color.DarkSlateGray);
-            SceneManager.DrawCurrentScene(SpriteBatch);
-
             base.Draw(gameTime);
-
-            GumUI.Draw();
         }
-
     }
 }
