@@ -32,7 +32,7 @@ namespace Slumber.Screens
             StartButton.Click += (_, _) =>
             {
                 if (File.Exists(SaveManager.FileSavePath)) SaveManager.LoadData();
-                else Core.SceneManager.AddScene(new Scene1());
+                else Engine.SceneManager.AddScene(new Scene1());
             };
 
             DeleteSaveButton.Click += (_, _) =>
@@ -44,7 +44,7 @@ namespace Slumber.Screens
 
             QuitButton.Click += (_, _) =>
             {
-                Core.Exit = true;
+                Engine.Quit();
             };
 
             SettingsButton.Click += (_, _) =>

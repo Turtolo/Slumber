@@ -20,14 +20,14 @@ namespace Slumber.Screens
             
             ResumeButton.Click += (_, _) =>
             {
-                Core.SceneManager.UnFreezeCurrentScene();
+                Engine.SceneManager.UnFreezeCurrentScene();
                 Root.Visible = false;
             };
 
             QuitButton.Click += (_, _) =>
             {
                 SaveManager.SaveData();
-                Core.SceneManager.AddScene(new MainMenu());
+                Engine.SceneManager.AddScene(new MainMenu());
             };
 
             SettingsButton.Click += (_, _) =>

@@ -21,7 +21,7 @@ namespace Slumber.Components.ConstructControls
 
         partial void CustomInitialize()
         {
-            foreach (var kvp in Core.Input.Binds)
+            foreach (var kvp in Engine.Input.Binds)
             {
                 var keybindButton = new ConstructButtonDuo();
                 KeybindButtons.AddChild(keybindButton);
@@ -48,7 +48,7 @@ namespace Slumber.Components.ConstructControls
 
             ResetBindsButton.Click += (_, _) =>
             {
-                Core.Input.ResetBinds();  
+                Engine.Input.ResetBinds();  
                 resetBinds = true;
             };
         }
@@ -56,7 +56,6 @@ namespace Slumber.Components.ConstructControls
         public void Update(float deltaTime)
         {
             var keyboardState = Keyboard.GetState();
-            var mouseState = Mouse.GetState();
 
             if (waitingForKeyRelease)
             {
@@ -70,13 +69,13 @@ namespace Slumber.Components.ConstructControls
 
             if (isRebinding)
             {
-                var key = Core.Input.Keyboard.GetFirstKeyDown();
-                var mouse = Core.Input.Mouse.GetFirstButtonDown();
-                var button = Core.Input.CurrentGamePad.GetFirstButtonDown();
+                var key = Engine.Input.Keyboard.GetFirstKeyDown();
+                var mouse = Engine.Input.Mouse.GetFirstButtonDown();
+                var button = Engine.Input.CurrentGamePad.GetFirstButtonDown();
 
                 if (key != Keys.None)
                 {
-                    Core.Input.Rebind(currentAction, key);
+                    Engine.Input.Rebind(currentAction, key);
                     currentRebindButton.TextRight = key.ToString();
                     isRebinding = false;
                     currentRebindButton = null;
@@ -84,7 +83,7 @@ namespace Slumber.Components.ConstructControls
 
                 if (mouse != MouseButton.None)
                 {
-                    Core.Input.Rebind(currentAction, mouse);
+                    Engine.Input.Rebind(currentAction, mouse);
                     currentRebindButton.TextRight = mouse.ToString();
                     isRebinding = false;
                     currentRebindButton = null;
@@ -92,7 +91,7 @@ namespace Slumber.Components.ConstructControls
 
                 if (button != Buttons.None)
                 {
-                    Core.Input.Rebind(currentAction, button);
+                    Engine.Input.Rebind(currentAction, button);
                     currentRebindButton.TextRight = button.ToString();
                     isRebinding = false;
                     currentRebindButton = null;
@@ -105,7 +104,7 @@ namespace Slumber.Components.ConstructControls
                 {
                     var button = ButtonList[i];
                     var action = button.TextLeft;
-                    if (Core.Input.InitialBinds.TryGetValue(action, out var keyList))
+                    if (Engine.Input.InitialBinds.TryGetValue(action, out var keyList))
                     {
                         button.TextRight = keyList.FirstOrDefault().Key.ToString();
                     }

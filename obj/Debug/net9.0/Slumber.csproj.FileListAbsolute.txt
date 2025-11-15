@@ -428,3 +428,4 @@
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/GumProject/Components/ConstructControls/ConstructButtonDuo.gucx
 /home/nils/Documents/Project/Slumber/bin/Debug/net9.0/Content/GumProject/Components/ConstructControls/ConstructButtonAnimationsDuo.ganx
 /home/nils/Documents/Project/Slumber/bin/Debug/net9.0/Content/GumProject/Components/ConstructControls/ConstructButtonDuo.gucx
+/home/nils/Documents/Project/Slumber/bin/Debug/net9.0/Content/Assets/Shader/Blur.xnb

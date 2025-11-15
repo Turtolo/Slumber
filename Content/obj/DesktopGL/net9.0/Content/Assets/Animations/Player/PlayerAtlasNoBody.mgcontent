@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Animations/Player/PlayerAtlasNoBody.png</SourceFile>
-  <SourceTime>2025-11-14T21:39:34.5829548+01:00</SourceTime>
-  <DestFile>/Users/nilslauvstad/Documents/Project/Slumber/Content/bin/DesktopGL/Content/Assets/Animations/Player/PlayerAtlasNoBody.xnb</DestFile>
-  <DestTime>2025-11-14T21:40:19.1135683+01:00</DestTime>
+  <SourceFile>/home/nils/Documents/Project/Slumber/Content/Assets/Animations/Player/PlayerAtlasNoBody.png</SourceFile>
+  <SourceTime>2025-11-15T09:32:23.4844351+01:00</SourceTime>
+  <DestFile>/home/nils/Documents/Project/Slumber/Content/bin/DesktopGL/Content/Assets/Animations/Player/PlayerAtlasNoBody.xnb</DestFile>
+  <DestTime>2025-11-15T09:34:29.3181618+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-10-20T16:25:32+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

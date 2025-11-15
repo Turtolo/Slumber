@@ -25,7 +25,7 @@ public class Scene1 : Scene, Scene.IScene
 
     public Scene1()
     {
-        this.contentManager = Core.Content;
+        this.contentManager = Engine.Content;
         
     }
 
@@ -38,7 +38,7 @@ public class Scene1 : Scene, Scene.IScene
 
         TilemapFromOgmo.InstantiateEntities("Data/Scene1.json");
         TilemapFromOgmo.FromFile(contentManager, "Data/Scene1.json", "0 0 512 512", "Assets/Tileset/SlumberTilesetAtlas");
-        TilemapFromOgmo.SearchForObjects("Data/Scene1.json", Entity.EntityList.OfType<Player>().FirstOrDefault(), Core.SceneManager);
+        TilemapFromOgmo.SearchForObjects("Data/Scene1.json", Entity.EntityList.OfType<Player>().FirstOrDefault(), Engine.SceneManager);
 
         _camera = new RoomCamera(1f); 
         
@@ -59,9 +59,9 @@ public class Scene1 : Scene, Scene.IScene
     public void Update(GameTime gameTime)
     {
   
-        if (Core.Input.Keyboard.WasKeyJustPressed(Keys.R))
+        if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.R))
         {
-            Core.SceneManager.ReloadCurrentScene();
+            Engine.SceneManager.ReloadCurrentScene();
         }
 
         TilemapFromOgmo.UpdateObjects(gameTime);
@@ -77,7 +77,7 @@ public class Scene1 : Scene, Scene.IScene
 
     public void Draw(SpriteBatch spriteBatch)
     {
-        ParallaxBackground.DrawParallaxBackgrounds(spriteBatch, Core.GraphicsDevice, SamplerState.LinearWrap);
+        ParallaxBackground.DrawParallaxBackgrounds(spriteBatch, Engine.GraphicsDevice, SamplerState.LinearWrap);
 
         spriteBatch.Begin(
             SpriteSortMode.BackToFront,

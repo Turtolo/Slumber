@@ -25,7 +25,7 @@ public class PlayerWallSlideState : State
             return;
         }
 
-        if (Core.Input.IsActionJustPressed("Jump"))
+        if (Engine.Input.IsActionJustPressed("Jump"))
         {
             RequestTransition(nameof(PlayerWallJumpState));
             return;

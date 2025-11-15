@@ -22,7 +22,7 @@ public class SaveManager
 
         player = Entity.EntityList.OfType<Player>().FirstOrDefault();
 
-        PlayerData.CurrentScene = Core.SceneManager.GetCurrentScene().GetType().Name;
+        PlayerData.CurrentScene = Engine.SceneManager.GetCurrentScene().GetType().Name;
 
         FileSaver.SaveDataToJson(PlayerData, FileSavePath);
 
@@ -32,7 +32,7 @@ public class SaveManager
     {
         FileSaver.LoadDataFromJson(PlayerData, FileSavePath);
 
-        Core.SceneManager.AddSceneFromString(PlayerData.CurrentScene);
+        Engine.SceneManager.AddSceneFromString(PlayerData.CurrentScene);
 
         Entity.EntityList.OfType<Player>().FirstOrDefault().KinematicBase.Position = PlayerData.CurrentPosition;
         

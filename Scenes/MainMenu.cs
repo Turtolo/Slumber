@@ -50,7 +50,7 @@ public class MainMenu : Scene, Scene.IScene
 
     public void Update(GameTime gameTime)
     {
-        if (Core.Input.IsActionJustPressed("Back"))
+        if (Engine.Input.IsActionJustPressed("Back"))
         {
             if (titleScreen.Settings.Main.IsVisible)
             {
@@ -70,7 +70,7 @@ public class MainMenu : Scene, Scene.IScene
 
     public void Draw(SpriteBatch spriteBatch)
     {
-        ParallaxBackground.DrawParallaxBackgrounds(spriteBatch, Core.GraphicsDevice, SamplerState.LinearWrap);
+        ParallaxBackground.DrawParallaxBackgrounds(spriteBatch, Engine.GraphicsDevice, SamplerState.LinearWrap);
     }
 
 }

@@ -18,13 +18,13 @@ public class PlayerIdleState : PlayerGroundedState
         
         base.Update(gameTime);
 
-        if (Core.Input.IsActionPressed("MoveLeft") || Core.Input.IsActionPressed("MoveRight"))
+        if (Engine.Input.IsActionPressed("MoveLeft") || Engine.Input.IsActionPressed("MoveRight"))
         {
             RequestTransition(nameof(PlayerRunState));
             return;
         }
 
-        if (Core.Input.IsActionJustPressed("Attack"))
+        if (Engine.Input.IsActionJustPressed("Attack"))
         {
             RequestTransition(nameof(PlayerAttackState));
             return;

@@ -49,7 +49,7 @@ public class Enemy : Entity, Entity.IEntity
 
     public override void Load()
     {
-        Atlas = TextureAtlas.FromFile(Core.Content, "Assets/Atlas/enemyatlas.xml", "Assets/Animations/Enemies/grassspidersheet");
+        Atlas = TextureAtlas.FromFile(Engine.Content, "Assets/Atlas/enemyatlas.xml", "Assets/Animations/Enemies/grassspidersheet");
 
         RunAnimation = Atlas.CreateAnimatedSprite("run-animation").Animation;
 
@@ -136,7 +136,7 @@ public class Enemy : Entity, Entity.IEntity
 
     private void HandleGravity()
     {
-        KinematicBase.Velocity.Y += Gravity * Core.DeltaTime;
+        KinematicBase.Velocity.Y += Gravity * Engine.DeltaTime;
     }
 
     private void HandleMovement()

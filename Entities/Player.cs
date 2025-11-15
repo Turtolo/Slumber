@@ -44,7 +44,7 @@ public class Player : Entity, Entity.IEntity
         Screen = new PlayerUI();
         pauseMenu = new Pausemenu(this);
 
-        _atlas = TextureAtlas.FromFile(Core.Content, "Assets/Atlas/Player/player-atlas.xml", "Assets/Animations/Player/PlayerModel3Atlas");
+        _atlas = TextureAtlas.FromFile(Engine.Content, "Assets/Atlas/Player/player-atlas.xml", "Assets/Animations/Player/PlayerModel3Atlas");
 
         _runAnim = _atlas.GetAnimation("run-animation");
         _idleAnim = _atlas.GetAnimation("idle-animation");
@@ -110,7 +110,7 @@ public class Player : Entity, Entity.IEntity
         if (!KinematicBase.IsOnGround())
         {
             KinematicBase.Velocity.Y = MathF.Min(
-                KinematicBase.Velocity.Y + PlayerInfo.Gravity * Core.DeltaTime,
+                KinematicBase.Velocity.Y + PlayerInfo.Gravity * Engine.DeltaTime,
                 PlayerInfo.TerminalVelocity
             );
         }
@@ -124,19 +124,19 @@ public class Player : Entity, Entity.IEntity
     {
         float targetSpeed = 0f;
 
-        if (Core.Input.IsActionPressed("MoveLeft") && !Core.Input.IsActionPressed("MoveRight"))
+        if (Engine.Input.IsActionPressed("MoveLeft") && !Engine.Input.IsActionPressed("MoveRight"))
         {
             targetSpeed = -PlayerInfo.MoveSpeed;
             PlayerInfo.dir = -1;
         }
-        else if (Core.Input.IsActionPressed("MoveRight") && !Core.Input.IsActionPressed("MoveLeft"))
+        else if (Engine.Input.IsActionPressed("MoveRight") && !Engine.Input.IsActionPressed("MoveLeft"))
         {
             targetSpeed = PlayerInfo.MoveSpeed;
             PlayerInfo.dir = 1;
         }
 
         float accel = (MathF.Abs(targetSpeed) > 0) ? PlayerInfo.Acceleration : PlayerInfo.Deceleration;
-        KinematicBase.Velocity.X = MoveToward(KinematicBase.Velocity.X, targetSpeed, accel * Core.DeltaTime);
+        KinematicBase.Velocity.X = MoveToward(KinematicBase.Velocity.X, targetSpeed, accel * Engine.DeltaTime);
     }
 
     private float MoveToward(float current, float target, float maxDelta)

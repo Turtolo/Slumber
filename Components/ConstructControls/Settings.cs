@@ -29,7 +29,7 @@ namespace Slumber.Components.ConstructControls
 
         public void Update(GameTime gameTime)
         {
-            Controls.Update(Core.DeltaTime);
+            Controls.Update(Engine.DeltaTime);
         }
 
         
