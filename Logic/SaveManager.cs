@@ -3,7 +3,7 @@ using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
 using ConstructEngine;
-using ConstructEngine.Components.Entity;
+using ConstructEngine.Components;
 using ConstructEngine.Directory;
 using Slumber.Entities;
 
@@ -20,7 +20,7 @@ public class SaveManager
     {
         Player player;
 
-        player = Entity.EntityList.OfType<Player>().FirstOrDefault();
+        player = KinematicEntity.EntityList.OfType<Player>().FirstOrDefault();
 
         PlayerData.CurrentScene = Engine.SceneManager.GetCurrentScene().GetType().Name;
 
@@ -34,7 +34,7 @@ public class SaveManager
 
         Engine.SceneManager.AddSceneFromString(PlayerData.CurrentScene);
 
-        Entity.EntityList.OfType<Player>().FirstOrDefault().KinematicBase.Position = PlayerData.CurrentPosition;
+        KinematicEntity.EntityList.OfType<Player>().FirstOrDefault().KinematicBase.Position = PlayerData.CurrentPosition;
         
 
     }

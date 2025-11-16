@@ -3,7 +3,7 @@ using System;
 using System.IO.Pipes;
 using System.Runtime.CompilerServices;
 using ConstructEngine;
-using ConstructEngine.Components.Entity;
+using ConstructEngine.Components;
 using ConstructEngine.Graphics;
 using ConstructEngine.Objects;
 using ConstructEngine.Area;
@@ -15,7 +15,7 @@ using System.Net.Http.Headers;
 
 namespace Slumber.Entities;
 
-public class Enemy : Entity, Entity.IEntity
+public class Enemy : KinematicEntity, IKinematicEntity
 {
     public float Gravity = 1300f;
     private int Health;
@@ -38,6 +38,8 @@ public class Enemy : Entity, Entity.IEntity
     private Animation RunAnimation;
 
     private Area2D TakeDamageArea;
+
+    AnimatedSprite AnimatedSprite;
 
     Vector2 RayPos;
 
@@ -96,7 +98,7 @@ public class Enemy : Entity, Entity.IEntity
 
         if (Health <= 0)
         {
-            Free();
+            Unload();
         }
 
         KinematicBase.UpdateCollider(gameTime);
@@ -115,8 +117,7 @@ public class Enemy : Entity, Entity.IEntity
 
     public void Draw(SpriteBatch spriteBatch)
     {
-        DrawSprites(spriteBatch, SpritePosition, TextureOffset);
-
+        AnimatedSprite.Draw(spriteBatch, new Vector2(SpritePosition.X + TextureOffset, SpritePosition.Y));
         //DrawHelper.DrawString(Health.ToString(), Color.DarkBlue, new Vector2(KinematicBase.Position.X, KinematicBase.Position.Y - 10));
     }
 
@@ -124,13 +125,10 @@ public class Enemy : Entity, Entity.IEntity
     {
         if (direction == 1)
         {
-            if (AnimatedSprite != null) AnimatedSprite.Effects = SpriteEffects.None;
-            if (AnimatedSpriteFeet != null) AnimatedSpriteFeet.Effects = SpriteEffects.None;
-        }
+            if (AnimatedSprite != null) AnimatedSprite.Effects = SpriteEffects.None;        }
         else
         {
             if (AnimatedSprite != null) AnimatedSprite.Effects = SpriteEffects.FlipHorizontally;
-            if (AnimatedSpriteFeet != null) AnimatedSpriteFeet.Effects = SpriteEffects.FlipHorizontally;
         }
     }
 
@@ -155,10 +153,10 @@ public class Enemy : Entity, Entity.IEntity
         if (KinematicBase.Collider.IsIntersectingAny())
         {
 
-            Entity OtherEntity = (Entity)KinematicBase.Collider.GetCurrentlyIntersectingArea().Root;
+            KinematicEntity OtherKinematicEntity = (KinematicEntity)KinematicBase.Collider.GetCurrentlyIntersectingArea().Root;
             
-            if (OtherEntity.GetType() != typeof(Enemy))
-                TakeDamage(OtherEntity.DamageAmount);
+            if (OtherKinematicEntity.GetType() != typeof(Enemy))
+                TakeDamage(OtherKinematicEntity.DamageAmount);
         }
 
     }

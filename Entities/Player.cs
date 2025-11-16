@@ -1,5 +1,5 @@
 using ConstructEngine;
-using ConstructEngine.Components.Entity;
+using ConstructEngine.Components;
 using ConstructEngine.Components.Physics;
 using ConstructEngine.Graphics;
 using ConstructEngine.Area;
@@ -14,7 +14,7 @@ using ConstructEngine.Util;
 
 namespace Slumber.Entities;
 
-public class Player : Entity, Entity.IEntity
+public class Player : KinematicEntity, IKinematicEntity
 {
     private TextureAtlas _atlas;
 
@@ -34,13 +34,15 @@ public class Player : Entity, Entity.IEntity
 
     private PlayerUI Screen;
     private Pausemenu pauseMenu;
-
+    public AnimatedSprite AnimatedSprite;
     private StateController _stateController;
 
     public Player() : base(4) { }
 
     public override void Load()
     {
+        Engine.MainCharacter = this;
+        
         Screen = new PlayerUI();
         pauseMenu = new Pausemenu(this);
 
@@ -55,7 +57,10 @@ public class Player : Entity, Entity.IEntity
         AnimatedSprite = _atlas.CreateAnimatedSprite("idle-animation");
         AnimatedSprite.LayerDepth = 0.5f;
 
+
         KinematicBase.Collider = new Area2D(new Rectangle(400, 150, 10, 25), true, this);
+
+        KinematicBase.Position = Position;
 
         Circle attackCircle = new(0, 0, 30);
         DamageArea = new Area2D(attackCircle, false, this);
@@ -80,7 +85,7 @@ public class Player : Entity, Entity.IEntity
         ]);
     }
 
-    public void Update(GameTime gameTime)
+    public override void Update(GameTime gameTime)
     {
 
         DamageArea.Circ.X = KinematicBase.Collider.Rect.X + AttackColliderOffset;
@@ -99,9 +104,9 @@ public class Player : Entity, Entity.IEntity
         AnimatedSprite.Update(gameTime);
     }
 
-    public void Draw(SpriteBatch spriteBatch)
-    {
-        DrawSprites(spriteBatch, AnimatedSpriteRenderingPosition, PlayerInfo.textureOffset);
+    public override void Draw(SpriteBatch spriteBatch)
+    {   
+        AnimatedSprite.Draw(spriteBatch, new Vector2(AnimatedSpriteRenderingPosition.X + PlayerInfo.textureOffset, AnimatedSpriteRenderingPosition.Y));
         DrawHelper.DrawString(_stateController.CurrentState.ToString(), Color.White, Camera.CurrentCamera.GetScreenEdges().TopLeft);
     }
 
