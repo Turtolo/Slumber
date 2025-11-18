@@ -86,14 +86,15 @@ public class Player : KinematicEntity, IKinematicEntity
 
         FlipSprite();
 
-        AnimatedSprite.Position = new Vector2(KinematicBase.Collider.Rect.X - 64, KinematicBase.Collider.Rect.Y - 55);
+        AnimatedSprite.Position = new Vector2(KinematicBase.Collider.Rect.X - 64 + PlayerInfo.textureOffset, KinematicBase.Collider.Rect.Y - 55);
         AnimatedSprite.Update(gameTime);
     }
 
     public override void Draw(SpriteBatch spriteBatch)
     {   
         Engine.DrawManager.Draw(AnimatedSprite);
-        //DrawHelper.DrawString(_stateController.CurrentState.ToString(), Color.White, CCamera.CurrentCamera.GetScreenEdges().TopLeft);
+        DrawHelper.DrawRectangle(KinematicBase.Collider.Rect, Color.Red, 2);
+        DrawHelper.DrawString(_stateController.CurrentState.ToString(), Color.White, CCamera.CurrentCamera.GetScreenEdges().TopLeft);
     }
 
     public void ApplyGravity()

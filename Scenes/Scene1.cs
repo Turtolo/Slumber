@@ -18,6 +18,7 @@ public class Scene1 : Scene, IScene
     }
     public override void Load()
     {
+        GumHelper.Wipe();
 
         Camera = new RoomCamera(1f); 
     }
@@ -30,6 +31,7 @@ public class Scene1 : Scene, IScene
             Engine.SceneManager.ReloadCurrentScene();
     
         Camera.Follow(KinematicEntity.EntityList.OfType<Player>().FirstOrDefault());
+        
     }
     public override void Draw(SpriteBatch spriteBatch) {  }
 

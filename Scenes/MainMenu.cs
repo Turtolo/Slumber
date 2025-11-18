@@ -8,7 +8,7 @@ public class MainMenu : Scene, IScene
 
     ParallaxBackground Background;
     
-    public MainMenu() : base(new SceneConfig {GumScreen = new TitleScreen()})
+    public MainMenu() : base(new SceneConfig {})
     {
         
     }
@@ -17,6 +17,9 @@ public class MainMenu : Scene, IScene
     {
         GumHelper.Wipe();
 
+        titleScreen = new TitleScreen();
+
+        GumHelper.AddScreenToRoot(titleScreen);
 
         Background = new ParallaxBackground(
             texture: Engine.Content.Load<Texture2D>("Assets/Backgrounds/streetsbg"),
