@@ -3,8 +3,6 @@ namespace Slumber;
 public class Scene1 : Scene, IScene
 {
     public RoomCamera Camera { get; set; }
-    public ParallaxBackground Background;
-
     public Scene1 ():  base(new SceneConfig
     {
         DataPath = "Data/Scene1.json",
@@ -27,11 +25,7 @@ public class Scene1 : Scene, IScene
 
     public override void Update(GameTime gameTime)
     {
-        if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.R))
-            Engine.SceneManager.ReloadCurrentScene();
-    
         Camera.Follow(KinematicEntity.EntityList.OfType<Player>().FirstOrDefault());
-        
     }
     public override void Draw(SpriteBatch spriteBatch) {  }
 

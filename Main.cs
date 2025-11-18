@@ -15,6 +15,7 @@ namespace Slumber
             SynchronizeWithVerticalRetrace = true,
             FontPath = "Assets/Fonts/Font",
             GumProject = "GumProject/GumProject.gumx",
+            MainCharacterType = typeof(Player)
         }) {  }
 
         protected override void Initialize()

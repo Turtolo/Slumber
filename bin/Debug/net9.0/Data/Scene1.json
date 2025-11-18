@@ -114,9 +114,7 @@
       "gridCellHeight": 8,
       "gridCellsX": 146,
       "gridCellsY": 46,
-      "decals": [
-        {"x": 88, "y": 32, "texture": "Assets/Animations/Player/PlayerModel3Atlas.png", "originX": 0.5, "originY": 0.5}
-      ],
+      "decals": [],
       "folder": "../Content"
     }
   ]

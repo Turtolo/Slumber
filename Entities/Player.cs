@@ -27,7 +27,7 @@ public class Player : KinematicEntity, IKinematicEntity
 
     public override void Load()
     {
-        Engine.MainCharacter = this;
+        //Engine.MainCharacter = this;
         
         Screen = new PlayerUI();
         pauseMenu = new Pausemenu(this);
