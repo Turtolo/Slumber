@@ -49,7 +49,7 @@ public class Player : KinematicEntity, IKinematicEntity
 
         KinematicBase.Collider = new Area2D(new Rectangle(400, 150, 10, 25), true, this);
 
-        KinematicBase.Position = Area.Position;
+        KinematicBase.Position = Position;
 
         Circle attackCircle = new(0, 0, 30);
         DamageArea = new Area2D(attackCircle, false, this);

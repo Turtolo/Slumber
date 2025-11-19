@@ -4,11 +4,6 @@ public class Scene1 : Scene, IScene
 {
     public FollowCamera Camera { get; set; }
 
-    CollisionObject collisionObject;
-    float colPosXTarget = -100f;
-
-    Tween tween;
-
     public Scene1 ():  base(new SceneConfig
     {
         DataPath = "Data/Scene1.json",
@@ -23,22 +18,8 @@ public class Scene1 : Scene, IScene
     public override void Load()
     {
         base.Load();
-        
         GumHelper.Wipe();
-
-        collisionObject = new CollisionObject(new Rectangle((int)colPosXTarget, 150, 100, 20), true, false);
-
-        tween = new Tween(
-            100f,
-            EasingFunctions.Linear,
-            t => colPosXTarget = MathHelper.Lerp(colPosXTarget, 500f, t),
-            () => tween.Sta
-        );
-        
-        tween.Start();
-        Engine.TweenManager.AddTween(tween);
-
-        Camera = new FollowCamera(1f); 
+        Camera = new FollowCamera(1f);
         Camera.LerpFactor = 1f;
     }
 
@@ -57,16 +38,10 @@ public class Scene1 : Scene, IScene
         {
             Engine.SceneManager.ReloadCurrentScene();
         }
-
-        collisionObject.Position = new Vector2(colPosXTarget, 150);
-
-
     }
     public override void Draw(SpriteBatch spriteBatch)
     {
         base.Draw(spriteBatch);
-
-        DrawHelper.DrawRectangle(collisionObject.Area.Rect, Color.Red, 2);
     }
 
 }
