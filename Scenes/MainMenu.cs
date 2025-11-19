@@ -13,6 +13,8 @@ public class MainMenu : Scene, IScene
 
     public override void Initialize()
     {
+        base.Initialize();
+
         GumHelper.Wipe();
 
         titleScreen = new TitleScreen();
@@ -21,13 +23,24 @@ public class MainMenu : Scene, IScene
 
         
         texture = Engine.Content.Load<Texture2D>("Assets/Backgrounds/streetsbg");
-    }   
+    
+    }
+    public override void Load()
+    {
+        base.Load();
+        
+        
+    }
 
-    public override void Load() { }
-    public override void Unload() { }
+    public override void Unload()
+    {
+        base.Unload();
+    }
 
     public override void Update(GameTime gameTime)
     {
+        base.Update(gameTime);
+
         if (Engine.Input.IsActionJustPressed("Back"))
         {
             if (titleScreen.Settings.Main.IsVisible)
@@ -43,11 +56,11 @@ public class MainMenu : Scene, IScene
                 titleScreen.Settings.ControlButton.IsFocused = true;
             }
         }
-
     }
-
     public override void Draw(SpriteBatch spriteBatch)
     {
+        base.Draw(spriteBatch);
+
         Engine.DrawManager.DrawLooping(
             texture,
             Vector2.Zero,
@@ -55,5 +68,6 @@ public class MainMenu : Scene, IScene
             DrawLayer.Background
         );
     }
+
 
 }

@@ -15,7 +15,7 @@ public class PlayerRunState : PlayerGroundedState
         
         p.AnimatedSprite.PlayAnimation(p._runAnim, false);
 
-        if (!Engine.Input.IsActionPressed("MoveLeft") && !Engine.Input.IsActionPressed("MoveRight"))
+        if (p.PlayerAxis == 0)
         {
             RequestTransition(nameof(PlayerIdleState));
             return;

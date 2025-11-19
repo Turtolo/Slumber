@@ -15,7 +15,7 @@ public class PlayerIdleState : PlayerGroundedState
         
         base.Update(gameTime);
 
-        if (Engine.Input.IsActionPressed("MoveLeft") || Engine.Input.IsActionPressed("MoveRight"))
+        if (p.PlayerAxis != 0)
         {
             RequestTransition(nameof(PlayerRunState));
             return;

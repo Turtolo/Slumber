@@ -1,3 +1,5 @@
+using RenderingLibrary;
+
 namespace Slumber.Entities;
 
 public class Player : KinematicEntity, IKinematicEntity
@@ -10,7 +12,6 @@ public class Player : KinematicEntity, IKinematicEntity
     public Animation _attackAnim1;
     public Animation _attackAnim2;
 
-    private Vector2 AnimatedSpriteRenderingPosition;
     public int AttackColliderOffset;
 
     public Area2D DamageArea;
@@ -22,6 +23,8 @@ public class Player : KinematicEntity, IKinematicEntity
     private Pausemenu pauseMenu;
     public AnimatedSprite AnimatedSprite;
     private StateController _stateController;
+
+    public int PlayerAxis;
 
     public Player() : base(4) { }
 
@@ -46,11 +49,11 @@ public class Player : KinematicEntity, IKinematicEntity
 
         KinematicBase.Collider = new Area2D(new Rectangle(400, 150, 10, 25), true, this);
 
-        KinematicBase.Position = Position;
+        KinematicBase.Position = Area.Position;
 
         Circle attackCircle = new(0, 0, 30);
         DamageArea = new Area2D(attackCircle, false, this);
-
+        
         var grounded = new PlayerGroundedState(this);
         var idle = new PlayerIdleState(this);
         var run = new PlayerRunState(this);
@@ -72,12 +75,15 @@ public class Player : KinematicEntity, IKinematicEntity
     }
 
     public override void Update(GameTime gameTime)
-    {
+    {   
+        PlayerAxis = Engine.Input.GetAxis("MoveLeft", "MoveRight");
 
         DamageArea.Circ.X = KinematicBase.Collider.Rect.X + AttackColliderOffset;
         DamageArea.Circ.Y = KinematicBase.Collider.Rect.Y - 10;
 
         ApplyGravity();
+
+        //pauseMenu.Update();
 
         _stateController.Update(gameTime);
 
@@ -93,6 +99,7 @@ public class Player : KinematicEntity, IKinematicEntity
     public override void Draw(SpriteBatch spriteBatch)
     {   
         Engine.DrawManager.Draw(AnimatedSprite);
+        DrawHelper.DrawString(KinematicBase.Collider.IsIntersectingAny().ToString(), Color.White, CTCamera.CurrentCamera.GetScreenEdges().TopLeft);
     }
 
     public void ApplyGravity()
