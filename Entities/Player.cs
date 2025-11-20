@@ -51,7 +51,7 @@ public class Player : KinematicEntity, IKinematicEntity
 
         KinematicBase.Position = Position;
 
-        Circle attackCircle = new(0, 0, 30);
+        CircleShape2D attackCircle = new(0, 0, 30);
         DamageArea = new Area2D(attackCircle, false, this);
         
         var grounded = new PlayerGroundedState(this);

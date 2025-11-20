@@ -4,6 +4,11 @@ public class Scene1 : Scene, IScene
 {
     public FollowCamera Camera { get; set; }
 
+    Area Area1;
+    RegionShape2D Rect1;
+    Area Area2;
+    RegionShape2D Rect2;
+
     public Scene1 ():  base(new SceneConfig
     {
         DataPath = "Data/Scene1.json",
@@ -38,6 +43,8 @@ public class Scene1 : Scene, IScene
         {
             Engine.SceneManager.ReloadCurrentScene();
         }
+
+        Console.WriteLine($"Area Intersecting: {Area1.AreaEntered()}");
     }
     public override void Draw(SpriteBatch spriteBatch)
     {
