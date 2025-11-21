@@ -9,7 +9,7 @@ public class PlayerAttackState : PlayerGroundedState
     {
         p.PlayerInfo.AttackCount++;
         p.PlayerInfo.attacking = true;
-        p.DamageArea.Enabled = true;
+        //p.DamageArea.Enabled = true;
 
         p.AnimatedSprite.PlayAnimation(p._attackAnim1, false);
 
@@ -26,7 +26,7 @@ public class PlayerAttackState : PlayerGroundedState
         if (p.AnimatedSprite.finished)
         {
             p.PlayerInfo.attacking = false;
-            p.DamageArea.Enabled = false;
+            //p.DamageArea.Enabled = false;
             RequestTransition(nameof(PlayerIdleState));
         }
     }
@@ -34,6 +34,6 @@ public class PlayerAttackState : PlayerGroundedState
     public override void OnExit()
     {
         p.PlayerInfo.attacking = false;
-        p.DamageArea.Enabled = false;
+        //p.DamageArea.Enabled = false;
     }
 }

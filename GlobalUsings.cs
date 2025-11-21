@@ -1,11 +1,11 @@
 global using ConstructEngine;
-global using ConstructEngine.Area;
+global using ConstructEngine.Region;
 global using ConstructEngine.Components;
 global using ConstructEngine.Directory;
 global using ConstructEngine.Graphics;
 global using ConstructEngine.Helpers;
 global using ConstructEngine.Managers;
-global using ConstructEngine.Objects;
+global using ConstructEngine.Nodes;
 global using ConstructEngine.UI;
 global using ConstructEngine.Util;
 

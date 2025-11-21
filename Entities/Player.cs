@@ -14,9 +14,6 @@ public class Player : KinematicEntity, IKinematicEntity
 
     public int AttackColliderOffset;
 
-    public Area2D DamageArea;
-
-
     public PlayerInfo PlayerInfo = new();
 
     private PlayerUI Screen;
@@ -30,7 +27,6 @@ public class Player : KinematicEntity, IKinematicEntity
 
     public override void Load()
     {
-        //Engine.MainCharacter = this;
         
         Screen = new PlayerUI();
         pauseMenu = new Pausemenu(this);
@@ -47,12 +43,11 @@ public class Player : KinematicEntity, IKinematicEntity
         AnimatedSprite.LayerDepth = 0.5f;
 
 
-        KinematicBase.Collider = new Area2D(new Rectangle(400, 150, 10, 25), true, this);
+        KinematicBase.Collider = new RectangleShape2D(400, 150, 10, 25);
 
-        KinematicBase.Position = Position;
+        KinematicBase.Position = Shape.Location.ToVector2();
 
         CircleShape2D attackCircle = new(0, 0, 30);
-        DamageArea = new Area2D(attackCircle, false, this);
         
         var grounded = new PlayerGroundedState(this);
         var idle = new PlayerIdleState(this);
@@ -78,12 +73,7 @@ public class Player : KinematicEntity, IKinematicEntity
     {   
         PlayerAxis = Engine.Input.GetAxis("MoveLeft", "MoveRight");
 
-        DamageArea.Circ.X = KinematicBase.Collider.Rect.X + AttackColliderOffset;
-        DamageArea.Circ.Y = KinematicBase.Collider.Rect.Y - 10;
-
         ApplyGravity();
-
-        //pauseMenu.Update();
 
         _stateController.Update(gameTime);
 
@@ -92,14 +82,13 @@ public class Player : KinematicEntity, IKinematicEntity
 
         FlipSprite();
 
-        AnimatedSprite.Position = new Vector2(KinematicBase.Collider.Rect.X - 64 + PlayerInfo.textureOffset, KinematicBase.Collider.Rect.Y - 55);
+        AnimatedSprite.Position = new Vector2(KinematicBase.Collider.X - 64 + PlayerInfo.textureOffset, KinematicBase.Collider.Y - 55);
         AnimatedSprite.Update(gameTime);
     }
 
     public override void Draw(SpriteBatch spriteBatch)
     {   
         Engine.DrawManager.Draw(AnimatedSprite);
-        DrawHelper.DrawString(KinematicBase.Collider.IsIntersectingAny().ToString(), Color.White, CTCamera.CurrentCamera.GetScreenEdges().TopLeft);
     }
 
     public void ApplyGravity()

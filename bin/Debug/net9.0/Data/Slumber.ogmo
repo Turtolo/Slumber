@@ -129,7 +129,7 @@
     },
     {
       "exportID": "15938898",
-      "name": "CollisionObject",
+      "name": "StaticBody2D",
       "limit": -1,
       "size": {"x": 8, "y": 8},
       "origin": {"x": 0, "y": 0},

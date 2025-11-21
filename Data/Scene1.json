@@ -32,7 +32,7 @@
       "entities": [
         {"name": "Player", "id": 31, "_eid": "92345250", "x": 128, "y": 160, "originX": 0, "originY": 0},
         {
-          "name": "CollisionObject",
+          "name": "StaticBody2D",
           "id": 36,
           "_eid": "15938898",
           "x": 112,
@@ -44,7 +44,7 @@
           "values": {"Collision": true, "OneWay": false}
         },
         {
-          "name": "CollisionObject",
+          "name": "StaticBody2D",
           "id": 37,
           "_eid": "15938898",
           "x": 208,
@@ -56,7 +56,7 @@
           "values": {"Collision": true, "OneWay": false}
         },
         {
-          "name": "CollisionObject",
+          "name": "StaticBody2D",
           "id": 39,
           "_eid": "15938898",
           "x": 560,
@@ -68,7 +68,7 @@
           "values": {"Collision": true, "OneWay": false}
         },
         {
-          "name": "CollisionObject",
+          "name": "StaticBody2D",
           "id": 50,
           "_eid": "15938898",
           "x": 768,
@@ -80,7 +80,7 @@
           "values": {"Collision": true, "OneWay": false}
         },
         {
-          "name": "CollisionObject",
+          "name": "StaticBody2D",
           "id": 51,
           "_eid": "15938898",
           "x": 800,
@@ -92,7 +92,7 @@
           "values": {"Collision": true, "OneWay": false}
         },
         {
-          "name": "CollisionObject",
+          "name": "StaticBody2D",
           "id": 52,
           "_eid": "15938898",
           "x": 672,

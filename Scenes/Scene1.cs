@@ -4,8 +4,8 @@ public class Scene1 : Scene, IScene
 {
     public RoomCamera Camera { get; set; }
 
-    Area Area1;
-    Area Area2;
+    Area2D Area1;
+    Area2D Area2;
 
     
 
@@ -51,8 +51,8 @@ public class Scene1 : Scene, IScene
             Engine.SceneManager.ReloadCurrentScene();
         }
 
-        Area1.AreaEntered(out Area other);
-        Console.WriteLine($"Area1 Position: {Area1.RegionShape.Location}");
+        Area1.AreaEntered(out Area2D other);
+        Console.WriteLine($"Area1 Position: {Area1.Shape.Location}");
         Console.WriteLine($"Area1 Intersector: {other}");
     }
     
@@ -60,8 +60,9 @@ public class Scene1 : Scene, IScene
     {
         base.Draw(spriteBatch);
 
-        DrawHelper.DrawRegionShape(Area1.RegionShape, Color.Red, 2);
-        DrawHelper.DrawRegionShape(Area2.RegionShape, Color.Red, 2);
+        DrawHelper.DrawRegionShape(Area1.Shape, Color.Red, 2);
+        DrawHelper.DrawRegionShape(Area2.Shape, Color.Red, 2);
+
     }
 
 }
