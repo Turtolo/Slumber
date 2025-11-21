@@ -4,7 +4,7 @@ public class Pausemenu : BackseatComponent
 {
     private PauseMenu Menu;
 
-    public Pausemenu(object root) : base(root)
+    public Pausemenu()
     {
         Menu = new PauseMenu();
         GumHelper.AddScreenToRoot(Menu);

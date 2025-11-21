@@ -29,7 +29,7 @@ public class Player : KinematicEntity, IKinematicEntity
     {
         
         Screen = new PlayerUI();
-        pauseMenu = new Pausemenu(this);
+        pauseMenu = new Pausemenu();
 
         _atlas = TextureAtlas.FromFile(Engine.Content, "Assets/Atlas/Player/player-atlas.xml", "Assets/Animations/Player/PlayerModel3Atlas");
 
