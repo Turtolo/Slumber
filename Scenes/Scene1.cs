@@ -2,7 +2,7 @@ namespace Slumber;
 
 public class Scene1 : Scene, IScene
 {
-    public FollowCamera Camera { get; set; }
+    public RoomCamera Camera { get; set; }
 
     Area Area1;
     Area Area2;
@@ -27,7 +27,7 @@ public class Scene1 : Scene, IScene
     {
         base.Load();
         GumHelper.Wipe();
-        Camera = new FollowCamera(1f);
+        Camera = new RoomCamera(1f);
         Camera.LerpFactor = 1f;
 
         Area1 = new(new RectangleShape2D(10, 10, 10, 10));
@@ -44,22 +44,24 @@ public class Scene1 : Scene, IScene
     {
         base.Update(gameTime);
         
-        Camera.Follow(KinematicEntity.EntityList.OfType<Player>().FirstOrDefault().KinematicBase.Collider.Rect);
+        Camera.Follow(KinematicEntity.EntityList.OfType<Player>().FirstOrDefault());
 
         if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.R))
         {
             Engine.SceneManager.ReloadCurrentScene();
         }
 
-        Area1.RegionShape.X += 10;
-
         Area1.AreaEntered(out Area other);
         Console.WriteLine($"Area1 Position: {Area1.RegionShape.Location}");
         Console.WriteLine($"Area1 Intersector: {other}");
     }
+    
     public override void Draw(SpriteBatch spriteBatch)
     {
         base.Draw(spriteBatch);
+
+        DrawHelper.DrawRegionShape(Area1.RegionShape, Color.Red, 2);
+        DrawHelper.DrawRegionShape(Area2.RegionShape, Color.Red, 2);
     }
 
 }
