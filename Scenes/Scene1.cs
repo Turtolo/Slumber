@@ -7,6 +7,8 @@ public class Scene1 : Scene, IScene
     Area Area1;
     Area Area2;
 
+    
+
 
     public Scene1 ():  base(new SceneConfig
     {
@@ -18,6 +20,8 @@ public class Scene1 : Scene, IScene
     public override void Initialize()
     {
         base.Initialize();
+
+        IRegionShape2D shape = new RectangleShape2D(10, 10, 10, 10);
     }
     public override void Load()
     {
@@ -28,6 +32,7 @@ public class Scene1 : Scene, IScene
 
         Area1 = new(new RectangleShape2D(10, 10, 10, 10));
         Area2 = new(new RectangleShape2D(10, 10, 10, 10));
+
     }
 
     public override void Unload()
@@ -46,7 +51,10 @@ public class Scene1 : Scene, IScene
             Engine.SceneManager.ReloadCurrentScene();
         }
 
+        Area1.RegionShape.X += 10;
+
         Area1.AreaEntered(out Area other);
+        Console.WriteLine($"Area1 Position: {Area1.RegionShape.Location}");
         Console.WriteLine($"Area1 Intersector: {other}");
     }
     public override void Draw(SpriteBatch spriteBatch)
