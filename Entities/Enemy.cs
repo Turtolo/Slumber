@@ -25,7 +25,7 @@ public class Enemy : KinematicBody2D
 
     private Area2D TakeDamageArea;
 
-    public Enemy() {}
+    public Enemy(NodeConfig config) : base(config) {}
 
     public override void Load()
     {
@@ -36,7 +36,8 @@ public class Enemy : KinematicBody2D
         AnimatedSprite = Atlas.CreateAnimatedSprite("run-animation");
         AnimatedSprite.LayerDepth = 0.5f;
 
-        Shape = new RectangleShape2D(400, 150, 16, 16);
+        Shape.Width = 16;
+        Shape.Height = 16;
 
         Health = 5;
 
@@ -51,7 +52,7 @@ public class Enemy : KinematicBody2D
         EnemyRay = new RayCast2D(RayPos, 90, 50);
         EnemyRayNotDown = new RayCast2D(RayPos, 0, 5);
 
-        TakeDamageArea = new Area2D(Shape);
+        TakeDamageArea = new(new NodeConfig{Shape = Shape, Root = this, Name = "EnemyTakeDamageArea"});
 
         
 

@@ -25,10 +25,11 @@ public class Player : KinematicBody2D
 
     public int PlayerAxis;
 
-    public Player() {}
+    public Player(NodeConfig config) : base(config) {}
 
     public override void Load()
     {
+
         
         Screen = new PlayerUI();
         pauseMenu = new Pausemenu();
@@ -44,10 +45,11 @@ public class Player : KinematicBody2D
         AnimatedSprite = _atlas.CreateAnimatedSprite("idle-animation");
         AnimatedSprite.LayerDepth = 0.5f;
 
+        Shape.Width = 10;
+        Shape.Height = 25;
 
-        Shape = new RectangleShape2D(400, 150, 10, 25);
 
-        TakeDamageArea = new(Shape);
+        TakeDamageArea = new(new NodeConfig{Shape = Shape, Root = this, Name = "PlayerTakeDamageArea"});
 
         CircleShape2D attackCircle = new(0, 0, 30);
         

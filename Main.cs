@@ -33,6 +33,8 @@ namespace Slumber
         protected override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
+
+            foreach (var node in Node.AllInstances) DrawHelper.DrawRegionShapeHollow(node.Shape, Color.Red, 2);
         }
     }
 }

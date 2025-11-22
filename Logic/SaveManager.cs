@@ -9,7 +9,6 @@ public class SaveManager
 
     public static void SaveData()
     {
-        Console.WriteLine("Yes");
         Player player;
 
         player = Node.AllInstances.OfType<Player>().FirstOrDefault();
@@ -28,7 +27,8 @@ public class SaveManager
 
         Player player = Node.AllInstances.OfType<Player>().FirstOrDefault();
 
-        player.Location = PlayerData.CurrentPosition.ToPoint();
+        
+        player?.Location = PlayerData.CurrentPosition.ToPoint();
         
 
     }
