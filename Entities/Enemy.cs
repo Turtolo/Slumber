@@ -8,6 +8,7 @@ public class Enemy : KinematicEntity, IKinematicEntity
     private int Direction = 1;
     private int TextureOffset;
 
+
     private RayCast2D EnemyRay;
     private RayCast2D EnemyRayNotDown;
 
@@ -55,6 +56,9 @@ public class Enemy : KinematicEntity, IKinematicEntity
         EnemyRayNotDown = new RayCast2D(RayPos, 0, 5);
 
         TakeDamageArea = new Area2D(KinematicBase.Collider);
+
+        
+
     }
 
     public override void Update(GameTime gameTime)
@@ -67,10 +71,8 @@ public class Enemy : KinematicEntity, IKinematicEntity
         EnemyRay.Update(RayPos, 90, 50);
         EnemyRayNotDown.Update(RayPos, 0, 5);
 
-        EnemyRay.CheckIntersection(Node.AllInstances.OfType<RegionNode>());
-        EnemyRayNotDown.CheckIntersection(Node.AllInstances.OfType<RegionNode>());
-
-        //HandleDamage();
+        EnemyRay.CheckIntersection(Node.AllInstances.OfType<StaticBody2D>());
+        EnemyRayNotDown.CheckIntersection(Node.AllInstances.OfType<StaticBody2D>());
 
         HandleGravity();
 
@@ -85,7 +87,7 @@ public class Enemy : KinematicEntity, IKinematicEntity
             KinematicBase.Velocity.Y = 0;
         }
 
-        SpritePosition = new Vector2(KinematicBase.Collider.BoundingBox.X, KinematicBase.Collider.BoundingBox.Y);
+        SpritePosition = new Vector2(KinematicBase.Collider.X, KinematicBase.Collider.BoundingBox.Y);
 
         AnimatedSprite.PlayAnimation(RunAnimation, true);
 
@@ -97,7 +99,7 @@ public class Enemy : KinematicEntity, IKinematicEntity
     public override void Draw(SpriteBatch spriteBatch)
     {
         Engine.DrawManager.Draw(AnimatedSprite);
-        DrawHelper.DrawRay(EnemyRay, Color.Red, 2);
+        //DrawHelper.DrawRay(EnemyRay, Color.Red, 2);
     }
 
     private void FlipSprite(int direction)
