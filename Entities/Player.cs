@@ -29,8 +29,6 @@ public class Player : KinematicBody2D
 
     public override void Load()
     {
-
-        
         Screen = new PlayerUI();
         pauseMenu = new Pausemenu();
 

@@ -1,8 +1,11 @@
+using System.Collections.Generic;
+
 namespace Slumber;
 
 public class Scene1 : Scene, IScene
 {
     public RoomCamera Camera { get; set; }
+    public Area2D Area1;
 
     public Scene1 ():  base(new SceneConfig
     {
@@ -23,7 +26,6 @@ public class Scene1 : Scene, IScene
         GumHelper.Wipe();
         Camera = new RoomCamera(1f);
         Camera.LerpFactor = 1f;
-
 
     }
 
