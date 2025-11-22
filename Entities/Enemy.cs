@@ -19,7 +19,6 @@ public class Enemy : KinematicBody2D
     private bool CanTakeDamage = true;
 
     private TextureAtlas Atlas;
-    private Texture2D AltasTexture;
 
     private Animation RunAnimation;
     AnimatedSprite AnimatedSprite;
@@ -37,23 +36,22 @@ public class Enemy : KinematicBody2D
         AnimatedSprite = Atlas.CreateAnimatedSprite("run-animation");
         AnimatedSprite.LayerDepth = 0.5f;
 
-        Collider = new RectangleShape2D(400, 150, 16, 16);
-        Position = Shape.Location.ToVector2();
+        Shape = new RectangleShape2D(400, 150, 16, 16);
 
         Health = 5;
 
-        float forwardOffset = Collider.BoundingBox.Width / 2f + 5f;
+        float forwardOffset = Shape.BoundingBox.Width / 2f + 5f;
 
         RayPos = new Vector2
         (
-            Collider.BoundingBox.Center.X + forwardOffset * Direction,
-            Collider.BoundingBox.Bottom
+            Shape.BoundingBox.Center.X + forwardOffset * Direction,
+            Shape.BoundingBox.Bottom
         );
 
         EnemyRay = new RayCast2D(RayPos, 90, 50);
         EnemyRayNotDown = new RayCast2D(RayPos, 0, 5);
 
-        TakeDamageArea = new Area2D(Collider);
+        TakeDamageArea = new Area2D(Shape);
 
         
 
@@ -61,10 +59,10 @@ public class Enemy : KinematicBody2D
 
     public override void Update(GameTime gameTime)
     {
-        float forwardOffset = Collider.BoundingBox.Width / 2f + 5f;
+        float forwardOffset = Shape.BoundingBox.Width / 2f + 5f;
 
-        RayPos.X = Collider.BoundingBox.Center.X + forwardOffset * Direction;
-        RayPos.Y = Collider.BoundingBox.Bottom;
+        RayPos.X = Shape.BoundingBox.Center.X + forwardOffset * Direction;
+        RayPos.Y = Shape.BoundingBox.Bottom;
 
         EnemyRay.Update(RayPos, 90, 50);
         EnemyRayNotDown.Update(RayPos, 0, 5);
@@ -78,14 +76,14 @@ public class Enemy : KinematicBody2D
 
         FlipSprite(Direction);
 
-        UpdateCollider(gameTime);
+        UpdateKinematicBody();
 
         if (IsOnGround())
         {
             Velocity.Y = 0;
         }
 
-        SpritePosition = new Vector2(Collider.X, Collider.BoundingBox.Y);
+        SpritePosition = Location.ToVector2();
 
         AnimatedSprite.PlayAnimation(RunAnimation, true);
 

@@ -24,6 +24,7 @@ public class Scene1 : Scene, IScene
         Camera = new RoomCamera(1f);
         Camera.LerpFactor = 1f;
 
+
     }
 
     public override void Unload()
@@ -39,6 +40,7 @@ public class Scene1 : Scene, IScene
 
         if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.R))
             Engine.SceneManager.ReloadCurrentScene();
+
     }
     
     public override void Draw(SpriteBatch spriteBatch)

@@ -16,6 +16,8 @@ public class Player : KinematicBody2D
 
     public PlayerInfo PlayerInfo = new();
 
+    Area2D TakeDamageArea;
+
     private PlayerUI Screen;
     private Pausemenu pauseMenu;
     public AnimatedSprite AnimatedSprite;
@@ -43,9 +45,9 @@ public class Player : KinematicBody2D
         AnimatedSprite.LayerDepth = 0.5f;
 
 
-        Collider = new RectangleShape2D(400, 150, 10, 25);
+        Shape = new RectangleShape2D(400, 150, 10, 25);
 
-        Position = Shape.Location.ToVector2();
+        TakeDamageArea = new(Shape);
 
         CircleShape2D attackCircle = new(0, 0, 30);
         
@@ -71,18 +73,19 @@ public class Player : KinematicBody2D
 
     public override void Update(GameTime gameTime)
     {   
+        UpdateKinematicBody();
+
         PlayerAxis = Engine.Input.GetAxis("MoveLeft", "MoveRight");
 
         ApplyGravity();
 
         _stateController.Update(gameTime);
 
-        UpdateCollider(gameTime);
-        SaveManager.PlayerData.CurrentPosition = Position;
+        SaveManager.PlayerData.CurrentPosition = Location.ToVector2();
 
         FlipSprite();
 
-        AnimatedSprite.Position = new Vector2(Collider.X - 64 + PlayerInfo.textureOffset, Collider.Y - 55);
+        AnimatedSprite.Position = new Vector2(Location.X - 64 + PlayerInfo.textureOffset, Location.Y - 55);
         AnimatedSprite.Update(gameTime);
     }
 
