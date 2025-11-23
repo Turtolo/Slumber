@@ -27,6 +27,13 @@ public class Scene1 : Scene, IScene
         Camera = new RoomCamera(1f);
         Camera.LerpFactor = 1f;
 
+        Area1 = new(new NodeConfig
+        {
+            Shape = new RectangleShape2D(400, 160, 100, 20),
+            Name = "Scene1TestArea",
+            Root = this
+        });
+
     }
 
     public override void Unload()
@@ -43,10 +50,16 @@ public class Scene1 : Scene, IScene
         if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.R))
             Engine.SceneManager.ReloadCurrentScene();
 
+        
+        if (Area1.BodyEntered(out KinematicBody2D body))
+        {
+            body.QueeFree();
+        }
+
     }
     
     public override void Draw(SpriteBatch spriteBatch)
     {
-        base.Draw(spriteBatch);
+        base.Draw(spriteBatch);        
     }
 }

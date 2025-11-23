@@ -34,7 +34,7 @@ namespace Slumber
         {
             base.Draw(gameTime);
 
-            foreach (var node in Node.AllInstances) DrawHelper.DrawRegionShapeHollow(node.Shape, Color.Red, 2);
+            foreach (var node in Node.AllInstances) node.DrawShapeHollow(Color.Red);
         }
     }
 }
