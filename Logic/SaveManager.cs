@@ -28,7 +28,7 @@ public class SaveManager
         Player player = Node.AllInstances.OfType<Player>().FirstOrDefault();
 
         
-        player?.Location = PlayerData.CurrentPosition.ToPoint();
+        player.Location = PlayerData.CurrentPosition.ToPoint();
         
 
     }
