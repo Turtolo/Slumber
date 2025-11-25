@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Slumber;
 
 public class Scene1 : Scene, IScene
@@ -25,6 +23,8 @@ public class Scene1 : Scene, IScene
         GumHelper.Wipe();
         Camera = new RoomCamera(1f);
         Camera.LerpFactor = 1f;
+
+        
     }
 
     public override void Unload()

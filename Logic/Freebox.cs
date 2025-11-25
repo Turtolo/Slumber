@@ -32,7 +32,7 @@ public class FreeBox : Node
 
         if (FreeArea.BodyEntered(out KinematicBody2D body) && body is Player)
         {
-            body.QueeFree();
+            body.QueueFree();
         }
     }
 

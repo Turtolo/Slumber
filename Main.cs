@@ -24,6 +24,8 @@ namespace Slumber
         {
             base.Initialize();
             SceneManager.AddScene(new MainMenu());
+
+            DebugOverlay.AddInfo("PlayerPosition", () => $"Player Pos: {2}");
         }
 
         protected override void Update(GameTime gameTime)
