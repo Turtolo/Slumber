@@ -4,12 +4,12 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Animations/Enemies/grassspidersheet.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Animations/Player/PlayerModel3Atlas.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Backgrounds/Desert.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Backgrounds/streetsbg.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Fonts/Font.spritefont</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Tileset/SlumberTilesetAtlas.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Animations/Enemies/grassspidersheet.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Animations/Player/PlayerModel3Atlas.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Backgrounds/Desert.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Backgrounds/streetsbg.png</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Fonts/Font.spritefont</File>
+    <File>/home/nils/Documents/Project/Slumber/Content/Assets/Tileset/SlumberTilesetAtlas.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
