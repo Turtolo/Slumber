@@ -27,9 +27,15 @@ namespace Slumber
             {
                 var p = NodeManager.GetNodeByName("Player") as Player;
                 
+                return p == null ? "Player: Null" : $"Player Location: {p.Location}";
+            }, Color.Yellow);
+           
+            DebugOverlay.AddInfo("PlayerState", () =>
+            {
+                var p = NodeManager.GetNodeByName("Player") as Player;
+                
                 return p == null ? "Player: Null" : $"Player State: {p.StateController.CurrentState}";
-            }, Color.Aqua);
-            
+            }, Color.Yellow);
         }
 
 
