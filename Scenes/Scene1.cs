@@ -23,6 +23,21 @@ public class Scene1 : Scene, IScene
         GumHelper.Wipe();
         Camera = new RoomCamera(1f);
         Camera.LerpFactor = 1f;
+
+        new Sprite2D(new NodeConfig
+        {
+            Shape = new RectangleShape2D(10, 10, 10, 10),
+            Name = "Sprite2D",
+            Parent = this,
+            Values = new Sprite2D.ValuesData
+            (
+                Texture: new MTexture("Assets/Animations/Player/PlayerModel3Atlas"),
+                Scale: Vector2.One,
+                Rotation: 0f,
+                Modulate: Color.White
+            )
+        });
+
     }
 
     public override void Unload()
