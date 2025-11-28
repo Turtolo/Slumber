@@ -4,7 +4,7 @@ namespace Slumber;
 public class MainMenu : Scene, IScene
 {
     TitleScreen titleScreen;
-    Texture2D texture;
+    MTexture texture;
     
     public MainMenu() : base(new SceneConfig {})
     {
@@ -22,7 +22,7 @@ public class MainMenu : Scene, IScene
         GumHelper.AddScreenToRoot(titleScreen);
 
         
-        texture = Engine.Content.Load<Texture2D>("Assets/Backgrounds/streetsbg");
+        texture = new("Assets/Backgrounds/streetsbg");
     
     }
     public override void Load()

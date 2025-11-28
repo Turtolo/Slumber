@@ -1,11 +1,10 @@
+using System.Collections.Generic;
 using RenderingLibrary;
 
 namespace Slumber.Entities;
 
 public class Player : KinematicBody2D
 {
-    private TextureAtlas _atlas;
-
     public Animation _runAnim;
     public Animation _idleAnim;
     public Animation _fallAnim;
@@ -34,16 +33,25 @@ public class Player : KinematicBody2D
         Screen = new PlayerUI();
         pauseMenu = new Pausemenu();
 
-        _atlas = TextureAtlas.FromFile("Assets/Atlas/Player/player-atlas.xml", "Assets/Animations/Player/PlayerModel3Atlas");
+        MTexture PlayerTexture = new("Assets/Animations/Player/PlayerModel3Atlas");
 
-        _runAnim = _atlas.GetAnimation("run-animation");
-        _idleAnim = _atlas.GetAnimation("idle-animation");
-        _fallAnim = _atlas.GetAnimation("fall-animation");
-        _attackAnim1 = _atlas.GetAnimation("attack-animation-1");
-        _attackAnim2 = _atlas.GetAnimation("attack-animation-2");
+        List<MTexture> IdleAnimSheet = SpriteSlicer.Slice(PlayerTexture, 128, 128, 0, 5, 0, 0);
+        List<MTexture> RunAnimSheet = SpriteSlicer.Slice(PlayerTexture, 128, 128, 0, 5, 1, 1);
+        List<MTexture> FallAnimSheet = SpriteSlicer.Slice(PlayerTexture, 128, 128, 0, 4, 2, 2);
+        List<MTexture> AttackAnimSheet = SpriteSlicer.Slice(PlayerTexture, 128, 128, 0, 10, 3, 3);
 
-        AnimatedSprite = _atlas.CreateAnimatedSprite("idle-animation");
+
+
+        _runAnim = new(RunAnimSheet, TimeSpan.FromMilliseconds(100));
+        _idleAnim = new(IdleAnimSheet, TimeSpan.FromMilliseconds(100));
+        _fallAnim = new(FallAnimSheet, TimeSpan.FromMilliseconds(100));
+        _attackAnim1 = new(AttackAnimSheet, TimeSpan.FromMilliseconds(100));
+        _attackAnim2 = new(AttackAnimSheet, TimeSpan.FromMilliseconds(100));
+        
+        AnimatedSprite = new(_idleAnim);
         AnimatedSprite.LayerDepth = 0.5f;
+
+        
 
         Shape.Width = 10;
         Shape.Height = 25;

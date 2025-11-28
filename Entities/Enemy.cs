@@ -18,8 +18,6 @@ public class Enemy : KinematicBody2D
 
     private bool CanTakeDamage = true;
 
-    private TextureAtlas Atlas;
-
     private Animation RunAnimation;
     AnimatedSprite AnimatedSprite;
 
@@ -29,11 +27,11 @@ public class Enemy : KinematicBody2D
 
     public override void Load()
     {
-        Atlas = TextureAtlas.FromFile("Content/Assets/Atlas/enemyatlas.xml", "Content/Assets/Animations/Enemies/grassspidersheet");
+        //Atlas = TextureAtlas.FromFile("Content/Assets/Atlas/enemyatlas.xml", "Content/Assets/Animations/Enemies/grassspidersheet");
 
-        RunAnimation = Atlas.CreateAnimatedSprite("run-animation").Animation;
+        //RunAnimation = Atlas.CreateAnimatedSprite("run-animation").Animation;
 
-        AnimatedSprite = Atlas.CreateAnimatedSprite("run-animation");
+        //AnimatedSprite = Atlas.CreateAnimatedSprite("run-animation");
         AnimatedSprite.LayerDepth = 0.5f;
 
         Shape.Width = 16;
