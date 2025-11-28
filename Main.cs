@@ -1,11 +1,12 @@
+using RenderingLibrary.Content;
+
 namespace Slumber
 {
     public class Main : Engine 
     {
         public Main() : base(new EngineConfig
         {
-            AssetsFolder = "Content",
-            AssetLoaderType = LoaderType.Runtime,
+            ContentProvider = new ContentPipelineLoader(),
             Title = "Slumber",
             RenderWidth = 640,
             RenderHeight = 360,
@@ -13,8 +14,8 @@ namespace Slumber
             IntegerScaling = true,
             DebugMode = true,
             AllowUserResizing = true,
-            Maximised = true,
-            IsBorderless = true,
+            Maximised = false,
+            IsBorderless = false,
             FontPath = "Assets/Fonts/Font",
             GumProject = "GumProject/GumProject.gumx",
             MainCharacterType = typeof(Player)
@@ -44,6 +45,9 @@ namespace Slumber
         protected override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+
+            if (Input.Keyboard.WasKeyJustPressed(Keys.E))
+                ContentProvider.ReloadAll();
         }
 
         protected override void Draw(GameTime gameTime)

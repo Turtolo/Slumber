@@ -34,7 +34,7 @@ public class Player : KinematicBody2D
         Screen = new PlayerUI();
         pauseMenu = new Pausemenu();
 
-        _atlas = TextureAtlas.FromFile(Engine.Content, "Assets/Atlas/Player/player-atlas.xml", "Assets/Animations/Player/PlayerModel3Atlas");
+        _atlas = TextureAtlas.FromFile("Assets/Atlas/Player/player-atlas.xml", "Assets/Animations/Player/PlayerModel3Atlas");
 
         _runAnim = _atlas.GetAnimation("run-animation");
         _idleAnim = _atlas.GetAnimation("idle-animation");
@@ -47,7 +47,6 @@ public class Player : KinematicBody2D
 
         Shape.Width = 10;
         Shape.Height = 25;
-
 
         TakeDamageArea = new(new NodeConfig{Shape = Shape, Parent = this, Name = "PlayerTakeDamageArea"});
 

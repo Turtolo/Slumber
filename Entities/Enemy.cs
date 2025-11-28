@@ -29,7 +29,7 @@ public class Enemy : KinematicBody2D
 
     public override void Load()
     {
-        Atlas = TextureAtlas.FromFile(Engine.Content, "Assets/Atlas/enemyatlas.xml", "Assets/Animations/Enemies/grassspidersheet");
+        Atlas = TextureAtlas.FromFile("Content/Assets/Atlas/enemyatlas.xml", "Content/Assets/Animations/Enemies/grassspidersheet");
 
         RunAnimation = Atlas.CreateAnimatedSprite("run-animation").Animation;
 
