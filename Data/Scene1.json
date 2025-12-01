@@ -42,7 +42,19 @@
           "originY": 0,
           "values": {"Collidable": false, "OneWay": false}
         },
-        {"name": "Player", "id": 1, "_eid": "92345250", "x": 240, "y": 176, "originX": 0, "originY": 0}
+        {"name": "Player", "id": 1, "_eid": "92345250", "x": 240, "y": 176, "originX": 0, "originY": 0},
+        {
+          "name": "ExampleNode",
+          "id": 2,
+          "_eid": "53227683",
+          "x": 128,
+          "y": 184,
+          "width": 32,
+          "height": 16,
+          "originX": 0,
+          "originY": 0,
+          "values": {"TestVar": true}
+        }
       ]
     },
     {

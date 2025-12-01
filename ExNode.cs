@@ -1,8 +1,11 @@
-public class ExampleNode : Node
+public record class ExNodeConfig : Node2DConfig
 {
-    public int Health { get; set; }
-    public bool Quit { get; set; }
-    public ExampleNode(NodeConfig config) : base(config)
+    public RegionNode2D Region { get; set; }
+}
+
+public class ExampleNode : Node2D
+{
+    public ExampleNode(ExNodeConfig config) : base(config)
     {
         
     }
