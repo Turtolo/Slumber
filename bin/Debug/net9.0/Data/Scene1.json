@@ -43,7 +43,19 @@
           "values": {"Collidable": true, "OneWay": false}
         },
         {"name": "Player", "id": 1, "_eid": "92345250", "x": 240, "y": 176, "originX": 0, "originY": 0},
-        {"name": "ExampleNode", "id": 3, "_eid": "86441548", "x": 160, "y": 112, "width": 16, "height": 16, "originX": 0, "originY": 0}
+        {"name": "ExampleNode", "id": 3, "_eid": "86441548", "x": 160, "y": 112, "width": 16, "height": 16, "originX": 0, "originY": 0},
+        {
+          "name": "Area2D",
+          "id": 4,
+          "_eid": "49261216",
+          "x": 112,
+          "y": 152,
+          "width": 64,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "values": {"MonitorAreas": true, "MonitorBodies": true}
+        }
       ]
     },
     {

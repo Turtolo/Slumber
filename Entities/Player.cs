@@ -53,6 +53,9 @@ public class Player : KinematicBody2D
             IsLooping = true
         });
 
+        CollisionShape2D.Width = 10;
+        CollisionShape2D.Height = 25;
+
         AnimatedSprite.LayerDepth = 0.5f;
         
         var grounded = new PlayerGroundedState(this);
@@ -94,10 +97,7 @@ public class Player : KinematicBody2D
 
     }
 
-    public override void Draw(SpriteBatch spriteBatch)
-    {   
-        
-    }
+    public override void Draw(SpriteBatch spriteBatch) { }
 
     public void ApplyGravity()
     {

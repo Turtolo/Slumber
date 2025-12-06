@@ -9,10 +9,6 @@ public class SaveManager
 
     public static void SaveData()
     {
-        Player player;
-
-        player = NodeManager.AllInstances.OfType<Player>().FirstOrDefault();
-
         PlayerData.CurrentScene = Engine.SceneManager.GetCurrentScene().GetType().Name;
 
         FileSaver.SaveData(PlayerData, FileSavePath, FileFormat.Binary);
@@ -23,11 +19,7 @@ public class SaveManager
         FileSaver.LoadData(PlayerData, FileSavePath, FileFormat.Binary);
 
         Engine.SceneManager.AddSceneFromString(PlayerData.CurrentScene);
-        
-        Player player = NodeManager.AllInstances.OfType<Player>().FirstOrDefault();
 
-        if (!PlayerData.Dead)
-            player.Position = PlayerData.CurrentPosition;
         
 
     }
