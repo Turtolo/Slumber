@@ -16,16 +16,37 @@ public class DevStage : Stage
 
         var o = PathHelper.Combine("Raw", "LevelData", "Dev.json");
 
-        Player = Engine.Node.Create<Player>();   
+        Player = Engine.Node.Create<Player>().SetProperties(n =>
+        {
+            n.Position = new Vector2(160, 20);
+        });   
+
+        Engine.Node.Create<Camera2D>().SetProperties(n =>
+        {
+            n.Position = Player.Position;
+            n.SetParent(Player);
+        });
 
         Engine.Node.Create<StaticBody2D>().SetProperties(n =>
         {
-            n.Position = new Vector2(100, 50);
+            n.Position = new Vector2(0, 50);
             n.AddChild(Engine.Node.Create<CollisionShape2D>().SetProperties(c =>
             {
                 c.Shape = new RectangleShape2D(100, 25);
             }));
         });
+
+        Engine.Node.Create<DynamicBody2D>().SetProperties(n =>
+        {
+            n.Position = new Vector2(150, 50);
+            n.Velocity.X = 50;
+            n.AddChild(Engine.Node.Create<CollisionShape2D>().SetProperties(c =>
+            {
+                c.Shape = new RectangleShape2D(100, 25);
+            }));
+        });
+
+        
     }
 
     public override void PhysicsUpdate(float deltaTime)
@@ -42,8 +63,13 @@ public class DevStage : Stage
     {
         base.SubmitCall();
 
-        foreach(var c in Engine.Node.GetAll<StaticBody2D>())
+        foreach(var c in Engine.Node.GetAll<PhysicsBody2D>())
+        {
+            if (c is Player)
+                continue;
+
             c.CollisionShape.Shape.Draw();
+        }
     }
 
     public override void OnExit()
