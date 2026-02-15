@@ -92,6 +92,18 @@
 /processorParam:Quality=Best
 /build:Assets/Music/Cold_Heights_Ambient_01.mp3
 
+#begin Assets/Tileset/DevTileset.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Tileset/DevTileset.png
+
 #begin Assets/Tileset/SlumberTilesetAtlas.png
 /importer:TextureImporter
 /processor:TextureProcessor

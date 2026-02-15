@@ -46,11 +46,11 @@
 /Users/nilslauvstad/Documents/Project/Slumber/obj/Debug/net9.0/ref/Slumber.dll
 /Users/nilslauvstad/Documents/Project/Slumber/obj/Debug/net9.0/Slumber.sourcelink.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Assets/ButtonBG.xnb
-/Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Raw/LevelData/Level1.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Assets/Backgrounds/HeightsBG.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Assets/Backgrounds/HeightsBGNoMain.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Assets/Music/Cold_Heights_Ambient_01.ogg
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Assets/Music/Cold_Heights_Ambient_01.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Assets/Music/blizzard-445020.ogg
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Assets/Music/blizzard-445020.xnb
-/Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Raw/LevelData/Level2.json
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Assets/Tileset/DevTileset.xnb
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Raw/LevelData/Dev.json

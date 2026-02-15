@@ -8,7 +8,7 @@ namespace Slumber
         {
             base.Initialize();
 
-            Stage.AddStage(new Scene1());    
+            Stage.AddStage(new DevStage());    
             
             Input.AddBind("MoveLeft", new InputAction(Keys.A), new InputAction(Buttons.DPadLeft));
             Input.AddBind("MoveRight", new InputAction(Keys.D), new InputAction(Buttons.DPadRight));
@@ -21,14 +21,6 @@ namespace Slumber
 
             Input.AddBind("Pause", new InputAction(Keys.Escape), new InputAction(Buttons.Start));
             Input.AddBind("Back", new InputAction(Keys.X), new InputAction(Buttons.B));
-
-
-            var bgMusic = Resource.Load<Song>("Assets/Music/Cold_Heights_Ambient_01");
-
-            MediaPlayer.IsRepeating = true;
-
-            MediaPlayer.Play(bgMusic);
-    
         }
 
         protected override void LoadContent()
@@ -53,32 +45,7 @@ namespace Slumber
         {
             base.Draw(gameTime);
 
-            Screen.Call(new FontDrawCall
-            {
-                Font = BitmapFont,
-                Text = Math.Round(FPS).ToString(),
-                Color = Color.Yellow,
-            }, DrawLayer.UI);
-            
-            Screen.Call(new FontDrawCall
-            {
-                Font = BitmapFont,
-                Text = Vector2.Round(Node.GetFirstNodeByT<Player>().GlobalPosition).ToString(),
-                Color = Color.Azure,
-                Position = new Vector2(0, 10)
-            }, DrawLayer.UI);
-
-            Screen.Call(new FontDrawCall
-            {
-                Font = BitmapFont,
-                Color = Color.WhiteSmoke,
-                Position = new Vector2(0, 20)
-            }, DrawLayer.UI);
-
-
-            
-
-            
+        
         }
     }
 }

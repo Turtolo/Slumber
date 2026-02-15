@@ -12,9 +12,9 @@ namespace Slumber
 
         public float Gravity = 1300f;
         public float TerminalVelocity = 1200f;
-        public float JumpForce = -350f;
+        public float JumpForce = -350;
 
-        public float WallSlideGravity = 10f;
+        public float WallSlideGravity = 20f;
         public float WallJumpHorizontalSpeed = 200f;
         public float WallJumpVerticalSpeed = 300f;
 
@@ -51,31 +51,30 @@ namespace Slumber
 
         #region Constructors
 
-        public Player(KinematicBodyConfig cfg) : base(cfg) { }
+        public Player() {}
 
         public override void Load()
         {
             base.Load();
 
-            CollisionShape = new CollisionShape2D(new CollisionShapeConfig
-            {
-                Parent = this,
-                Shape = new RectangleShape2D(12, 25)
-            });
+            var c = Engine.Node.Create<CollisionShape2D>();
+            c.Shape = new RectangleShape2D(10, 25);
+
+            c.SetParent(this);
+
 
             var animations = AsepriteLoader.LoadAnimations(
                 new("Assets/Animations/PlayerModel3Atlas"),
                 PathHelper.Combine("Raw/Raw/PlayerModel3.json")
             );
 
-            Sprite = new AnimatedSprite2D(new AnimatedSpriteConfig
-            {
-                Parent = this,
-                Name = "PlayerSprite",
-                Atlas = animations,
-                LocalPosition = new Vector2(6, 9),
-                IsLooping = true
-            });
+            Sprite = Engine.Node.Create<AnimatedSprite2D>();
+
+            Sprite.SetParent(this);
+
+            Sprite.Atlas = animations;
+            Sprite.Position = new Vector2(6, 9);
+            Sprite.IsLooping = true;
 
             Depth = 5;
         }
@@ -96,7 +95,7 @@ namespace Slumber
             HandleDeceleration(delta);
             HandleAttack();
             ApplyGravity(delta);
-
+            
             base.PhysicsUpdate(delta);
         }
 
@@ -115,7 +114,7 @@ namespace Slumber
         {
             base.SubmitCall();
 
-            CollisionShape.Shape.Draw();
+            //CollisionShape.Shape.Draw();
         }
 
         #endregion
@@ -135,11 +134,7 @@ namespace Slumber
 
         public void HandleDeceleration(float delta)
         {
-            if (!Engine.Input.IsActionPressed("MoveLeft") &&
-                !Engine.Input.IsActionPressed("MoveRight"))
-            {
-                Velocity.X = MoveToward(Velocity.X, 0, Deceleration * delta);
-            }
+            Velocity.X = PlayerAxis == 0 ? MoveToward(Velocity.X, 0, Deceleration * delta) : Velocity.X;
         }
 
         public float MoveToward(float current, float target, float maxDelta)
@@ -156,8 +151,8 @@ namespace Slumber
 
         public void ApplyGravity(float delta)
         {
-            if (wallSlideTriggered)
-                return;
+            //if (wallSlideTriggered)
+                //return;
 
             if (!IsOnFloor)
             {
@@ -220,7 +215,7 @@ namespace Slumber
 
         public void HandleWallSlide()
         {
-            if (PlayerAxis != 0 && IsOnWall && !IsOnFloor)
+            if (PlayerAxis != 0 && IsOnWall && Velocity.Y > 0)
                 wallSlideTriggered = true;
 
             if (!wallSlideTriggered)
@@ -283,9 +278,9 @@ namespace Slumber
         private void FlipSprite()
         {
             if (PlayerAxis > 0)
-                Sprite.LocalMaterial = Sprite.LocalMaterial with { SpriteEffects = SpriteEffects.None };
+                Sprite.SpriteEffects = SpriteEffects.None;
             else if (PlayerAxis < 0)
-                Sprite.LocalMaterial = Sprite.LocalMaterial with { SpriteEffects = SpriteEffects.FlipHorizontally };
+                Sprite.SpriteEffects = SpriteEffects.FlipHorizontally;
         }
 
         #endregion

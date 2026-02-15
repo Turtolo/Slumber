@@ -12,9 +12,11 @@
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Fonts/Font.spritefont</File>
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Music/blizzard-445020.mp3</File>
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Music/Cold_Heights_Ambient_01.mp3</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Tileset/DevTileset.png</File>
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Tileset/SlumberTilesetAtlas.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
