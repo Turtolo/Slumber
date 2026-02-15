@@ -16,16 +16,16 @@ public class DevStage : Stage
 
         var o = PathHelper.Combine("Raw", "LevelData", "Dev.json");
 
-        Player = Engine.Node.Create<Player>();       
+        Player = Engine.Node.Create<Player>();   
 
-        CollisionShape2D StaticShape = Engine.Node.Create<CollisionShape2D>();
-
-        StaticShape.Shape = new RectangleShape2D(100, 25);
-
-        StaticBody2D StaticBody2D  = Engine.Node.Create<StaticBody2D>();
-
-        StaticBody2D.Position = new Vector2(0, 50);
-        StaticBody2D.AddChild(StaticShape);
+        Engine.Node.Create<StaticBody2D>().SetProperties(n =>
+        {
+            n.Position = new Vector2(100, 50);
+            n.AddChild(Engine.Node.Create<CollisionShape2D>().SetProperties(c =>
+            {
+                c.Shape = new RectangleShape2D(100, 25);
+            }));
+        });
     }
 
     public override void PhysicsUpdate(float deltaTime)
