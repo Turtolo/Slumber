@@ -4,7 +4,7 @@ using RenderingLibrary.Graphics;
 
 namespace Slumber;
 
-public class Scene1 : IStage
+public class Scene1 : Stage
 {
     public Scene1 () {}
 
@@ -13,9 +13,10 @@ public class Scene1 : IStage
 
     Random random;
 
-    public void OnEnter()
-    {       
-        
+    public override void OnEnter()
+    {
+        base.OnEnter();
+
         random = new Random();
 
         var camera = new RoomCamera(new RoomCameraConfig
@@ -43,20 +44,24 @@ public class Scene1 : IStage
         });
     }
 
-    public void OnExit() {}
-
-    public void PhysicsUpdate(float deltaTime)
+    public override void OnExit()
     {
-        
+        base.OnExit();
     }
 
-    public void ProcessUpdate(float deltaTime)
+    public override void PhysicsUpdate(float deltaTime)
     {
-        
+        base.PhysicsUpdate(deltaTime);
     }
 
-    public void SubmitCall()
+    public override void ProcessUpdate(float deltaTime)
     {
+        base.ProcessUpdate(deltaTime);
+    }
+
+    public override void SubmitCall()
+    {
+        base.SubmitCall();
         //foreach (var c in Engine.Node.GetNodesByT<CollisionShape2D>()) 
             //c.Shape.Draw();        
     }
