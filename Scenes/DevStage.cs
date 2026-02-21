@@ -40,7 +40,14 @@ public class DevStage : Stage
 
         var path = Engine.Node.Create<Path2D>().SetProperties(n =>
         {
-            n.SetPath(new Vector2(150, 50), new Vector2(200, 50), new Vector2(250, 100));
+            n.SetPath(
+                new Vector2(150, 50), 
+                new Vector2(200, 50), 
+                new Vector2(250, 100), 
+                new Vector2(600, 100), 
+                new Vector2(750, 200),
+                new Vector2(750, 50)
+            );
         });
 
         Engine.Node.Create<DynamicBody2D>().SetProperties(n =>
@@ -49,6 +56,19 @@ public class DevStage : Stage
             n.AddChild(Engine.Node.Create<CollisionShape2D>().SetProperties(c =>
             {
                 c.Shape = new RectangleShape2D(100, 25);
+            }));
+        });
+
+        Engine.Node.Create<Parallax2D>().SetProperties(n =>
+        {
+            n.SetParent(Engine.Node.Create<ParallaxLayer>().SetProperties(n =>
+            {
+                n.Texture = new MTexture("Assets/Backgrounds/HeightsBGNoMain");
+            }));
+
+            n.SetParent(Engine.Node.Create<ParallaxLayer>().SetProperties(n =>
+            {
+                n.Texture = new MTexture("Assets/Backgrounds/HeightsBG");
             }));
         });
     }
