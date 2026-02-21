@@ -73,10 +73,10 @@ namespace Slumber
             Sprite.SetParent(this);
 
             Sprite.Atlas = animations;
-            Sprite.Position = new Vector2(6, 9);
+            Sprite.LocalPosition = new Vector2(6, 9);
             Sprite.IsLooping = true;
 
-            Depth = 5;
+            LocalDepth = 5;
         }
 
         #endregion
@@ -278,9 +278,9 @@ namespace Slumber
         private void FlipSprite()
         {
             if (PlayerAxis > 0)
-                Sprite.SpriteEffects = SpriteEffects.None;
+                Sprite.LocalSpriteEffects = SpriteEffects.None;
             else if (PlayerAxis < 0)
-                Sprite.SpriteEffects = SpriteEffects.FlipHorizontally;
+                Sprite.LocalSpriteEffects = SpriteEffects.FlipHorizontally;
         }
 
         #endregion

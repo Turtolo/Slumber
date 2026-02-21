@@ -8,8 +8,9 @@ namespace Slumber;
 public class DevStage : Stage
 {    
     public DevStage() {}
-
     public Player Player;
+
+    Vector2 Current = new Vector2(10, 10);
 
     public override void OnEnter()
     {
@@ -19,35 +20,37 @@ public class DevStage : Stage
 
         Player = Engine.Node.Create<Player>().SetProperties(n =>
         {
-            n.Position = new Vector2(160, 20);
+            n.LocalPosition = new Vector2(160, 20);
         });   
 
         Engine.Node.Create<Camera2D>().SetProperties(n =>
         {
-            n.Position = Player.Position;
+            n.LocalPosition = Player.GlobalPosition;
             n.SetParent(Player);
-        });
+        }); 
 
         Engine.Node.Create<StaticBody2D>().SetProperties(n =>
         {
-            n.Position = new Vector2(0, 50);
+            n.LocalPosition = new Vector2(0, 50);
             n.AddChild(Engine.Node.Create<CollisionShape2D>().SetProperties(c =>
             {
                 c.Shape = new RectangleShape2D(100, 25);
             }));
+        });
+
+        var path = Engine.Node.Create<Path2D>().SetProperties(n =>
+        {
+            n.SetPath(new Vector2(150, 50), new Vector2(200, 50), new Vector2(250, 100));
         });
 
         Engine.Node.Create<DynamicBody2D>().SetProperties(n =>
         {
-            n.Position = new Vector2(150, 50);
-            n.Velocity.X = 50;
+            n.SetParent(path);
             n.AddChild(Engine.Node.Create<CollisionShape2D>().SetProperties(c =>
             {
                 c.Shape = new RectangleShape2D(100, 25);
             }));
         });
-
-        
     }
 
     public override void PhysicsUpdate(float deltaTime)
@@ -58,6 +61,8 @@ public class DevStage : Stage
     public override void ProcessUpdate(float deltaTime)
     {
         base.ProcessUpdate(deltaTime);
+
+        
     }
 
     public override void SubmitCall()
