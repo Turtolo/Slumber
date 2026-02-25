@@ -18,27 +18,27 @@ public class DevStage : Stage
 
         var o = PathHelper.Combine("Raw", "LevelData", "Dev.json");
 
-        Player = Engine.Node.Create<Player>().SetProperties(n =>
+        Player = Engine.Tree.Create<Player>().SetProperties(n =>
         {
-            n.LocalPosition = new Vector2(160, 20);
+            n.LocalPosition = new Vector2(160, 40);
         });   
 
-        Engine.Node.Create<Camera2D>().SetProperties(n =>
+        Engine.Tree.Create<Camera2D>().SetProperties(n =>
         {
             n.LocalPosition = Player.GlobalPosition;
             n.SetParent(Player);
         }); 
-
-        Engine.Node.Create<StaticBody2D>().SetProperties(n =>
+ 
+        Engine.Tree.Create<StaticBody2D>().SetProperties(n =>
         {
             n.LocalPosition = new Vector2(0, 50);
-            n.AddChild(Engine.Node.Create<CollisionShape2D>().SetProperties(c =>
+            n.AddChild(Engine.Tree.Create<CollisionShape2D>().SetProperties(c =>
             {
                 c.Shape = new RectangleShape2D(100, 25);
             }));
         });
 
-        var path = Engine.Node.Create<Path2D>().SetProperties(n =>
+        var path = Engine.Tree.Create<Path2D>().SetProperties(n =>
         {
             n.SetPath(
                 new Vector2(150, 50), 
@@ -46,27 +46,31 @@ public class DevStage : Stage
                 new Vector2(250, 100), 
                 new Vector2(600, 100), 
                 new Vector2(750, 200),
-                new Vector2(750, 50)
+                new Vector2(750, 50),
+                new Vector2(1500, 50)
             );
         });
 
-        Engine.Node.Create<DynamicBody2D>().SetProperties(n =>
+        Engine.Tree.Create<Test>();
+
+        Engine.Tree.Create<YBody>().SetProperties(n =>
         {
-            n.SetParent(path);
-            n.AddChild(Engine.Node.Create<CollisionShape2D>().SetProperties(c =>
+            n.LocalPosition = new Vector2(150, 70);
+            n.Velocity.X = 50;
+            n.AddChild(Engine.Tree.Create<CollisionShape2D>().SetProperties(c =>
             {
                 c.Shape = new RectangleShape2D(100, 25);
             }));
         });
 
-        Engine.Node.Create<Parallax2D>().SetProperties(n =>
+        Engine.Tree.Create<Node2D>().SetProperties(n =>
         {
-            n.SetParent(Engine.Node.Create<ParallaxLayer>().SetProperties(n =>
+            n.AddChild(Engine.Tree.Create<ParallaxLayer>().SetProperties(n =>
             {
                 n.Texture = new MTexture("Assets/Backgrounds/HeightsBGNoMain");
             }));
 
-            n.SetParent(Engine.Node.Create<ParallaxLayer>().SetProperties(n =>
+            n.AddChild(Engine.Tree.Create<ParallaxLayer>().SetProperties(n =>
             {
                 n.Texture = new MTexture("Assets/Backgrounds/HeightsBG");
             }));
@@ -89,7 +93,7 @@ public class DevStage : Stage
     {
         base.SubmitCall();
 
-        foreach(var c in Engine.Node.GetAll<PhysicsBody2D>())
+        foreach(var c in Engine.Tree.GetAll<PhysicsBody2D>())
         {
             if (c is Player)
                 continue;

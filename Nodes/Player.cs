@@ -28,7 +28,7 @@ namespace Slumber
 
         #region State
 
-        public int PlayerAxis;
+        public Vector2 PlayerAxis;
         public int PlayerDirection;
 
         private bool jumpReleased = false;
@@ -53,11 +53,11 @@ namespace Slumber
 
         public Player() {}
 
-        public override void Load()
+        public override void OnEnter()
         {
-            base.Load();
+            base.OnEnter();
 
-            var c = Engine.Node.Create<CollisionShape2D>();
+            var c = Engine.Tree.Create<CollisionShape2D>();
             c.Shape = new RectangleShape2D(10, 25);
 
             c.SetParent(this);
@@ -68,7 +68,7 @@ namespace Slumber
                 PathHelper.Combine("Raw/Raw/PlayerModel3.json")
             );
 
-            Sprite = Engine.Node.Create<AnimatedSprite2D>();
+            Sprite = Engine.Tree.Create<AnimatedSprite2D>();
 
             Sprite.SetParent(this);
 
@@ -85,8 +85,8 @@ namespace Slumber
 
         public override void PhysicsUpdate(float delta)
         {
-            PlayerAxis = Engine.Input.GetAxis("MoveLeft", "MoveRight");
-            PlayerDirection = PlayerAxis != 0 ? PlayerAxis : PlayerDirection;
+            PlayerAxis = Engine.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp");
+            PlayerDirection = (int)PlayerAxis.X != 0 ? (int)PlayerAxis.X : PlayerDirection;
 
             HandleCoyoteTime();
             HandleJump();
@@ -126,7 +126,7 @@ namespace Slumber
             if (!AllowControl)
                 return;
 
-            float targetSpeed = MoveSpeed * PlayerAxis;
+            float targetSpeed = MoveSpeed * PlayerAxis.X;
 
             if (targetSpeed != 0)
                 Velocity.X = MoveToward(Velocity.X, targetSpeed, Acceleration);
@@ -134,7 +134,7 @@ namespace Slumber
 
         public void HandleDeceleration(float delta)
         {
-            Velocity.X = PlayerAxis == 0 ? MoveToward(Velocity.X, 0, Deceleration * delta) : Velocity.X;
+            Velocity.X = PlayerAxis.X == 0 ? MoveToward(Velocity.X, 0, Deceleration * delta) : Velocity.X;
         }
 
         public float MoveToward(float current, float target, float maxDelta)
@@ -215,7 +215,7 @@ namespace Slumber
 
         public void HandleWallSlide()
         {
-            if (PlayerAxis != 0 && IsOnWall && Velocity.Y > 0)
+            if (PlayerAxis.X != 0 && IsOnWall && Velocity.Y > 0)
                 wallSlideTriggered = true;
 
             if (!wallSlideTriggered)
@@ -256,14 +256,14 @@ namespace Slumber
             {
                 if (!isAttacking)
                 {
-                    if (PlayerAxis != 0)
+                    if (PlayerAxis.X != 0)
                         Sprite.PlayAnimation("Run");
                     else
                         Sprite.PlayAnimation("Idle");
                 }
                 else
                 {
-                    if (PlayerAxis != 0)
+                    if (PlayerAxis.X != 0)
                         Sprite.PlayAnimation("RunAttack");
                     else
                         Sprite.PlayAnimation("Attack" + attackCounter);
@@ -277,9 +277,9 @@ namespace Slumber
 
         private void FlipSprite()
         {
-            if (PlayerAxis > 0)
+            if (PlayerAxis.X > 0)
                 Sprite.LocalSpriteEffects = SpriteEffects.None;
-            else if (PlayerAxis < 0)
+            else if (PlayerAxis.X < 0)
                 Sprite.LocalSpriteEffects = SpriteEffects.FlipHorizontally;
         }
 
