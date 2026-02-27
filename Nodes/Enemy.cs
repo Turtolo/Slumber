@@ -100,8 +100,8 @@ public class Enemy : KinematicBody2D
     {
         base.SubmitCall();
 
-        RayRight.Ray.Draw();
-        RayLeft.Ray.Draw();
+        //RayRight.Ray.Draw();
+        //RayLeft.Ray.Draw();
 
         Engine.Screen.Call(new FontDrawCall
         {

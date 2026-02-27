@@ -14,24 +14,14 @@ public class DevStage : Stage
     {
         base.OnEnter();
 
+        Random rand = new Random();
+
         var o = PathHelper.Combine("Raw", "LevelData", "Dev.json");
 
         Player = Engine.Tree.Create<Player>().SetProperties(n =>
         {
             n.LocalPosition = new Vector2(160, 40);
         });   
-
-        Engine.Tree.Create<Enemy>().SetProperties(n =>
-        {
-            n.LocalPosition = new Vector2(160, -20);
-            n.Velocity.X = 80;
-        });
-
-        Engine.Tree.Create<Enemy>().SetProperties(n =>
-        {
-            n.LocalPosition = new Vector2(150, -20);
-            n.Velocity.X = 50;
-        });
 
         Engine.Tree.Create<Camera2D>().SetProperties(n =>
         {
@@ -41,12 +31,21 @@ public class DevStage : Stage
  
         Engine.Tree.Create<StaticBody2D>().SetProperties(n =>
         {
-            n.LocalPosition = new Vector2(0, 50);
+            n.LocalPosition = new Vector2(50, 50);
             n.AddChild(Engine.Tree.Create<CollisionShape2D>().SetProperties(c =>
             {
-                c.Shape = new RectangleShape2D(2000, 25);
+                c.Shape = new RectangleShape2D(1300, 25);
             }));
         });
+
+        for (int i = 0; i < 10; i++)
+        {
+            Engine.Tree.Create<Enemy>().SetProperties(n =>
+            {
+                n.LocalPosition = new Vector2(100 + i * 10, 40);
+                n.Velocity.X = rand.Next(i * 5, 101);
+            });
+        }
  
         Engine.Tree.Create<Node2D>().SetProperties(n =>
         {
@@ -76,7 +75,7 @@ public class DevStage : Stage
     {
         base.SubmitCall();
 
-        foreach(var c in Engine.Tree.GetAll<CollisionNode2D>())
+        foreach(var c in Engine.Tree.GetAll<PhysicsBody2D>())
         {
             if (c.CollisionShape == null)
                 continue;

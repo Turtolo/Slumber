@@ -281,7 +281,10 @@ namespace Slumber
 
             else
             {
-                Sprite.PlayAnimation("Attack");
+                if (Velocity.X == 0)
+                    Sprite.PlayAnimation("Attack");
+                else
+                    Sprite.PlayAnimation("RunAttack");
             }
 
             
@@ -324,7 +327,7 @@ namespace Slumber
             {
                 AttackArea.CollisionShape.Disabled = true;
                 isAttacking = false;
-
+                
                 if (attackBuffer)
                 {
                     attackBuffer = false;
