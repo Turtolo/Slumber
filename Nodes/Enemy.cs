@@ -18,7 +18,7 @@ public class Enemy : KinematicBody2D
     public float Gravity = 1300f;
     public float TerminalVelocity = 1200f;
 
-    public int Health = 10;
+    public int Health = 4;
 
     public int Direction = 1;
 
@@ -106,7 +106,7 @@ public class Enemy : KinematicBody2D
         Engine.Screen.Call(new FontDrawCall
         {
             Font = Engine.BitmapFont,
-            Text = $"Health: {Health}",
+            Text = $"{Health}",
             Position = new Vector2(GlobalPosition.X - 16, GlobalPosition.Y - 16)
         });
     }
@@ -134,7 +134,6 @@ public class Enemy : KinematicBody2D
             if (area is Area2D && area.GetParent() is Player && CanTakeDamage)
             {
                 TakeDamage(2);
-                Console.WriteLine("Yes");
             }
         }
 

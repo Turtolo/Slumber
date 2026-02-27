@@ -75,7 +75,7 @@ public class DevStage : Stage
     {
         base.SubmitCall();
 
-        foreach(var c in Engine.Tree.GetAll<PhysicsBody2D>())
+        foreach(var c in Engine.Tree.GetAll<StaticBody2D>())
         {
             if (c.CollisionShape == null)
                 continue;
