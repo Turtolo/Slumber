@@ -54,3 +54,5 @@
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Assets/Music/blizzard-445020.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Assets/Tileset/DevTileset.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Raw/LevelData/Dev.json
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Raw/Raw/GrassSpider.json
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Raw/WhiteEffect.fx

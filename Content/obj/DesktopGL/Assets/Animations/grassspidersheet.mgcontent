@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Animations/grassspidersheet.png</SourceFile>
-  <SourceTime>2025-12-06T14:04:29.1812083+01:00</SourceTime>
+  <SourceTime>2026-02-26T16:13:20.4793878+01:00</SourceTime>
   <DestFile>/Users/nilslauvstad/Documents/Project/Slumber/Content/bin/DesktopGL/Assets/Animations/grassspidersheet.xnb</DestFile>
-  <DestTime>2025-12-17T10:41:35.0835507+01:00</DestTime>
+  <DestTime>2026-02-26T18:40:39.0338193+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-10-20T16:25:32+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -47,6 +47,8 @@ namespace Slumber
 
         public AnimatedSprite2D Sprite;
 
+        public Area2D AttackArea;
+
         #endregion
 
         #region Constructors
@@ -77,6 +79,17 @@ namespace Slumber
             Sprite.IsLooping = true;
 
             LocalDepth = 5;
+
+            AttackArea = Engine.Tree.Create<Area2D>().SetProperties(n =>
+            {
+                n.AddChild(Engine.Tree.Create<CollisionShape2D>().SetProperties(c =>
+                {
+                    c.Shape = new CircleShape2D(20);
+                    c.Disabled = true;
+                }));
+                n.SetParent(this);
+                n.LocalPosition = new Vector2(50, 5);
+            });
         }
 
         #endregion
@@ -113,7 +126,6 @@ namespace Slumber
         public override void SubmitCall()
         {
             base.SubmitCall();
-
             //CollisionShape.Shape.Draw();
         }
 
@@ -252,9 +264,9 @@ namespace Slumber
 
         private void AnimateSprite()
         {
-            if (IsOnFloor)
+            if (!isAttacking)
             {
-                if (!isAttacking)
+                if (IsOnFloor)
                 {
                     if (PlayerAxis.X != 0)
                         Sprite.PlayAnimation("Run");
@@ -263,24 +275,30 @@ namespace Slumber
                 }
                 else
                 {
-                    if (PlayerAxis.X != 0)
-                        Sprite.PlayAnimation("RunAttack");
-                    else
-                        Sprite.PlayAnimation("Attack" + attackCounter);
+                    Sprite.PlayAnimation("Fall");
                 }
             }
+
             else
             {
-                Sprite.PlayAnimation("Fall");
+                Sprite.PlayAnimation("Attack");
             }
+
+            
         }
 
         private void FlipSprite()
         {
             if (PlayerAxis.X > 0)
+            {
                 Sprite.LocalSpriteEffects = SpriteEffects.None;
+                AttackArea.LocalPosition = new Vector2(50, 5);
+            }
             else if (PlayerAxis.X < 0)
+            {
                 Sprite.LocalSpriteEffects = SpriteEffects.FlipHorizontally;
+                AttackArea.LocalPosition = new Vector2(-35, 5);
+            }
         }
 
         #endregion
@@ -304,6 +322,7 @@ namespace Slumber
 
             if (isAttacking && Sprite.IsFinished)
             {
+                AttackArea.CollisionShape.Disabled = true;
                 isAttacking = false;
 
                 if (attackBuffer)
@@ -316,6 +335,7 @@ namespace Slumber
 
         public void Attack()
         {
+            AttackArea.CollisionShape.Disabled = false;
             attackCounter ++;
             isAttacking = true;
         }
