@@ -43,7 +43,7 @@ public class DevStage : Stage
             Engine.Tree.Create<Enemy>().SetProperties(n =>
             {
                 n.LocalPosition = new Vector2(100 + i * 10, 40);
-                n.Velocity.X = rand.Next(i * 5, 101);
+                n.Speed = rand.Next(i * 5, 101);
             });
         }
  
@@ -64,6 +64,8 @@ public class DevStage : Stage
     public override void PhysicsUpdate(float deltaTime)
     {
         base.PhysicsUpdate(deltaTime);
+
+        Console.WriteLine(Engine.Physics.Query(Engine.Tree.Get<KinematicBody2D>().Bounds).Count);
     }  
 
     public override void ProcessUpdate(float deltaTime)

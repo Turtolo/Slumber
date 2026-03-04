@@ -9,7 +9,6 @@
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/Content/Assets/Music/Cold_Heights_Ambient_01.ogg
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/Content/Assets/Music/Cold_Heights_Ambient_01.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/Content/Assets/Tileset/SlumberTilesetAtlas.xnb
-/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/Raw/LevelData/Level1.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/Raw/LevelData/Slumber.ogmo
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/Raw/Raw/PlayerModel3.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/Slumber
@@ -225,3 +224,8 @@
 /Users/nilslauvstad/Documents/Project/Slumber/obj/Release/net9.0/linux-x64/Slumber.pdb
 /Users/nilslauvstad/Documents/Project/Slumber/obj/Release/net9.0/linux-x64/Slumber.genruntimeconfig.cache
 /Users/nilslauvstad/Documents/Project/Slumber/obj/Release/net9.0/linux-x64/ref/Slumber.dll
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/Content/Assets/Tileset/DevTileset.xnb
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/Raw/LevelData/Dev.json
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/Raw/Raw/GrassSpider.json
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/Raw/WhiteEffect.fx
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/Content/Assets/Animations/PlayerModel3AtlasFeet.xnb

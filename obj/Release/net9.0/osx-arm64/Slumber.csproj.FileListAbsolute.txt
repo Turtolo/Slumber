@@ -5,7 +5,6 @@
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Content/Assets/ButtonBG.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Content/Assets/Fonts/Font.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Content/Assets/Tileset/SlumberTilesetAtlas.xnb
-/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Raw/LevelData/Level1.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Raw/LevelData/Slumber.ogmo
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Raw/Raw/PlayerModel3.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Slumber
@@ -225,3 +224,8 @@
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Content/Assets/Music/blizzard-445020.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Content/Assets/Music/Cold_Heights_Ambient_01.ogg
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Content/Assets/Music/Cold_Heights_Ambient_01.xnb
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Content/Assets/Tileset/DevTileset.xnb
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Raw/LevelData/Dev.json
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Raw/Raw/GrassSpider.json
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Raw/WhiteEffect.fx
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Content/Assets/Animations/PlayerModel3AtlasFeet.xnb

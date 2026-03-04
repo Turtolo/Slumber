@@ -1,6 +1,7 @@
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Slumber
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Content/Assets/Animations/grassspidersheet.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Content/Assets/Animations/PlayerModel3Atlas.xnb
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Content/Assets/Animations/PlayerModel3AtlasFeet.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Content/Assets/Backgrounds/HeightsBG.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Content/Assets/Backgrounds/HeightsBGNoMain.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Content/Assets/ButtonBG.xnb
@@ -9,10 +10,13 @@
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Content/Assets/Music/blizzard-445020.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Content/Assets/Music/Cold_Heights_Ambient_01.ogg
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Content/Assets/Music/Cold_Heights_Ambient_01.xnb
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Content/Assets/Tileset/DevTileset.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Content/Assets/Tileset/SlumberTilesetAtlas.xnb
-/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Raw/LevelData/Level1.json
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Raw/LevelData/Dev.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Raw/LevelData/Slumber.ogmo
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Raw/Raw/GrassSpider.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Raw/Raw/PlayerModel3.json
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Raw/WhiteEffect.fx
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Slumber.dll
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Slumber.deps.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/publish/Slumber.runtimeconfig.json

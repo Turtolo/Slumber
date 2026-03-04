@@ -37,6 +37,18 @@
 /processorParam:TextureFormat=Color
 /build:Assets/Animations/PlayerModel3Atlas.png
 
+#begin Assets/Animations/PlayerModel3AtlasFeet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Animations/PlayerModel3AtlasFeet.png
+
 #begin Assets/Backgrounds/HeightsBG.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -115,4 +127,10 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Assets/Tileset/SlumberTilesetAtlas.png
+
+#begin Assets/WhiteEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Assets/WhiteEffect.fx
 

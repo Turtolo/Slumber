@@ -1,6 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
-using Gum.DataTypes.Variables;
-using RenderingLibrary.Graphics;
 
 namespace Slumber;
 
@@ -9,11 +6,12 @@ public class Enemy : KinematicBody2D
     public AnimatedSprite2D Sprite;
     public Area2D TakeDamageArea;
 
+    public int Speed;
+
     public RayCast2D RayRight;
     public RayCast2D RayLeft;
 
     public MTexture MainTexture;
-    public MTexture WhiteTexture => MainTexture.CreateWhiteTexture();
 
     public float Gravity = 1300f;
     public float TerminalVelocity = 1200f;
@@ -29,7 +27,6 @@ public class Enemy : KinematicBody2D
     public override void OnEnter()
     {
         base.OnEnter();
-
         MainTexture = new MTexture("Assets/Animations/grassspidersheet");
 
         var animations = AsepriteLoader.LoadAnimations
@@ -44,6 +41,7 @@ public class Enemy : KinematicBody2D
             n.Atlas = animations;
             n.IsLooping = true;
             n.LocalPosition = new Vector2(8, 8);
+            n.LocalShader = Engine.Resource.Load<Effect>("Assets/WhiteEffect").Clone();;
         });
 
         Engine.Tree.Create<CollisionShape2D>().SetProperties(n =>
@@ -89,6 +87,8 @@ public class Enemy : KinematicBody2D
         base.PhysicsUpdate(delta);
 
         Sprite.PlayAnimation("run");
+
+        Sprite.LocalShader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());    
     }
 
     public override void ProcessUpdate(float delta)
@@ -103,7 +103,7 @@ public class Enemy : KinematicBody2D
         //RayRight.Ray.Draw();
         //RayLeft.Ray.Draw();
 
-        Engine.Screen.Call(new FontDrawCall
+        Engine.Canvas.Call(new FontDrawCall
         {
             Font = Engine.BitmapFont,
             Text = $"{Health}",
@@ -118,7 +118,7 @@ public class Enemy : KinematicBody2D
 
     public void Move(float delta)
     {
-        Velocity.X *= Direction;
+        Velocity.X = Speed * Direction;
 
         if (Direction == 1 && !RayRight.IsColliding)
             Direction = -1;
@@ -153,11 +153,18 @@ public class Enemy : KinematicBody2D
     {
         Health -= amount;
         CanTakeDamage = false;
-        Engine.Timer.Wait(0.3f, () => CanTakeDamage = true);
-    }
+        Sprite.LocalShader.Parameters["enabled"].SetValue(1);
+
+        Engine.Timer.Wait(0.15f, () =>
+        {
+            CanTakeDamage = true;
+            Sprite.LocalShader.Parameters["enabled"].SetValue(0);
+        });
+}
     
     public void ApplyGravity(float delta)
     {
+
         if (!IsOnFloor)
         {
             Velocity.Y = MathF.Min(

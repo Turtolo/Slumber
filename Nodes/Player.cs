@@ -46,6 +46,7 @@ namespace Slumber
         #region Components
 
         public AnimatedSprite2D Sprite;
+        public AnimatedSprite2D FeetSprite;
 
         public Area2D AttackArea;
 
@@ -70,13 +71,26 @@ namespace Slumber
                 PathHelper.Combine("Raw/Raw/PlayerModel3.json")
             );
 
-            Sprite = Engine.Tree.Create<AnimatedSprite2D>();
+            var feetAnimations = AsepriteLoader.LoadAnimations(
+                new("Assets/Animations/PlayerModel3AtlasFeet"),
+                PathHelper.Combine("Raw/Raw/PlayerModel3.json")
+            );
 
-            Sprite.SetParent(this);
+            FeetSprite = Engine.Tree.Create<AnimatedSprite2D>().SetProperties(n =>
+            {
+                n.SetParent(this);
+                n.Atlas = feetAnimations;
+                n.LocalPosition = new Vector2(6, 9);
+                n.IsLooping = true;
+            });
 
-            Sprite.Atlas = animations;
-            Sprite.LocalPosition = new Vector2(6, 9);
-            Sprite.IsLooping = true;
+            Sprite = Engine.Tree.Create<AnimatedSprite2D>().SetProperties(n =>
+            {
+                n.SetParent(this);
+                n.Atlas = animations;
+                n.LocalPosition = new Vector2(6, 9);
+                n.IsLooping = true;
+            });
 
             LocalDepth = 5;
 
@@ -84,7 +98,7 @@ namespace Slumber
             {
                 n.AddChild(Engine.Tree.Create<CollisionShape2D>().SetProperties(c =>
                 {
-                    c.Shape = new CircleShape2D(20);
+                    c.Shape = new CircleShape2D(30);
                     c.Disabled = true;
                 }));
                 n.SetParent(this);
@@ -125,7 +139,7 @@ namespace Slumber
 
         public override void SubmitCall()
         {
-            base.SubmitCall();
+            base.SubmitCall(); 
             //CollisionShape.Shape.Draw();
         }
 
@@ -264,6 +278,19 @@ namespace Slumber
 
         private void AnimateSprite()
         {
+
+            if (IsOnFloor)
+            {
+                if (PlayerAxis.X != 0)
+                    FeetSprite.PlayAnimation("Run");
+                else
+                    FeetSprite.PlayAnimation("Idle");
+            }
+            else 
+            {
+                FeetSprite.PlayAnimation("Fall");
+            }
+
             if (!isAttacking)
             {
                 if (IsOnFloor)
@@ -281,10 +308,7 @@ namespace Slumber
 
             else
             {
-                if (Velocity.X == 0)
-                    Sprite.PlayAnimation("Attack");
-                else
-                    Sprite.PlayAnimation("RunAttack");
+                Sprite.PlayAnimation("Attack");
             }
 
             
@@ -295,10 +319,12 @@ namespace Slumber
             if (PlayerAxis.X > 0)
             {
                 Sprite.LocalSpriteEffects = SpriteEffects.None;
+                FeetSprite.LocalSpriteEffects = SpriteEffects.None;
                 AttackArea.LocalPosition = new Vector2(50, 5);
             }
             else if (PlayerAxis.X < 0)
             {
+                FeetSprite.LocalSpriteEffects = SpriteEffects.FlipHorizontally;
                 Sprite.LocalSpriteEffects = SpriteEffects.FlipHorizontally;
                 AttackArea.LocalPosition = new Vector2(-35, 5);
             }
