@@ -102,7 +102,7 @@ namespace Slumber
                     c.Disabled = true;
                 }));
                 n.SetParent(this);
-                n.LocalPosition = new Vector2(50, 5);
+                n.LocalPosition = new Vector2(30, 5);
             });
         }
 
@@ -140,7 +140,8 @@ namespace Slumber
         public override void SubmitCall()
         {
             base.SubmitCall(); 
-            //CollisionShape.Shape.Draw();
+            CollisionShape.Shape.Draw(Color.Blue, 1);
+            AttackArea.CollisionShape.Shape.Draw(Color.Blue, 1);
         }
 
         #endregion
@@ -320,13 +321,13 @@ namespace Slumber
             {
                 Sprite.LocalSpriteEffects = SpriteEffects.None;
                 FeetSprite.LocalSpriteEffects = SpriteEffects.None;
-                AttackArea.LocalPosition = new Vector2(50, 5);
+                AttackArea.LocalPosition = new Vector2(30, 5);
             }
             else if (PlayerAxis.X < 0)
             {
                 FeetSprite.LocalSpriteEffects = SpriteEffects.FlipHorizontally;
                 Sprite.LocalSpriteEffects = SpriteEffects.FlipHorizontally;
-                AttackArea.LocalPosition = new Vector2(-35, 5);
+                AttackArea.LocalPosition = new Vector2(-15, 5);
             }
         }
 

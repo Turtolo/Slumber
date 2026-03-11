@@ -1,9 +1,4 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-
-namespace Slumber;
+ namespace Slumber;
 
 public class DevStage : Stage
 {    
@@ -38,15 +33,26 @@ public class DevStage : Stage
             }));
         });
 
-        for (int i = 0; i < 10; i++)
+        Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+        {
+            n.Properties = EmitterProperties.Identity with
+            {
+                Interval = 0.01f,
+                EmitCount = 10,
+                AngleVariance = 180f
+            };
+        });
+
+
+        for (int i = 0; i < 20; i++)
         {
             Engine.Tree.Create<Enemy>().SetProperties(n =>
             {
                 n.LocalPosition = new Vector2(100 + i * 10, 40);
-                n.Speed = rand.Next(i * 5, 101);
+                n.Speed = rand.Next(1, 100);
             });
         }
- 
+
         Engine.Tree.Create<Node2D>().SetProperties(n =>
         {
             n.AddChild(Engine.Tree.Create<ParallaxLayer>().SetProperties(n =>
@@ -64,8 +70,6 @@ public class DevStage : Stage
     public override void PhysicsUpdate(float deltaTime)
     {
         base.PhysicsUpdate(deltaTime);
-
-        Console.WriteLine(Engine.Physics.Query(Engine.Tree.Get<KinematicBody2D>().Bounds).Count);
     }  
 
     public override void ProcessUpdate(float deltaTime)
@@ -76,6 +80,12 @@ public class DevStage : Stage
     public override void SubmitCall()
     {
         base.SubmitCall();
+
+        Engine.Canvas.Call(new FontDrawCall
+        {
+            Font = Engine.BitmapFont,
+            Text = Engine.FPS.ToString()
+        });
 
         foreach(var c in Engine.Tree.GetAll<StaticBody2D>())
         {
