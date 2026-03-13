@@ -18,9 +18,9 @@ namespace Slumber
         public float WallJumpHorizontalSpeed = 200f;
         public float WallJumpVerticalSpeed = 300f;
 
-        public float CoyoteTime = 0.12f;
-        public float JumpBufferTime = 0.2f;
-        public float AttackBufferTime = 0.2f;
+        public TimeSpan CoyoteTime = TimeSpan.FromSeconds(0.12f);
+        public TimeSpan JumpBufferTime = TimeSpan.FromSeconds(0.2f);
+        public TimeSpan AttackBufferTime = TimeSpan.FromMilliseconds(0.2f);
 
         public bool AllowControl = true;
 
@@ -98,7 +98,7 @@ namespace Slumber
             {
                 n.AddChild(Engine.Tree.Create<CollisionShape2D>().SetProperties(c =>
                 {
-                    c.Shape = new CircleShape2D(30);
+                    c.Shape = new CircleShape2D(32);
                     c.Disabled = true;
                 }));
                 n.SetParent(this);
@@ -140,8 +140,8 @@ namespace Slumber
         public override void SubmitCall()
         {
             base.SubmitCall(); 
-            CollisionShape.Shape.Draw(Color.Blue, 1);
-            AttackArea.CollisionShape.Shape.Draw(Color.Blue, 1);
+            //CollisionShape.Shape.Draw(Color.Blue, 1);
+            //AttackArea.CollisionShape.Shape.Draw(Color.Blue, 1);
         }
 
         #endregion
@@ -263,7 +263,7 @@ namespace Slumber
         public void WallJump()
         {
             AllowControl = false;
-            Engine.Timer.Wait(0.06f, () => AllowControl = true);
+            Engine.Timer.Wait(TimeSpan.FromSeconds(0.06f), () => AllowControl = true);
 
             if (PlayerDirection == 1)
                 Velocity.X = -WallJumpHorizontalSpeed;

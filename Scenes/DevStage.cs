@@ -33,17 +33,6 @@ public class DevStage : Stage
             }));
         });
 
-        Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
-        {
-            n.Properties = EmitterProperties.Identity with
-            {
-                Interval = 0.01f,
-                EmitCount = 10,
-                AngleVariance = 180f
-            };
-        });
-
-
         for (int i = 0; i < 20; i++)
         {
             Engine.Tree.Create<Enemy>().SetProperties(n =>
@@ -75,6 +64,15 @@ public class DevStage : Stage
     public override void ProcessUpdate(float deltaTime)
     {
         base.ProcessUpdate(deltaTime);
+
+        if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.Y))
+        {
+            Engine.Tree.Create<Enemy>().SetProperties(n =>
+            {
+                n.Speed = 60;
+                n.LocalPosition = new Vector2(Engine.Tree.Get<Player>().LocalPosition.X + 20, Engine.Tree.Get<Player>().LocalPosition.Y);
+            });
+        }
     }
 
     public override void SubmitCall()

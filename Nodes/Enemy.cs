@@ -5,6 +5,7 @@ public class Enemy : KinematicBody2D
 {
     public AnimatedSprite2D Sprite;
     public Area2D TakeDamageArea;
+    public ParticleEmitter2D Emitter;
 
     public int Speed;
 
@@ -47,6 +48,21 @@ public class Enemy : KinematicBody2D
         Engine.Tree.Create<CollisionShape2D>().SetProperties(n =>
         {
             n.Shape = new RectangleShape2D(16, 16);
+            n.SetParent(this);
+        });
+
+        Emitter = Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+        {
+            n.Properties = EmitterProperties.Identity with
+            {
+                EmitCount = 0,
+                AngleVariance = 180f,
+                ParticleProperties = ParticleProperties.Identity with
+                {
+                    ColorStart = Color.DarkSlateBlue,
+                    ColorEnd = Color.MediumPurple
+                }
+            };
             n.SetParent(this);
         });
 
@@ -138,7 +154,14 @@ public class Enemy : KinematicBody2D
         }
 
         if (Health <= 0) 
+        {
+            Emitter.Emit(10);
+            Emitter.SetParent(null);
+
+            Engine.Timer.Wait(TimeSpan.FromSeconds(0.5f), () => Emitter.QueueFree());
+
             QueueFree();
+        }
     }
 
     public void Flip()
@@ -155,7 +178,7 @@ public class Enemy : KinematicBody2D
         CanTakeDamage = false;
         Sprite.LocalShader.Parameters["enabled"].SetValue(1);
 
-        Engine.Timer.Wait(0.15f, () =>
+        Engine.Timer.Wait(TimeSpan.FromSeconds(0.15f), () =>
         {
             CanTakeDamage = true;
             Sprite.LocalShader.Parameters["enabled"].SetValue(0);
