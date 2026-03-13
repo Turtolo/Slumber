@@ -69,7 +69,7 @@ public class DevStage : Stage
         {
             Engine.Tree.Create<Enemy>().SetProperties(n =>
             {
-                n.Speed = 60;
+                n.Speed = MathM.Random.Next(60, 100);
                 n.LocalPosition = new Vector2(Engine.Tree.Get<Player>().LocalPosition.X + 20, Engine.Tree.Get<Player>().LocalPosition.Y);
             });
         }
