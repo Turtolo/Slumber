@@ -227,5 +227,5 @@
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Content/Assets/Tileset/DevTileset.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Raw/LevelData/Dev.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Raw/Raw/GrassSpider.json
-/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Raw/WhiteEffect.fx
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Content/Assets/Animations/PlayerModel3AtlasFeet.xnb
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/osx-arm64/Content/Assets/WhiteEffect.xnb

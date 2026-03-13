@@ -12,11 +12,11 @@
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/publish/Content/Assets/Music/Cold_Heights_Ambient_01.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/publish/Content/Assets/Tileset/DevTileset.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/publish/Content/Assets/Tileset/SlumberTilesetAtlas.xnb
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/publish/Content/Assets/WhiteEffect.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/publish/Raw/LevelData/Dev.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/publish/Raw/LevelData/Slumber.ogmo
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/publish/Raw/Raw/GrassSpider.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/publish/Raw/Raw/PlayerModel3.json
-/Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/publish/Raw/WhiteEffect.fx
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/publish/Slumber.dll
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/publish/Slumber.deps.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Release/net9.0/linux-x64/publish/Slumber.runtimeconfig.json
