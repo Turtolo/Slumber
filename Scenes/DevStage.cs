@@ -5,6 +5,8 @@ public class DevStage : Stage
     public DevStage() {}
     public Player Player;
 
+    Vector2 position = Vector2.Zero;
+
     public override void OnEnter()
     {
         base.OnEnter();
@@ -54,6 +56,22 @@ public class DevStage : Stage
                 n.Texture = new MTexture("Assets/Backgrounds/HeightsBG");
             }));
         });
+
+        Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+        {
+            n.Properties = EmitterProperties.Identity with
+            {
+                
+            };
+        });
+
+        Engine.Tree.CreateTween(
+            setter: v => position = v,
+            start: new Vector2(0, 0),
+            end: new Vector2(400, 200),
+            duration: 1.5f,
+            lerpFunc: Vector2.Lerp
+        );
     }
 
     public override void PhysicsUpdate(float deltaTime)
@@ -73,6 +91,8 @@ public class DevStage : Stage
                 n.LocalPosition = new Vector2(Engine.Tree.Get<Player>().LocalPosition.X + 20, Engine.Tree.Get<Player>().LocalPosition.Y);
             });
         }
+
+       Console.WriteLine(position);
     }
 
     public override void SubmitCall()
