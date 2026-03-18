@@ -1,9 +1,14 @@
- namespace Slumber;
+using System.Xml.Linq;
+
+namespace Slumber;
 
 public class DevStage : Stage
 {    
     public DevStage() {}
     public Player Player;
+
+    ParticleEmitter2D Emitter1;
+    ParticleEmitter2D Emitter2;
 
     Vector2 position = Vector2.Zero;
 
@@ -22,7 +27,7 @@ public class DevStage : Stage
 
         Engine.Tree.Create<Camera2D>().SetProperties(n =>
         {
-            n.LocalPosition = Player.GlobalPosition;
+            n.LocalPosition = new Vector2(0, 40);
             n.SetParent(Player);
         }); 
  
@@ -57,20 +62,45 @@ public class DevStage : Stage
             }));
         });
 
-        Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+        var p = EmitterProperties.Identity with
         {
-            n.Properties = EmitterProperties.Identity with
+            ParticleProperties = ParticleProperties.Identity with
             {
-                
-            };
+                ColorStart = Color.White,
+                ColorEnd = Color.White,
+                SizeStart = 3f,
+                SizeEnd = 3f,
+                Lifespan = 6f,
+                Speed = 20f,
+                Angle = MathHelper.ToRadians(45f)
+            },
+            Angle = MathHelper.ToRadians(45f),
+            AngleVariance = MathHelper.ToRadians(80f),
+            LifespanMin = 8f,
+            LifespanMax = 32f,
+            SpeedMin = 10f,
+            SpeedMax = 30f,
+            Interval = 0.02f,
+            EmitCount = 0
+        };
+        
+
+        Emitter1 = Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+        {
+            n.Properties = p;
+        });
+
+        Emitter2 = Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+        {
+            n.Properties = p;
         });
 
         Engine.Tree.CreateTween(
-            setter: v => position = v,
-            start: new Vector2(0, 0),
-            end: new Vector2(400, 200),
-            duration: 1.5f,
-            lerpFunc: Vector2.Lerp
+            v => position = v,
+            new Vector2(0, 0),
+            new Vector2(400, 200),
+            1.5f,
+            Vector2.Lerp
         );
     }
 
@@ -83,16 +113,21 @@ public class DevStage : Stage
     {
         base.ProcessUpdate(deltaTime);
 
+        Console.WriteLine(Engine.Tree.Get<Camera2D>().Bounds);
+
         if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.Y))
         {
             Engine.Tree.Create<Enemy>().SetProperties(n =>
             {
-                n.Speed = MathM.Random.Next(60, 100);
+                n.Speed = MonolithMath.Random.Next(60, 100);
                 n.LocalPosition = new Vector2(Engine.Tree.Get<Player>().LocalPosition.X + 20, Engine.Tree.Get<Player>().LocalPosition.Y);
             });
         }
 
-       Console.WriteLine(position);
+       var c = Engine.Tree.Get<Camera2D>();
+
+       Emitter1.Emit(new Vector2(MonolithMath.Random.Next(c.Bounds.Left - 320, c.Bounds.Right - 320), c.Bounds.Top - 20), 3);
+       Emitter2.Emit(new Vector2(MonolithMath.Random.Next(c.Bounds.Right - 320, c.Bounds.Right + 320), c.Bounds.Top - 20), 3);
     }
 
     public override void SubmitCall()
@@ -102,8 +137,10 @@ public class DevStage : Stage
         Engine.Canvas.Call(new FontDrawCall
         {
             Font = Engine.BitmapFont,
-            Text = Engine.FPS.ToString()
-        });
+            Text = Math.Round(Engine.FPS).ToString()
+        }, DrawLayer.UI);
+
+        Engine.Tree.Get<Camera2D>().Bounds.ToShape().Draw(Color.Red, 2);
 
         foreach(var c in Engine.Tree.GetAll<StaticBody2D>())
         {

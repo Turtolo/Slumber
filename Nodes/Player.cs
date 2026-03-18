@@ -352,7 +352,7 @@ namespace Slumber
 
             if (isAttacking && Sprite.IsFinished)
             {
-                AttackArea.CollisionShape.Disabled = true;
+                AttackArea.Get<CollisionShape2D>().Disabled = true;
                 isAttacking = false;
                 
                 if (attackBuffer)
@@ -365,7 +365,7 @@ namespace Slumber
 
         public void Attack()
         {
-            AttackArea.CollisionShape.Disabled = false;
+            AttackArea.Get<CollisionShape2D>().Disabled = false;
             attackCounter ++;
             isAttacking = true;
         }
