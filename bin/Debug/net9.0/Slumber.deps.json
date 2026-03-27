@@ -10,6 +10,7 @@
         "dependencies": {
           "Gum.MonoGame": "2025.9.27.1",
           "MonoGame.Framework.DesktopGL": "3.8.4.1",
+          "MonoTile": "1.0.0",
           "Monolith": "1.0.0"
         },
         "runtime": {
@@ -172,6 +173,14 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "MonoTile/1.0.0": {
+        "runtime": {
+          "MonoTile.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -245,6 +254,11 @@
       "hashPath": "textcopy.6.2.1.nupkg.sha512"
     },
     "Monolith/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MonoTile/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

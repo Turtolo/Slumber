@@ -13,7 +13,7 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin Assets/Animations/grassspidersheet.png
+#begin Graphics/Atlas/PlayerModel3AtlasFeet.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -23,9 +23,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Assets/Animations/grassspidersheet.png
+/build:Graphics/Atlas/PlayerModel3AtlasFeet.png
 
-#begin Assets/Animations/PlayerModel3Atlas.png
+#begin Graphics/Atlas/grassspidersheet.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -35,9 +35,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Assets/Animations/PlayerModel3Atlas.png
+/build:Graphics/Atlas/grassspidersheet.png
 
-#begin Assets/Animations/PlayerModel3AtlasFeet.png
+#begin Graphics/Atlas/PlayerModel3Atlas.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -47,9 +47,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Assets/Animations/PlayerModel3AtlasFeet.png
+/build:Graphics/Atlas/PlayerModel3Atlas.png
 
-#begin Assets/Backgrounds/HeightsBG.png
+#begin Graphics/Background/HeightsBG.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -59,9 +59,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Assets/Backgrounds/HeightsBG.png
+/build:Graphics/Background/HeightsBG.png
 
-#begin Assets/Backgrounds/HeightsBGNoMain.png
+#begin Graphics/Background/HeightsBGNoMain.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -71,9 +71,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Assets/Backgrounds/HeightsBGNoMain.png
+/build:Graphics/Background/HeightsBGNoMain.png
 
-#begin Assets/ButtonBG.png
+#begin Graphics/Atlas/SlumberTilesetAtlas.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -83,28 +83,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Assets/ButtonBG.png
+/build:Graphics/Atlas/SlumberTilesetAtlas.png
 
-#begin Assets/Fonts/Font.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Assets/Fonts/Font.spritefont
-
-#begin Assets/Music/blizzard-445020.mp3
-/importer:Mp3Importer
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:Assets/Music/blizzard-445020.mp3
-
-#begin Assets/Music/Cold_Heights_Ambient_01.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Assets/Music/Cold_Heights_Ambient_01.mp3
-
-#begin Assets/Tileset/DevTileset.png
+#begin Graphics/Atlas/DevTileset.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -114,9 +95,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Assets/Tileset/DevTileset.png
+/build:Graphics/Atlas/DevTileset.png
 
-#begin Assets/Tileset/SlumberTilesetAtlas.png
+#begin Maps/Stage1/spritesheet.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -126,11 +107,34 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Assets/Tileset/SlumberTilesetAtlas.png
+/build:Maps/Stage1/spritesheet.png
 
-#begin Assets/WhiteEffect.fx
-/importer:EffectImporter
-/processor:EffectProcessor
-/processorParam:DebugMode=Auto
-/build:Assets/WhiteEffect.fx
+#begin Maps/Stage2/spritesheet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Maps/Stage2/spritesheet.png
 
+#begin Maps/Stage1/map.tmx
+/copy:Maps/Stage1/map.tmx
+
+#begin Maps/Stage2/map.tmx
+/copy:Maps/Stage2/map.tmx
+
+#begin Graphics/Atlas/EagleAtlas.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphics/Atlas/EagleAtlas.png

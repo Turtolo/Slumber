@@ -67,12 +67,12 @@ namespace Slumber
 
 
             var animations = AsepriteLoader.LoadAnimations(
-                new("Assets/Animations/PlayerModel3Atlas"),
+                Engine.Resource.Load<MTexture>("Graphics/Atlas/PlayerModel3Atlas"),
                 PathHelper.Combine("Raw/Raw/PlayerModel3.json")
             );
 
             var feetAnimations = AsepriteLoader.LoadAnimations(
-                new("Assets/Animations/PlayerModel3AtlasFeet"),
+                Engine.Resource.Load<MTexture>("Graphics/Atlas/PlayerModel3AtlasFeet"),
                 PathHelper.Combine("Raw/Raw/PlayerModel3.json")
             );
 
@@ -311,8 +311,6 @@ namespace Slumber
             {
                 Sprite.PlayAnimation("Attack");
             }
-
-            
         }
 
         private void FlipSprite()

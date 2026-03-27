@@ -102,6 +102,8 @@ public class DevStage : Stage
             1.5f,
             Vector2.Lerp
         );
+
+        
     }
 
     public override void PhysicsUpdate(float deltaTime)
@@ -112,8 +114,6 @@ public class DevStage : Stage
     public override void ProcessUpdate(float deltaTime)
     {
         base.ProcessUpdate(deltaTime);
-
-        Console.WriteLine(Engine.Tree.Get<Camera2D>().Bounds);
 
         if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.Y))
         {
