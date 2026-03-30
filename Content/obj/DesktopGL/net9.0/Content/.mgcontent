@@ -11,9 +11,9 @@
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Background/HeightsBGNoMain.png</File>
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/SlumberTilesetAtlas.png</File>
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/DevTileset.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Maps/Stage1/spritesheet.png</File>
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Maps/Stage2/spritesheet.png</File>
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/EagleAtlas.png</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Maps/Stage1/spritesheet.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

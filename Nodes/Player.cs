@@ -142,6 +142,12 @@ namespace Slumber
             base.SubmitCall(); 
             //CollisionShape.Shape.Draw(Color.Blue, 1);
             //AttackArea.CollisionShape.Shape.Draw(Color.Blue, 1);
+
+            Engine.Canvas.Call(new FontDrawCall
+            {
+                Font = Engine.BitmapFont,
+                Text = GlobalPosition.ToString()
+            },DrawLayer.UI);
         }
 
         #endregion
