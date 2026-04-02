@@ -18,9 +18,9 @@ namespace Slumber
         public float WallJumpHorizontalSpeed = 200f;
         public float WallJumpVerticalSpeed = 300f;
 
-        public TimeSpan CoyoteTime = TimeSpan.FromSeconds(0.12f);
+        public TimeSpan CoyoteTime = TimeSpan.FromSeconds(0.6f);
         public TimeSpan JumpBufferTime = TimeSpan.FromSeconds(0.2f);
-        public TimeSpan AttackBufferTime = TimeSpan.FromMilliseconds(0.2f);
+        public TimeSpan AttackBufferTime = TimeSpan.FromSeconds(0.2f);
 
         public bool AllowControl = true;
 
@@ -124,6 +124,8 @@ namespace Slumber
             ApplyGravity(delta);
             
             base.PhysicsUpdate(delta);
+
+            Console.WriteLine($"{GlobalPosition} Floor State; {IsOnFloor}");
         }
 
         public override void ProcessUpdate(float delta)

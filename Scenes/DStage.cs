@@ -12,37 +12,22 @@ public class DStage : Stage
 {
     public DStage() {}
 
-
     public override void OnEnter()
     {
         base.OnEnter();
 
 
-        //Map.LoadMap("Content/Maps/Stage1/map.tmx");
+        Map.LoadMap("Content/Maps/Stage1/map.tmx");
 
-        
+        Engine.Tree.Get<Tilemap>().SetProperties(n =>
+        {
+            n.LocalPosition = Vector2.Zero;
+        });
+
  
         Engine.Tree.Create<Player>().SetProperties(n =>
         {
-            n.LocalPosition = new Vector2(130, 50);
-        });
-
-        Engine.Tree.Create<StaticBody2D>().SetProperties(n =>
-        {
-            n.AddChild(Engine.Tree.Create<CollisionShape2D>().SetProperties(c =>
-            {
-                c.Shape = new RectangleShape2D(200, 20);
-            }));
-            n.LocalPosition = new Vector2(100, 80);
-        });
-
-        Engine.Tree.Create<StaticBody2D>().SetProperties(n =>
-        {
-            n.AddChild(Engine.Tree.Create<CollisionShape2D>().SetProperties(c =>
-            {
-                c.Shape = new RectangleShape2D(200, 20);
-            }));
-            n.LocalPosition = new Vector2(300, 130);
+            n.LocalPosition = new Vector2(0, -50);
         });
 
 
@@ -68,17 +53,6 @@ public class DStage : Stage
     public override void SubmitCall()
     {
         base.SubmitCall();
-
-        foreach (var c in Engine.Tree.GetAll<CollisionShape2D>())
-        {
-            Engine.Canvas.Call(new TextureDrawCall
-            {
-                Texture = Engine.Pixel,
-                Scale = new Vector2(c.Shape.Size.Width, c.Shape.Size.Height),
-                Color = Color.Blue,
-                Position = c.GlobalPosition
-            });
-        }
     }
 
     public override void OnExit()
