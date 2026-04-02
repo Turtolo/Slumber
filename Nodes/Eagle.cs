@@ -5,13 +5,16 @@ namespace Slumber;
 
 public class Eagle : Node2D
 {
-    public Sprite2D Sprite;
+    public AnimatedSprite2D Sprite;
 
     public Node2D TargetNode;
 
     public int[,] CSV;
 
     public Path2D Path;
+
+    private float pathTimer = 0f;
+    private float pathInterval = 0.5f;
 
     public override void OnEnter()
     {
@@ -24,13 +27,14 @@ public class Eagle : Node2D
 
         var animations = AsepriteLoader.LoadAnimations(
             Engine.Resource.Load<MTexture>("Graphics/Atlas/EagleAtlas"),
-            PathHelper.Combine("Raw/Raw/Eagle.json")
+            PathTools.Combine("Raw/Raw/Eagle.json")
         );
 
-        Sprite = Engine.Tree.Create<Sprite2D>().SetProperties(n =>
+        Sprite = Engine.Tree.Create<AnimatedSprite2D>().SetProperties(n =>
         {
             n.SetParent(this);
-            n.Texture = Engine.Pixel;
+            n.Atlas = animations;
+            n.IsLooping = true;
         });
     }
 
@@ -38,10 +42,15 @@ public class Eagle : Node2D
     {
         base.PhysicsUpdate(delta);
 
-        //Sprite.PlayAnimation("Flying");
+        Sprite.PlayAnimation("Flying");
 
-        if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.F))
+        pathTimer -= delta;
+
+        if (pathTimer <= 0f)
+        {
             UpdatePath();
+            pathTimer = pathInterval;
+        }
     }
 
     public override void ProcessUpdate(float delta)
@@ -71,8 +80,8 @@ public class Eagle : Node2D
         var startInPlaneCords = new Point(thisCords.X / 16, thisCords.Y / 16);
         var goalInPlaneCords = new Point(tarCords.X / 16, tarCords.Y / 16).FindNearestSafeTile(CSV);
 
-        var path = AStar.GetPath(CSV, startInPlaneCords, goalInPlaneCords).ToWorldCords(16).ToVec2().ToArray();
-                
+        var path = AStar.GetPath(CSV, startInPlaneCords, goalInPlaneCords).ToWorldCords(16, 16).ToVec2().ToArray();
+        
         Path.SetPath(path);
 
     }

@@ -41,7 +41,6 @@
 /Users/nilslauvstad/Documents/Project/Slumber/obj/Debug/net9.0/Slumber.genruntimeconfig.cache
 /Users/nilslauvstad/Documents/Project/Slumber/obj/Debug/net9.0/ref/Slumber.dll
 /Users/nilslauvstad/Documents/Project/Slumber/obj/Debug/net9.0/Slumber.sourcelink.json
-/Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Assets/Music/blizzard-445020.ogg
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Raw/LevelData/Dev.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Raw/Raw/GrassSpider.json
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Raw/LevelData/Stage1.csv

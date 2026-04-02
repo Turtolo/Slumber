@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Slumber")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73567c1f38b1e453667ff835b18b40db31d38e13")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3610d60b66ecafd91d8816486102bf1a5d425d13")]
 [assembly: System.Reflection.AssemblyProductAttribute("Slumber")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Slumber")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

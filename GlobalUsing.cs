@@ -2,7 +2,7 @@
 global using Monolith;
 global using Monolith.Geometry;
 global using Monolith.Graphics;
-global using Monolith.Helpers;
+global using Monolith.Tools;
 global using Monolith.Input;
 global using Monolith.IO;
 global using Monolith.Managers;

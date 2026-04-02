@@ -4,22 +4,18 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Animations/grassspidersheet.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Animations/PlayerModel3Atlas.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Animations/PlayerModel3AtlasFeet.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Backgrounds/HeightsBG.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Backgrounds/HeightsBGNoMain.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/ButtonBG.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Fonts/Font.spritefont</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Music/blizzard-445020.mp3</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Music/Cold_Heights_Ambient_01.mp3</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Tileset/DevTileset.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/Tileset/SlumberTilesetAtlas.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Assets/WhiteEffect.fx</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/PlayerModel3AtlasFeet.png</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/grassspidersheet.png</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/PlayerModel3Atlas.png</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Background/HeightsBG.png</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Background/HeightsBGNoMain.png</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/SlumberTilesetAtlas.png</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/DevTileset.png</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Maps/Stage2/spritesheet.png</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/EagleAtlas.png</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Maps/Stage1/spritesheet.png</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

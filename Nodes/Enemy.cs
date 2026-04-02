@@ -33,7 +33,7 @@ public class Enemy : KinematicBody2D
         var animations = AsepriteLoader.LoadAnimations
         (
             MainTexture,
-            PathHelper.Combine("Raw/Raw/GrassSpider.json")
+            PathTools.Combine("Raw/Raw/GrassSpider.json")
         );
 
         Sprite = Engine.Tree.Create<AnimatedSprite2D>().SetProperties(n =>

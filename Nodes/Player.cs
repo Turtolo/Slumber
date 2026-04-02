@@ -65,15 +65,14 @@ namespace Slumber
 
             c.SetParent(this);
 
-
             var animations = AsepriteLoader.LoadAnimations(
                 Engine.Resource.Load<MTexture>("Graphics/Atlas/PlayerModel3Atlas"),
-                PathHelper.Combine("Raw/Raw/PlayerModel3.json")
+                PathTools.Combine("Raw/Raw/PlayerModel3.json")
             );
 
             var feetAnimations = AsepriteLoader.LoadAnimations(
                 Engine.Resource.Load<MTexture>("Graphics/Atlas/PlayerModel3AtlasFeet"),
-                PathHelper.Combine("Raw/Raw/PlayerModel3.json")
+                PathTools.Combine("Raw/Raw/PlayerModel3.json")
             );
 
             FeetSprite = Engine.Tree.Create<AnimatedSprite2D>().SetProperties(n =>
@@ -82,6 +81,7 @@ namespace Slumber
                 n.Atlas = feetAnimations;
                 n.LocalPosition = new Vector2(6, 9);
                 n.IsLooping = true;
+                n.LocalVisible = false;
             });
 
             Sprite = Engine.Tree.Create<AnimatedSprite2D>().SetProperties(n =>
@@ -147,6 +147,13 @@ namespace Slumber
             {
                 Font = Engine.BitmapFont,
                 Text = GlobalPosition.ToString()
+            },DrawLayer.UI);
+
+            Engine.Canvas.Call(new FontDrawCall
+            {
+                Position = new Vector2(0, 20),
+                Font = Engine.BitmapFont,
+                Text = Math.Round(Engine.FPS).ToString()
             },DrawLayer.UI);
         }
 

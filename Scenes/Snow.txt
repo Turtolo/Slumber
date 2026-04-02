@@ -18,7 +18,7 @@ public class DevStage : Stage
 
         Random rand = new Random();
 
-        var o = PathHelper.Combine("Raw", "LevelData", "Dev.json");
+        var o = PathTools.Combine("Raw", "LevelData", "Dev.json");
 
         Player = Engine.Tree.Create<Player>().SetProperties(n =>
         {
@@ -119,15 +119,15 @@ public class DevStage : Stage
         {
             Engine.Tree.Create<Enemy>().SetProperties(n =>
             {
-                n.Speed = MonolithMath.Random.Next(60, 100);
+                n.Speed = MathE.Random.Next(60, 100);
                 n.LocalPosition = new Vector2(Engine.Tree.Get<Player>().LocalPosition.X + 20, Engine.Tree.Get<Player>().LocalPosition.Y);
             });
         }
 
        var c = Engine.Tree.Get<Camera2D>();
 
-       Emitter1.Emit(new Vector2(MonolithMath.Random.Next(c.Bounds.Left - 320, c.Bounds.Right - 320), c.Bounds.Top - 20), 3);
-       Emitter2.Emit(new Vector2(MonolithMath.Random.Next(c.Bounds.Right - 320, c.Bounds.Right + 320), c.Bounds.Top - 20), 3);
+       Emitter1.Emit(new Vector2(MathE.Random.Next(c.Bounds.Left - 320, c.Bounds.Right - 320), c.Bounds.Top - 20), 3);
+       Emitter2.Emit(new Vector2(MathE.Random.Next(c.Bounds.Right - 320, c.Bounds.Right + 320), c.Bounds.Top - 20), 3);
     }
 
     public override void SubmitCall()
