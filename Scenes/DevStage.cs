@@ -20,6 +20,8 @@ public class DevStage : Stage
 
         var o = PathTools.Combine("Raw", "LevelData", "Dev.json");
 
+        Map.LoadMap("Content/Maps/Stage1/map.tmx");
+
         Player = Engine.Tree.Create<Player>().SetProperties(n =>
         {
             n.LocalPosition = new Vector2(160, 40);
@@ -30,15 +32,6 @@ public class DevStage : Stage
             n.LocalPosition = new Vector2(0, 40);
             n.SetParent(Player);
         }); 
- 
-        Engine.Tree.Create<StaticBody2D>().SetProperties(n =>
-        {
-            n.LocalPosition = new Vector2(50, 50);
-            n.AddChild(Engine.Tree.Create<CollisionShape2D>().SetProperties(c =>
-            {
-                c.Shape = new RectangleShape2D(1300, 25);
-            }));
-        });
 
         for (int i = 0; i < 20; i++)
         {
@@ -53,12 +46,12 @@ public class DevStage : Stage
         {
             n.AddChild(Engine.Tree.Create<ParallaxLayer>().SetProperties(n =>
             {
-                n.Texture = new MTexture("Assets/Backgrounds/HeightsBGNoMain");
+                n.Texture = new MTexture("Graphics/Background/HeightsBGNoMain");
             }));
 
             n.AddChild(Engine.Tree.Create<ParallaxLayer>().SetProperties(n =>
             {
-                n.Texture = new MTexture("Assets/Backgrounds/HeightsBG");
+                n.Texture = new MTexture("Graphics/Background/HeightsBG");
             }));
         });
 
@@ -139,19 +132,6 @@ public class DevStage : Stage
             Font = Engine.BitmapFont,
             Text = Math.Round(Engine.FPS).ToString()
         }, DrawLayer.UI);
-
-        Engine.Tree.Get<Camera2D>().Bounds.ToShape().Draw(Color.Red, 2);
-
-        foreach(var c in Engine.Tree.GetAll<StaticBody2D>())
-        {
-            if (c.CollisionShape == null)
-                continue;
-
-            if (c.CollisionShape.Disabled)
-                c.CollisionShape.Shape.Draw(Color.Gray, 1);
-            else 
-                c.CollisionShape.Shape.Draw(Color.Blue, 1);
-        }
     }
 
     public override void OnExit()

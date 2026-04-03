@@ -13,9 +13,11 @@
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/DevTileset.png</File>
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Maps/Stage2/spritesheet.png</File>
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/EagleAtlas.png</File>
+    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Shader/WhiteEffect.fx</File>
     <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Maps/Stage1/spritesheet.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

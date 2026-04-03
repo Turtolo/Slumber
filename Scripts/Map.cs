@@ -41,8 +41,9 @@ namespace Slumber
                 });
 
                 var props = layer.Properties;
-                if (props.TryGetValue("collider", out var value) && value is bool collision)
+                if (props.TryGetValue("collider", out var value) && value is bool collision && collision == true)
                 {
+                
                     var tileRects = GetRectangles(layer.Tiles);
 
                     foreach (var rect in tileRects)

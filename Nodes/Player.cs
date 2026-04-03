@@ -124,8 +124,6 @@ namespace Slumber
             ApplyGravity(delta);
             
             base.PhysicsUpdate(delta);
-
-            Console.WriteLine($"{GlobalPosition} Floor State; {IsOnFloor}");
         }
 
         public override void ProcessUpdate(float delta)
@@ -145,17 +143,23 @@ namespace Slumber
             //CollisionShape.Shape.Draw(Color.Blue, 1);
             //AttackArea.CollisionShape.Shape.Draw(Color.Blue, 1);
 
-            Engine.Canvas.Call(new FontDrawCall
-            {
-                Font = Engine.BitmapFont,
-                Text = GlobalPosition.ToString()
-            },DrawLayer.UI);
+            var fps = Math.Round(Engine.FPS);
+
+            Color color = Color.White;
+
+            if (fps > 20)
+                color = Color.Red;
+            if (fps > 40)
+                color = Color.Yellow;
+            if (fps >= 60)
+                color = Color.Green;
 
             Engine.Canvas.Call(new FontDrawCall
             {
+                Color = color,
                 Position = new Vector2(0, 20),
                 Font = Engine.BitmapFont,
-                Text = Math.Round(Engine.FPS).ToString()
+                Text = fps.ToString()
             },DrawLayer.UI);
         }
 

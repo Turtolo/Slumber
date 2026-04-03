@@ -124,6 +124,11 @@
 /processorParam:TextureFormat=Color
 /build:Graphics/Atlas/EagleAtlas.png
 
+#begin Graphics/Shader/WhiteEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/build:Graphics/Shader/WhiteEffect.fx
+
 #begin Maps/Stage1/spritesheet.png
 /importer:TextureImporter
 /processor:TextureProcessor

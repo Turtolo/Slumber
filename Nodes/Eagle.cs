@@ -44,6 +44,10 @@ public class Eagle : Node2D
 
         Sprite.PlayAnimation("Flying");
 
+
+        if (TargetNode == null)
+            return;
+        
         pathTimer -= delta;
 
         if (pathTimer <= 0f)

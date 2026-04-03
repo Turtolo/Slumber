@@ -8,7 +8,7 @@ namespace Slumber
         {
             base.Initialize();
 
-            Stage.AddStage(new DStage());    
+            Stage.AddStage(new DevStage());    
             
             Input.AddBind("MoveLeft", new InputAction(Keys.A), new InputAction(Buttons.DPadLeft));
             Input.AddBind("MoveRight", new InputAction(Keys.D), new InputAction(Buttons.DPadRight));

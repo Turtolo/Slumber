@@ -28,7 +28,7 @@ public class Enemy : KinematicBody2D
     public override void OnEnter()
     {
         base.OnEnter();
-        MainTexture = new MTexture("Assets/Animations/grassspidersheet");
+        MainTexture = new MTexture("Graphics/Atlas/grassspidersheet");
 
         var animations = AsepriteLoader.LoadAnimations
         (
@@ -42,7 +42,7 @@ public class Enemy : KinematicBody2D
             n.Atlas = animations;
             n.IsLooping = true;
             n.LocalPosition = new Vector2(8, 8);
-            n.LocalShader = Engine.Resource.Load<Effect>("Assets/WhiteEffect").Clone();;
+            n.LocalShader = Engine.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();;
         });
 
         Engine.Tree.Create<CollisionShape2D>().SetProperties(n =>
@@ -116,8 +116,8 @@ public class Enemy : KinematicBody2D
     {
         base.SubmitCall();
 
-        //RayRight.Ray.Draw();
-        //RayLeft.Ray.Draw();
+        RayRight.Ray.Draw();
+        RayLeft.Ray.Draw();
 
         Engine.Canvas.Call(new FontDrawCall
         {

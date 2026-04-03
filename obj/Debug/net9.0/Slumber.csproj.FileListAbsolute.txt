@@ -61,3 +61,4 @@
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/MonoTile.pdb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Graphics/Atlas/EagleAtlas.xnb
 /Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Raw/Raw/Eagle.json
+/Users/nilslauvstad/Documents/Project/Slumber/bin/Debug/net9.0/Content/Graphics/Shader/WhiteEffect.xnb

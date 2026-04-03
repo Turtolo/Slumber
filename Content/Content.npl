@@ -18,6 +18,15 @@
                 "TextureFormat": "Color"
             }
         },
+
+        "shaders": {
+            "path": "Graphics/*.fx",
+            "recursive": "True",
+            "action": "build",
+            "importer": "EffectImporter",
+            "processor": "EffectProcessor"
+        },
+
         "maps_png": {
             "path": "Maps/*.png",
             "recursive": "True",
@@ -34,6 +43,7 @@
                 "TextureFormat": "Color"
             }
         },
+
         "maps_tmx": {
             "path": "Maps/*.tmx",
             "recursive": true,

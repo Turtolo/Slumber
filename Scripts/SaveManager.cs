@@ -21,8 +21,5 @@ public class SaveManager
         FileSaver.LoadData(PlayerData, FileSavePath, FileFormat.Binary);
 
         Engine.Stage.AddStageFromString(PlayerData.CurrentStage);
-
-        
-
     }
 }
