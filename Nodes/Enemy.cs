@@ -1,4 +1,3 @@
-
 namespace Slumber;
 
 public class Enemy : KinematicBody2D
@@ -7,7 +6,8 @@ public class Enemy : KinematicBody2D
     public Area2D TakeDamageArea;
     public ParticleEmitter2D Emitter;
 
-    public int Speed;
+    public float Speed;
+    public float TargetSpeed;
 
     public RayCast2D RayRight;
     public RayCast2D RayLeft;
@@ -28,6 +28,7 @@ public class Enemy : KinematicBody2D
     public override void OnEnter()
     {
         base.OnEnter();
+
         MainTexture = new MTexture("Graphics/Atlas/grassspidersheet");
 
         var animations = AsepriteLoader.LoadAnimations
@@ -42,7 +43,7 @@ public class Enemy : KinematicBody2D
             n.Atlas = animations;
             n.IsLooping = true;
             n.LocalPosition = new Vector2(8, 8);
-            n.LocalShader = Engine.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();;
+            n.LocalShader = Engine.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();
         });
 
         Engine.Tree.Create<CollisionShape2D>().SetProperties(n =>
@@ -89,35 +90,50 @@ public class Enemy : KinematicBody2D
             n.LocalPosition = new Vector2(-24, 0);
         });
 
+        SetNewTargetSpeed();
 
         LocalDepth = 6;
+    }
+
+    private void SetNewTargetSpeed()
+    {
+        float random = MathE.RandomFloat(0f, 1f);
+        TargetSpeed = float.Lerp(20f, 120f, random * random);
+
+        if (MathE.Random.NextDouble() < 0.2)
+            TargetSpeed = 0;
+
+        Engine.Timer.Wait(
+            TimeSpan.FromSeconds(MathE.RandomFloat(0.5f, 2f)),
+            () => SetNewTargetSpeed()
+        );
     }
 
     public override void PhysicsUpdate(float delta)
     {
         ApplyGravity(delta);
-        HandleDamage();
         Flip();
+
+        Speed = MoveToward(Speed, TargetSpeed, 200f * delta);
+
         Move(delta);
 
         base.PhysicsUpdate(delta);
 
         Sprite.PlayAnimation("run");
-
-        Sprite.LocalShader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());    
+        Sprite.LocalShader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
     }
 
     public override void ProcessUpdate(float delta)
     {
         base.ProcessUpdate(delta);
+
+        HandleDamage();
     }
 
     public override void SubmitCall()
     {
         base.SubmitCall();
-
-        RayRight.Ray.Draw();
-        RayLeft.Ray.Draw();
 
         Engine.Canvas.Call(new FontDrawCall
         {
@@ -125,11 +141,6 @@ public class Enemy : KinematicBody2D
             Text = $"{Health}",
             Position = new Vector2(GlobalPosition.X - 16, GlobalPosition.Y - 16)
         });
-    }
-
-    public override void OnExit()
-    {
-        base.OnExit();
     }
 
     public void Move(float delta)
@@ -177,17 +188,22 @@ public class Enemy : KinematicBody2D
         Health -= amount;
         CanTakeDamage = false;
         Sprite.LocalShader.Parameters["enabled"].SetValue(1);
+        Engine.EngineTime.TimeScale = 0f;
 
-        Engine.Timer.Wait(TimeSpan.FromSeconds(0.15f), () =>
+        Engine.Timer.WaitUnscaled(TimeSpan.FromSeconds(0.15f), () =>
         {
             CanTakeDamage = true;
             Sprite.LocalShader.Parameters["enabled"].SetValue(0);
         });
-}
-    
+
+        Engine.Timer.WaitFrames(2, () =>
+        {
+            Engine.EngineTime.TimeScale = 1f;
+        });
+    }
+
     public void ApplyGravity(float delta)
     {
-
         if (!IsOnFloor)
         {
             Velocity.Y = MathF.Min(
@@ -199,5 +215,13 @@ public class Enemy : KinematicBody2D
         {
             Velocity.Y = 0;
         }
+    }
+
+    public float MoveToward(float current, float target, float maxDelta)
+    {
+        if (MathF.Abs(target - current) <= maxDelta)
+            return target;
+
+        return current + MathF.Sign(target - current) * maxDelta;
     }
 }

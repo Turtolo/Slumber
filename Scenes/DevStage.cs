@@ -1,24 +1,21 @@
 using System.Xml.Linq;
+using Gum.Forms.Controls;
 
 namespace Slumber;
 
 public class DevStage : Stage
 {    
     public DevStage() {}
+
     public Player Player;
 
     ParticleEmitter2D Emitter1;
     ParticleEmitter2D Emitter2;
 
-    Vector2 position = Vector2.Zero;
 
     public override void OnEnter()
     {
         base.OnEnter();
-
-        Random rand = new Random();
-
-        var o = PathTools.Combine("Raw", "LevelData", "Dev.json");
 
         Map.LoadMap("Content/Maps/Stage1/map.tmx");
 
@@ -33,70 +30,17 @@ public class DevStage : Stage
             n.SetParent(Player);
         }); 
 
-        for (int i = 0; i < 20; i++)
-        {
-            Engine.Tree.Create<Enemy>().SetProperties(n =>
-            {
-                n.LocalPosition = new Vector2(100 + i * 10, 40);
-                n.Speed = rand.Next(1, 100);
-            });
-        }
-
-        Engine.Tree.Create<Node2D>().SetProperties(n =>
-        {
-            n.AddChild(Engine.Tree.Create<ParallaxLayer>().SetProperties(n =>
-            {
-                n.Texture = new MTexture("Graphics/Background/HeightsBGNoMain");
-            }));
-
-            n.AddChild(Engine.Tree.Create<ParallaxLayer>().SetProperties(n =>
-            {
-                n.Texture = new MTexture("Graphics/Background/HeightsBG");
-            }));
-        });
-
-        var p = EmitterProperties.Identity with
-        {
-            ParticleProperties = ParticleProperties.Identity with
-            {
-                ColorStart = Color.White,
-                ColorEnd = Color.White,
-                SizeStart = 3f,
-                SizeEnd = 3f,
-                Lifespan = 6f,
-                Speed = 20f,
-                Angle = MathHelper.ToRadians(45f)
-            },
-            Angle = MathHelper.ToRadians(45f),
-            AngleVariance = MathHelper.ToRadians(80f),
-            LifespanMin = 8f,
-            LifespanMax = 32f,
-            SpeedMin = 10f,
-            SpeedMax = 30f,
-            Interval = 0.02f,
-            EmitCount = 0
-        };
         
-
-        Emitter1 = Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+    
+        Emitter1 = Engine.Tree.Create<SnowEmitter>().SetProperties(n =>
         {
-            n.Properties = p;
+            
         });
 
-        Emitter2 = Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+        Emitter2 = Engine.Tree.Create<SnowEmitter>().SetProperties(n =>
         {
-            n.Properties = p;
+            
         });
-
-        Engine.Tree.CreateTween(
-            v => position = v,
-            new Vector2(0, 0),
-            new Vector2(400, 200),
-            1.5f,
-            Vector2.Lerp
-        );
-
-        
     }
 
     public override void PhysicsUpdate(float deltaTime)
@@ -112,7 +56,6 @@ public class DevStage : Stage
         {
             Engine.Tree.Create<Enemy>().SetProperties(n =>
             {
-                n.Speed = MathE.Random.Next(60, 100);
                 n.LocalPosition = new Vector2(Engine.Tree.Get<Player>().LocalPosition.X + 20, Engine.Tree.Get<Player>().LocalPosition.Y);
             });
         }
@@ -126,12 +69,6 @@ public class DevStage : Stage
     public override void SubmitCall()
     {
         base.SubmitCall();
-
-        Engine.Canvas.Call(new FontDrawCall
-        {
-            Font = Engine.BitmapFont,
-            Text = Math.Round(Engine.FPS).ToString()
-        }, DrawLayer.UI);
     }
 
     public override void OnExit()

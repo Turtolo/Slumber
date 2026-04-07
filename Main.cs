@@ -10,10 +10,10 @@ namespace Slumber
 
             Stage.AddStage(new DevStage());    
             
-            Input.AddBind("MoveLeft", new InputAction(Keys.A), new InputAction(Buttons.DPadLeft));
-            Input.AddBind("MoveRight", new InputAction(Keys.D), new InputAction(Buttons.DPadRight));
-            Input.AddBind("MoveDown", new InputAction(Keys.W), new InputAction(Buttons.DPadDown));
-            Input.AddBind("MoveUp", new InputAction(Keys.S), new InputAction(Buttons.DPadUp));
+            Input.AddBind("MoveLeft", new InputAction(Keys.A), new InputAction(Buttons.LeftThumbstickLeft), new InputAction(Buttons.DPadLeft));
+            Input.AddBind("MoveRight", new InputAction(Keys.D), new InputAction(Buttons.LeftThumbstickRight), new InputAction(Buttons.DPadRight));
+            Input.AddBind("MoveDown", new InputAction(Keys.S), new InputAction(Buttons.LeftThumbstickDown), new InputAction(Buttons.DPadDown));
+            Input.AddBind("MoveUp",new InputAction(Keys.W), new InputAction(Buttons.LeftThumbstickUp), new InputAction(Buttons.DPadUp));
 
             Input.AddBind("Jump", new InputAction(Keys.Space), new InputAction(Buttons.A));
 
@@ -21,6 +21,10 @@ namespace Slumber
 
             Input.AddBind("Pause", new InputAction(Keys.Escape), new InputAction(Buttons.Start));
             Input.AddBind("Back", new InputAction(Keys.X), new InputAction(Buttons.B));
+
+            Prefs.Graphics.Fullscreen = false;
+ 
+            Prefs.Apply();
         }
 
         protected override void LoadContent()
@@ -37,7 +41,7 @@ namespace Slumber
         {
             base.Update(gameTime);
 
-            if (Input.Keyboard.WasKeyJustPressed(Keys.R)) 
+            if (Input.CurrentGamePad.WasButtonJustPressed(Buttons.Back)) 
                 Stage.ReloadCurrentStage();
         }
 

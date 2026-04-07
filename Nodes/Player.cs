@@ -10,6 +10,8 @@ namespace Slumber
         public float Acceleration = 3500f;
         public float Deceleration = 2500f;
 
+        public int Health = 5;
+
         public float Gravity = 1300f;
         public float TerminalVelocity = 1200f;
         public float JumpForce = -350;
@@ -31,6 +33,8 @@ namespace Slumber
         public Vector2 PlayerAxis;
         public int PlayerDirection;
 
+        private bool CanTakeDamage = true;        
+
         private bool jumpReleased = false;
         private bool wallSlideTriggered = false;
         private bool jumpBuffered = false;
@@ -46,9 +50,10 @@ namespace Slumber
         #region Components
 
         public AnimatedSprite2D Sprite;
-        public AnimatedSprite2D FeetSprite;
 
         public Area2D AttackArea;
+
+        public Area2D TakeDamageArea;
 
         #endregion
 
@@ -66,23 +71,10 @@ namespace Slumber
             c.SetParent(this);
 
             var animations = AsepriteLoader.LoadAnimations(
-                Engine.Resource.Load<MTexture>("Graphics/Atlas/PlayerModel3Atlas"),
+                Engine.Resource.Load<MTexture>("Graphics/Atlas/PlayerAnimation"),
                 PathTools.Combine("Raw/Raw/PlayerModel3.json")
             );
 
-            var feetAnimations = AsepriteLoader.LoadAnimations(
-                Engine.Resource.Load<MTexture>("Graphics/Atlas/PlayerModel3AtlasFeet"),
-                PathTools.Combine("Raw/Raw/PlayerModel3.json")
-            );
-
-            FeetSprite = Engine.Tree.Create<AnimatedSprite2D>().SetProperties(n =>
-            {
-                n.SetParent(this);
-                n.Atlas = feetAnimations;
-                n.LocalPosition = new Vector2(6, 9);
-                n.IsLooping = true;
-                n.LocalVisible = false;
-            });
 
             Sprite = Engine.Tree.Create<AnimatedSprite2D>().SetProperties(n =>
             {
@@ -103,6 +95,14 @@ namespace Slumber
                 }));
                 n.SetParent(this);
                 n.LocalPosition = new Vector2(30, 5);
+            });
+
+            var tC = c.Clone();
+
+            TakeDamageArea = Engine.Tree.Create<Area2D>().SetProperties(n =>
+            {
+                n.AddChild(tC);
+                n.SetParent(this);
             });
         }
 
@@ -132,6 +132,7 @@ namespace Slumber
 
             AnimateSprite();
             FlipSprite();
+            HandleDamage();
 
             if (attackCounter == 2)
                 attackCounter = 0;
@@ -142,6 +143,7 @@ namespace Slumber
             base.SubmitCall(); 
             //CollisionShape.Shape.Draw(Color.Blue, 1);
             //AttackArea.CollisionShape.Shape.Draw(Color.Blue, 1);
+
 
             var fps = Math.Round(Engine.FPS);
 
@@ -157,7 +159,6 @@ namespace Slumber
             Engine.Canvas.Call(new FontDrawCall
             {
                 Color = color,
-                Position = new Vector2(0, 20),
                 Font = Engine.BitmapFont,
                 Text = fps.ToString()
             },DrawLayer.UI);
@@ -298,19 +299,6 @@ namespace Slumber
 
         private void AnimateSprite()
         {
-
-            if (IsOnFloor)
-            {
-                if (PlayerAxis.X != 0)
-                    FeetSprite.PlayAnimation("Run");
-                else
-                    FeetSprite.PlayAnimation("Idle");
-            }
-            else 
-            {
-                FeetSprite.PlayAnimation("Fall");
-            }
-
             if (!isAttacking)
             {
                 if (IsOnFloor)
@@ -337,12 +325,10 @@ namespace Slumber
             if (PlayerAxis.X > 0)
             {
                 Sprite.LocalSpriteEffects = SpriteEffects.None;
-                FeetSprite.LocalSpriteEffects = SpriteEffects.None;
                 AttackArea.LocalPosition = new Vector2(30, 5);
             }
             else if (PlayerAxis.X < 0)
             {
-                FeetSprite.LocalSpriteEffects = SpriteEffects.FlipHorizontally;
                 Sprite.LocalSpriteEffects = SpriteEffects.FlipHorizontally;
                 AttackArea.LocalPosition = new Vector2(-15, 5);
             }
@@ -351,6 +337,41 @@ namespace Slumber
         #endregion
 
         #region Attack
+
+        public void HandleDamage()
+        {
+            if (Health <= 0)
+            {
+                QueueFree();
+            }
+
+            if (!CanTakeDamage)
+                return;
+
+            
+            if (TakeDamageArea.AreaEntered(out var overlapping))
+            {
+                if (overlapping.GetParent() is Enemy)
+                {
+                    TakeDamage(1);
+                }
+            }
+        }
+
+        public void TakeDamage(int damage)
+        {
+            CanTakeDamage = false;
+
+            Health -= damage;
+
+            Engine.EngineTime.TimeScale = 0f;
+
+            Engine.Timer.WaitFrames(2, () =>
+            {
+                Engine.EngineTime.TimeScale = 1f;
+                CanTakeDamage = true;
+            });
+        }
 
         public void HandleAttack()
         {
