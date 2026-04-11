@@ -2,8 +2,14 @@ using System.Linq;
 
 namespace Slumber;
 
-public class SnowEmitter : ParticleEmitter2D
+public class SnowEmitter : Node2D
 {
+
+    ParticleEmitter2D Emitter1;
+    ParticleEmitter2D Emitter2;
+
+    EmitterProperties Properties;
+
     public override void OnEnter()
     {
         base.OnEnter();
@@ -29,6 +35,17 @@ public class SnowEmitter : ParticleEmitter2D
             Interval = 0.02f,
             EmitCount = 0
         };
+        
+
+        Emitter1 = Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+        {
+            n.Properties = Properties;
+        });
+
+        Emitter2 = Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+        {
+            n.Properties = Properties;
+        });
     }
 
     public override void PhysicsUpdate(float delta)
@@ -40,7 +57,10 @@ public class SnowEmitter : ParticleEmitter2D
     {
         base.ProcessUpdate(delta);
 
-        //var toBeRemoved = Particles.Where(p => p.Info.Position.Y )
+        var c = Engine.Tree.Get<Camera2D>();
+
+       Emitter1.Emit(new Vector2(MathE.Random.Next(c.Bounds.Left - 320, c.Bounds.Right - 320), c.Bounds.Top - 20), 3);
+       Emitter2.Emit(new Vector2(MathE.Random.Next(c.Bounds.Right - 320, c.Bounds.Right + 320), c.Bounds.Top - 20), 3);
     }
 
     public override void SubmitCall()

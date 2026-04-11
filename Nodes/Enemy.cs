@@ -139,7 +139,7 @@ public class Enemy : KinematicBody2D
         {
             Font = Engine.BitmapFont,
             Text = $"{Health}",
-            Position = new Vector2(GlobalPosition.X - 16, GlobalPosition.Y - 16)
+            Position = new Vector2(Transform.Global.Position.X - 16, Transform.Global.Position.Y - 16)
         });
     }
 
@@ -188,7 +188,7 @@ public class Enemy : KinematicBody2D
         Health -= amount;
         CanTakeDamage = false;
         Sprite.LocalShader.Parameters["enabled"].SetValue(1);
-        Engine.EngineTime.TimeScale = 0f;
+        Engine.Time.TimeScale = 0f;
 
         Engine.Timer.WaitUnscaled(TimeSpan.FromSeconds(0.15f), () =>
         {
@@ -198,7 +198,7 @@ public class Enemy : KinematicBody2D
 
         Engine.Timer.WaitFrames(2, () =>
         {
-            Engine.EngineTime.TimeScale = 1f;
+            Engine.Time.TimeScale = 1f;
         });
     }
 

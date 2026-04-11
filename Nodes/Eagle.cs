@@ -78,8 +78,8 @@ public class Eagle : Node2D
         if (CSV == null || TargetNode == null)
             return;
 
-        var tarCords = TargetNode.GlobalPosition.ToPoint();
-        var thisCords = GlobalPosition.ToPoint();
+        var tarCords = TargetNode.Transform.Global.Position.ToPoint();
+        var thisCords = Transform.Global.Position.ToPoint();
 
         var startInPlaneCords = new Point(thisCords.X / 16, thisCords.Y / 16);
         var goalInPlaneCords = new Point(tarCords.X / 16, tarCords.Y / 16).FindNearestSafeTile(CSV);

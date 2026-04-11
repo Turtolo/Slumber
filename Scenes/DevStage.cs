@@ -1,6 +1,3 @@
-using System.Xml.Linq;
-using Gum.Forms.Controls;
-
 namespace Slumber;
 
 public class DevStage : Stage
@@ -8,10 +5,6 @@ public class DevStage : Stage
     public DevStage() {}
 
     public Player Player;
-
-    ParticleEmitter2D Emitter1;
-    ParticleEmitter2D Emitter2;
-
 
     public override void OnEnter()
     {
@@ -30,17 +23,9 @@ public class DevStage : Stage
             n.SetParent(Player);
         }); 
 
-        
-    
-        Emitter1 = Engine.Tree.Create<SnowEmitter>().SetProperties(n =>
-        {
-            
-        });
+        Engine.Tree.Create<SnowEmitter>();
 
-        Emitter2 = Engine.Tree.Create<SnowEmitter>().SetProperties(n =>
-        {
-            
-        });
+
     }
 
     public override void PhysicsUpdate(float deltaTime)
@@ -60,15 +45,24 @@ public class DevStage : Stage
             });
         }
 
-       var c = Engine.Tree.Get<Camera2D>();
-
-       Emitter1.Emit(new Vector2(MathE.Random.Next(c.Bounds.Left - 320, c.Bounds.Right - 320), c.Bounds.Top - 20), 3);
-       Emitter2.Emit(new Vector2(MathE.Random.Next(c.Bounds.Right - 320, c.Bounds.Right + 320), c.Bounds.Top - 20), 3);
     }
 
     public override void SubmitCall()
     {
         base.SubmitCall();
+
+        foreach (var shape in Engine.Tree.GetAll<CollisionShape2D>())
+        {
+            if (shape.GetParent() is not DynamicBody2D || shape.GetParent().GetParent() is Tilemap)
+                continue;
+            
+            Engine.Canvas.Call(new TextureDrawCall
+            {
+                Texture = Engine.Pixel,
+                Scale = new Vector2(shape.Width, shape.Height),
+                Position = shape.Transform.Global.Position
+            });
+        }
     }
 
     public override void OnExit()

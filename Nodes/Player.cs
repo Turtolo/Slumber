@@ -75,7 +75,6 @@ namespace Slumber
                 PathTools.Combine("Raw/Raw/PlayerModel3.json")
             );
 
-
             Sprite = Engine.Tree.Create<AnimatedSprite2D>().SetProperties(n =>
             {
                 n.SetParent(this);
@@ -348,10 +347,10 @@ namespace Slumber
             if (!CanTakeDamage)
                 return;
 
-            
-            if (TakeDamageArea.AreaEntered(out var overlapping))
+
+            if (TakeDamageArea.BodyEntered(out var overlapping))
             {
-                if (overlapping.GetParent() is Enemy)
+                if (overlapping is Enemy)
                 {
                     TakeDamage(1);
                 }
@@ -364,11 +363,11 @@ namespace Slumber
 
             Health -= damage;
 
-            Engine.EngineTime.TimeScale = 0f;
+            Engine.Time.TimeScale = 0f;
 
             Engine.Timer.WaitFrames(2, () =>
             {
-                Engine.EngineTime.TimeScale = 1f;
+                Engine.Time.TimeScale = 1f;
                 CanTakeDamage = true;
             });
         }
