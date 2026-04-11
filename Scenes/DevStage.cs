@@ -24,8 +24,6 @@ public class DevStage : Stage
         }); 
 
         Engine.Tree.Create<SnowEmitter>();
-
-
     }
 
     public override void PhysicsUpdate(float deltaTime)
