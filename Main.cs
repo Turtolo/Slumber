@@ -8,6 +8,8 @@ namespace Slumber
         {
             base.Initialize();
 
+            ClassDB.Initialize(typeof(Main).Assembly);
+
             Stage.AddStage(new DevStage());    
             
             Input.AddBind("MoveLeft", new InputAction(Keys.A), new InputAction(Buttons.LeftThumbstickLeft), new InputAction(Buttons.DPadLeft));

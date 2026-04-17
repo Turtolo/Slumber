@@ -12,12 +12,12 @@ public class DevStage : Stage
 
         Map.LoadMap("Content/Maps/Stage1/map.tmx");
 
-        Player = Engine.Tree.Create<Player>().SetProperties(n =>
+        Player = Engine.Tree.Create<Player>().Set(n =>
         {
             n.LocalPosition = new Vector2(160, 40);
         });   
 
-        Engine.Tree.Create<Camera2D>().SetProperties(n =>
+        Engine.Tree.Create<Camera2D>().Set(n =>
         {
             n.LocalPosition = new Vector2(0, 40);
             n.SetParent(Player);
@@ -37,10 +37,18 @@ public class DevStage : Stage
 
         if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.Y))
         {
-            Engine.Tree.Create<Enemy>().SetProperties(n =>
+            Engine.Tree.Create<Enemy>().Set(n =>
             {
                 n.LocalPosition = new Vector2(Engine.Tree.Get<Player>().LocalPosition.X + 20, Engine.Tree.Get<Player>().LocalPosition.Y);
             });
+        }
+
+        if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.G))
+            Engine.Tree.Get<Enemy>().TakeDamage(1);
+
+        if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.U))
+        {
+          Engine.Tree.Get<Player>().grod = true;
         }
 
     }
@@ -57,8 +65,11 @@ public class DevStage : Stage
             Engine.Canvas.Call(new TextureDrawCall
             {
                 Texture = Engine.Pixel,
-                Scale = new Vector2(shape.Width, shape.Height),
-                Position = shape.Transform.Global.Position
+                Params = CanvasParams.Identity with
+                {
+                  Scale = new Vector2(shape.Width, shape.Height),
+                  Position = shape.Transform.Global.Position
+                }
             });
         }
     }

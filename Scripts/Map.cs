@@ -30,7 +30,7 @@ namespace Slumber
             
             foreach (var layer in data.Layers)
             {
-                var map = Engine.Tree.Create<Tilemap>().SetProperties(n =>
+                var map = Engine.Tree.Create<Tilemap>().Set(n =>
                 {
                     n.IndexOffset = tileset.FirstGid; 
                     n.Tileset = new Tileset(
@@ -47,9 +47,9 @@ namespace Slumber
                     var tileRects = GetRectangles(layer.Tiles);
 
                     foreach (var rect in tileRects)
-                        Engine.Tree.Create<StaticBody2D>().SetProperties(n =>
+                        Engine.Tree.Create<StaticBody2D>().Set(n =>
                         {
-                            n.AddChild(Engine.Tree.Create<CollisionShape2D>().SetProperties(c =>
+                            n.AddChild(Engine.Tree.Create<CollisionShape2D>().Set(c =>
                             {
                                 c.Shape = new RectangleShape2D(rect.width * tileset.TileWidth, rect.height * tileset.TileHeight);
                             }));

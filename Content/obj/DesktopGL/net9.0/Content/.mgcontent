@@ -4,18 +4,18 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/PlayerModel3AtlasFeet.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/grassspidersheet.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/PlayerModel3Atlas.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Background/HeightsBG.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Background/HeightsBGNoMain.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/SlumberTilesetAtlas.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/DevTileset.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Maps/Stage2/spritesheet.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/EagleAtlas.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Shader/WhiteEffect.fx</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Maps/Stage1/spritesheet.png</File>
-    <File>/Users/nilslauvstad/Documents/Project/Slumber/Content/Graphics/Atlas/PlayerAnimation.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/PlayerModel3AtlasFeet.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/grassspidersheet.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/PlayerModel3Atlas.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/HeightsBG.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/HeightsBGNoMain.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/SlumberTilesetAtlas.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/DevTileset.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Maps/Stage2/spritesheet.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/EagleAtlas.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Shader/WhiteEffect.fx</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Maps/Stage1/spritesheet.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/PlayerAnimation.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

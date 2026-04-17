@@ -37,7 +37,7 @@ public class Enemy : KinematicBody2D
             PathTools.Combine("Raw/Raw/GrassSpider.json")
         );
 
-        Sprite = Engine.Tree.Create<AnimatedSprite2D>().SetProperties(n =>
+        Sprite = Engine.Tree.Create<AnimatedSprite2D>().Set(n =>
         {
             n.SetParent(this);
             n.Atlas = animations;
@@ -46,19 +46,19 @@ public class Enemy : KinematicBody2D
             n.LocalShader = Engine.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();
         });
 
-        Engine.Tree.Create<CollisionShape2D>().SetProperties(n =>
+        Engine.Tree.Create<CollisionShape2D>().Set(n =>
         {
             n.Shape = new RectangleShape2D(16, 16);
             n.SetParent(this);
         });
 
-        Emitter = Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+        Emitter = Engine.Tree.Create<ParticleEmitter2D>().Set(n =>
         {
-            n.Properties = EmitterProperties.Identity with
+            n.Params = EmitterParams.Identity with
             {
                 EmitCount = 0,
                 AngleVariance = 180f,
-                ParticleProperties = ParticleProperties.Identity with
+                Params = ParticleParams.Identity with
                 {
                     ColorStart = Color.DarkSlateBlue,
                     ColorEnd = Color.MediumPurple
@@ -67,23 +67,23 @@ public class Enemy : KinematicBody2D
             n.SetParent(this);
         });
 
-        TakeDamageArea = Engine.Tree.Create<Area2D>().SetProperties(n =>
+        TakeDamageArea = Engine.Tree.Create<Area2D>().Set(n =>
         {
-            n.AddChild(Engine.Tree.Create<CollisionShape2D>().SetProperties(c =>
+            n.AddChild(Engine.Tree.Create<CollisionShape2D>().Set(c =>
             {
                 c.Shape = new RectangleShape2D(16, 16);
             }));
             n.SetParent(this);
         });
 
-        RayRight = Engine.Tree.Create<RayCast2D>().SetProperties(n =>
+        RayRight = Engine.Tree.Create<RayCast2D>().Set(n =>
         {
             n.SetParent(this);
             n.TargetPosition = new Vector2(20, 50);
             n.LocalPosition = new Vector2(40, 0);
         });
 
-        RayLeft = Engine.Tree.Create<RayCast2D>().SetProperties(n =>
+        RayLeft = Engine.Tree.Create<RayCast2D>().Set(n =>
         {
             n.SetParent(this);
             n.TargetPosition = new Vector2(-20, 50);
@@ -103,7 +103,7 @@ public class Enemy : KinematicBody2D
         if (MathE.Random.NextDouble() < 0.2)
             TargetSpeed = 0;
 
-        Engine.Timer.Wait(
+        Await.Span(
             TimeSpan.FromSeconds(MathE.RandomFloat(0.5f, 2f)),
             () => SetNewTargetSpeed()
         );
@@ -139,7 +139,10 @@ public class Enemy : KinematicBody2D
         {
             Font = Engine.BitmapFont,
             Text = $"{Health}",
-            Position = new Vector2(Transform.Global.Position.X - 16, Transform.Global.Position.Y - 16)
+            Params = CanvasParams.Identity with
+            {
+              Position = new Vector2(Transform.Global.Position.X - 16, Transform.Global.Position.Y - 16)
+            }
         });
     }
 
@@ -169,7 +172,7 @@ public class Enemy : KinematicBody2D
             Emitter.Emit(10);
             Emitter.SetParent(null);
 
-            Engine.Timer.Wait(TimeSpan.FromSeconds(0.5f), () => Emitter.QueueFree());
+            Await.Span(TimeSpan.FromSeconds(0.5f), () => Emitter.QueueFree());
 
             QueueFree();
         }
@@ -188,18 +191,20 @@ public class Enemy : KinematicBody2D
         Health -= amount;
         CanTakeDamage = false;
         Sprite.LocalShader.Parameters["enabled"].SetValue(1);
-        Engine.Time.TimeScale = 0f;
+        
 
-        Engine.Timer.WaitUnscaled(TimeSpan.FromSeconds(0.15f), () =>
+        Await.Span(TimeSpan.FromSeconds(0.15f), () =>
         {
             CanTakeDamage = true;
             Sprite.LocalShader.Parameters["enabled"].SetValue(0);
         });
 
-        Engine.Timer.WaitFrames(2, () =>
+        Engine.Time.TimeScale = 0f;
+
+        Await.Span(TimeSpan.FromSeconds(0.3f), () =>
         {
             Engine.Time.TimeScale = 1f;
-        });
+        }, true);
     }
 
     public void ApplyGravity(float delta)

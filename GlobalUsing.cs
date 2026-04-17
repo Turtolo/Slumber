@@ -1,4 +1,3 @@
-
 global using Monolith;
 global using Monolith.Geometry;
 global using Monolith.Graphics;
@@ -6,9 +5,9 @@ global using Monolith.Tools;
 global using Monolith.Input;
 global using Monolith.IO;
 global using Monolith.Managers;
-global using Monolith.Nodes;
+global using Monolith.Hierarchy;
 global using Monolith.Util;
-global using Monolith.Attributes;
+global using Monolith.Params;
 
 global using System;
 

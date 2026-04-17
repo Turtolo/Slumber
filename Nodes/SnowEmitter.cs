@@ -8,15 +8,15 @@ public class SnowEmitter : Node2D
     ParticleEmitter2D Emitter1;
     ParticleEmitter2D Emitter2;
 
-    EmitterProperties Properties;
+    EmitterParams Properties;
 
     public override void OnEnter()
     {
         base.OnEnter();
 
-        Properties = EmitterProperties.Identity with
+        Properties = EmitterParams.Identity with
         {
-            ParticleProperties = ParticleProperties.Identity with
+            Params = ParticleParams.Identity with
             {
                 ColorStart = Color.White,
                 ColorEnd = Color.White,
@@ -37,14 +37,14 @@ public class SnowEmitter : Node2D
         };
         
 
-        Emitter1 = Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+        Emitter1 = Engine.Tree.Create<ParticleEmitter2D>().Set(n =>
         {
-            n.Properties = Properties;
+            n.Params = Properties;
         });
 
-        Emitter2 = Engine.Tree.Create<ParticleEmitter2D>().SetProperties(n =>
+        Emitter2 = Engine.Tree.Create<ParticleEmitter2D>().Set(n =>
         {
-            n.Properties = Properties;
+            n.Params = Properties;
         });
     }
 

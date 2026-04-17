@@ -9,6 +9,9 @@ namespace Slumber
         public float MoveSpeed = 100f;
         public float Acceleration = 3500f;
         public float Deceleration = 2500f;
+        
+        [Export]
+        public bool grod { get; set; } = false;
 
         public int Health = 5;
 
@@ -63,48 +66,47 @@ namespace Slumber
 
         public override void OnEnter()
         {
-            base.OnEnter();
+          base.OnEnter();
 
-            var c = Engine.Tree.Create<CollisionShape2D>();
-            c.Shape = new RectangleShape2D(10, 25);
+          var c = Engine.Tree.Create<CollisionShape2D>();
+          c.Shape = new RectangleShape2D(10, 25);
 
-            c.SetParent(this);
+          c.SetParent(this);
 
-            var animations = AsepriteLoader.LoadAnimations(
-                Engine.Resource.Load<MTexture>("Graphics/Atlas/PlayerAnimation"),
-                PathTools.Combine("Raw/Raw/PlayerModel3.json")
-            );
+          var animations = AsepriteLoader.LoadAnimations(
+              Engine.Resource.Load<MTexture>("Graphics/Atlas/PlayerAnimation"),
+              PathTools.Combine("Raw/Raw/PlayerModel3.json")
+          );
 
-            Sprite = Engine.Tree.Create<AnimatedSprite2D>().SetProperties(n =>
-            {
-                n.SetParent(this);
-                n.Atlas = animations;
-                n.LocalPosition = new Vector2(6, 9);
-                n.IsLooping = true;
-            });
+          Sprite = Engine.Tree.Create<AnimatedSprite2D>().Set(n =>
+          {
+              n.SetParent(this);
+              n.Atlas = animations;
+              n.LocalPosition = new Vector2(6, 9);
+              n.IsLooping = true;
+          });
 
-            LocalDepth = 5;
+          LocalDepth = 5;
 
-            AttackArea = Engine.Tree.Create<Area2D>().SetProperties(n =>
-            {
-                n.AddChild(Engine.Tree.Create<CollisionShape2D>().SetProperties(c =>
-                {
-                    c.Shape = new CircleShape2D(32);
-                    c.Disabled = true;
-                }));
-                n.SetParent(this);
-                n.LocalPosition = new Vector2(30, 5);
-            });
+          AttackArea = Engine.Tree.Create<Area2D>().Set(n =>
+          {
+              n.AddChild(Engine.Tree.Create<CollisionShape2D>().Set(c =>
+              {
+                  c.Shape = new CircleShape2D(32);
+                  c.Disabled = true;
+              }));
+              n.SetParent(this);
+              n.LocalPosition = new Vector2(30, 5);
+          });
 
-            var tC = c.Clone();
+          var tC = c.Clone();
 
-            TakeDamageArea = Engine.Tree.Create<Area2D>().SetProperties(n =>
-            {
-                n.AddChild(tC);
-                n.SetParent(this);
-            });
+          TakeDamageArea = Engine.Tree.Create<Area2D>().Set(n =>
+          {
+              n.AddChild(tC);
+              n.SetParent(this);
+          });
         }
-
         #endregion
 
         #region Update
@@ -140,9 +142,6 @@ namespace Slumber
         public override void SubmitCall()
         {
             base.SubmitCall(); 
-            //CollisionShape.Shape.Draw(Color.Blue, 1);
-            //AttackArea.CollisionShape.Shape.Draw(Color.Blue, 1);
-
 
             var fps = Math.Round(Engine.FPS);
 
@@ -157,7 +156,10 @@ namespace Slumber
 
             Engine.Canvas.Call(new FontDrawCall
             {
-                Color = color,
+                Params = CanvasParams.Identity with
+                {
+                  Color = color
+                },
                 Font = Engine.BitmapFont,
                 Text = fps.ToString()
             },DrawLayer.UI);
@@ -230,7 +232,7 @@ namespace Slumber
                 if (Engine.Input.IsActionJustPressed("Jump"))
                 {
                     jumpBuffered = true;
-                    Engine.Timer.Wait(JumpBufferTime, () => jumpBuffered = false);
+                    Await.Span(JumpBufferTime, () => jumpBuffered = false);
                 }
             }
 
@@ -246,7 +248,7 @@ namespace Slumber
             if (wasOnFloor && !IsOnFloor && Velocity.Y >= 0f)
             {
                 canCoyoteJump = true;
-                Engine.Timer.Wait(CoyoteTime, () => canCoyoteJump = false);
+                Await.Span(CoyoteTime, () => canCoyoteJump = false);
             }
 
             if (IsOnFloor)
@@ -282,7 +284,7 @@ namespace Slumber
         public void WallJump()
         {
             AllowControl = false;
-            Engine.Timer.Wait(TimeSpan.FromSeconds(0.06f), () => AllowControl = true);
+            Await.Span(TimeSpan.FromSeconds(0.06f), () => AllowControl = true);
 
             if (PlayerDirection == 1)
                 Velocity.X = -WallJumpHorizontalSpeed;
@@ -365,7 +367,7 @@ namespace Slumber
 
             Engine.Time.TimeScale = 0f;
 
-            Engine.Timer.WaitFrames(2, () =>
+            Await.Span(TimeSpan.FromSeconds(2), () =>
             {
                 Engine.Time.TimeScale = 1f;
                 CanTakeDamage = true;
@@ -414,7 +416,7 @@ namespace Slumber
             
             attackBuffer = true;
 
-            Engine.Timer.Wait(AttackBufferTime, () =>
+            Await.Span(AttackBufferTime, () =>
             {
                 attackBuffer = false;
             });

@@ -32,17 +32,15 @@
         </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Gum.MonoGame" Version="2025.9.27.1" />
         <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4.1" />
         <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.4.1" />
         <PackageReference Include="Nopipeline.Task" Version="2.3.0" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Content\Assets\Atlas\" />
-      <Folder Include="Content\GumProject\" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="../../../Git/Libraries/MonoTile/MonoTile.csproj" />
-      <ProjectReference Include="../Libraries/Monolith-Engine/Monolith.csproj" />
+      <ProjectReference Include="../Libraries/MonoTile/MonoTile.csproj" />
+      <ProjectReference Include="../Monolith/Monolith.csproj" />
     </ItemGroup>
 </Project>

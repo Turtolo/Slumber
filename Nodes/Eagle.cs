@@ -20,7 +20,7 @@ public class Eagle : Node2D
     {
         base.OnEnter();
 
-        Path = Engine.Tree.Create<Path2D>().SetProperties(n =>
+        Path = Engine.Tree.Create<Path2D>().Set(n =>
         {
             n.Target = this;
         });
@@ -30,7 +30,7 @@ public class Eagle : Node2D
             PathTools.Combine("Raw/Raw/Eagle.json")
         );
 
-        Sprite = Engine.Tree.Create<AnimatedSprite2D>().SetProperties(n =>
+        Sprite = Engine.Tree.Create<AnimatedSprite2D>().Set(n =>
         {
             n.SetParent(this);
             n.Atlas = animations;
