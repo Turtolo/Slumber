@@ -1,9 +1,10 @@
 
 using System.Collections.Generic;
+using Monolith.Runtime;
 
 namespace Slumber;
 
-public class DevStage : Stage
+public class DevStage : Node
 {    
     public DevStage() {}
 
@@ -15,18 +16,19 @@ public class DevStage : Stage
 
         Map.LoadMap("Content/Maps/Stage1/map.tmx");
 
-        Player = Engine.Tree.Create<Player>().Set(n =>
+        Player = Engine.Table.Create<Player>().Set(n =>
         {
             n.LocalPosition = new Vector2(160, 40);
-        });   
+        });
+        
 
-        Engine.Tree.Create<Camera2D>().Set(n =>
+        Engine.Table.Create<Camera2D>().Set(n =>
         {
             n.LocalPosition = new Vector2(0, 40);
             n.SetParent(Player);
         }); 
 
-        Engine.Tree.Create<SnowEmitter>();
+        Engine.Table.Create<SnowEmitter>();
       }
 
     public override void PhysicsUpdate(float deltaTime)
@@ -40,18 +42,18 @@ public class DevStage : Stage
 
         if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.Y))
         {
-            Engine.Tree.Create<Enemy>().Set(n =>
+            Engine.Table.Create<Enemy>().Set(n =>
             {
-                n.LocalPosition = new Vector2(Engine.Tree.Get<Player>().LocalPosition.X + 20, Engine.Tree.Get<Player>().LocalPosition.Y);
+                n.LocalPosition = new Vector2(Engine.Table.Get<Player>().LocalPosition.X + 20, Engine.Table.Get<Player>().LocalPosition.Y);
             });
         }
 
         if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.G))
-            Engine.Tree.Get<Enemy>().TakeDamage(1);
+            Engine.Table.Get<Enemy>().TakeDamage(1);
 
         if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.U))
         {
-          Engine.Tree.Get<Player>().grod = true;
+          Engine.Table.Get<Player>().grod = true;
         }
 
     }
@@ -60,7 +62,7 @@ public class DevStage : Stage
     {
         base.SubmitCall();
 
-        foreach (var shape in Engine.Tree.GetAll<CollisionShape2D>())
+        foreach (var shape in Engine.Table.GetAll<CollisionShape2D>())
         {
             if (shape.GetParent() is not DynamicBody2D || shape.GetParent().GetParent() is Tilemap)
                 continue;

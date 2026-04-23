@@ -10,7 +10,7 @@ namespace Slumber
 
             ClassDB.Initialize(typeof(Main).Assembly);
 
-            Stage.AddStage(new DevStage());    
+            Tree.SetScene(Engine.Table.Create<DevStage>());    
             
             Input.AddBind("MoveLeft", new InputAction(Keys.A), new InputAction(Buttons.LeftThumbstickLeft), new InputAction(Buttons.DPadLeft));
             Input.AddBind("MoveRight", new InputAction(Keys.D), new InputAction(Buttons.LeftThumbstickRight), new InputAction(Buttons.DPadRight));
@@ -44,7 +44,7 @@ namespace Slumber
             base.Update(gameTime);
 
             if (Input.CurrentGamePad.WasButtonJustPressed(Buttons.Back)) 
-                Stage.ReloadCurrentStage();
+                Tree.ReloadCurrentScene();
         }
 
         protected override void Draw(GameTime gameTime)

@@ -11,7 +11,7 @@ public class SaveManager
 
     public static void SaveData()
     {
-        PlayerData.CurrentStage = Engine.Stage.GetCurrentStage().GetType().Name;
+        PlayerData.CurrentStage = Engine.Tree.GetCurrentStage().GetType().Name;
 
         FileSaver.SaveData(PlayerData, FileSavePath, FileFormat.Binary);
     }

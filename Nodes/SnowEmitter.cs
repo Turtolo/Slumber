@@ -37,12 +37,12 @@ public class SnowEmitter : Node2D
         };
         
 
-        Emitter1 = Engine.Tree.Create<ParticleEmitter2D>().Set(n =>
+        Emitter1 = Engine.Table.Create<ParticleEmitter2D>().Set(n =>
         {
             n.Params = Properties;
         });
 
-        Emitter2 = Engine.Tree.Create<ParticleEmitter2D>().Set(n =>
+        Emitter2 = Engine.Table.Create<ParticleEmitter2D>().Set(n =>
         {
             n.Params = Properties;
         });
@@ -57,7 +57,7 @@ public class SnowEmitter : Node2D
     {
         base.ProcessUpdate(delta);
 
-        var c = Engine.Tree.Get<Camera2D>();
+        var c = Engine.Table.Get<Camera2D>();
 
        Emitter1.Emit(new Vector2(MathE.Random.Next(c.Bounds.Left - 320, c.Bounds.Right - 320), c.Bounds.Top - 20), 3);
        Emitter2.Emit(new Vector2(MathE.Random.Next(c.Bounds.Right - 320, c.Bounds.Right + 320), c.Bounds.Top - 20), 3);

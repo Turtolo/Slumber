@@ -37,7 +37,7 @@ public class Enemy : KinematicBody2D
             PathTools.Combine("Raw/Raw/GrassSpider.json")
         );
 
-        Sprite = Engine.Tree.Create<AnimatedSprite2D>().Set(n =>
+        Sprite = Engine.Table.Create<AnimatedSprite2D>().Set(n =>
         {
             n.SetParent(this);
             n.Atlas = animations;
@@ -46,13 +46,13 @@ public class Enemy : KinematicBody2D
             n.LocalShader = Engine.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();
         });
 
-        Engine.Tree.Create<CollisionShape2D>().Set(n =>
+        Engine.Table.Create<CollisionShape2D>().Set(n =>
         {
             n.Shape = new RectangleShape2D(16, 16);
             n.SetParent(this);
         });
 
-        Emitter = Engine.Tree.Create<ParticleEmitter2D>().Set(n =>
+        Emitter = Engine.Table.Create<ParticleEmitter2D>().Set(n =>
         {
             n.Params = EmitterParams.Identity with
             {
@@ -67,23 +67,23 @@ public class Enemy : KinematicBody2D
             n.SetParent(this);
         });
 
-        TakeDamageArea = Engine.Tree.Create<Area2D>().Set(n =>
+        TakeDamageArea = Engine.Table.Create<Area2D>().Set(n =>
         {
-            n.AddChild(Engine.Tree.Create<CollisionShape2D>().Set(c =>
+            n.AddChild(Engine.Table.Create<CollisionShape2D>().Set(c =>
             {
                 c.Shape = new RectangleShape2D(16, 16);
             }));
             n.SetParent(this);
         });
 
-        RayRight = Engine.Tree.Create<RayCast2D>().Set(n =>
+        RayRight = Engine.Table.Create<RayCast2D>().Set(n =>
         {
             n.SetParent(this);
             n.TargetPosition = new Vector2(20, 50);
             n.LocalPosition = new Vector2(40, 0);
         });
 
-        RayLeft = Engine.Tree.Create<RayCast2D>().Set(n =>
+        RayLeft = Engine.Table.Create<RayCast2D>().Set(n =>
         {
             n.SetParent(this);
             n.TargetPosition = new Vector2(-20, 50);

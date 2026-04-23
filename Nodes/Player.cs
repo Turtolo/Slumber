@@ -68,7 +68,7 @@ namespace Slumber
         {
           base.OnEnter();
 
-          var c = Engine.Tree.Create<CollisionShape2D>();
+          var c = Engine.Table.Create<CollisionShape2D>();
           c.Shape = new RectangleShape2D(10, 25);
 
           c.SetParent(this);
@@ -78,7 +78,7 @@ namespace Slumber
               PathTools.Combine("Raw/Raw/PlayerModel3.json")
           );
 
-          Sprite = Engine.Tree.Create<AnimatedSprite2D>().Set(n =>
+          Sprite = Engine.Table.Create<AnimatedSprite2D>().Set(n =>
           {
               n.SetParent(this);
               n.Atlas = animations;
@@ -88,9 +88,9 @@ namespace Slumber
 
           LocalDepth = 5;
 
-          AttackArea = Engine.Tree.Create<Area2D>().Set(n =>
+          AttackArea = Engine.Table.Create<Area2D>().Set(n =>
           {
-              n.AddChild(Engine.Tree.Create<CollisionShape2D>().Set(c =>
+              n.AddChild(Engine.Table.Create<CollisionShape2D>().Set(c =>
               {
                   c.Shape = new CircleShape2D(32);
                   c.Disabled = true;
@@ -101,7 +101,7 @@ namespace Slumber
 
           var tC = c.Clone();
 
-          TakeDamageArea = Engine.Tree.Create<Area2D>().Set(n =>
+          TakeDamageArea = Engine.Table.Create<Area2D>().Set(n =>
           {
               n.AddChild(tC);
               n.SetParent(this);
