@@ -4,14 +4,14 @@
     "/Users/nilslauvstad/Git/Slumber/Slumber.csproj": {}
   },
   "projects": {
-    "/Users/nilslauvstad/Git/Libraries/MonoTile/MonoTile.csproj": {
+    "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nilslauvstad/Git/Libraries/MonoTile/MonoTile.csproj",
-        "projectName": "MonoTile",
-        "projectPath": "/Users/nilslauvstad/Git/Libraries/MonoTile/MonoTile.csproj",
+        "projectUniqueName": "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj",
+        "projectName": "Amethyst",
+        "projectPath": "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj",
         "packagesPath": "/Users/nilslauvstad/.nuget/packages/",
-        "outputPath": "/Users/nilslauvstad/Git/Libraries/MonoTile/obj/",
+        "outputPath": "/Users/nilslauvstad/Git/Amethyst/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nilslauvstad/.nuget/NuGet/NuGet.Config"
@@ -48,7 +48,7 @@
             "MonoGame.Framework.DesktopGL": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.8.*, )"
+              "version": "[3.8.2.1105, )"
             }
           },
           "imports": [
@@ -81,14 +81,14 @@
         }
       }
     },
-    "/Users/nilslauvstad/Git/Monolith/Monolith.csproj": {
+    "/Users/nilslauvstad/Git/MonoTile/MonoTile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nilslauvstad/Git/Monolith/Monolith.csproj",
-        "projectName": "Monolith",
-        "projectPath": "/Users/nilslauvstad/Git/Monolith/Monolith.csproj",
+        "projectUniqueName": "/Users/nilslauvstad/Git/MonoTile/MonoTile.csproj",
+        "projectName": "MonoTile",
+        "projectPath": "/Users/nilslauvstad/Git/MonoTile/MonoTile.csproj",
         "packagesPath": "/Users/nilslauvstad/.nuget/packages/",
-        "outputPath": "/Users/nilslauvstad/Git/Monolith/obj/",
+        "outputPath": "/Users/nilslauvstad/Git/MonoTile/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nilslauvstad/.nuget/NuGet/NuGet.Config"
@@ -181,11 +181,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/nilslauvstad/Git/Libraries/MonoTile/MonoTile.csproj": {
-                "projectPath": "/Users/nilslauvstad/Git/Libraries/MonoTile/MonoTile.csproj"
+              "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj": {
+                "projectPath": "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj"
               },
-              "/Users/nilslauvstad/Git/Monolith/Monolith.csproj": {
-                "projectPath": "/Users/nilslauvstad/Git/Monolith/Monolith.csproj"
+              "/Users/nilslauvstad/Git/MonoTile/MonoTile.csproj": {
+                "projectPath": "/Users/nilslauvstad/Git/MonoTile/MonoTile.csproj"
               }
             }
           }
@@ -206,6 +206,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "DotTiled": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "MonoGame.Content.Builder.Task": {
               "target": "Package",
               "version": "[3.8.4.1, )"

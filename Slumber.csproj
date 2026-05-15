@@ -16,9 +16,6 @@
     <ItemGroup>
         <None Remove="Icon.ico" />
         <None Remove="Icon.bmp" />
-        <None Update="Content\GumProject\**\*.*">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
         <None Update="Raw\**\*.*">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
@@ -32,6 +29,7 @@
         </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
+        <PackageReference Include="DotTiled" Version="1.0.0" />
         <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4.1" />
         <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.4.1" />
         <PackageReference Include="Nopipeline.Task" Version="2.3.0" />
@@ -40,7 +38,7 @@
       <Folder Include="Content\Assets\Atlas\" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="../Libraries/MonoTile/MonoTile.csproj" />
-      <ProjectReference Include="../Monolith/Monolith.csproj" />
+      <ProjectReference Include="../MonoTile/MonoTile.csproj" />
+      <ProjectReference Include="../Amethyst/Amethyst.csproj" />
     </ItemGroup>
 </Project>

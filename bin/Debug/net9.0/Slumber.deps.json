@@ -8,12 +8,21 @@
     ".NETCoreApp,Version=v9.0": {
       "Slumber/1.0.0": {
         "dependencies": {
+          "Amethyst": "1.0.0",
+          "DotTiled": "1.0.0",
           "MonoGame.Framework.DesktopGL": "3.8.4.1",
-          "MonoTile": "1.0.0",
-          "Monolith": "1.0.0"
+          "MonoTile": "1.0.0"
         },
         "runtime": {
           "Slumber.dll": {}
+        }
+      },
+      "DotTiled/1.0.0": {
+        "runtime": {
+          "lib/net8.0/DotTiled.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "MonoGame.Framework.DesktopGL/3.8.4.1": {
@@ -115,9 +124,9 @@
           }
         }
       },
-      "Monolith/1.0.0": {
+      "Amethyst/1.0.0": {
         "runtime": {
-          "Monolith.dll": {
+          "Amethyst.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -138,6 +147,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DotTiled/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w6WvJaeBSo4vlx33QFLqBMgq6V/nCYqJcVZ1qzh7RwcuVH/pAf7uTZpU2vZudNK7nPM/cvmzYdV9MXt42yS8Eg==",
+      "path": "dottiled/1.0.0",
+      "hashPath": "dottiled.1.0.0.nupkg.sha512"
     },
     "MonoGame.Framework.DesktopGL/3.8.4.1": {
       "type": "package",
@@ -167,7 +183,7 @@
       "path": "nvorbis/0.10.4",
       "hashPath": "nvorbis.0.10.4.nupkg.sha512"
     },
-    "Monolith/1.0.0": {
+    "Amethyst/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

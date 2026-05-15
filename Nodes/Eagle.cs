@@ -5,89 +5,89 @@ namespace Slumber;
 
 public class Eagle : Node2D
 {
-    public AnimatedSprite2D Sprite;
+  public AnimatedSprite2D Sprite;
 
-    public Node2D TargetNode;
+  public Node2D TargetNode;
 
-    public int[,] CSV;
+  public int[,] CSV;
 
-    public Path2D Path;
+  public Path2D Path;
 
-    private float pathTimer = 0f;
-    private float pathInterval = 0.5f;
+  private float pathTimer = 0f;
+  private float pathInterval = 0.5f;
 
-    public override void OnEnter()
+  public override void _EnterTree()
+  {
+    base._EnterTree();
+
+    Path = Core.Index.Create<Path2D>().Set(n =>
     {
-        base.OnEnter();
+      n.Target = this;
+    });
 
-        Path = Engine.Table.Create<Path2D>().Set(n =>
-        {
-            n.Target = this;
-        });
+    var animations = AsepriteLoader.LoadAnimations(
+        Core.Resource.Load<MTexture>("Graphics/Atlas/EagleAtlas"),
+        PathTools.Combine("Raw/Raw/Eagle.json")
+    );
 
-        var animations = AsepriteLoader.LoadAnimations(
-            Engine.Resource.Load<MTexture>("Graphics/Atlas/EagleAtlas"),
-            PathTools.Combine("Raw/Raw/Eagle.json")
-        );
-
-        Sprite = Engine.Table.Create<AnimatedSprite2D>().Set(n =>
-        {
-            n.SetParent(this);
-            n.Atlas = animations;
-            n.IsLooping = true;
-        });
-    }
-
-    public override void PhysicsUpdate(float delta)
+    Sprite = Core.Index.Create<AnimatedSprite2D>().Set(n =>
     {
-        base.PhysicsUpdate(delta);
+      n.SetParent(this);
+      n.Atlas = animations;
+      n.IsLooping = true;
+    });
+  }
 
-        Sprite.PlayAnimation("Flying");
+  public override void _PhysicsUpdate(float delta)
+  {
+    base._PhysicsUpdate(delta);
+
+    Sprite.PlayAnimation("Flying");
 
 
-        if (TargetNode == null)
-            return;
-        
-        pathTimer -= delta;
+    if (TargetNode == null)
+      return;
 
-        if (pathTimer <= 0f)
-        {
-            UpdatePath();
-            pathTimer = pathInterval;
-        }
-    }
+    pathTimer -= delta;
 
-    public override void ProcessUpdate(float delta)
+    if (pathTimer <= 0f)
     {
-        base.ProcessUpdate(delta);
+      UpdatePath();
+      pathTimer = pathInterval;
     }
+  }
 
-    public override void SubmitCall()
-    {
-        base.SubmitCall();
-    }
+  public override void _Process(float delta)
+  {
+    base._Process(delta);
+  }
 
-    public override void OnExit()
-    {
-        base.OnExit();
-    }
+  public override void _SubmitCall()
+  {
+    base._SubmitCall();
+  }
+
+  public override void _ExitTree()
+  {
+    base._ExitTree();
+  }
 
 
-    public void UpdatePath()
-    {
-        if (CSV == null || TargetNode == null)
-            return;
+  public void UpdatePath()
+  {
+    if (CSV == null || TargetNode == null)
+      return;
 
-        var tarCords = TargetNode.Transform.Global.Position.ToPoint();
-        var thisCords = Transform.Global.Position.ToPoint();
+    var tarCords = TargetNode.Transform.Global.Position.ToPoint();
+    var thisCords = Transform.Global.Position.ToPoint();
 
-        var startInPlaneCords = new Point(thisCords.X / 16, thisCords.Y / 16);
-        var goalInPlaneCords = new Point(tarCords.X / 16, tarCords.Y / 16).FindNearestSafeTile(CSV);
+    var startInPlaneCords = new Point(thisCords.X / 16, thisCords.Y / 16);
+    var goalInPlaneCords = new Point(tarCords.X / 16, tarCords.Y / 16).FindNearestSafeTile(CSV);
 
-        var path = AStar.GetPath(CSV, startInPlaneCords, goalInPlaneCords).ToWorldCords(16, 16).ToVec2().ToArray();
-        
-        Path.SetPath(path);
+    var path = AStar.GetPath(CSV, startInPlaneCords, goalInPlaneCords).ToWorldCords(16, 16).ToVec2().ToArray();
 
-    }
+    Path.SetPath(path);
+
+  }
 
 }

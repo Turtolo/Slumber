@@ -1,0 +1,303 @@
+{ "frames": {
+   "PlayerAnimation (Main) 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 1.ase": {
+    "frame": { "x": 208, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 2.ase": {
+    "frame": { "x": 416, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 3.ase": {
+    "frame": { "x": 624, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 4.ase": {
+    "frame": { "x": 832, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 5.ase": {
+    "frame": { "x": 1040, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 6.ase": {
+    "frame": { "x": 1248, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 7.ase": {
+    "frame": { "x": 1456, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 8.ase": {
+    "frame": { "x": 1664, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 9.ase": {
+    "frame": { "x": 1872, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 10.ase": {
+    "frame": { "x": 2080, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 11.ase": {
+    "frame": { "x": 2288, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 12.ase": {
+    "frame": { "x": 2496, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 13.ase": {
+    "frame": { "x": 2704, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 14.ase": {
+    "frame": { "x": 2912, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 15.ase": {
+    "frame": { "x": 3120, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 16.ase": {
+    "frame": { "x": 3328, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 17.ase": {
+    "frame": { "x": 3536, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 70
+   },
+   "PlayerAnimation (Main) 18.ase": {
+    "frame": { "x": 3744, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 70
+   },
+   "PlayerAnimation (Main) 19.ase": {
+    "frame": { "x": 3952, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 70
+   },
+   "PlayerAnimation (Main) 20.ase": {
+    "frame": { "x": 4160, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 70
+   },
+   "PlayerAnimation (Main) 21.ase": {
+    "frame": { "x": 4368, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 70
+   },
+   "PlayerAnimation (Main) 22.ase": {
+    "frame": { "x": 4576, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 70
+   },
+   "PlayerAnimation (Main) 23.ase": {
+    "frame": { "x": 4784, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 70
+   },
+   "PlayerAnimation (Main) 24.ase": {
+    "frame": { "x": 4992, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 25.ase": {
+    "frame": { "x": 5200, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 26.ase": {
+    "frame": { "x": 5408, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 27.ase": {
+    "frame": { "x": 5616, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 28.ase": {
+    "frame": { "x": 5824, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 29.ase": {
+    "frame": { "x": 6032, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 30.ase": {
+    "frame": { "x": 6240, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 31.ase": {
+    "frame": { "x": 6448, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 32.ase": {
+    "frame": { "x": 6656, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 33.ase": {
+    "frame": { "x": 6864, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   },
+   "PlayerAnimation (Main) 34.ase": {
+    "frame": { "x": 7072, "y": 0, "w": 208, "h": 208 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 208, "h": 208 },
+    "sourceSize": { "w": 208, "h": 208 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.12-dev",
+  "image": "PlayerAnimation.png",
+  "format": "RGBA8888",
+  "size": { "w": 7280, "h": 208 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "Idle", "from": 0, "to": 5, "direction": "forward", "color": "#f7a547ff" },
+   { "name": "Run", "from": 6, "to": 11, "direction": "forward", "color": "#f3ce52ff" },
+   { "name": "Fall", "from": 12, "to": 16, "direction": "forward", "color": "#6acd5bff" },
+   { "name": "Attack", "from": 17, "to": 23, "direction": "forward", "color": "#57b9f2ff" },
+   { "name": "Chain", "from": 24, "to": 34, "direction": "forward", "color": "#d186dfff" }
+  ],
+  "layers": [
+   { "name": "Main", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

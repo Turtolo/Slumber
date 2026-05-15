@@ -1,13 +1,13 @@
-global using Monolith;
-global using Monolith.Geometry;
-global using Monolith.Graphics;
-global using Monolith.Tools;
-global using Monolith.Input;
-global using Monolith.IO;
-global using Monolith.Managers;
-global using Monolith.Hierarchy;
-global using Monolith.Util;
-global using Monolith.Params;
+global using Amethyst;
+global using Amethyst.Geometry;
+global using Amethyst.Graphics;
+global using Amethyst.Tools;
+global using Amethyst.Input;
+global using Amethyst.IO;
+global using Amethyst.Managers;
+global using Amethyst.Hierarchy;
+global using Amethyst.Util;
+global using Amethyst.Params;
 
 global using System;
 

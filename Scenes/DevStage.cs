@@ -1,87 +1,73 @@
 
 using System.Collections.Generic;
-using Monolith.Runtime;
+using System.Linq;
+using Amethyst.Runtime;
 
 namespace Slumber;
 
 public class DevStage : Node
-{    
-    public DevStage() {}
+{
+  public DevStage() { }
 
-    public Player Player;
+  public Player Player;
 
-    public override void OnEnter()
+
+  public override void _EnterTree()
+  {
+    base._EnterTree();
+
+    Player = new Player()
+      .Set("LocalPosition", new Vector2(160, 40));
+
+    new Node2D()
+      .Set("LocalPosition", new Vector2(60, 20))
+      .Set("LocalRotation", 2f);
+
+    new Camera2D()
+      .Set("LocalPosition", new Vector2(0, 40))
+      .SetParent(Player);
+
+    new StaticBody2D().Set(n =>
     {
-        base.OnEnter();
+      n.AddChild(new CollisionShape2D().Set("Shape", new RectangleShape2D(500, 10)));
+      n.LocalPosition = new Vector2(150, 50);
+    });
 
-        Map.LoadMap("Content/Maps/Stage1/map.tmx");
+    new SnowEmitter();
 
-        Player = Engine.Table.Create<Player>().Set(n =>
-        {
-            n.LocalPosition = new Vector2(160, 40);
-        });
-        
+  }
 
-        Engine.Table.Create<Camera2D>().Set(n =>
-        {
-            n.LocalPosition = new Vector2(0, 40);
-            n.SetParent(Player);
-        }); 
+  public override void _PhysicsUpdate(float deltaTime)
+  {
+    base._PhysicsUpdate(deltaTime);
+  }
 
-        Engine.Table.Create<SnowEmitter>();
-      }
+  public override void _Process(float deltaTime)
+  {
+    base._Process(deltaTime);
 
-    public override void PhysicsUpdate(float deltaTime)
+    if (Core.Input.Keyboard.WasKeyJustPressed(Keys.Y) || Core.Input.CurrentGamePad.WasButtonJustPressed(Buttons.LeftTrigger))
     {
-        base.PhysicsUpdate(deltaTime);
-    }  
-
-    public override void ProcessUpdate(float deltaTime)
-    {
-        base.ProcessUpdate(deltaTime);
-
-        if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.Y))
-        {
-            Engine.Table.Create<Enemy>().Set(n =>
-            {
-                n.LocalPosition = new Vector2(Engine.Table.Get<Player>().LocalPosition.X + 20, Engine.Table.Get<Player>().LocalPosition.Y);
-            });
-        }
-
-        if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.G))
-            Engine.Table.Get<Enemy>().TakeDamage(1);
-
-        if (Engine.Input.Keyboard.WasKeyJustPressed(Keys.U))
-        {
-          Engine.Table.Get<Player>().grod = true;
-        }
-
+      var player = Core.Index.Get<Player>();
+      new Enemy().Set("LocalPosition", new Vector2(player.Transform.Global.Position.X + 20, player.Transform.Global.Position.Y));
     }
 
-    public override void SubmitCall()
+    if (Core.Input.Keyboard.WasKeyJustPressed(Keys.H) || Core.Input.CurrentGamePad.WasButtonJustPressed(Buttons.RightShoulder))
     {
-        base.SubmitCall();
-
-        foreach (var shape in Engine.Table.GetAll<CollisionShape2D>())
-        {
-            if (shape.GetParent() is not DynamicBody2D || shape.GetParent().GetParent() is Tilemap)
-                continue;
-            
-            Engine.Canvas.Call(new TextureDrawCall
-            {
-                Texture = Engine.Pixel,
-                Params = CanvasParams.Identity with
-                {
-                  Scale = new Vector2(shape.Width, shape.Height),
-                  Position = shape.Transform.Global.Position
-                }
-            });
-        }
+      var player = Core.Index.Get<Player>();
+      player.Health += 1;
+      player.AddHealthIcons();
     }
+  }
 
-    public override void OnExit()
-    {
-        base.OnExit();
-    }
-    
+  public override void _SubmitCall()
+  {
+    base._SubmitCall();
+  }
+
+  public override void _ExitTree()
+  {
+    base._ExitTree();
+  }
+
 }

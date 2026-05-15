@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "DotTiled/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/DotTiled.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DotTiled.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "MonoGame.Content.Builder.Task/3.8.4.1": {
         "type": "package",
         "build": {
@@ -137,14 +150,14 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "Monolith/1.0.0": {
+      "Amethyst/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
-          "bin/placeholder/Monolith.dll": {}
+          "bin/placeholder/Amethyst.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Monolith.dll": {}
+          "bin/placeholder/Amethyst.dll": {}
         }
       },
       "MonoTile/1.0.0": {
@@ -160,6 +173,21 @@
     }
   },
   "libraries": {
+    "DotTiled/1.0.0": {
+      "sha512": "w6WvJaeBSo4vlx33QFLqBMgq6V/nCYqJcVZ1qzh7RwcuVH/pAf7uTZpU2vZudNK7nPM/cvmzYdV9MXt42yS8Eg==",
+      "type": "package",
+      "path": "dottiled/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "dottiled.1.0.0.nupkg.sha512",
+        "dottiled.nuspec",
+        "lib/net8.0/DotTiled.dll",
+        "lib/net8.0/DotTiled.xml"
+      ]
+    },
     "MonoGame.Content.Builder.Task/3.8.4.1": {
       "sha512": "jf6IZXMiOhuybRaWQt//u+804yzMRGk3ZRvlBJG/0iusRwTunJsQvA6tMMJJc7gjUrY6rUkzRqwinKWXugyHfA==",
       "type": "package",
@@ -334,23 +362,24 @@
         "version.txt"
       ]
     },
-    "Monolith/1.0.0": {
+    "Amethyst/1.0.0": {
       "type": "project",
-      "path": "../Monolith/Monolith.csproj",
-      "msbuildProject": "../Monolith/Monolith.csproj"
+      "path": "../Amethyst/Amethyst.csproj",
+      "msbuildProject": "../Amethyst/Amethyst.csproj"
     },
     "MonoTile/1.0.0": {
       "type": "project",
-      "path": "../Libraries/MonoTile/MonoTile.csproj",
-      "msbuildProject": "../Libraries/MonoTile/MonoTile.csproj"
+      "path": "../MonoTile/MonoTile.csproj",
+      "msbuildProject": "../MonoTile/MonoTile.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "Amethyst >= 1.0.0",
+      "DotTiled >= 1.0.0",
       "MonoGame.Content.Builder.Task >= 3.8.4.1",
       "MonoGame.Framework.DesktopGL >= 3.8.4.1",
       "MonoTile >= 1.0.0",
-      "Monolith >= 1.0.0",
       "Nopipeline.Task >= 2.3.0"
     ]
   },
@@ -380,11 +409,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/nilslauvstad/Git/Libraries/MonoTile/MonoTile.csproj": {
-              "projectPath": "/Users/nilslauvstad/Git/Libraries/MonoTile/MonoTile.csproj"
+            "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj": {
+              "projectPath": "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj"
             },
-            "/Users/nilslauvstad/Git/Monolith/Monolith.csproj": {
-              "projectPath": "/Users/nilslauvstad/Git/Monolith/Monolith.csproj"
+            "/Users/nilslauvstad/Git/MonoTile/MonoTile.csproj": {
+              "projectPath": "/Users/nilslauvstad/Git/MonoTile/MonoTile.csproj"
             }
           }
         }
@@ -405,6 +434,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "DotTiled": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "MonoGame.Content.Builder.Task": {
             "target": "Package",
             "version": "[3.8.4.1, )"

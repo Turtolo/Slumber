@@ -5,71 +5,71 @@ namespace Slumber;
 public class SnowEmitter : Node2D
 {
 
-    ParticleEmitter2D Emitter1;
-    ParticleEmitter2D Emitter2;
+  ParticleEmitter2D Emitter1;
+  ParticleEmitter2D Emitter2;
 
-    EmitterParams Properties;
+  EmitterParams Properties;
 
-    public override void OnEnter()
+  public override void _EnterTree()
+  {
+    base._EnterTree();
+
+    Properties = EmitterParams.Identity with
     {
-        base.OnEnter();
+      Params = ParticleParams.Identity with
+      {
+        ColorStart = Color.White,
+        ColorEnd = Color.White,
+        SizeStart = 3f,
+        SizeEnd = 3f,
+        Lifespan = 6f,
+        Speed = 20f,
+        Angle = MathHelper.ToRadians(45f)
+      },
+      Angle = MathHelper.ToRadians(45f),
+      AngleVariance = MathHelper.ToRadians(80f),
+      LifespanMin = 8f,
+      LifespanMax = 32f,
+      SpeedMin = 10f,
+      SpeedMax = 30f,
+      Interval = 0.02f,
+      EmitCount = 0
+    };
 
-        Properties = EmitterParams.Identity with
-        {
-            Params = ParticleParams.Identity with
-            {
-                ColorStart = Color.White,
-                ColorEnd = Color.White,
-                SizeStart = 3f,
-                SizeEnd = 3f,
-                Lifespan = 6f,
-                Speed = 20f,
-                Angle = MathHelper.ToRadians(45f)
-            },
-            Angle = MathHelper.ToRadians(45f),
-            AngleVariance = MathHelper.ToRadians(80f),
-            LifespanMin = 8f,
-            LifespanMax = 32f,
-            SpeedMin = 10f,
-            SpeedMax = 30f,
-            Interval = 0.02f,
-            EmitCount = 0
-        };
-        
 
-        Emitter1 = Engine.Table.Create<ParticleEmitter2D>().Set(n =>
-        {
-            n.Params = Properties;
-        });
-
-        Emitter2 = Engine.Table.Create<ParticleEmitter2D>().Set(n =>
-        {
-            n.Params = Properties;
-        });
-    }
-
-    public override void PhysicsUpdate(float delta)
+    Emitter1 = Core.Index.Create<ParticleEmitter2D>().Set(n =>
     {
-        base.PhysicsUpdate(delta);
-    }
+      n.Params = Properties;
+    });
 
-    public override void ProcessUpdate(float delta)
+    Emitter2 = Core.Index.Create<ParticleEmitter2D>().Set(n =>
     {
-        base.ProcessUpdate(delta);
+      n.Params = Properties;
+    });
+  }
 
-        var c = Engine.Table.Get<Camera2D>();
+  public override void _PhysicsUpdate(float delta)
+  {
+    base._PhysicsUpdate(delta);
+  }
 
-       Emitter1.Emit(new Vector2(MathE.Random.Next(c.Bounds.Left - 320, c.Bounds.Right - 320), c.Bounds.Top - 20), 3);
-       Emitter2.Emit(new Vector2(MathE.Random.Next(c.Bounds.Right - 320, c.Bounds.Right + 320), c.Bounds.Top - 20), 3);
-    }
+  public override void _Process(float delta)
+  {
+    base._Process(delta);
 
-    public override void SubmitCall()
-    {
-        base.SubmitCall();
-    }
+    var c = Core.Index.Get<Camera2D>();
 
-    public override void OnExit()
-    {
-        base.OnExit();
-    }
+    Emitter1.Emit(new Vector2(MathE.Random.Next(c.Bounds.Left - 320, c.Bounds.Right - 320), c.Bounds.Top - 20), 3);
+    Emitter2.Emit(new Vector2(MathE.Random.Next(c.Bounds.Right - 320, c.Bounds.Right + 320), c.Bounds.Top - 20), 3);
+  }
+
+  public override void _SubmitCall()
+  {
+    base._SubmitCall();
+  }
+
+  public override void _ExitTree()
+  {
+    base._ExitTree();
+  }
 }
