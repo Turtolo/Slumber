@@ -19,4 +19,4 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Catacombs/map.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Catacombs/map.tmx","CopyItem","File",3362,3362,0.000269
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Catacombs/spritesheet.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Catacombs/spritesheet.xnb","TextureProcessor","Texture2DContent",767,16469,0.001497
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Heights/Snow.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Heights/Snow.tmx","CopyItem","File",9910,9910,0.00121
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Test/Test.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Test/Test.tmx","CopyItem","File",20755,20755,0.000798
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Test/Test.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Test/Test.tmx","CopyItem","File",36491,36491,0.001279

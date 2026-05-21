@@ -20,12 +20,14 @@ public class Stage2 : Node
       .Set(n => n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-1"))
       .Set("Depth", -8)
       .Set("LoopAxes", LoopAxis.X)
+      .Set("MotionScale", new Vector2(0.1f, 0))
       .SetParent(ParRoot);
 
 
     new ParallaxLayer()
       .Set(n => n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-2"))
       .Set("Depth", -9)
+      .Set("MotionScale", new Vector2(0.3f, 0))
       .Set("LoopAxes", LoopAxis.X)
       .SetParent(ParRoot);
 
@@ -34,15 +36,17 @@ public class Stage2 : Node
       .Set(n => n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-3"))
       .Set("Depth", -10)
       .Set("LoopAxes", LoopAxis.X)
+      .Set("MotionScale", new Vector2(0.6f, 0))
       .SetParent(ParRoot);
 
     Player = new Player()
       .Set("Position", new Vector2(220, -100));
 
-    new IntegerCamera()
-      .Set(n => n.Weight = 1)
-      .Set(n => n.Smoothing = true)
+    new PixelCamera()
+      .Set(n => n.Weight = 0.1f)
+      .Set(n => n.TargetOffset = new Point(40))
       .Set(n => n.OffsetSmoothing = true)
+      .Set(n => n.FollowY = false)
       .Set(n => n.Target = Player);
 
     var loader = Loader.Default();

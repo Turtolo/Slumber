@@ -22,9 +22,8 @@ public class Heights : Node
     Player = new Player()
       .Set("Position", new Vector2(-100, -20));
 
-    new IntegerCamera()
+    new PixelCamera()
       .Set(n => n.Weight = 0.1f)
-      .Set(n => n.OffsetSmoothing = true)
       .Set(n => n.TargetOffset = new Point(40))
       .Set(n => n.Target = Player);
 

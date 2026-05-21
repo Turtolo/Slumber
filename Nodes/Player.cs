@@ -125,7 +125,7 @@ namespace Slumber
       float iconSize = 16;
       float spacing = 2f;
 
-      Vector2 startPosition = new Vector2(277, -17);
+      Vector2 startPosition = new Vector2(0, 0);
 
       for (int i = 0; i < Health; i++)
       {
@@ -139,7 +139,6 @@ namespace Slumber
           n.Depth = 50;
           n.Name = "Health";
           n.Visibility = false;
-          //n.SetParent(Core.Index.Get<MainCamera>());
         });
 
         healthIcons.Add(s);
@@ -211,7 +210,7 @@ namespace Slumber
         Params = CanvasParams.Identity with
         {
           Color = color,
-          Position = new Vector2(625, 8)
+          Position = new Vector2(6, 8),
         },
         Font = Core.BitmapFont,
         Text = fps.ToString()
