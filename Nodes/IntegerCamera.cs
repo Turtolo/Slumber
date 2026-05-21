@@ -6,7 +6,7 @@ public class IntegerCamera : Camera2D
   public Player Target { get; set; }
 
   [Export]
-  public bool FollowX { get; set; } = true;
+  public bool FollowX { get; set; } = true; 
 
   [Export]
   public bool FollowY { get; set; } = true;
@@ -31,41 +31,15 @@ public class IntegerCamera : Camera2D
   {
     base._Process(delta);
 
-    bool left = Core.Input.IsActionPressed("MoveLeft");
-    bool right = Core.Input.IsActionPressed("MoveRight");
-    bool up = Core.Input.IsActionPressed("MoveUp");
-    bool down = Core.Input.IsActionPressed("MoveDown");
+    _axis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveUp", "MoveDown");
 
-    if (_axis.X == 0 && _axis.Y == 0)
+    if (MathF.Abs(_axis.X) > MathF.Abs(_axis.Y))
     {
-      if (left)
-        _axis.X = -1;
-      else if (right)
-        _axis.X = 1;
-    }
-    else if (_axis.X != 0)
-    {
-      if ((_axis.X == -1 && !left) ||
-          (_axis.X == 1 && !right))
-      {
-        _axis.X = 0;
-      }
-    }
-
-    if (_axis.Y == 0 && _axis.X == 0)
-    {
-      if (up)
-        _axis.Y = -1;
-      else if (down)
-        _axis.Y = 1;
-    }
-    else if (_axis.Y != 0)
-    {
-      if ((_axis.Y == -1 && !up) ||
-          (_axis.Y == 1 && !down))
-      {
         _axis.Y = 0;
-      }
+    }
+    else
+    {
+        _axis.X = 0;
     }
 
     var targetOffset = TargetOffset * _axis;
@@ -89,7 +63,5 @@ public class IntegerCamera : Camera2D
       : targetPos;
 
     Position = modifiedTargetPos.ToVector2();
-
-    Console.WriteLine(Offset);
   }
-}
+} 
