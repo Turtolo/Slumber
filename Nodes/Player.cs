@@ -83,12 +83,13 @@ namespace Slumber
       {
         n.SetParent(this);
         n.Atlas = animations;
-        n.LocalPosition = new Vector2(6, 9);
+        n.Position = new Vector2(6, 9);
         n.IsLooping = true;
-        n.LocalShader = Core.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();
+        n.Material.Local = n.Material.Local with { PixelPerfect = true };
+        n.Shader = Core.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();
       });
 
-      LocalDepth = 5;
+      Depth = 5;
 
       AttackArea = Core.Index.Create<Area2D>().Set(n =>
       {
@@ -124,7 +125,7 @@ namespace Slumber
       float iconSize = 16;
       float spacing = 2f;
 
-      Vector2 startPosition = new Vector2(8, 8);
+      Vector2 startPosition = new Vector2(277, -17);
 
       for (int i = 0; i < Health; i++)
       {
@@ -134,10 +135,11 @@ namespace Slumber
         {
           n.Texture = Core.Resource.Load<MTexture>("Graphics/Atlas/HealthIconSheetSmall");
           n.HFrames = 2;
-          n.LocalPosition = startPosition + offset;
-          n.LocalDepth = 50;
+          n.Position = startPosition + offset;
+          n.Depth = 50;
           n.Name = "Health";
-          n.LocalVisible = false;
+          n.Visibility = false;
+          //n.SetParent(Core.Index.Get<MainCamera>());
         });
 
         healthIcons.Add(s);
@@ -146,7 +148,7 @@ namespace Slumber
 
     public override void _PhysicsUpdate(float delta)
     {
-      PlayerAxis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp");
+      PlayerAxis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp").ToVector2();
       PlayerDirection = (int)PlayerAxis.X != 0 ? (int)PlayerAxis.X : PlayerDirection;
 
       HandleCoyoteTime();
@@ -159,7 +161,9 @@ namespace Slumber
 
       base._PhysicsUpdate(delta);
 
-      Sprite.LocalShader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
+      Sprite.Shader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
+
+      Position = new Vector2(MathF.Round(Position.X), Position.Y);
     }
 
     public override void _Process(float delta)
@@ -173,6 +177,18 @@ namespace Slumber
 
       if (attackCounter == 2)
         attackCounter = 0;
+
+      var rounded = new Vector2(
+          MathF.Round(Position.X),
+          MathF.Round(Position.Y)
+      );
+
+      var fractional = Position - rounded;
+
+      Sprite.Position = new Vector2(
+          6 - fractional.X,
+          9 - fractional.Y
+      );
     }
 
     public override void _SubmitCall()
@@ -212,11 +228,6 @@ namespace Slumber
         return;
 
       float targetSpeed = MoveSpeed * PlayerAxis.X;
-      
-      float flySpeed = MoveSpeed * PlayerAxis.Y;
-      
-      if (flySpeed != 0)
-        Velocity.Y = MoveToward(Velocity.Y, flySpeed, Acceleration);
 
       if (targetSpeed != 0)
         Velocity.X = MoveToward(Velocity.X, targetSpeed, Acceleration);
@@ -364,13 +375,13 @@ namespace Slumber
     {
       if (PlayerAxis.X > 0)
       {
-        Sprite.LocalSpriteEffects = SpriteEffects.None;
-        AttackArea.LocalPosition = new Vector2(40, 5);
+        Sprite.SpriteEffects = SpriteEffects.None;
+        AttackArea.Position = new Vector2(40, 5);
       }
       else if (PlayerAxis.X < 0)
       {
-        Sprite.LocalSpriteEffects = SpriteEffects.FlipHorizontally;
-        AttackArea.LocalPosition = new Vector2(-30, 5);
+        Sprite.SpriteEffects = SpriteEffects.FlipHorizontally;
+        AttackArea.Position = new Vector2(-30, 5);
       }
     }
 
@@ -411,7 +422,7 @@ namespace Slumber
 
     public void TakeDamage(int damage, int dir)
     {
-      Sprite.LocalShader.Parameters["enabled"].SetValue(1);
+      Sprite.Shader.Parameters["enabled"].SetValue(1);
       CanTakeDamage = false;
 
       Health -= damage;
@@ -429,7 +440,7 @@ namespace Slumber
       {
         Core.Time.TimeScale = 1f;
         AllowControl = true;
-        Sprite.LocalShader.Parameters["enabled"].SetValue(0);
+        Sprite.Shader.Parameters["enabled"].SetValue(0);
         CanTakeDamage = true;
       }, true);
     }

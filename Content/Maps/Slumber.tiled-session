@@ -1,20 +1,34 @@
 {
     "activeFile": "Test/Test.tmx",
     "expandedProjectPaths": [
-        ".",
-        "Test"
+        "Test",
+        "."
     ],
     "fileStates": {
         "Atlas.tsx": {
-            "scaleInDock": 1,
+            "scaleInDock": 1.2067,
             "scaleInEditor": 1
         },
+        "Heights/Snow.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 1.4688,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 61.95533769063181,
+                "y": 115.74074074074073
+            }
+        },
         "Test/Test.tmx": {
-            "scale": 1.3205,
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 1.5419,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 375.61529723589547,
-                "y": -57.55395683453236
+                "x": -42.15578182761527,
+                "y": 79.7717102276412
             }
         }
     },

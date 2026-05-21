@@ -13,10 +13,10 @@ public class Catacombs : Node
     base._EnterTree();
 
     Player = new Player()
-      .Set("LocalPosition", new Vector2(100, 0));
+      .Set("Position", new Vector2(100, 0));
 
     new Camera2D()
-      .Set("LocalPosition", new Vector2(0, 40))
+      .Set("Position", new Vector2(0, 40))
       .SetParent(Player);
 
     SPTiledLoader.Extract("Content/Maps/Catacombs/map.tmx").ToMaps().ToTMap();

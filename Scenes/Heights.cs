@@ -1,40 +1,37 @@
 
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Amethyst.Runtime;
+using DotTiled.Serialization;
 
 namespace Slumber;
 
-public class DevStage : Node
+public class Heights : Node
 {
-  public DevStage() { }
+  public Heights() { }
 
   public Player Player;
 
+  int current = 1;
 
   public override void _EnterTree()
   {
     base._EnterTree();
 
     Player = new Player()
-      .Set("LocalPosition", new Vector2(160, 40));
+      .Set("Position", new Vector2(-100, -20));
 
-    new Node2D()
-      .Set("LocalPosition", new Vector2(60, 20))
-      .Set("LocalRotation", 2f);
-
-    new Camera2D()
-      .Set("LocalPosition", new Vector2(0, 40))
-      .SetParent(Player);
-
-    new StaticBody2D().Set(n =>
-    {
-      n.AddChild(new CollisionShape2D().Set("Shape", new RectangleShape2D(500, 10)));
-      n.LocalPosition = new Vector2(150, 50);
-    });
+    new IntegerCamera()
+      .Set(n => n.Weight = 0.1f)
+      .Set(n => n.OffsetSmoothing = true)
+      .Set(n => n.TargetOffset = new Point(40))
+      .Set(n => n.Target = Player);
 
     new SnowEmitter();
 
+    var loader = Loader.Default();
+    DotTiledBridge.Load(Path.Combine(Core.Resource.ContentRoot, "Maps", "Heights", "Snow.tmx"), loader);
   }
 
   public override void _PhysicsUpdate(float deltaTime)
@@ -49,7 +46,7 @@ public class DevStage : Node
     if (Core.Input.Keyboard.WasKeyJustPressed(Keys.Y) || Core.Input.CurrentGamePad.WasButtonJustPressed(Buttons.LeftTrigger))
     {
       var player = Core.Index.Get<Player>();
-      new Enemy().Set("LocalPosition", new Vector2(player.Transform.Global.Position.X + 20, player.Transform.Global.Position.Y));
+      new Enemy().Set("Position", new Vector2(player.Transform.Global.Position.X + 20, player.Transform.Global.Position.Y));
     }
 
     if (Core.Input.Keyboard.WasKeyJustPressed(Keys.H) || Core.Input.CurrentGamePad.WasButtonJustPressed(Buttons.RightShoulder))

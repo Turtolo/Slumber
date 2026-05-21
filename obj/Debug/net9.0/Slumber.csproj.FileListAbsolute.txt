@@ -66,3 +66,7 @@
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/CatacombBG.xnb
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Catacombs/spritesheet.xnb
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Test/Test.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Background/Gardens-Layer-1.xnb
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Background/Gardens-Layer-2.xnb
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Background/Gardens-Layer-3.xnb
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Heights/Snow.tmx

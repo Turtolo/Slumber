@@ -32,18 +32,25 @@ public static class DotTiledBridge
         if (obj is not RectangleObject rect)
           continue;
 
-        var shape = new CollisionShape2D().Set(n => 
+        var shape = new CollisionShape2D().Set(n =>
         {
           n.Shape = new RectangleShape2D((int)rect.Width, (int)rect.Height);
         });
 
         if (layer.TryGetProperty("collision", out BoolProperty collision) && collision.Value == true)
         {
-          var stat = new StaticBody2D().Set(n => 
+          var stat = new StaticBody2D().Set(n =>
           {
-            n.LocalPosition = new Vector2(rect.X, rect.Y);
+            n.Position = new Vector2(rect.X, rect.Y);
             n.AddChild(shape);
           });
+
+
+          if (layer.TryGetProperty("one_way", out BoolProperty oneWay) && oneWay.Value == true)
+          {
+            foreach (var c in stat.CollisionShapes)
+              c.OneWay = oneWay.Value;
+          }
 
           nodes.Add(stat);
         }
@@ -159,7 +166,7 @@ public static class DotTiledBridge
         n.Name = tileLayer.Name;
         n.Tileset = tileset;
 
-        n.LocalPosition = new Vector2(
+        n.Position = new Vector2(
           offsetX * map.TileWidth,
           offsetY * map.TileHeight
         );

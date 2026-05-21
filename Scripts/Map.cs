@@ -33,7 +33,7 @@ namespace Slumber
         var tMap = new Tilemap().Set(n =>
         {
           n.Name = result.ToString();
-          n.LocalDepth = result;
+          n.Depth = result;
           n.IndexOffset = map.IndexOffset;
           n.Tileset = new Tileset(
             Core.Resource.Load<MTexture>(texturePath),
@@ -55,7 +55,7 @@ namespace Slumber
                   c.Shape = new RectangleShape2D(rect.Width * map.TileSet.TileWidth, rect.Height * map.TileSet.TileHeight);
 
                 }));
-              n.LocalPosition = new Vector2(rect.X * map.TileSet.TileWidth, rect.Y * map.TileSet.TileHeight);
+              n.Position = new Vector2(rect.X * map.TileSet.TileWidth, rect.Y * map.TileSet.TileHeight);
               n.SetParent(tMap);
             });
         }

@@ -20,8 +20,8 @@ public class SnowEmitter : Node2D
       {
         ColorStart = Color.White,
         ColorEnd = Color.White,
-        SizeStart = 3f,
-        SizeEnd = 3f,
+        SizeStart = 1f,
+        SizeEnd = 1f,
         Lifespan = 6f,
         Speed = 20f,
         Angle = MathHelper.ToRadians(45f)

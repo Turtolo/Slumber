@@ -48,8 +48,8 @@ public class Enemy : KinematicBody2D
       n.SetParent(this);
       n.Atlas = animations;
       n.IsLooping = true;
-      n.LocalPosition = new Vector2(8, 8);
-      n.LocalShader = Core.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();
+      n.Position = new Vector2(8, 8);
+      n.Shader = Core.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();
     });
 
     var c = Core.Index.Create<CollisionShape2D>().Set(n =>
@@ -86,14 +86,14 @@ public class Enemy : KinematicBody2D
     {
       n.SetParent(this);
       n.TargetPosition = new Vector2(20, 50);
-      n.LocalPosition = new Vector2(40, 0);
+      n.Position = new Vector2(40, 0);
     });
 
     RayLeft = Core.Index.Create<RayCast2D>().Set(n =>
     {
       n.SetParent(this);
       n.TargetPosition = new Vector2(-20, 50);
-      n.LocalPosition = new Vector2(-24, 0);
+      n.Position = new Vector2(-24, 0);
     });
 
     var fullRect = new Rectangle(0, 0, 16, 16);
@@ -116,7 +116,7 @@ public class Enemy : KinematicBody2D
 
     SetNewTargetSpeed();
 
-    LocalDepth = 6;
+    Depth = 6;
   }
 
   private void SetNewTargetSpeed()
@@ -145,7 +145,7 @@ public class Enemy : KinematicBody2D
     base._PhysicsUpdate(delta);
 
     Sprite.PlayAnimation("run");
-    Sprite.LocalShader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
+    Sprite.Shader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
   }
 
   public override void _Process(float delta)
@@ -209,22 +209,22 @@ public class Enemy : KinematicBody2D
   public void Flip()
   {
     if (Direction == 1)
-      Sprite.LocalSpriteEffects = SpriteEffects.None;
+      Sprite.SpriteEffects = SpriteEffects.None;
     else
-      Sprite.LocalSpriteEffects = SpriteEffects.FlipHorizontally;
+      Sprite.SpriteEffects = SpriteEffects.FlipHorizontally;
   }
 
   public void TakeDamage(int amount)
   {
     Health -= amount;
     CanTakeDamage = false;
-    Sprite.LocalShader.Parameters["enabled"].SetValue(1);
+    Sprite.Shader.Parameters["enabled"].SetValue(1);
 
 
     Await.Span(TimeSpan.FromSeconds(0.15f), () =>
     {
       CanTakeDamage = true;
-      Sprite.LocalShader.Parameters["enabled"].SetValue(0);
+      Sprite.Shader.Parameters["enabled"].SetValue(0);
     });
 
     Core.Time.TimeScale = 0f;

@@ -19,8 +19,14 @@
     <File>/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.png</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/CatacombBG.png</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Maps/Catacombs/spritesheet.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Gardens-Layer-1.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Gardens-Layer-3.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Gardens-Layer-2.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
