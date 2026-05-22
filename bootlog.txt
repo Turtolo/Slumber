@@ -1,0 +1,38 @@
+START Initialize
+LoadContent
+base.Initialize OK
+A: ClassDB.Initialize
+ClassDB OK
+B: Create Stage2
+Stage2 created: True
+C: SetScene
+SetScene OK
+D: Input bindings
+Input OK
+E: Prefs
+Prefs OK
+END Initialize
+START Initialize
+LoadContent
+base.Initialize OK
+A: ClassDB.Initialize
+ClassDB OK
+B: Create Stage2
+Stage2 created: True
+C: SetScene
+SetScene OK
+D: Input bindings
+Input OK
+E: Prefs
+Prefs OK
+END Initialize
+[STAGE2] _EnterTree START
+[STAGE2] base OK
+[STAGE2] Parallax ROOT
+[STAGE2] Layer 1
+[STAGE2] Layer 2
+[STAGE2] Layer 3
+[STAGE2] Player
+[STAGE2] Camera
+[STAGE2] Tilemap load
+[STAGE2] _EnterTree END

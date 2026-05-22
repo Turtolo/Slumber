@@ -85,7 +85,6 @@ namespace Slumber
         n.Atlas = animations;
         n.Position = new Vector2(6, 9);
         n.IsLooping = true;
-        n.Material.Local = n.Material.Local with { PixelPerfect = true };
         n.Shader = Core.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();
       });
 
@@ -125,7 +124,7 @@ namespace Slumber
       float iconSize = 16;
       float spacing = 2f;
 
-      Vector2 startPosition = new Vector2(0, 0);
+      Vector2 startPosition = new Vector2(6, 8);
 
       for (int i = 0; i < Health; i++)
       {
@@ -136,9 +135,9 @@ namespace Slumber
           n.Texture = Core.Resource.Load<MTexture>("Graphics/Atlas/HealthIconSheetSmall");
           n.HFrames = 2;
           n.Position = startPosition + offset;
-          n.Depth = 50;
+          n.Depth = 99;
           n.Name = "Health";
-          n.Visibility = false;
+          n.Seperated = true;
         });
 
         healthIcons.Add(s);
@@ -210,8 +209,9 @@ namespace Slumber
         Params = CanvasParams.Identity with
         {
           Color = color,
-          Position = new Vector2(6, 8),
+          Position = new Vector2(625, 8),
         },
+        Depth = 99,
         Font = Core.BitmapFont,
         Text = fps.ToString()
       });

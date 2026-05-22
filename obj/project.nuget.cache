@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kTXBBm7krDs=",
+  "dgSpecHash": "m9lXnmcAG3c=",
   "success": true,
   "projectFilePath": "/Users/nilslauvstad/Git/Slumber/Slumber.csproj",
   "expectedPackageFiles": [
@@ -13,9 +13,11 @@
     "/Users/nilslauvstad/.nuget/packages/nvorbis/0.10.4/nvorbis.0.10.4.nupkg.sha512",
     "/Users/nilslauvstad/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
     "/Users/nilslauvstad/.nuget/packages/system.valuetuple/4.5.0/system.valuetuple.4.5.0.nupkg.sha512",
+    "/Users/nilslauvstad/.nuget/packages/microsoft.netcore.app.ref/9.0.12/microsoft.netcore.app.ref.9.0.12.nupkg.sha512",
+    "/Users/nilslauvstad/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/9.0.12/microsoft.netcore.app.runtime.linux-x64.9.0.12.nupkg.sha512",
     "/Users/nilslauvstad/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.12/microsoft.aspnetcore.app.ref.9.0.12.nupkg.sha512",
-    "/Users/nilslauvstad/.nuget/packages/microsoft.netcore.app.host.osx-arm64/9.0.12/microsoft.netcore.app.host.osx-arm64.9.0.12.nupkg.sha512",
-    "/Users/nilslauvstad/.nuget/packages/microsoft.netcore.app.ref/9.0.12/microsoft.netcore.app.ref.9.0.12.nupkg.sha512"
+    "/Users/nilslauvstad/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/9.0.12/microsoft.aspnetcore.app.runtime.linux-x64.9.0.12.nupkg.sha512",
+    "/Users/nilslauvstad/.nuget/packages/microsoft.netcore.app.host.linux-x64/9.0.12/microsoft.netcore.app.host.linux-x64.9.0.12.nupkg.sha512"
   ],
   "logs": []
 }

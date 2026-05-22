@@ -158,16 +158,6 @@ public class Enemy : KinematicBody2D
   public override void _SubmitCall()
   {
     base._SubmitCall();
-
-    Core.Canvas.Submit(new FontDrawCall
-    {
-      Font = Core.BitmapFont,
-      Text = $"{Health}",
-      Params = CanvasParams.Identity with
-      {
-        Position = new Vector2(Transform.Global.Position.X - 16, Transform.Global.Position.Y - 16)
-      }
-    });
   }
 
   public void Move(float delta)

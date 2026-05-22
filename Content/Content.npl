@@ -43,6 +43,12 @@
                 "TextureFormat": "Color"
             }
         },
+        
+        "maps_tsx": {
+            "path": "Maps/*.tsx",
+            "recursive": true,
+            "action": "copy"
+        },
 
         "maps_tmx": {
             "path": "Maps/*.tmx",

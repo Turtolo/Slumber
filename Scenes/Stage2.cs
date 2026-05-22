@@ -50,7 +50,15 @@ public class Stage2 : Node
       .Set(n => n.Target = Player);
 
     var loader = Loader.Default();
-    DotTiledBridge.Load(Path.Combine(Core.Resource.ContentRoot, "Maps", "Test", "Test.tmx"), loader);
+    var mapPath = Path.Combine(
+        AppContext.BaseDirectory,
+        "Content",
+        "Maps",
+        "Test",
+        "Test.tmx"
+    );
+
+    DotTiledBridge.Load(mapPath, loader);
   }
 
   public override void _ExitTree()

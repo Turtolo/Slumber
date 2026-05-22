@@ -18,7 +18,8 @@
         <None Remove="Icon.bmp" />
         <None Update="Raw\**\*.*">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
+          </None>
+
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Include="Icon.ico">
@@ -35,10 +36,7 @@
         <PackageReference Include="Nopipeline.Task" Version="2.3.0" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Content\Assets\Atlas\" />
-    </ItemGroup>
-    <ItemGroup>
       <ProjectReference Include="../MonoTile/MonoTile.csproj" />
       <ProjectReference Include="../Amethyst/Amethyst.csproj" />
     </ItemGroup>
-</Project>
+  </Project>

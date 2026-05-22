@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Profile>Reach</Profile>
+  <Profile>HiDef</Profile>
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/PlayerModel3AtlasFeet.png</File>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/grassspidersheet.png</File>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/PlayerModel3Atlas.png</File>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/HeightsBG.png</File>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/HeightsBGNoMain.png</File>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/EagleAtlas.png</File>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Shader/WhiteEffect.fx</File>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/PlayerAnimation.png</File>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/HealthZ.png</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/HealthIcon.png</File>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/HealthIconSheet.png</File>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/HealthIconSheetSmall.png</File>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.png</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/CatacombBG.png</File>
-    <File>/Users/nilslauvstad/Git/Slumber/Content/Maps/Catacombs/spritesheet.png</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Gardens-Layer-1.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/HeightsBG.png</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Gardens-Layer-3.png</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Gardens-Layer-2.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/HeightsBGNoMain.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/PlayerAnimation.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/PlayerModel3AtlasFeet.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/grassspidersheet.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/HealthIconSheet.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/HealthIconSheetSmall.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/PlayerModel3Atlas.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/HealthZ.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/EagleAtlas.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Shader/WhiteEffect.fx</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Maps/Catacombs/spritesheet.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
