@@ -69,7 +69,7 @@ namespace Slumber
     {
       base._EnterTree();
 
-      var c = Core.Index.Create<CollisionShape2D>();
+      var c = Core.Token.Create<CollisionShape2D>();
       c.Shape = new RectangleShape2D(10, 25);
 
       c.SetParent(this);
@@ -79,7 +79,7 @@ namespace Slumber
           PathTools.Combine("Raw/Raw/PlayerAnimation.json")
       );
 
-      Sprite = Core.Index.Create<AnimatedSprite2D>().Set(n =>
+      Sprite = Core.Token.Create<AnimatedSprite2D>().Set(n =>
       {
         n.SetParent(this);
         n.Atlas = animations;
@@ -90,9 +90,9 @@ namespace Slumber
 
       Depth = 5;
 
-      AttackArea = Core.Index.Create<Area2D>().Set(n =>
+      AttackArea = Core.Token.Create<Area2D>().Set(n =>
       {
-        n.AddChild(Core.Index.Create<CollisionShape2D>().Set(c =>
+        n.AddChild(Core.Token.Create<CollisionShape2D>().Set(c =>
           {
             c.Shape = new CircleShape2D(32);
             c.Disabled = true;
@@ -103,7 +103,7 @@ namespace Slumber
 
       var tC = c.Clone();
 
-      TakeDamageArea = Core.Index.Create<Area2D>().Set(n =>
+      TakeDamageArea = Core.Token.Create<Area2D>().Set(n =>
       {
         n.AddChild(tC);
         n.SetParent(this);
@@ -117,7 +117,7 @@ namespace Slumber
 
     public void AddHealthIcons()
     {
-      foreach (var i in Core.Index.GetAll("Health"))
+      foreach (var i in Core.Token.GetAll("Health"))
         i.QueueFree();
 
 
@@ -189,9 +189,9 @@ namespace Slumber
       );
     }
 
-    public override void _SubmitCall()
+    public override void _Submit(Canvas2D canvas)
     {
-      base._SubmitCall();
+      base._Submit(canvas);
 
       var fps = Math.Round(Core.FPS);
 
@@ -215,6 +215,24 @@ namespace Slumber
         Font = Core.BitmapFont,
         Text = fps.ToString()
       });
+
+      var t = ObjectPool<TextureDrawCall>.Get();
+
+      t.Texture = Core.Pixel;
+
+      t.Params = CanvasParams.Identity with
+      {
+        Scale = new Vector2(100, 100),
+        Position = Transform.Global.Position
+      };
+    
+      t.Key = BatchKey.Default with
+      {
+        Matrix = Core.Token.Get<Camera2D>()?.GetTransform()
+      };
+
+      canvas.SubmitLight(t);
+
     }
 
     #endregion

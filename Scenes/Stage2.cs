@@ -77,7 +77,7 @@ public class Stage2 : Node
 
     if (Core.Input.Keyboard.WasKeyJustPressed(Keys.Y) || Core.Input.CurrentGamePad.WasButtonJustPressed(Buttons.LeftTrigger))
     {
-      var player = Core.Index.Get<Player>();
+      var player = Core.Token.Get<Player>();
       new Enemy().Set("Position", new Vector2(player.Transform.Global.Position.X + 20, player.Transform.Global.Position.Y));
     }
 
@@ -85,8 +85,8 @@ public class Stage2 : Node
     //Console.WriteLine($"Depth: {t.Ordering.Global.Depth}, Name: {t.Name}");
   }
 
-  public override void _SubmitCall()
+  public override void _Submit(Canvas2D canvas)
   {
-    base._SubmitCall();
+    base._Submit(canvas);
   }
 }

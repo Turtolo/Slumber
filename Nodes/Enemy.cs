@@ -43,7 +43,7 @@ public class Enemy : KinematicBody2D
         PathTools.Combine("Raw/Raw/GrassSpider.json")
     );
 
-    Sprite = Core.Index.Create<AnimatedSprite2D>().Set(n =>
+    Sprite = Core.Token.Create<AnimatedSprite2D>().Set(n =>
     {
       n.SetParent(this);
       n.Atlas = animations;
@@ -52,13 +52,13 @@ public class Enemy : KinematicBody2D
       n.Shader = Core.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();
     });
 
-    var c = Core.Index.Create<CollisionShape2D>().Set(n =>
+    var c = Core.Token.Create<CollisionShape2D>().Set(n =>
     {
       n.Shape = new RectangleShape2D(16, 16);
       n.SetParent(this);
     });
 
-    Emitter = Core.Index.Create<ParticleEmitter2D>().Set(n =>
+    Emitter = Core.Token.Create<ParticleEmitter2D>().Set(n =>
     {
       n.Params = EmitterParams.Identity with
       {
@@ -73,23 +73,23 @@ public class Enemy : KinematicBody2D
       n.SetParent(this);
     });
 
-    TakeDamageArea = Core.Index.Create<Area2D>().Set(n =>
+    TakeDamageArea = Core.Token.Create<Area2D>().Set(n =>
     {
-      n.AddChild(Core.Index.Create<CollisionShape2D>().Set(c =>
+      n.AddChild(Core.Token.Create<CollisionShape2D>().Set(c =>
         {
           c.Shape = new RectangleShape2D(16, 16);
         }));
       n.SetParent(this);
     });
 
-    RayRight = Core.Index.Create<RayCast2D>().Set(n =>
+    RayRight = Core.Token.Create<RayCast2D>().Set(n =>
     {
       n.SetParent(this);
       n.TargetPosition = new Vector2(20, 50);
       n.Position = new Vector2(40, 0);
     });
 
-    RayLeft = Core.Index.Create<RayCast2D>().Set(n =>
+    RayLeft = Core.Token.Create<RayCast2D>().Set(n =>
     {
       n.SetParent(this);
       n.TargetPosition = new Vector2(-20, 50);
@@ -155,9 +155,9 @@ public class Enemy : KinematicBody2D
     HandleDamage();
   }
 
-  public override void _SubmitCall()
+  public override void _Submit(Canvas2D canvas)
   {
-    base._SubmitCall();
+    base._Submit(canvas);
   }
 
   public void Move(float delta)

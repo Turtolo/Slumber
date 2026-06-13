@@ -48,9 +48,9 @@ namespace Slumber
           var tileRects = GetRectangles(map.Grid);
 
           foreach (var rect in tileRects)
-            Core.Index.Create<StaticBody2D>().Set(n =>
+            Core.Token.Create<StaticBody2D>().Set(n =>
             {
-              n.AddChild(Core.Index.Create<CollisionShape2D>().Set(c =>
+              n.AddChild(Core.Token.Create<CollisionShape2D>().Set(c =>
                 {
                   c.Shape = new RectangleShape2D(rect.Width * map.TileSet.TileWidth, rect.Height * map.TileSet.TileHeight);
 

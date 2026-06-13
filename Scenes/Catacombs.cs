@@ -37,8 +37,8 @@ public class Catacombs : Node
     base._Process(delta);
   }
 
-  public override void _SubmitCall()
+  public override void _Submit(Canvas2D canvas)
   {
-    base._SubmitCall();
+    base._Submit(canvas);
   }
 }

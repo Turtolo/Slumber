@@ -37,12 +37,12 @@ public class SnowEmitter : Node2D
     };
 
 
-    Emitter1 = Core.Index.Create<ParticleEmitter2D>().Set(n =>
+    Emitter1 = Core.Token.Create<ParticleEmitter2D>().Set(n =>
     {
       n.Params = Properties;
     });
 
-    Emitter2 = Core.Index.Create<ParticleEmitter2D>().Set(n =>
+    Emitter2 = Core.Token.Create<ParticleEmitter2D>().Set(n =>
     {
       n.Params = Properties;
     });
@@ -57,15 +57,15 @@ public class SnowEmitter : Node2D
   {
     base._Process(delta);
 
-    var c = Core.Index.Get<Camera2D>();
+    var c = Core.Token.Get<Camera2D>();
 
     Emitter1.Emit(new Vector2(MathE.Random.Next(c.Bounds.Left - 320, c.Bounds.Right - 320), c.Bounds.Top - 20), 3);
     Emitter2.Emit(new Vector2(MathE.Random.Next(c.Bounds.Right - 320, c.Bounds.Right + 320), c.Bounds.Top - 20), 3);
   }
 
-  public override void _SubmitCall()
+  public override void _Submit(Canvas2D canvas)
   {
-    base._SubmitCall();
+    base._Submit(canvas);
   }
 
   public override void _ExitTree()

@@ -20,7 +20,7 @@ public class Eagle : Node2D
   {
     base._EnterTree();
 
-    Path = Core.Index.Create<Path2D>().Set(n =>
+    Path = Core.Token.Create<Path2D>().Set(n =>
     {
       n.Target = this;
     });
@@ -30,7 +30,7 @@ public class Eagle : Node2D
         PathTools.Combine("Raw/Raw/Eagle.json")
     );
 
-    Sprite = Core.Index.Create<AnimatedSprite2D>().Set(n =>
+    Sprite = Core.Token.Create<AnimatedSprite2D>().Set(n =>
     {
       n.SetParent(this);
       n.Atlas = animations;
@@ -62,9 +62,9 @@ public class Eagle : Node2D
     base._Process(delta);
   }
 
-  public override void _SubmitCall()
+  public override void _Submit(Canvas2D canvas)
   {
-    base._SubmitCall();
+    base._Submit(canvas);
   }
 
   public override void _ExitTree()

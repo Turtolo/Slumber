@@ -44,21 +44,21 @@ public class Heights : Node
 
     if (Core.Input.Keyboard.WasKeyJustPressed(Keys.Y) || Core.Input.CurrentGamePad.WasButtonJustPressed(Buttons.LeftTrigger))
     {
-      var player = Core.Index.Get<Player>();
+      var player = Core.Token.Get<Player>();
       new Enemy().Set("Position", new Vector2(player.Transform.Global.Position.X + 20, player.Transform.Global.Position.Y));
     }
 
     if (Core.Input.Keyboard.WasKeyJustPressed(Keys.H) || Core.Input.CurrentGamePad.WasButtonJustPressed(Buttons.RightShoulder))
     {
-      var player = Core.Index.Get<Player>();
+      var player = Core.Token.Get<Player>();
       player.Health += 1;
       player.AddHealthIcons();
     }
   }
 
-  public override void _SubmitCall()
+  public override void _Submit(Canvas2D canvas)
   {
-    base._SubmitCall();
+    base._Submit(canvas);
   }
 
   public override void _ExitTree()

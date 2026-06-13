@@ -22,8 +22,40 @@
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Shader/WhiteEffect.fx</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.png</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Maps/Catacombs/spritesheet.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/l2.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/light.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/lightsmall.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/lan.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Foreground/arches.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/GreenBricks.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Heights/Gradiant.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Heights/Mountain.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Heights/Tree4.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Heights/Tree2.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Heights/Tree3.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Heights/Tree1.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Gardens/Gardens-Layer-1.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Gardens/Gardens-Layer-3.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Gardens/Gardens-Layer-2.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Shader/Lighting.fx</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

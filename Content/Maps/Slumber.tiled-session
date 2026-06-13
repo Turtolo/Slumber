@@ -1,34 +1,89 @@
 {
-    "activeFile": "Test/Test.tmx",
+    "activeFile": "Green/Green.tmx",
     "expandedProjectPaths": [
-        "Test",
-        "."
+        "Catacombs",
+        ".",
+        "Green"
     ],
     "fileStates": {
         "Atlas.tsx": {
-            "scaleInDock": 1.2067,
+            "scaleInDock": 1.2501,
             "scaleInEditor": 1
+        },
+        "Big/Big.tmx": {
+            "scale": 0.9302,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 255.85895506342717,
+                "y": 255.8589550634272
+            }
+        },
+        "Bricks/Bricks.tmx": {
+            "scale": 0.9047,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 0,
+                "y": 256.43859843041895
+            }
+        },
+        "Catacombs/Catacombs-1.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 1.1176,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -1302.791696492484,
+                "y": 125.26843235504654
+            }
+        },
+        "Catacombs/map.tmx": {
+            "scale": 1.1764,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 890.0034002040122,
+                "y": 50.15300918055084
+            }
+        },
+        "Catacombs/map.tmx#spritefusion": {
+            "scaleInDock": 1
+        },
+        "Caverns/Caverns-1.tmx": {
+            "scale": 1.6849,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -74.78188616535107,
+                "y": -52.82212594219243
+            }
+        },
+        "Green/Green.tmx": {
+            "scale": 1.2204,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": -727.630285152409,
+                "y": 190.92100950508035
+            }
         },
         "Heights/Snow.tmx": {
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 1.4688,
-            "selectedLayer": 1,
+            "scale": 0.4901,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 23.148148148148152,
-                "y": 64.67864923747274
+                "x": -383.5951846561926,
+                "y": 0
             }
         },
         "Test/Test.tmx": {
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 1.5419,
+            "scale": 0.9339,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -42.15578182761527,
-                "y": 79.7717102276412
+                "x": -255.91605096905448,
+                "y": 255.9160509690546
             }
         }
     },
@@ -38,14 +93,20 @@
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
-        "Atlas.tsx",
-        "Test/Test.tmx"
+        "Green/Green.tmx"
     ],
     "project": "Slumber.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "Green/Green.tmx",
+        "Catacombs/Catacombs-1.tmx",
+        "Heights/Snow.tmx",
+        "Caverns/Caverns-1.tmx",
+        "Test/Test.tmx",
         "Atlas.tsx",
-        "Test/Test.tmx"
+        "Big/Big.tmx",
+        "Bricks/Bricks.tmx",
+        "Catacombs/map.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
