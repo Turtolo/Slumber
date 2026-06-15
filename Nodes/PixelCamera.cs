@@ -39,7 +39,7 @@ public class PixelCamera : Camera2D
 
     //_axis = new Point(Core.Input.GetAxis("MoveLeft", "MoveRight"), Target.IsOnFloor ? Core.Input.GetAxis("MoveUp", "MoveDown") : 0);
 
-    _axis = Target.IsOnFloor ? Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveUp", "MoveDown") : Point.Zero;
+    _axis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveUp", "MoveDown");
 
     if (MathF.Abs(_axis.X) > MathF.Abs(_axis.Y))
     {

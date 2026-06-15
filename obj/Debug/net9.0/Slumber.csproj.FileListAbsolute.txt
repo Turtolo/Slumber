@@ -75,11 +75,8 @@
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Background/Heights/Tree3.xnb
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Background/Heights/Tree4.xnb
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Foreground/arches.xnb
-/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/l2.xnb
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/lan.xnb
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/light.xnb
-/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/lightsmall.xnb
-/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Shader/Lighting.xnb
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Big/Big.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Bricks/Bricks.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Catacombs/Catacombs-1.tmx

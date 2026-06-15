@@ -228,18 +228,6 @@
 #begin Maps/Atlas.tsx
 /copy:Maps/Atlas.tsx
 
-#begin Graphics/l2.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Graphics/l2.png
-
 #begin Graphics/light.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -251,18 +239,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Graphics/light.png
-
-#begin Graphics/lightsmall.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Graphics/lightsmall.png
 
 #begin Graphics/lan.png
 /importer:TextureImporter
@@ -407,11 +383,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Graphics/Background/Gardens/Gardens-Layer-2.png
-
-#begin Graphics/Shader/Lighting.fx
-/importer:EffectImporter
-/processor:EffectProcessor
-/build:Graphics/Shader/Lighting.fx
 
 #begin Maps/Catacombs/Catacombs-1.tmx
 /copy:Maps/Catacombs/Catacombs-1.tmx

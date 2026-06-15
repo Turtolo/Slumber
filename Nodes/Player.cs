@@ -14,13 +14,16 @@ namespace Slumber
 
     public int Health = 5;
 
-    public float Gravity = 1300f;
-    public float TerminalVelocity = 1200f;
-    public float JumpForce = -350;
+    public float BaseGravity = 950f;
+    public float FallGravity = 1950f;
+    public float TerminalVelocity = 1600f;
+    public float JumpForce = -330;
 
     public float WallSlideGravity = 20f;
     public float WallJumpHorizontalSpeed = 200f;
     public float WallJumpVerticalSpeed = 300f;
+
+    public float DashVelocity = 300f;
 
     public TimeSpan CoyoteTime = TimeSpan.FromSeconds(0.6f);
     public TimeSpan JumpBufferTime = TimeSpan.FromSeconds(0.2f);
@@ -33,7 +36,7 @@ namespace Slumber
     #region State
 
     public Vector2 PlayerAxis;
-    public int PlayerDirection;
+    public int PlayerDirection = 1;
 
     private bool CanTakeDamage = true;
 
@@ -46,6 +49,8 @@ namespace Slumber
     private int attackCounter;
     private bool attackBuffer;
     private bool isAttacking = false;
+
+    private bool _isDashing = false;
 
     #endregion
 
@@ -63,16 +68,22 @@ namespace Slumber
 
     #region Constructors
 
+    MTexture tex;
+
     public Player() { }
 
     public override void _EnterTree()
     {
       base._EnterTree();
 
-      var c = Core.Token.Create<CollisionShape2D>();
-      c.Shape = new RectangleShape2D(10, 25);
+      var c = Core.Token.Create<CollisionShape2D>().Set(n =>
+      {
+        n.Shape = new RectangleShape2D(8, 20);
+        n.Position = new Vector2(0, 5);
+        n.SetParent(this);
+      });
 
-      c.SetParent(this);
+      tex = Core.Resource.Load<MTexture>("Graphics/lan");
 
       var animations = AsepriteLoader.LoadAnimations(
           Core.Resource.Load<MTexture>("Graphics/Atlas/PlayerAnimation"),
@@ -101,7 +112,10 @@ namespace Slumber
         n.Name = "AttackArea";
       });
 
-      var tC = c.Clone();
+      var tC = c.Clone().Set(n =>
+      {
+        n.Position = new Vector2(0, 5);
+      });
 
       TakeDamageArea = Core.Token.Create<Area2D>().Set(n =>
       {
@@ -146,18 +160,21 @@ namespace Slumber
 
     public override void _PhysicsUpdate(float delta)
     {
+      base._PhysicsUpdate(delta);
+
       PlayerAxis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp").ToVector2();
       PlayerDirection = (int)PlayerAxis.X != 0 ? (int)PlayerAxis.X : PlayerDirection;
 
       HandleCoyoteTime();
       HandleJump();
+      HandleDash();
       HandleMovementInput();
       HandleWallSlide();
       HandleDeceleration(delta);
       HandleAttack();
       ApplyGravity(delta);
-
-      base._PhysicsUpdate(delta);
+      
+      MoveAndSlide(delta);
 
       Sprite.Shader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
 
@@ -204,7 +221,7 @@ namespace Slumber
       if (fps >= 60)
         color = Color.Green;
 
-      Core.Canvas.Submit(new FontDrawCall
+      Core.Canvas.SubmitUnLit(new FontDrawCall
       {
         Params = CanvasParams.Identity with
         {
@@ -218,12 +235,13 @@ namespace Slumber
 
       var t = ObjectPool<TextureDrawCall>.Get();
 
-      t.Texture = Core.Pixel;
+      t.Texture = tex;
+
 
       t.Params = CanvasParams.Identity with
       {
-        Scale = new Vector2(100, 100),
-        Position = Transform.Global.Position
+        Scale = new Vector2(1, 1),
+        Position = new Vector2(Transform.Global.Position.X - (tex.Bounds.Width / 2), Transform.Global.Position.Y - (tex.Bounds.Height / 2))
       };
     
       t.Key = BatchKey.Default with
@@ -231,17 +249,45 @@ namespace Slumber
         Matrix = Core.Token.Get<Camera2D>()?.GetTransform()
       };
 
-      canvas.SubmitLight(t);
-
+      //canvas.SubmitLight(t);
     }
 
     #endregion
 
     #region Movement
 
+    public TimeSpan DashDuration = TimeSpan.FromSeconds(0.2f);
+    public TimeSpan DashCooldown = TimeSpan.FromSeconds(0.1f);
+    
+    private bool _canDash = true;
+
+    public void HandleDash()
+    {
+      if (!_canDash)
+        return;
+
+      if (Core.Input.IsActionJustPressed("Dash"))
+        Dash();
+    }
+
+    public void Dash()
+    {
+      _isDashing = true;
+
+      Velocity.X = DashVelocity * PlayerDirection;
+      Velocity.Y = 0;
+
+      Await.Span(DashDuration, () =>
+      {
+        _isDashing = false;
+        _canDash = false;
+        Await.Span(DashCooldown, () => _canDash = true);
+      });
+    }
+
     public void HandleMovementInput()
     {
-      if (!AllowControl)
+      if (!AllowControl || _isDashing)
         return;
 
       float targetSpeed = MoveSpeed * PlayerAxis.X;
@@ -252,6 +298,9 @@ namespace Slumber
 
     public void HandleDeceleration(float delta)
     {
+      if (!AllowControl || _isDashing)
+        return;
+
       Velocity.X = PlayerAxis.X == 0 ? MoveToward(Velocity.X, 0, Deceleration * delta) : Velocity.X;
     }
 
@@ -269,10 +318,15 @@ namespace Slumber
 
     public void ApplyGravity(float delta)
     {
+      if (_isDashing)
+        return;
+
       if (!IsOnFloor)
       {
+        float activeGravity = Velocity.Y < 0 ? BaseGravity : FallGravity;
+
         Velocity.Y = MathF.Min(
-            Velocity.Y + Gravity * delta,
+            Velocity.Y + activeGravity * delta,
             TerminalVelocity
         );
       }
@@ -369,16 +423,23 @@ namespace Slumber
     {
       if (!isAttacking)
       {
-        if (IsOnFloor)
+        if (_isDashing)
         {
-          if (PlayerAxis.X != 0)
-            Sprite.PlayAnimation("Run");
-          else
-            Sprite.PlayAnimation("Idle");
+          Sprite.PlayAnimation("Dash");
         }
         else
         {
-          Sprite.PlayAnimation("Fall");
+          if (IsOnFloor)
+          {
+            if (PlayerAxis.X != 0)
+              Sprite.PlayAnimation("Run");
+            else
+              Sprite.PlayAnimation("Idle");
+          }
+          else
+          {
+            Sprite.PlayAnimation("Fall");
+          }
         }
       }
 

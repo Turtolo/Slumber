@@ -44,10 +44,15 @@ public class Stage2 : Node
 
     new PixelCamera()
       .Set(n => n.Weight = 0.1f)
-      .Set(n => n.TargetOffset = new Point(40))
+      .Set(n => n.TargetOffset = new Point(0, 40))
       .Set(n => n.OffsetSmoothing = true)
       .Set(n => n.FollowY = false)
       .Set(n => n.Target = Player);
+
+    new CanvasAnchor().Set(n => 
+    {
+      n.AmbientColor = Color.White;
+    });
 
     var loader = Loader.Default();
     var mapPath = Path.Combine(
