@@ -161,6 +161,8 @@ public static class DotTiledBridge
         continue;
       }
 
+      layer.TryGetProperty("layer", out IntProperty value);
+
       var tilemap = new Tilemap().Set(n =>
       {
         n.Name = tileLayer.Name;
@@ -170,6 +172,7 @@ public static class DotTiledBridge
           offsetX * map.TileWidth,
           offsetY * map.TileHeight
         );
+        n.Depth = value.Value;
 
         n.SetData(data);
       });

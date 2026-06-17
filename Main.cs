@@ -11,7 +11,7 @@ namespace Slumber
 
       ClassDB.Initialize(typeof(Main).Assembly);
 
-      Tree.SetScene(Core.Token.Create<Stage2>());
+      Tree.SetScene(Core.Token.Create<Green>());
 
       Input.AddBind("MoveLeft", new InputAction(Keys.A), new InputAction(Buttons.LeftThumbstickLeft), new InputAction(Buttons.DPadLeft));
       Input.AddBind("MoveRight", new InputAction(Keys.D), new InputAction(Buttons.LeftThumbstickRight), new InputAction(Buttons.DPadRight));
@@ -20,15 +20,13 @@ namespace Slumber
 
       Input.AddBind("Jump", new InputAction(Keys.Space), new InputAction(Buttons.A));
       Input.AddBind("Dash", new InputAction(Keys.E), new InputAction(Buttons.LeftShoulder));
-      
+
       Input.AddBind("Attack", new InputAction(Keys.K), new InputAction(Buttons.Y));
 
       Input.AddBind("Pause", new InputAction(Keys.Escape), new InputAction(Buttons.Start));
       Input.AddBind("Back", new InputAction(Keys.X), new InputAction(Buttons.B));
 
       Prefs.Graphics.Fullscreen = false;
-
-      Prefs.Graphics.CanvasColor = Color.Black;
 
       Prefs.General.ShowCollision = false;
 

@@ -1,14 +1,14 @@
 {
-    "activeFile": "Green/Green.tmx",
+    "activeFile": "Catacombs/Catacombs-1.tmx",
     "expandedProjectPaths": [
-        "Catacombs",
         ".",
+        "Catacombs",
         "Green"
     ],
     "fileStates": {
         "Atlas.tsx": {
             "scaleInDock": 1.2501,
-            "scaleInEditor": 1
+            "scaleInEditor": 0.7423
         },
         "Big/Big.tmx": {
             "scale": 0.9302,
@@ -33,15 +33,15 @@
             "scale": 1.1176,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -1302.791696492484,
-                "y": 125.26843235504654
+                "x": -1303.2390837508951,
+                "y": 217.4302075876879
             }
         },
         "Catacombs/map.tmx": {
             "scale": 1.1764,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 890.0034002040122,
+                "x": 889.5783747024823,
                 "y": 50.15300918055084
             }
         },
@@ -57,11 +57,11 @@
             }
         },
         "Green/Green.tmx": {
-            "scale": 1.2204,
-            "selectedLayer": 1,
+            "scale": 1.0012,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": -727.630285152409,
-                "y": 190.92100950508035
+                "x": 34.45864962045542,
+                "y": 74.91010787055535
             }
         },
         "Heights/Snow.tmx": {
@@ -93,20 +93,23 @@
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
-        "Green/Green.tmx"
+        "Green/Green.tmx",
+        "Atlas.tsx",
+        "Catacombs/map.tmx",
+        "Catacombs/Catacombs-1.tmx"
     ],
     "project": "Slumber.tiled-project",
-    "property.type": "bool",
+    "property.type": "int",
     "recentFiles": [
         "Green/Green.tmx",
+        "Atlas.tsx",
+        "Catacombs/map.tmx",
         "Catacombs/Catacombs-1.tmx",
         "Heights/Snow.tmx",
         "Caverns/Caverns-1.tmx",
         "Test/Test.tmx",
-        "Atlas.tsx",
         "Big/Big.tmx",
-        "Bricks/Bricks.tmx",
-        "Catacombs/map.tmx"
+        "Bricks/Bricks.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

@@ -20,14 +20,14 @@ public class Green : Node
 
     Player = new Player()
       .Set("Position", new Vector2(-105, -30));
-    
+
     new PixelCamera()
       .Set(n => n.Weight = 0.1f)
-      .Set(n => n.TargetOffset = new Point(0, 80))
+      .Set(n => n.TargetOffset = new Point(15, 80))
       .Set(n => n.OffsetSmoothing = true)
       .Set(n => n.FollowY = false)
       .Set(n => n.Target = Player);
-    
+
     var loader = Loader.Default();
     var mapPath = Path.Combine(
         AppContext.BaseDirectory,
@@ -36,6 +36,12 @@ public class Green : Node
         "Green",
         "Green.tmx"
     );
+
+    new CanvasAnchor().Set(n =>
+    {
+      n.BackBufferColor = Color.CornflowerBlue;
+    });
+
 
     DotTiledBridge.Load(mapPath, loader);
   }

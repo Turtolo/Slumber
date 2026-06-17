@@ -49,7 +49,7 @@ public class Stage2 : Node
       .Set(n => n.FollowY = false)
       .Set(n => n.Target = Player);
 
-    new CanvasAnchor().Set(n => 
+    new CanvasAnchor().Set(n =>
     {
       n.AmbientColor = Color.White;
     });

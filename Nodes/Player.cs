@@ -79,7 +79,7 @@ namespace Slumber
       var c = Core.Token.Create<CollisionShape2D>().Set(n =>
       {
         n.Shape = new RectangleShape2D(8, 20);
-        n.Position = new Vector2(0, 5);
+        n.Position = new Vector2(0, 4);
         n.SetParent(this);
       });
 
@@ -114,7 +114,7 @@ namespace Slumber
 
       var tC = c.Clone().Set(n =>
       {
-        n.Position = new Vector2(0, 5);
+        n.Position = new Vector2(0, 4);
       });
 
       TakeDamageArea = Core.Token.Create<Area2D>().Set(n =>
@@ -173,7 +173,7 @@ namespace Slumber
       HandleDeceleration(delta);
       HandleAttack();
       ApplyGravity(delta);
-      
+
       MoveAndSlide(delta);
 
       Sprite.Shader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
@@ -243,7 +243,7 @@ namespace Slumber
         Scale = new Vector2(1, 1),
         Position = new Vector2(Transform.Global.Position.X - (tex.Bounds.Width / 2), Transform.Global.Position.Y - (tex.Bounds.Height / 2))
       };
-    
+
       t.Key = BatchKey.Default with
       {
         Matrix = Core.Token.Get<Camera2D>()?.GetTransform()
@@ -258,7 +258,7 @@ namespace Slumber
 
     public TimeSpan DashDuration = TimeSpan.FromSeconds(0.2f);
     public TimeSpan DashCooldown = TimeSpan.FromSeconds(0.1f);
-    
+
     private bool _canDash = true;
 
     public void HandleDash()
