@@ -1,5 +1,5 @@
 { "frames": {
-   "PlayerAnimation-5 0.ase": {
+   "KoalaAtlas 0.ase": {
     "frame": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -7,7 +7,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 1.ase": {
+   "KoalaAtlas 1.ase": {
     "frame": { "x": 256, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -15,7 +15,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 2.ase": {
+   "KoalaAtlas 2.ase": {
     "frame": { "x": 512, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -23,7 +23,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 3.ase": {
+   "KoalaAtlas 3.ase": {
     "frame": { "x": 768, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -31,7 +31,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 4.ase": {
+   "KoalaAtlas 4.ase": {
     "frame": { "x": 1024, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -39,7 +39,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 5.ase": {
+   "KoalaAtlas 5.ase": {
     "frame": { "x": 1280, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -47,7 +47,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 6.ase": {
+   "KoalaAtlas 6.ase": {
     "frame": { "x": 1536, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -55,7 +55,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 7.ase": {
+   "KoalaAtlas 7.ase": {
     "frame": { "x": 1792, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -63,7 +63,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 8.ase": {
+   "KoalaAtlas 8.ase": {
     "frame": { "x": 2048, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -71,7 +71,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 9.ase": {
+   "KoalaAtlas 9.ase": {
     "frame": { "x": 2304, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -79,7 +79,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 10.ase": {
+   "KoalaAtlas 10.ase": {
     "frame": { "x": 2560, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -87,7 +87,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 11.ase": {
+   "KoalaAtlas 11.ase": {
     "frame": { "x": 2816, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -95,7 +95,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 12.ase": {
+   "KoalaAtlas 12.ase": {
     "frame": { "x": 3072, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -103,7 +103,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 13.ase": {
+   "KoalaAtlas 13.ase": {
     "frame": { "x": 3328, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -111,7 +111,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 14.ase": {
+   "KoalaAtlas 14.ase": {
     "frame": { "x": 3584, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -119,7 +119,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 15.ase": {
+   "KoalaAtlas 15.ase": {
     "frame": { "x": 3840, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -127,7 +127,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 16.ase": {
+   "KoalaAtlas 16.ase": {
     "frame": { "x": 4096, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -135,7 +135,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 17.ase": {
+   "KoalaAtlas 17.ase": {
     "frame": { "x": 4352, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -143,7 +143,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 70
    },
-   "PlayerAnimation-5 18.ase": {
+   "KoalaAtlas 18.ase": {
     "frame": { "x": 4608, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -151,7 +151,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 70
    },
-   "PlayerAnimation-5 19.ase": {
+   "KoalaAtlas 19.ase": {
     "frame": { "x": 4864, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -159,7 +159,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 70
    },
-   "PlayerAnimation-5 20.ase": {
+   "KoalaAtlas 20.ase": {
     "frame": { "x": 5120, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -167,7 +167,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 70
    },
-   "PlayerAnimation-5 21.ase": {
+   "KoalaAtlas 21.ase": {
     "frame": { "x": 5376, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -175,7 +175,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 70
    },
-   "PlayerAnimation-5 22.ase": {
+   "KoalaAtlas 22.ase": {
     "frame": { "x": 5632, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -183,7 +183,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 70
    },
-   "PlayerAnimation-5 23.ase": {
+   "KoalaAtlas 23.ase": {
     "frame": { "x": 5888, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -191,7 +191,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 70
    },
-   "PlayerAnimation-5 24.ase": {
+   "KoalaAtlas 24.ase": {
     "frame": { "x": 6144, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -199,55 +199,55 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 70
    },
-   "PlayerAnimation-5 25.ase": {
+   "KoalaAtlas 25.ase": {
     "frame": { "x": 6400, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 100
+    "duration": 70
    },
-   "PlayerAnimation-5 26.ase": {
+   "KoalaAtlas 26.ase": {
     "frame": { "x": 6656, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 100
+    "duration": 70
    },
-   "PlayerAnimation-5 27.ase": {
+   "KoalaAtlas 27.ase": {
     "frame": { "x": 6912, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 100
+    "duration": 70
    },
-   "PlayerAnimation-5 28.ase": {
+   "KoalaAtlas 28.ase": {
     "frame": { "x": 7168, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 100
+    "duration": 70
    },
-   "PlayerAnimation-5 29.ase": {
+   "KoalaAtlas 29.ase": {
     "frame": { "x": 7424, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 100
+    "duration": 70
    },
-   "PlayerAnimation-5 30.ase": {
+   "KoalaAtlas 30.ase": {
     "frame": { "x": 7680, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 100
+    "duration": 70
    },
-   "PlayerAnimation-5 31.ase": {
+   "KoalaAtlas 31.ase": {
     "frame": { "x": 7936, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -255,7 +255,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 32.ase": {
+   "KoalaAtlas 32.ase": {
     "frame": { "x": 8192, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -263,7 +263,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 33.ase": {
+   "KoalaAtlas 33.ase": {
     "frame": { "x": 8448, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -271,7 +271,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 34.ase": {
+   "KoalaAtlas 34.ase": {
     "frame": { "x": 8704, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -279,7 +279,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 35.ase": {
+   "KoalaAtlas 35.ase": {
     "frame": { "x": 8960, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -287,7 +287,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 36.ase": {
+   "KoalaAtlas 36.ase": {
     "frame": { "x": 9216, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -295,7 +295,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 37.ase": {
+   "KoalaAtlas 37.ase": {
     "frame": { "x": 9472, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -303,7 +303,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 38.ase": {
+   "KoalaAtlas 38.ase": {
     "frame": { "x": 9728, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -311,8 +311,56 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
    },
-   "PlayerAnimation-5 39.ase": {
+   "KoalaAtlas 39.ase": {
     "frame": { "x": 9984, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 100
+   },
+   "KoalaAtlas 40.ase": {
+    "frame": { "x": 10240, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 100
+   },
+   "KoalaAtlas 41.ase": {
+    "frame": { "x": 10496, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 100
+   },
+   "KoalaAtlas 42.ase": {
+    "frame": { "x": 10752, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 100
+   },
+   "KoalaAtlas 43.ase": {
+    "frame": { "x": 11008, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 100
+   },
+   "KoalaAtlas 44.ase": {
+    "frame": { "x": 11264, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 100
+   },
+   "KoalaAtlas 45.ase": {
+    "frame": { "x": 11520, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
@@ -325,18 +373,20 @@
   "version": "1.3.12-dev",
   "image": "PlayerAnimation.png",
   "format": "RGBA8888",
-  "size": { "w": 10240, "h": 256 },
+  "size": { "w": 11776, "h": 256 },
   "scale": "1",
   "frameTags": [
    { "name": "Idle", "from": 0, "to": 5, "direction": "forward", "color": "#f7a547ff" },
    { "name": "Run", "from": 6, "to": 11, "direction": "forward", "color": "#f3ce52ff" },
    { "name": "Fall", "from": 12, "to": 16, "direction": "forward", "color": "#6acd5bff" },
-   { "name": "Attack", "from": 17, "to": 24, "direction": "forward", "color": "#57b9f2ff" },
-   { "name": "Chain", "from": 25, "to": 35, "direction": "forward", "color": "#a798edff" },
-   { "name": "Chain Charge", "from": 36, "to": 38, "direction": "forward", "color": "#d186dfff" },
-   { "name": "Dash", "from": 39, "to": 39, "direction": "forward", "color": "#feb0ffff" }
+   { "name": "Attack", "from": 17, "to": 23, "direction": "forward", "color": "#57b9f2ff" },
+   { "name": "RunAttack", "from": 24, "to": 30, "direction": "forward", "color": "#000000ff" },
+   { "name": "Chain", "from": 31, "to": 41, "direction": "forward", "color": "#a798edff" },
+   { "name": "Chain Charge", "from": 42, "to": 44, "direction": "forward", "color": "#d186dfff" },
+   { "name": "Dash", "from": 45, "to": 45, "direction": "forward", "color": "#feb0ffff" }
   ],
   "layers": [
+   { "name": "Sword", "opacity": 255, "blendMode": "normal" },
    { "name": "Main", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [

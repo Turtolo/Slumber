@@ -1,4 +1,6 @@
 using System;
+using ImGuiNET;
+
 namespace Slumber
 {
   public class Main : Core
@@ -30,7 +32,11 @@ namespace Slumber
 
       Prefs.General.ShowCollision = false;
 
+      Prefs.Graphics.MouseVisible = true;
+
       Prefs.Apply();
+
+      Console.WriteLine(Core.Instance.IsMouseVisible);
     }
 
     protected override void LoadContent()
@@ -51,9 +57,56 @@ namespace Slumber
         Tree.ReloadCurrentScene();
     }
 
+
     protected override void Draw(GameTime gameTime)
     {
+
       base.Draw(gameTime);
+
+      var player = Core.Token.Get<Player>();
+      
+      if (player == null)
+        return;
+
+      Core.ImGuiRenderer.BeforeLayout(gameTime);  
+      
+      ImGui.Begin("Player");  
+      ImGui.Text($"Velocity: {Core.Token.Get<Player>()?.Velocity.ToString()}");
+
+      ImGui.PushItemWidth(150); 
+
+      ImGui.InputFloat("BaseGravity", ref player.BaseGravity);
+      ImGui.SameLine();
+      if (ImGui.Button("Reset##BaseGravity")) 
+      {
+          player.BaseGravity = 950f;
+      }
+
+      ImGui.InputFloat("FallGravity", ref player.FallGravity);
+      ImGui.SameLine();
+      if (ImGui.Button("Reset##FallGravity")) 
+      {
+          player.FallGravity = 1950f;
+      }
+
+      ImGui.InputFloat("MoveSpeed", ref player.MoveSpeed);
+      ImGui.SameLine();
+      if (ImGui.Button("Reset##MoveSpeed")) 
+      {
+          player.MoveSpeed = 100f;
+      }
+
+      ImGui.InputFloat("JumpForce", ref player.JumpForce);
+      ImGui.SameLine();
+      if (ImGui.Button("Reset##JumpForce")) 
+      {
+          player.JumpForce = -330;
+      }
+
+      ImGui.PopItemWidth();
+      ImGui.End();
+
+      Core.ImGuiRenderer.AfterLayout();
     }
   }
 }

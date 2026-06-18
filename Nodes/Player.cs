@@ -16,8 +16,12 @@ namespace Slumber
 
     public float BaseGravity = 950f;
     public float FallGravity = 1950f;
-    public float TerminalVelocity = 1600f;
+    public float InitialTerminalVelocity = 300f;
+    public float SecondaryTerminalVelocity = 500f;
     public float JumpForce = -330;
+
+    public int InitialTerminalReachedCount = 0;
+    public const int InitialTerminalReachedCap = 9; 
 
     public float WallSlideGravity = 20f;
     public float WallJumpHorizontalSpeed = 200f;
@@ -138,7 +142,7 @@ namespace Slumber
       float iconSize = 16;
       float spacing = 2f;
 
-      Vector2 startPosition = new Vector2(6, 8);
+      Vector2 startPosition = new Vector2(8, 8);
 
       for (int i = 0; i < Health; i++)
       {
@@ -175,6 +179,8 @@ namespace Slumber
       ApplyGravity(delta);
 
       MoveAndSlide(delta);
+
+      Console.WriteLine(InitialTerminalReachedCount);
 
       Sprite.Shader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
 
@@ -324,16 +330,25 @@ namespace Slumber
       if (!IsOnFloor)
       {
         float activeGravity = Velocity.Y < 0 ? BaseGravity : FallGravity;
+        
+        float terminal = InitialTerminalReachedCount == InitialTerminalReachedCap ? SecondaryTerminalVelocity : InitialTerminalVelocity; 
 
         Velocity.Y = MathF.Min(
             Velocity.Y + activeGravity * delta,
-            TerminalVelocity
+            terminal
         );
+
+        if (Velocity.Y == InitialTerminalVelocity)
+          InitialTerminalReachedCount += 1;
+
       }
       else if (Velocity.Y > 0)
       {
         Velocity.Y = 0;
       }
+
+      if (IsOnFloor)
+          InitialTerminalReachedCount = 0;
     }
 
     public void HandleJump()
@@ -442,10 +457,12 @@ namespace Slumber
           }
         }
       }
-
       else
       {
-        Sprite.PlayAnimation("Attack");
+        if (PlayerAxis.X != 0)
+          Sprite.PlayAnimation("RunAttack");
+        else
+          Sprite.PlayAnimation("Attack");
       }
     }
 

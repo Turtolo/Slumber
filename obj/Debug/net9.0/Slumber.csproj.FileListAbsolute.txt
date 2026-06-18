@@ -17,7 +17,6 @@
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Atlas.tsx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Atlas.xnb
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Catacombs/map.tmx
-/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Catacombs/spritesheet.xnb
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Heights/Snow.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Test/Test.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Raw/Raw/Eagle.json
@@ -82,3 +81,10 @@
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Catacombs/Catacombs-1.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Caverns/Caverns-1.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Green/Green.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-test-1.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/ImGui.NET.dll
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/runtimes/linux-x64/native/libcimgui.so
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/runtimes/osx/native/libcimgui.dylib
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/runtimes/win-arm64/native/cimgui.dll
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/runtimes/win-x64/native/cimgui.dll
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/runtimes/win-x86/native/cimgui.dll

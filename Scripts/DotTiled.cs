@@ -46,7 +46,7 @@ public static class DotTiledBridge
           });
 
 
-          if (layer.TryGetProperty("one_way", out BoolProperty oneWay) && oneWay.Value == true)
+          if (obj.TryGetProperty("one_way", out BoolProperty oneWay) && oneWay.Value == true)
           {
             foreach (var c in stat.CollisionShapes)
               c.OneWay = oneWay.Value;
@@ -172,7 +172,7 @@ public static class DotTiledBridge
           offsetX * map.TileWidth,
           offsetY * map.TileHeight
         );
-        n.Depth = value.Value;
+        n.Depth = value != null ? value.Value : 0;
 
         n.SetData(data);
       });

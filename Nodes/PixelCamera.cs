@@ -12,7 +12,7 @@ public class PixelCamera : Camera2D
 {
   private Point _axis;
 
-  private Point _currentOffset;
+  private Vector2 _currentOffset;
 
   private Vector2 _setAsideOffset;
 
@@ -61,31 +61,32 @@ public class PixelCamera : Camera2D
     base._Process(delta);
 
     if (Target == null)
-    {
       return;
-    }
+
     Point axis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveUp", "MoveDown");
-    if (!Target.IsOnFloor && axis.Y != 0)
-    {
+
+    if ((Target.Velocity.X != 0 || Target.Velocity.Y != 0) && axis.Y != 0)
       yLocked = true;
-    }
-    if (Target.IsOnFloor && axis.Y == 0)
-    {
+
+    if (Target.Velocity.X == 0 && Target.Velocity.Y == 0 && axis.Y == 0)
       yLocked = false;
-    }
+
     _axis = new Point(axis.X, (!yLocked) ? axis.Y : 0);
+
     if (MathF.Abs(_axis.X) > MathF.Abs(_axis.Y))
-    {
       _axis.Y = 0;
-    }
     else
-    {
       _axis.X = 0;
-    }
+
     Point point = TargetOffset * _axis;
-    _currentOffset = (OffsetSmoothing ? MathE.Lerp(_currentOffset, point, Weight) : point);
+
+    _currentOffset = OffsetSmoothing
+      ? Vector2.Lerp(_currentOffset, new Vector2(point.X, point.Y), Weight)
+      : point.ToVector2();
+
     Vector2 position = Target.Transform.Global.Position;
-    Vector2 vector = _currentOffset.ToVector2();
+    Vector2 vector = Vector2.Floor(_currentOffset);
+
     if (FollowX)
     {
       float x = position.X - _cameraPlayerTargetPos.X;
@@ -103,6 +104,7 @@ public class PixelCamera : Camera2D
       }
     }
     Vector2 offset = base.Offset;
+
     float x3 = vector.X - offset.X;
     if (MathF.Abs(x3) > (float)Deadzone.Width)
     {
@@ -113,10 +115,14 @@ public class PixelCamera : Camera2D
     {
       offset.Y = vector.Y - (float)(MathF.Sign(x4) * Deadzone.Height);
     }
+
     base.Offset = offset;
+
     Vector2 cameraPlayerTargetPos = _cameraPlayerTargetPos;
+
     Point start = base.Position.ToPoint();
     Point point2 = cameraPlayerTargetPos.ToPoint();
+
     _setAsidePosition = (Smoothing ? MathE.Lerp(start, point2, Weight) : point2).ToVector2();
     base.Position = _setAsidePosition;
   }

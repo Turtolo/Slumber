@@ -1,9 +1,9 @@
 {
-    "activeFile": "Catacombs/Catacombs-1.tmx",
+    "activeFile": "Atlas.tsx",
     "expandedProjectPaths": [
         ".",
-        "Catacombs",
-        "Green"
+        "Green",
+        "Catacombs"
     ],
     "fileStates": {
         "Atlas.tsx": {
@@ -56,12 +56,20 @@
                 "y": -52.82212594219243
             }
         },
+        "Gardens/gardens-test-1.tmx": {
+            "scale": 0.9801,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 8.672584430160214,
+                "y": -35.71064177124782
+            }
+        },
         "Green/Green.tmx": {
             "scale": 1.0012,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 34.45864962045542,
-                "y": 74.91010787055535
+                "x": -0.49940071913704287,
+                "y": 127.84658409908107
             }
         },
         "Heights/Snow.tmx": {
@@ -94,12 +102,10 @@
     "map.tileWidth": 16,
     "openFiles": [
         "Green/Green.tmx",
-        "Atlas.tsx",
-        "Catacombs/map.tmx",
-        "Catacombs/Catacombs-1.tmx"
+        "Atlas.tsx"
     ],
     "project": "Slumber.tiled-project",
-    "property.type": "int",
+    "property.type": "bool",
     "recentFiles": [
         "Green/Green.tmx",
         "Atlas.tsx",

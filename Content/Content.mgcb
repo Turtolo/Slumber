@@ -204,27 +204,6 @@
 /processorParam:TextureFormat=Color
 /build:Maps/Atlas.png
 
-#begin Maps/Catacombs/spritesheet.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Maps/Catacombs/spritesheet.png
-
-#begin Maps/Catacombs/map.tmx
-/copy:Maps/Catacombs/map.tmx
-
-#begin Maps/Test/Test.tmx
-/copy:Maps/Test/Test.tmx
-
-#begin Maps/Heights/Snow.tmx
-/copy:Maps/Heights/Snow.tmx
-
 #begin Maps/Atlas.tsx
 /copy:Maps/Atlas.tsx
 
@@ -384,8 +363,8 @@
 /processorParam:TextureFormat=Color
 /build:Graphics/Background/Gardens/Gardens-Layer-2.png
 
-#begin Maps/Catacombs/Catacombs-1.tmx
-/copy:Maps/Catacombs/Catacombs-1.tmx
-
 #begin Maps/Green/Green.tmx
 /copy:Maps/Green/Green.tmx
+
+#begin Maps/Gardens/gardens-test-1.tmx
+/copy:Maps/Gardens/gardens-test-1.tmx

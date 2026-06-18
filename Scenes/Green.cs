@@ -1,5 +1,3 @@
-
-
 using System.IO;
 using System.Linq;
 using DotTiled.Serialization;
@@ -22,8 +20,8 @@ public class Green : Node
       .Set("Position", new Vector2(-105, -30));
 
     new PixelCamera()
-      .Set(n => n.Weight = 0.1f)
-      .Set(n => n.TargetOffset = new Point(15, 80))
+      .Set(n => n.Weight = 0.3f)
+      .Set(n => n.TargetOffset = new Point(0, 65))
       .Set(n => n.OffsetSmoothing = true)
       .Set(n => n.FollowY = false)
       .Set(n => n.Target = Player);
