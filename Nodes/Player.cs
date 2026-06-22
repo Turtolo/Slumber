@@ -8,7 +8,7 @@ namespace Slumber
   {
     #region Configuration
 
-    public float MoveSpeed = 100f;
+    public float MoveSpeed = 130f;
     public float Acceleration = 3500f;
     public float Deceleration = 2500f;
 
@@ -16,12 +16,10 @@ namespace Slumber
 
     public float BaseGravity = 950f;
     public float FallGravity = 1950f;
+    public float CurrentTerminalVelocity;
     public float InitialTerminalVelocity = 300f;
-    public float SecondaryTerminalVelocity = 500f;
-    public float JumpForce = -330;
-
-    public int InitialTerminalReachedCount = 0;
-    public const int InitialTerminalReachedCap = 9; 
+    public float SecondaryTerminalVelocity = 800f;
+    public float JumpForce = -350;
 
     public float WallSlideGravity = 20f;
     public float WallJumpHorizontalSpeed = 200f;
@@ -31,7 +29,7 @@ namespace Slumber
 
     public TimeSpan CoyoteTime = TimeSpan.FromSeconds(0.6f);
     public TimeSpan JumpBufferTime = TimeSpan.FromSeconds(0.2f);
-    public TimeSpan AttackBufferTime = TimeSpan.FromSeconds(0.2f);
+    public TimeSpan AttackBufferTime = TimeSpan.FromSeconds(0.08f);
 
     public bool AllowControl = true;
 
@@ -41,6 +39,8 @@ namespace Slumber
 
     public Vector2 PlayerAxis;
     public int PlayerDirection = 1;
+
+    public Raycast2D GroundCheck;
 
     private bool CanTakeDamage = true;
 
@@ -100,6 +100,7 @@ namespace Slumber
         n.Atlas = animations;
         n.Position = new Vector2(6, 9);
         n.IsLooping = true;
+        n.Rounded = true;
         n.Shader = Core.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();
       });
 
@@ -125,6 +126,13 @@ namespace Slumber
       {
         n.AddChild(tC);
         n.SetParent(this);
+      });
+
+      GroundCheck = new Raycast2D().Set(n =>
+      {
+        n.SetParent(this);
+        n.Shape = new RayCastShape2D(new Vector2(0, 50));
+        n.Position = new Vector2(0, 0);
       });
 
       AddHealthIcons();
@@ -180,11 +188,9 @@ namespace Slumber
 
       MoveAndSlide(delta);
 
-      Console.WriteLine(InitialTerminalReachedCount);
-
       Sprite.Shader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
 
-      Position = new Vector2(MathF.Round(Position.X), Position.Y);
+      //Position = new Vector2(MathF.Round(Position.X), Position.Y);
     }
 
     public override void _Process(float delta)
@@ -195,28 +201,15 @@ namespace Slumber
       FlipSprite();
       HandleDamage();
 
-
       if (attackCounter == 2)
         attackCounter = 0;
-
-      var rounded = new Vector2(
-          MathF.Round(Position.X),
-          MathF.Round(Position.Y)
-      );
-
-      var fractional = Position - rounded;
-
-      Sprite.Position = new Vector2(
-          6 - fractional.X,
-          9 - fractional.Y
-      );
     }
 
     public override void _Submit(Canvas2D canvas)
     {
       base._Submit(canvas);
 
-      var fps = Math.Round(Core.FPS);
+      var fps = Math.Round(Core.Time.FPS);
 
       Color color = Color.White;
 
@@ -235,7 +228,7 @@ namespace Slumber
           Position = new Vector2(625, 8),
         },
         Depth = 99,
-        Font = Core.BitmapFont,
+        Font = Core.Resources.BitmapFont,
         Text = fps.ToString()
       });
 
@@ -326,29 +319,25 @@ namespace Slumber
     {
       if (_isDashing)
         return;
-
+      
       if (!IsOnFloor)
       {
         float activeGravity = Velocity.Y < 0 ? BaseGravity : FallGravity;
         
-        float terminal = InitialTerminalReachedCount == InitialTerminalReachedCap ? SecondaryTerminalVelocity : InitialTerminalVelocity; 
+        if (GroundCheck.IsColliding())
+          CurrentTerminalVelocity = InitialTerminalVelocity;
+        else if (CurrentTerminalVelocity != SecondaryTerminalVelocity)
+          CurrentTerminalVelocity = MathHelper.Lerp(CurrentTerminalVelocity, SecondaryTerminalVelocity, 0.1f);
 
         Velocity.Y = MathF.Min(
             Velocity.Y + activeGravity * delta,
-            terminal
+            CurrentTerminalVelocity
         );
-
-        if (Velocity.Y == InitialTerminalVelocity)
-          InitialTerminalReachedCount += 1;
-
       }
       else if (Velocity.Y > 0)
       {
         Velocity.Y = 0;
       }
-
-      if (IsOnFloor)
-          InitialTerminalReachedCount = 0;
     }
 
     public void HandleJump()
@@ -468,12 +457,12 @@ namespace Slumber
 
     private void FlipSprite()
     {
-      if (PlayerAxis.X > 0)
+      if (PlayerDirection > 0)
       {
         Sprite.SpriteEffects = SpriteEffects.None;
         AttackArea.Position = new Vector2(40, 5);
       }
-      else if (PlayerAxis.X < 0)
+      else if (PlayerDirection < 0)
       {
         Sprite.SpriteEffects = SpriteEffects.FlipHorizontally;
         AttackArea.Position = new Vector2(-30, 5);

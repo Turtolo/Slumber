@@ -141,7 +141,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 70
+    "duration": 75
    },
    "KoalaAtlas 18.ase": {
     "frame": { "x": 4608, "y": 0, "w": 256, "h": 256 },
@@ -149,7 +149,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 70
+    "duration": 75
    },
    "KoalaAtlas 19.ase": {
     "frame": { "x": 4864, "y": 0, "w": 256, "h": 256 },
@@ -157,7 +157,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 70
+    "duration": 75
    },
    "KoalaAtlas 20.ase": {
     "frame": { "x": 5120, "y": 0, "w": 256, "h": 256 },
@@ -165,7 +165,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 70
+    "duration": 75
    },
    "KoalaAtlas 21.ase": {
     "frame": { "x": 5376, "y": 0, "w": 256, "h": 256 },
@@ -173,7 +173,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 70
+    "duration": 75
    },
    "KoalaAtlas 22.ase": {
     "frame": { "x": 5632, "y": 0, "w": 256, "h": 256 },
@@ -181,7 +181,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 70
+    "duration": 75
    },
    "KoalaAtlas 23.ase": {
     "frame": { "x": 5888, "y": 0, "w": 256, "h": 256 },
@@ -189,7 +189,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 70
+    "duration": 75
    },
    "KoalaAtlas 24.ase": {
     "frame": { "x": 6144, "y": 0, "w": 256, "h": 256 },

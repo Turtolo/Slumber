@@ -1,4 +1,5 @@
 using System;
+
 using ImGuiNET;
 
 namespace Slumber
@@ -13,7 +14,7 @@ namespace Slumber
 
       ClassDB.Initialize(typeof(Main).Assembly);
 
-      Tree.SetScene(Core.Token.Create<Green>());
+      Tree.SetScene(Core.Token.Create<GardensTest>());
 
       Input.AddBind("MoveLeft", new InputAction(Keys.A), new InputAction(Buttons.LeftThumbstickLeft), new InputAction(Buttons.DPadLeft));
       Input.AddBind("MoveRight", new InputAction(Keys.D), new InputAction(Buttons.LeftThumbstickRight), new InputAction(Buttons.DPadRight));
@@ -36,7 +37,6 @@ namespace Slumber
 
       Prefs.Apply();
 
-      Console.WriteLine(Core.Instance.IsMouseVisible);
     }
 
     protected override void LoadContent()
@@ -57,16 +57,22 @@ namespace Slumber
         Tree.ReloadCurrentScene();
     }
 
-
+    private bool showCollision;
+    
     protected override void Draw(GameTime gameTime)
     {
 
       base.Draw(gameTime);
+      
+      #if DEBUG
 
       var player = Core.Token.Get<Player>();
       
       if (player == null)
         return;
+
+      Core.Prefs.General.ShowCollision = showCollision;
+      Core.Prefs.Apply();
 
       Core.ImGuiRenderer.BeforeLayout(gameTime);  
       
@@ -82,6 +88,22 @@ namespace Slumber
           player.BaseGravity = 950f;
       }
 
+
+      ImGui.InputFloat("InitialTerminal", ref player.InitialTerminalVelocity);
+      ImGui.SameLine();
+      if (ImGui.Button("Reset##InitialTerminal")) 
+      {
+          player.InitialTerminalVelocity = 300f;
+      }
+
+
+      ImGui.InputFloat("SecondaryTerminal", ref player.SecondaryTerminalVelocity);
+      ImGui.SameLine();
+      if (ImGui.Button("Reset##SecondaryTerminal")) 
+      {
+          player.SecondaryTerminalVelocity = 800f;
+      }
+
       ImGui.InputFloat("FallGravity", ref player.FallGravity);
       ImGui.SameLine();
       if (ImGui.Button("Reset##FallGravity")) 
@@ -93,20 +115,29 @@ namespace Slumber
       ImGui.SameLine();
       if (ImGui.Button("Reset##MoveSpeed")) 
       {
-          player.MoveSpeed = 100f;
+          player.MoveSpeed = 130f;
       }
 
       ImGui.InputFloat("JumpForce", ref player.JumpForce);
       ImGui.SameLine();
       if (ImGui.Button("Reset##JumpForce")) 
       {
-          player.JumpForce = -330;
+          player.JumpForce = -350;
       }
 
       ImGui.PopItemWidth();
       ImGui.End();
 
+      ImGui.Begin("Debug");
+
+      ImGui.Checkbox("Show-Collision", ref showCollision);
+
+      ImGui.End();
+
+
       Core.ImGuiRenderer.AfterLayout();
+
+      #endif
     }
   }
 }

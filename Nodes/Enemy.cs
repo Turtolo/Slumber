@@ -12,8 +12,8 @@ public class Enemy : KinematicBody2D
   public float Speed;
   public float TargetSpeed;
 
-  public RayCast2D RayRight;
-  public RayCast2D RayLeft;
+  public Raycast2D RayRight;
+  public Raycast2D RayLeft;
 
   public Area2D LeftArea;
   public Area2D RightArea;
@@ -82,14 +82,14 @@ public class Enemy : KinematicBody2D
       n.SetParent(this);
     });
 
-    RayRight = Core.Token.Create<RayCast2D>().Set(n =>
+    RayRight = Core.Token.Create<Raycast2D>().Set(n =>
     {
       n.SetParent(this);
       n.TargetPosition = new Vector2(20, 50);
       n.Position = new Vector2(40, 0);
     });
 
-    RayLeft = Core.Token.Create<RayCast2D>().Set(n =>
+    RayLeft = Core.Token.Create<Raycast2D>().Set(n =>
     {
       n.SetParent(this);
       n.TargetPosition = new Vector2(-20, 50);
@@ -122,7 +122,7 @@ public class Enemy : KinematicBody2D
   private void SetNewTargetSpeed()
   {
     float random = MathE.RandomFloat(0f, 1f);
-    TargetSpeed = float.Lerp(20f, 120f, random * random);
+    TargetSpeed = float.Lerp(60f, 120f, random * random);
 
     if (MathE.Random.NextDouble() < 0.2)
       TargetSpeed = 0;
@@ -135,6 +135,9 @@ public class Enemy : KinematicBody2D
 
   public override void _PhysicsUpdate(float delta)
   {
+
+    base._PhysicsUpdate(delta);
+
     ApplyGravity(delta);
     Flip();
 
@@ -142,7 +145,7 @@ public class Enemy : KinematicBody2D
 
     Move(delta);
 
-    base._PhysicsUpdate(delta);
+    MoveAndSlide(delta);
 
     Sprite.PlayAnimation("run");
     Sprite.Shader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
@@ -164,10 +167,10 @@ public class Enemy : KinematicBody2D
   {
     Velocity.X = Speed * Direction;
 
-    if (Direction == 1 && !RayRight.IsColliding)
+    if (Direction == 1 && !RayRight.IsColliding())
       Direction = -1;
 
-    if (Direction == -1 && !RayLeft.IsColliding)
+    if (Direction == -1 && !RayLeft.IsColliding())
       Direction = 1;
   }
 

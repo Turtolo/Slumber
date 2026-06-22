@@ -56,9 +56,9 @@ public class PixelCamera : Camera2D
     }
   }
 
-  public override void _Process(float delta)
+  public override void _PhysicsUpdate(float delta)
   {
-    base._Process(delta);
+    base._PhysicsUpdate(delta);
 
     if (Target == null)
       return;

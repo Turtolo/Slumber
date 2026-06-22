@@ -1,13 +1,15 @@
 {
-    "activeFile": "Atlas.tsx",
+    "activeFile": "Gardens/gardens-test-1.tmx",
     "expandedProjectPaths": [
-        ".",
         "Green",
+        "Termplates",
+        ".",
+        "Gardens",
         "Catacombs"
     ],
     "fileStates": {
         "Atlas.tsx": {
-            "scaleInDock": 1.2501,
+            "scaleInDock": 1.2934,
             "scaleInEditor": 0.7423
         },
         "Big/Big.tmx": {
@@ -57,19 +59,25 @@
             }
         },
         "Gardens/gardens-test-1.tmx": {
-            "scale": 0.9801,
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 0.7585,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 8.672584430160214,
-                "y": -35.71064177124782
+                "x": 881.34475939354,
+                "y": 510.2175346077786
             }
         },
         "Green/Green.tmx": {
-            "scale": 1.0012,
-            "selectedLayer": 0,
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 1.0723,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": -0.49940071913704287,
-                "y": 127.84658409908107
+                "x": 6.061736454350438,
+                "y": 120.30215424787843
             }
         },
         "Heights/Snow.tmx": {
@@ -96,17 +104,18 @@
         }
     },
     "last.imagePath": "/Users/nilslauvstad/Git/Slumber/Content/Maps",
+    "last.objectTemplatePath": "/Users/nilslauvstad/Git/Slumber/Content/Termplates",
     "map.fixedSize": false,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
-        "Green/Green.tmx",
-        "Atlas.tsx"
+        "Gardens/gardens-test-1.tmx"
     ],
     "project": "Slumber.tiled-project",
-    "property.type": "bool",
+    "property.type": "string",
     "recentFiles": [
+        "Gardens/gardens-test-1.tmx",
         "Green/Green.tmx",
         "Atlas.tsx",
         "Catacombs/map.tmx",
