@@ -18,4 +18,4 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.xnb","TextureProcessor","Texture2DContent",30158,737365,0.096859
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.tsx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.tsx","CopyItem","File",224,224,0.000287
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-test-1.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-test-1.tmx","CopyItem","File",22452,22452,0.00072
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Green/Green.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Green/Green.tmx","CopyItem","File",4303,4303,0.001098
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Green/Green.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Green/Green.tmx","CopyItem","File",4303,4303,0.001284

@@ -10,6 +10,8 @@ public class GardensTest : Node
 {
   public Player Player;
 
+  public PixelCamera Camera;
+
   public override void _EnterTree()
   {
     base._EnterTree();
@@ -17,39 +19,15 @@ public class GardensTest : Node
     var root = new Node2D()
       .Set("Position", new Vector2(0, 60));
 
-    new Parallax2D().Set(n =>
-    {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-1");
-      n.Depth = -8;
-      n.MotionScale = new Vector2(0.5f, 0f);
-      n.RepeatSize = new Extent(640, 0);
-      n.SetParent(root);
-    });
-
-    new Parallax2D().Set(n =>
-    {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-2");
-      n.Depth = -9;
-      n.MotionScale = new Vector2(0.3f, 0f);
-      n.RepeatSize = new Extent(640, 0);
-      n.SetParent(root);
-    });
-
-    new Parallax2D().Set(n =>
-    {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-3");
-      n.Depth = -10;
-      n.MotionScale = new Vector2(0.1f, 0f);
-      n.RepeatSize = new Extent(640, 0);
-      n.SetParent(root);
-    });
-
     Player = new Player()
       .Set("Position", new Vector2(200, -30));
+
+    var bounds = new Rectangle(-320, -69, 717, 250);
     
-    new PixelCamera()
+    Camera = new PixelCamera()
       .Set(n => n.Weight = 0.3f)
       .Set(n => n.TargetOffset = new Point(0, 65))
+      .Set(n => n.Limit = bounds)
       .Set(n => n.Deadzone = new Extent(30, 0))
       .Set(n => n.OffsetSmoothing = true)
       .Set(n => n.Target = Player);
@@ -86,6 +64,8 @@ public class GardensTest : Node
   public override void _Process(float delta)
   {
     base._Process(delta);
+
+    Console.WriteLine(Camera.Transform.Global.Position);
   }
 
   public override void _Submit(Canvas2D canvas)

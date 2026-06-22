@@ -46,6 +46,9 @@ public class PixelCamera : Camera2D
   [Export]
   public Extent Deadzone { get; set; } = new Extent(30, 16);
 
+  [Export]
+  public Rectangle? Limit { get; set; }
+
   public override void _EnterTree()
   {
     base._EnterTree();
@@ -124,6 +127,29 @@ public class PixelCamera : Camera2D
     Point point2 = cameraPlayerTargetPos.ToPoint();
 
     _setAsidePosition = (Smoothing ? MathE.Lerp(start, point2, Weight) : point2).ToVector2();
-    base.Position = _setAsidePosition;
+
+    if (Limit.HasValue)
+    {
+      Rectangle bounds = Limit.Value;
+      Rectangle screenView = GetWorldViewRectangle();
+
+      Rectangle worldView = new Rectangle((int)_setAsidePosition.X, (int)_setAsidePosition.Y, screenView.Width, screenView.Height);
+
+      Vector2 center = new Vector2(
+          worldView.Width * 0.5f, 
+          worldView.Height * 0.5f);
+      
+      Vector2 min = new Vector2(bounds.Left + center.X, bounds.Top + center.Y);
+      Vector2 max = new Vector2(bounds.Right - center.X, bounds.Bottom - center.Y);
+
+      if (max.X < min.X)
+        max.X = min.X = bounds.Left + (bounds.Width * 0.5f);
+      if (max.Y < min.Y)
+        max.Y = min.Y = bounds.Top + (bounds.Height * 0.5f);
+
+      _setAsidePosition = Vector2.Clamp(_setAsidePosition, min, max);
+    }
+
+    base.Position = Vector2.Floor(_setAsidePosition);
   }
 }
