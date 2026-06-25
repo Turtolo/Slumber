@@ -1,15 +1,15 @@
 {
-    "activeFile": "Gardens/gardens-test-1.tmx",
+    "activeFile": "Catacombs/catacombs-test-1.tmx",
     "expandedProjectPaths": [
-        "Green",
-        "Termplates",
-        ".",
         "Gardens",
-        "Catacombs"
+        "Termplates",
+        "Green",
+        "Catacombs",
+        "."
     ],
     "fileStates": {
         "Atlas.tsx": {
-            "scaleInDock": 1.2934,
+            "scaleInDock": 0.9047,
             "scaleInEditor": 0.7423
         },
         "Big/Big.tmx": {
@@ -39,6 +39,18 @@
                 "y": 217.4302075876879
             }
         },
+        "Catacombs/catacombs-test-1.tmx": {
+            "expandedObjectLayers": [
+                3,
+                2
+            ],
+            "scale": 0.6776,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": -475.94451003541917,
+                "y": -48.7012987012987
+            }
+        },
         "Catacombs/map.tmx": {
             "scale": 1.1764,
             "selectedLayer": 0,
@@ -60,24 +72,25 @@
         },
         "Gardens/gardens-test-1.tmx": {
             "expandedObjectLayers": [
+                4,
                 2
             ],
-            "scale": 0.7585,
-            "selectedLayer": 0,
+            "scale": 0.8206,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 881.34475939354,
-                "y": 510.2175346077786
+                "x": 92.00584937850354,
+                "y": 123.08067267852795
             }
         },
         "Green/Green.tmx": {
             "expandedObjectLayers": [
-                3
+                5
             ],
-            "scale": 1.0723,
-            "selectedLayer": -1,
+            "scale": 1.1299,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": -182.31838105007927,
-                "y": 123.09987876527094
+                "x": -654.4826975838571,
+                "y": -37.17143110009738
             }
         },
         "Heights/Snow.tmx": {
@@ -110,13 +123,16 @@
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
-        "Gardens/gardens-test-1.tmx"
-    ],
-    "project": "Slumber.tiled-project",
-    "property.type": "string",
-    "recentFiles": [
         "Gardens/gardens-test-1.tmx",
         "Green/Green.tmx",
+        "Catacombs/catacombs-test-1.tmx"
+    ],
+    "project": "Slumber.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "Green/Green.tmx",
+        "Gardens/gardens-test-1.tmx",
+        "Catacombs/catacombs-test-1.tmx",
         "Atlas.tsx",
         "Catacombs/map.tmx",
         "Catacombs/Catacombs-1.tmx",

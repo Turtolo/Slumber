@@ -5,7 +5,7 @@ using MonoTile;
 
 namespace Slumber;
 
-public class Green : Node
+public class Gardens : Node
 {
   public Player Player;
 
@@ -17,40 +17,64 @@ public class Green : Node
       .Set("Position", new Vector2(0, 35));
 
     Player = new Player()
-      .Set("Position", new Vector2(-105, -30));
+      .Set("Position", new Vector2(-50, 68));
+
+    var rect = new Rectangle(-864, -96, 1152, 288);
 
     new PixelCamera()
       .Set(n => n.Weight = 0.3f)
       .Set(n => n.TargetOffset = new Point(0, 65))
+      .Set(n => n.Limit = rect)
       .Set(n => n.Deadzone = new Extent(30, 0))
       .Set(n => n.OffsetSmoothing = true)
       .Set(n => n.Target = Player);
+
+
+    new Parallax2D().Set(n =>
+    {
+      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-1");
+      n.Depth = -8;
+      n.MotionScale = new Vector2(0.2f, 0f);
+      n.RepeatSize = new Extent(640, 0);
+      n.RepeatTimes = 4;
+      n.SetParent(root);
+    });
+
+    new Parallax2D().Set(n =>
+    {
+      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-2");
+      n.Depth = -9;
+      n.MotionScale = new Vector2(0.3f, 0f);
+      n.RepeatTimes = 4;
+      n.RepeatSize = new Extent(640, 0);
+      n.SetParent(root);
+    });
+
+    new Parallax2D().Set(n =>
+    {
+      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-3");
+      n.Depth = -10;
+      n.MotionScale = new Vector2(0.4f, 0f);
+      n.RepeatTimes = 4;
+      n.RepeatSize = new Extent(640, 0);
+      n.SetParent(root);
+    });
 
     var loader = Loader.Default();
     var mapPath = Path.Combine(
         AppContext.BaseDirectory,
         "Content",
         "Maps",
-        "Green",
-        "Green.tmx"
+        "Gardens",
+        "gardens-1.tmx"
     );
 
     new CanvasAnchor().Set(n =>
     {
-      n.BackBufferColor = Color.CornflowerBlue;
+      n.BackBufferColor = Color.Black;
     });
     
-    new ColorRect().Set(n =>
-    {
-      n.Color = Color.White;
-      n.Scale = new Vector2(100, 100);
-      n.Depth = 99;
-      n.Position = new Vector2(50, 0);
-    });
-
     DotTiledBridge.Load(mapPath, loader);
-    
-
   }
 
   public override void _ExitTree()
@@ -77,27 +101,5 @@ public class Green : Node
   public override void _Submit(Canvas2D canvas)
   {
     base._Submit(canvas);
-
-    return;
-
-    TextureDrawCall call = ObjectPool<TextureDrawCall>.Get();
-      
-    call.Texture = Core.Resources.Pixel;
-    call.Depth = 99;
-
-    call.Params = CanvasParams.Identity with
-    {
-      Position = new Vector2(0, 0),
-      Color = Color.Blue,
-      Rotation = 0f,
-      Scale = new Vector2(100, 100),
-    };
-
-    call.Key = BatchKey.Default with
-    {
-      Matrix = Core.Token.Get<Camera2D>()?.GetTransform(),
-    };
-
-    Core.Canvas.Submit(call);
   }
 }

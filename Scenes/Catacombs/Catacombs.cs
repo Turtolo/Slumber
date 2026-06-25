@@ -1,4 +1,5 @@
 
+
 using System.IO;
 using System.Linq;
 using DotTiled.Serialization;
@@ -6,7 +7,7 @@ using MonoTile;
 
 namespace Slumber;
 
-public class GardensTest : Node
+public class Catacombs : Node
 {
   public Player Player;
 
@@ -20,14 +21,13 @@ public class GardensTest : Node
       .Set("Position", new Vector2(0, 60));
 
     Player = new Player()
-      .Set("Position", new Vector2(200, -30));
+      .Set("Position", new Vector2(-192, -16));
 
-    var bounds = new Rectangle(-320, -69, 717, 250);
+    var bounds = new Rectangle(-320, -64, 704, 304);
     
     Camera = new PixelCamera()
       .Set(n => n.Weight = 0.3f)
       .Set(n => n.TargetOffset = new Point(0, 65))
-      .Set(n => n.Limit = bounds)
       .Set(n => n.Deadzone = new Extent(30, 0))
       .Set(n => n.OffsetSmoothing = true)
       .Set(n => n.Target = Player);
@@ -37,14 +37,26 @@ public class GardensTest : Node
         AppContext.BaseDirectory,
         "Content",
         "Maps",
-        "Gardens",
-        "gardens-test-1.tmx"
+        "Catacombs",
+        "catacombs-test-1.tmx"
     );
 
     new CanvasAnchor().Set(n =>
     {
       n.BackBufferColor = Color.Black;
       //n.AmbientColor = Color.Black;
+    });
+
+
+    new Parallax2D().Set(n =>
+    {
+      n.Position = new Vector2(-500, -100);
+      n.Texture = Core.Resource.Load<MTexture>("Graphics/Foreground/arches");
+      n.Depth = 10;
+      n.MotionScale = new Vector2(0.1f, 0f);
+      n.RepeatTimes = 4;
+      n.RepeatSize = new Extent(324, 0);
+      n.SetParent(root);
     });
 
 

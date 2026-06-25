@@ -363,8 +363,11 @@
 /processorParam:TextureFormat=Color
 /build:Graphics/Background/Gardens/Gardens-Layer-2.png
 
-#begin Maps/Green/Green.tmx
-/copy:Maps/Green/Green.tmx
-
 #begin Maps/Gardens/gardens-test-1.tmx
 /copy:Maps/Gardens/gardens-test-1.tmx
+
+#begin Maps/Catacombs/catacombs-test-1.tmx
+/copy:Maps/Catacombs/catacombs-test-1.tmx
+
+#begin Maps/Gardens/gardens-1.tmx
+/copy:Maps/Gardens/gardens-1.tmx

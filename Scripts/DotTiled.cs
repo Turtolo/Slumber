@@ -172,6 +172,7 @@ public static class DotTiledBridge
           offsetX * map.TileWidth,
           offsetY * map.TileHeight
         );
+
         n.Depth = value != null ? value.Value : 0;
 
         n.SetData(data);
