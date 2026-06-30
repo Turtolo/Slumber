@@ -19,5 +19,5 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.xnb","TextureProcessor","Texture2DContent",30780,737365,0.105467
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.tsx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.tsx","CopyItem","File",224,224,0.000287
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Catacombs/catacombs-test-1.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Catacombs/catacombs-test-1.tmx","CopyItem","File",6981,6981,0.000649
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-1.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-1.tmx","CopyItem","File",33405,33405,0.000674
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-1.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-1.tmx","CopyItem","File",33405,33405,0.000889
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-test-1.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-test-1.tmx","CopyItem","File",22565,22565,0.000397

@@ -42,19 +42,21 @@ namespace Slumber
 
     public Raycast2D GroundCheck;
 
-    private bool CanTakeDamage = true;
+    public bool CanTakeDamage = true;
 
-    private bool jumpReleased = false;
-    private bool wallSlideTriggered = false;
-    private bool jumpBuffered = false;
-    private bool canCoyoteJump = false;
-    private bool wasOnFloor = false;
+    public bool jumpReleased = false;
+    public bool wallSlideTriggered = false;
+    public bool jumpBuffered = false;
+    public bool canCoyoteJump = false;
+    public bool wasOnFloor = false;
 
-    private int attackCounter;
-    private bool attackBuffer;
-    private bool isAttacking = false;
+    public int attackCounter;
+    public bool attackBuffer;
+    public bool isAttacking = false;
 
-    private bool _isDashing = false;
+    public bool _isDashing = false;
+
+    public float _prevY;
 
     #endregion
 
@@ -189,8 +191,6 @@ namespace Slumber
       MoveAndSlide(delta);
 
       Sprite.Shader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
-
-      //Position = new Vector2(MathF.Round(Position.X), Position.Y);
     }
 
     public override void _Process(float delta)
@@ -258,7 +258,7 @@ namespace Slumber
     public TimeSpan DashDuration = TimeSpan.FromSeconds(0.2f);
     public TimeSpan DashCooldown = TimeSpan.FromSeconds(0.1f);
 
-    private bool _canDash = true;
+    public bool _canDash = true;
 
     public void HandleDash()
     {
@@ -317,6 +317,11 @@ namespace Slumber
 
     public void ApplyGravity(float delta)
     {
+      if (_prevY > 0 && IsOnFloor)
+        Land();
+
+      _prevY = Velocity.Y;
+
       if (_isDashing)
         return;
       
@@ -338,6 +343,10 @@ namespace Slumber
       {
         Velocity.Y = 0;
       }
+    }
+
+    public void Land()
+    {
     }
 
     public void HandleJump()
@@ -368,7 +377,7 @@ namespace Slumber
       }
     }
 
-    private void HandleCoyoteTime()
+    public void HandleCoyoteTime()
     {
       if (wasOnFloor && !IsOnFloor && Velocity.Y >= 0f)
       {
@@ -423,7 +432,7 @@ namespace Slumber
 
     #region Visuals
 
-    private void AnimateSprite()
+    public void AnimateSprite()
     {
       if (!isAttacking)
       {
@@ -435,7 +444,7 @@ namespace Slumber
         {
           if (IsOnFloor)
           {
-            if (PlayerAxis.X != 0)
+            if (PlayerAxis.X != 0 && !IsOnWall)
               Sprite.PlayAnimation("Run");
             else
               Sprite.PlayAnimation("Idle");
@@ -455,7 +464,7 @@ namespace Slumber
       }
     }
 
-    private void FlipSprite()
+    public void FlipSprite()
     {
       if (PlayerDirection > 0)
       {

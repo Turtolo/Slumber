@@ -1,11 +1,11 @@
 {
-    "activeFile": "Catacombs/catacombs-test-1.tmx",
+    "activeFile": "Gardens/gardens-1.tmx",
     "expandedProjectPaths": [
-        "Gardens",
+        "Catacombs",
         "Termplates",
         "Green",
-        "Catacombs",
-        "."
+        ".",
+        "Gardens"
     ],
     "fileStates": {
         "Atlas.tsx": {
@@ -41,14 +41,14 @@
         },
         "Catacombs/catacombs-test-1.tmx": {
             "expandedObjectLayers": [
-                3,
-                2
+                2,
+                3
             ],
             "scale": 0.6776,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": -475.94451003541917,
-                "y": -48.7012987012987
+                "x": -384.4451003541913,
+                "y": 0
             }
         },
         "Catacombs/map.tmx": {
@@ -70,16 +70,24 @@
                 "y": -52.82212594219243
             }
         },
+        "Gardens/gardens-1.tmx": {
+            "scale": 3.1047,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -772.5384095081652,
+                "y": -44.44873900859986
+            }
+        },
         "Gardens/gardens-test-1.tmx": {
             "expandedObjectLayers": [
-                4,
-                2
+                2,
+                4
             ],
             "scale": 0.8206,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 92.00584937850354,
-                "y": 123.08067267852795
+                "x": 256.5196197903973,
+                "y": -1.2186205215695622
             }
         },
         "Green/Green.tmx": {
@@ -124,15 +132,16 @@
     "map.tileWidth": 16,
     "openFiles": [
         "Gardens/gardens-test-1.tmx",
-        "Green/Green.tmx",
-        "Catacombs/catacombs-test-1.tmx"
+        "Catacombs/catacombs-test-1.tmx",
+        "Gardens/gardens-1.tmx"
     ],
     "project": "Slumber.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "Green/Green.tmx",
         "Gardens/gardens-test-1.tmx",
         "Catacombs/catacombs-test-1.tmx",
+        "Gardens/gardens-1.tmx",
+        "Green/Green.tmx",
         "Atlas.tsx",
         "Catacombs/map.tmx",
         "Catacombs/Catacombs-1.tmx",

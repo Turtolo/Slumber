@@ -66,7 +66,7 @@ public class PixelCamera : Camera2D
     if (Target == null)
       return;
 
-    Point axis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveUp", "MoveDown");
+    Point axis = Core.Input.GetAxis("CamLeft", "CamRight", "CamUp", "CamDown");
 
     if ((Target.Velocity.X != 0 || Target.Velocity.Y != 0) && axis.Y != 0)
       yLocked = true;

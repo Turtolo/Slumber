@@ -9,6 +9,14 @@ public class Gardens : Node
 {
   public Player Player;
 
+  StateMachine machine;
+
+  public override void _Ready()
+  {
+
+    //machine.ChangeState("teststate");
+  }
+
   public override void _EnterTree()
   {
     base._EnterTree();
@@ -30,36 +38,6 @@ public class Gardens : Node
       .Set(n => n.Target = Player);
 
 
-    new Parallax2D().Set(n =>
-    {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-1");
-      n.Depth = -8;
-      n.MotionScale = new Vector2(0.2f, 0f);
-      n.RepeatSize = new Extent(640, 0);
-      n.RepeatTimes = 4;
-      n.SetParent(root);
-    });
-
-    new Parallax2D().Set(n =>
-    {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-2");
-      n.Depth = -9;
-      n.MotionScale = new Vector2(0.3f, 0f);
-      n.RepeatTimes = 4;
-      n.RepeatSize = new Extent(640, 0);
-      n.SetParent(root);
-    });
-
-    new Parallax2D().Set(n =>
-    {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-3");
-      n.Depth = -10;
-      n.MotionScale = new Vector2(0.4f, 0f);
-      n.RepeatTimes = 4;
-      n.RepeatSize = new Extent(640, 0);
-      n.SetParent(root);
-    });
-
     var loader = Loader.Default();
     var mapPath = Path.Combine(
         AppContext.BaseDirectory,
@@ -68,10 +46,18 @@ public class Gardens : Node
         "Gardens",
         "gardens-1.tmx"
     );
+    
+    var state = new TestState();
+
+    machine = new StateMachine().Set(n =>
+    {
+      n.AddChild(state);
+      n.Initial = state;
+    });
 
     new CanvasAnchor().Set(n =>
     {
-      n.BackBufferColor = Color.Black;
+      n.BackBufferColor = new Color(42, 63, 71);
     });
     
     DotTiledBridge.Load(mapPath, loader);
