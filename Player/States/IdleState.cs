@@ -19,30 +19,21 @@ public class IdleState : State
   public override void Update(float delta)
   {
     p.Sprite.PlayAnimation("Idle");
-  }
-
-  public override void PhysicsUpdate(float delta)
-  {
-    Axis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp");
-
-    HandleDeceleration(delta);
 
     if (Axis.X != 0) 
       Transition?.Invoke("RunState");
 
-    if (Core.Input.IsActionJustPressed("Jump"))
+    if (Core.Input.IsActionJustPressed("Jump") || p.jumpBuffered)
       Transition?.Invoke("JumpState");
 
     if (!p.IsOnFloor)
       Transition?.Invoke("FallState");
   }
 
-  
-  public void HandleDeceleration(float delta)
+  public override void PhysicsUpdate(float delta)
   {
-    if (!p.AllowControl || p._isDashing)
-      return;
+    Axis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp");
 
-    p.Velocity.X = p.PlayerAxis.X == 0 ? p.MoveToward(p.Velocity.X, 0, p.Deceleration * delta) : p.Velocity.X;
+    p.Functions.HandleDeceleration(delta);
   }
 }

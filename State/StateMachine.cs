@@ -38,7 +38,7 @@ public class StateMachine : Node
 
   public override void _PhysicsUpdate(float delta)
   {
-    base._Process(delta);
+    base._PhysicsUpdate(delta);
 
     Current?.PhysicsUpdate(delta);
   }

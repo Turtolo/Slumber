@@ -20,10 +20,10 @@ public class JumpState : BaseAirState
   {
     base.Update(delta);
     
-    p.Sprite.PlayAnimation("Jump");
+    p.Sprite.PlayAnimation("Fall");
 
-    if (p.Velocity <= 0)
-
+    if (p.Velocity.Y >= 0)
+      Transition?.Invoke("FallState");
   }
 
   public override void PhysicsUpdate(float delta)
@@ -43,15 +43,6 @@ public class JumpState : BaseAirState
 
   public void HandleJump()
   {
-    if (!p.IsOnFloor)
-    {
-      if (Core.Input.IsActionJustPressed("Jump"))
-      {
-        p.jumpBuffered = true;
-        Await.Span(p.JumpBufferTime, () => p.jumpBuffered = false);
-      }
-    }
-
     if (!p.jumpReleased && Core.Input.IsActionJustReleased("Jump") && p.Velocity.Y < 0)
     {
       p.Velocity.Y /= 2f;

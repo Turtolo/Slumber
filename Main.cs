@@ -82,7 +82,8 @@ namespace Slumber
       Core.ImGuiRenderer.BeforeLayout(gameTime);  
       
       ImGui.Begin("Player");  
-      ImGui.Text($"Velocity: {Core.Token.Get<Player>()?.Velocity.ToString()}");
+      ImGui.Text($"Velocity: {player?.Velocity.ToString()}");
+      ImGui.Text($"State: {player?.Get<StateMachine>()?.Current}");
 
       ImGui.PushItemWidth(150); 
 

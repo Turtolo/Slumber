@@ -18,21 +18,12 @@ public class FallState : BaseAirState
   public override void PhysicsUpdate(float delta)
   {
     base.PhysicsUpdate(delta);
-    
-    Axis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp");
 
-    HandleMovementInput();
-  }
-
-  public void HandleMovementInput()
-  {
-    if (!p.AllowControl || p._isDashing)
-      return;
-
-    float targetSpeed = p.MoveSpeed * p.PlayerAxis.X;
-
-    if (targetSpeed != 0)
-      p.Velocity.X = p.MoveToward(p.Velocity.X, targetSpeed, p.Acceleration);
+    if (Core.Input.IsActionJustPressed("Jump"))
+    {
+      p.jumpBuffered = true;
+      Await.Span(p.JumpBufferTime, () => p.jumpBuffered = false);
+    }
   }
 
   public override void Update(float delta)
@@ -40,5 +31,8 @@ public class FallState : BaseAirState
     base.Update(delta);
 
     p.Sprite.PlayAnimation("Fall");
+
+    if (p.IsOnFloor)
+      Transition?.Invoke("IdleState");
   }
 }
