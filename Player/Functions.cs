@@ -2,254 +2,275 @@ using System.Linq;
 
 namespace Slumber;
 
-public static class PlayerFunctions
+public partial class Player : KinematicBody2D
 {
-    private static Player p => Core.Token.Get<Player>();
+  public void HandleDash()
+  {
+    if (!Properties.CanDash)
+      return;
 
-    public static void HandleDash()
+    if (Core.Input.IsActionJustPressed("Dash"))
+      Dash();
+  }
+
+  public void Dash()
+  {
+    Properties.IsDashing = true;
+
+    Velocity.X = Properties.DashVelocity * Properties.PlayerDirection;
+    Velocity.Y = 0;
+
+    Await.Span(Properties.DashDuration, () =>
     {
-        if (!p._canDash)
-            return;
+      Properties.IsDashing = false;
+      Properties.CanDash = false;
+      Await.Span(Properties.DashCooldown, () => Properties.CanDash = true);
+    });
+  }
 
-        if (Core.Input.IsActionJustPressed("Dash"))
-            Dash();
+  public void HandleMovementInput()
+  {
+    if (!Properties.AllowControl || Properties.IsDashing)
+      return;
+
+    float targetSpeed = Properties.MoveSpeed * Properties.PlayerAxis.X;
+
+    if (targetSpeed != 0)
+      Velocity.X = MoveToward(Velocity.X, targetSpeed, Properties.Acceleration);
+  }
+
+
+  public void FlipSprite()
+  {
+    if (Properties.PlayerDirection > 0)
+    {
+      Sprite.SpriteEffects = SpriteEffects.None;
+      AttackArea.Position = new Vector2(40, 5);
+    }
+    else if (Properties.PlayerDirection < 0)
+    {
+      Sprite.SpriteEffects = SpriteEffects.FlipHorizontally;
+      AttackArea.Position = new Vector2(-30, 5);
+    }
+  }
+
+  public void HandleDeceleration(float delta)
+  {
+    if (!Properties.AllowControl || Properties.IsDashing)
+      return;
+
+    Velocity.X = Properties.PlayerAxis.X == 0 ? MoveToward(Velocity.X, 0, Properties.Deceleration * delta) : Velocity.X;
+  }
+
+  public float MoveToward(float current, float target, float maxDelta)
+  {
+    if (MathF.Abs(target - current) <= maxDelta)
+      return target;
+
+    return current + MathF.Sign(target - current) * maxDelta;
+  }
+
+  #region Jumping and Gravity
+
+  public void ApplyGravity(float delta)
+  {
+    if (Properties.PreviousY > 0 && IsOnFloor)
+      Land();
+
+    Properties.PreviousY = Velocity.Y;
+
+    if (Properties.IsDashing)
+      return;
+
+    if (!IsOnFloor)
+    {
+      float activeGravity = Velocity.Y < 0 ? Properties.BaseGravity : Properties.FallGravity;
+
+      float alpha = Properties.CurrentTerminalVelocity > Properties.InitialTerminalVelocity ? 0.3f : 0.02f;
+
+      if (GroundCheck.IsColliding())
+        Properties.CurrentTerminalVelocity = Properties.InitialTerminalVelocity;
+      else if (Properties.CurrentTerminalVelocity != Properties.SecondaryTerminalVelocity)
+        Properties.CurrentTerminalVelocity = MathHelper.Lerp(Properties.CurrentTerminalVelocity, Properties.SecondaryTerminalVelocity, 0.1f);
+      
+      if (Velocity.Y >= 700f)
+        Properties.ThresholdReached = true;
+
+      Velocity.Y = MathF.Min(
+        Velocity.Y + activeGravity * delta,
+        Properties.CurrentTerminalVelocity
+      );
+    }
+    else if (Velocity.Y > 0)
+    {
+      Velocity.Y = 0;
+    }
+  }
+
+  public void Land()
+  {
+  }
+
+  public void HandleCoyoteTime()
+  {
+    if (Properties.WasOnFloor && !IsOnFloor && Velocity.Y >= 0f)
+    {
+      Properties.CanCoyoteJump = true;
+      Await.Span(Properties.CoyoteTime, () => Properties.CanCoyoteJump = false);
     }
 
-    public static void Dash()
+    if (IsOnFloor)
+      Properties.CanCoyoteJump = false;
+
+    Properties.WasOnFloor = IsOnFloor;
+  }
+
+  #endregion
+
+  #region Wall Interaction
+
+  public bool CanWall()
+  {
+    return Properties.PlayerAxis.X != 0 && IsOnWall && Velocity.Y > 0;
+  }
+
+  public void HandleWallSlide()
+  {
+
+    if (!Properties.WallSlideTriggered)
+      return;
+
+    if (!IsOnWall || IsOnFloor)
+      Properties.WallSlideTriggered = false;
+
+    Velocity.Y = MathF.Min(
+      Velocity.Y + Properties.WallSlideGravity,
+      Properties.WallSlideGravity
+    );
+
+    if (Core.Input.IsActionJustPressed("Jump"))
+      WallJump();
+  }
+
+  public void WallJump()
+  {
+    Properties.AllowControl = false;
+    Await.Span(TimeSpan.FromSeconds(0.06f), () => Properties.AllowControl = true);
+
+    if (Properties.PlayerDirection == 1)
+      Velocity.X = -Properties.WallJumpHorizontalSpeed;
+    else if (Properties.PlayerDirection == -1)
+      Velocity.X = Properties.WallJumpHorizontalSpeed;
+
+    Velocity.Y = -Properties.WallJumpVerticalSpeed;
+  }
+
+  #endregion
+
+  #region Attack
+
+  public void HandleDamage()
+  {
+    if (Properties.Health <= 0)
     {
-        p._isDashing = true;
+      Core.Tree.ReloadCurrentScene();
+    }
 
-        p.Velocity.X = p.DashVelocity * p.PlayerDirection;
-        p.Velocity.Y = 0;
+    if (!Properties.CanTakeDamage)
+      return;
 
-        Await.Span(p.DashDuration, () =>
+    var areas = TakeDamageArea.AreasEntered();
+
+    if (areas.Any())
+    {
+      foreach (var area in areas)
+      {
+        if (area.Name == "LeftArea")
         {
-            p._isDashing = false;
-            p._canDash = false;
-            Await.Span(p.DashCooldown, () => p._canDash = true);
-        });
-    }
-
-    public static void HandleMovementInput()
-    {
-        if (!p.AllowControl || p._isDashing)
-            return;
-
-        float targetSpeed = p.MoveSpeed * p.PlayerAxis.X;
-
-        if (targetSpeed != 0)
-            p.Velocity.X = MoveToward(p.Velocity.X, targetSpeed, p.Acceleration);
-    }
-
-    public static void HandleDeceleration(float delta)
-    {
-        if (!p.AllowControl || p._isDashing)
-            return;
-
-        p.Velocity.X = p.PlayerAxis.X == 0 ? MoveToward(p.Velocity.X, 0, p.Deceleration * delta) : p.Velocity.X;
-    }
-
-    public static float MoveToward(float current, float target, float maxDelta)
-    {
-        if (MathF.Abs(target - current) <= maxDelta)
-            return target;
-
-        return current + MathF.Sign(target - current) * maxDelta;
-    }
-
-    #region Jumping and Gravity
-
-    public static void ApplyGravity(float delta)
-    {
-        if (p._prevY > 0 && p.IsOnFloor)
-            Land();
-
-        p._prevY = p.Velocity.Y;
-
-        if (p._isDashing)
-            return;
-        
-        if (!p.IsOnFloor)
-        {
-            float activeGravity = p.Velocity.Y < 0 ? p.BaseGravity : p.FallGravity;
-            
-            if (p.GroundCheck.IsColliding())
-                p.CurrentTerminalVelocity = p.InitialTerminalVelocity;
-            else if (p.CurrentTerminalVelocity != p.SecondaryTerminalVelocity)
-                p.CurrentTerminalVelocity = MathHelper.Lerp(p.CurrentTerminalVelocity, p.SecondaryTerminalVelocity, 0.1f);
-
-            p.Velocity.Y = MathF.Min(
-                p.Velocity.Y + activeGravity * delta,
-                p.CurrentTerminalVelocity
-            );
-        }
-        else if (p.Velocity.Y > 0)
-        {
-            p.Velocity.Y = 0;
-        }
-    }
-
-    public static void Land()
-    {
-    }
-
-    public static void HandleCoyoteTime()
-    {
-        if (p.wasOnFloor && !p.IsOnFloor && p.Velocity.Y >= 0f)
-        {
-            p.canCoyoteJump = true;
-            Await.Span(p.CoyoteTime, () => p.canCoyoteJump = false);
-        }
-
-        if (p.IsOnFloor)
-            p.canCoyoteJump = false;
-
-        p.wasOnFloor = p.IsOnFloor;
-    }
-
-    #endregion
-
-    #region Wall Interaction
-
-    public static void HandleWallSlide()
-    {
-        if (p.PlayerAxis.X != 0 && p.IsOnWall && p.Velocity.Y > 0)
-            p.wallSlideTriggered = true;
-
-        if (!p.wallSlideTriggered)
-            return;
-
-        if (!p.IsOnWall || p.IsOnFloor)
-            p.wallSlideTriggered = false;
-
-        p.Velocity.Y = MathF.Min(
-            p.Velocity.Y + p.WallSlideGravity,
-            p.WallSlideGravity
-        );
-
-        if (Core.Input.IsActionJustPressed("Jump"))
-            WallJump();
-    }
-
-    public static void WallJump()
-    {
-        p.AllowControl = false;
-        Await.Span(TimeSpan.FromSeconds(0.06f), () => p.AllowControl = true);
-
-        if (p.PlayerDirection == 1)
-            p.Velocity.X = -p.WallJumpHorizontalSpeed;
-        else if (p.PlayerDirection == -1)
-            p.Velocity.X = p.WallJumpHorizontalSpeed;
-
-        p.Velocity.Y = -p.WallJumpVerticalSpeed;
-    }
-
-    #endregion
-
-    #region Attack
-
-    public static void HandleDamage()
-    {
-        if (p.Health <= 0)
-        {
-            Core.Tree.ReloadCurrentScene();
-        }
-
-        if (!p.CanTakeDamage)
-            return;
-
-        var areas = p.TakeDamageArea.AreasEntered();
-
-        if (areas.Any())
-        {
-            foreach (var area in areas)
-            {
-                if (area.Name == "LeftArea")
-                {
-                    TakeDamage(1, -1);
-                    return;
-                }
-
-                if (area.Name == "RightArea")
-                {
-                    TakeDamage(1, 1);
-                    return;
-                }
-            }
-        }
-    }
-
-    public static void TakeDamage(int damage, int dir)
-    {
-        p.Sprite.Shader.Parameters["enabled"].SetValue(1);
-        p.CanTakeDamage = false;
-
-        p.Health -= damage;
-
-        p.healthIcons.LastOrDefault().Frame = 1;
-        p.healthIcons.RemoveAt(p.healthIcons.Count - 1);
-
-        p.AllowControl = false;
-
-        p.Velocity = new Vector2(300 * dir, -300);
-
-        Core.Time.TimeScale = 0f;
-
-        Await.Span(TimeSpan.FromSeconds(0.2), () =>
-        {
-            Core.Time.TimeScale = 1f;
-            p.AllowControl = true;
-            p.Sprite.Shader.Parameters["enabled"].SetValue(0);
-            p.CanTakeDamage = true;
-        }, true);
-    }
-
-    public static void HandleAttack()
-    {
-        if (Core.Input.IsActionJustPressed("Attack"))
-        {
-            if (!p.isAttacking)
-            {
-                Attack();
-            }
-            else
-            {
-                BufferAttack();
-            }
+          TakeDamage(1, -1);
+          return;
         }
 
-        if (p.isAttacking && p.Sprite.IsFinished)
+        if (area.Name == "RightArea")
         {
-            p.AttackArea.Get<CollisionShape2D>().Disabled = true;
-            p.isAttacking = false;
-
-            if (p.attackBuffer)
-            {
-                p.attackBuffer = false;
-                Attack();
-            }
+          TakeDamage(1, 1);
+          return;
         }
+      }
     }
+  }
 
-    public static void Attack()
+  public void TakeDamage(int damage, int dir)
+  {
+    Sprite.Shader.Parameters["enabled"].SetValue(1);
+    Properties.CanTakeDamage = false;
+
+    Properties.Health -= damage;
+
+    HealthIcons.LastOrDefault().Frame = 1;
+    HealthIcons.RemoveAt(HealthIcons.Count - 1);
+
+    Properties.AllowControl = false;
+
+    Velocity = new Vector2(300 * dir, -300);
+
+    Core.Time.TimeScale = 0f;
+
+    Await.Span(TimeSpan.FromSeconds(0.2), () =>
     {
-        p.AttackArea.Get<CollisionShape2D>().Disabled = false;
-        p.attackCounter++;
-        p.isAttacking = true;
-    }
+      Core.Time.TimeScale = 1f;
+      Properties.AllowControl = true;
+      Sprite.Shader.Parameters["enabled"].SetValue(0);
+      Properties.CanTakeDamage = true;
+    }, true);
+  }
 
-    public static void BufferAttack()
+  public void HandleAttack()
+  {
+    if (Core.Input.IsActionJustPressed("Attack"))
     {
-        if (p.attackBuffer)
-            return;
-
-        p.attackBuffer = true;
-
-        Await.Span(p.AttackBufferTime, () =>
-        {
-            p.attackBuffer = false;
-        });
+      if (!Properties.IsAttacking)
+      {
+        Attack();
+      }
+      else
+      {
+        BufferAttack();
+      }
     }
 
-    #endregion
+    if (Properties.IsAttacking && Sprite.IsFinished)
+    {
+      AttackArea.Get<CollisionShape2D>().Disabled = true;
+      Properties.IsAttacking = false;
+
+      if (Properties.AttackBuffer)
+      {
+        Properties.AttackBuffer = false;
+        Attack();
+      }
+    }
+  }
+
+  public void Attack()
+  {
+    AttackArea.Get<CollisionShape2D>().Disabled = false;
+    Properties.AttackCounter++;
+    Properties.IsAttacking = true;
+  }
+
+  public void BufferAttack()
+  {
+    if (Properties.AttackBuffer)
+      return;
+
+    Properties.AttackBuffer = true;
+
+    Await.Span(Properties.AttackBufferTime, () =>
+    {
+      Properties.AttackBuffer = false;
+    });
+  }
+
+  #endregion
 }

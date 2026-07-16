@@ -31,9 +31,9 @@ public class Enemy : KinematicBody2D
 
   public Enemy() { }
 
-  public override void _EnterTree()
+  public override void EnterTree()
   {
-    base._EnterTree();
+    base.EnterTree();
 
     MainTexture = new MTexture("Graphics/Atlas/grassspidersheet");
 
@@ -133,10 +133,10 @@ public class Enemy : KinematicBody2D
     );
   }
 
-  public override void _PhysicsUpdate(float delta)
+  public override void PhysicsUpdate(float delta)
   {
 
-    base._PhysicsUpdate(delta);
+    base.PhysicsUpdate(delta);
 
     ApplyGravity(delta);
     Flip();
@@ -151,16 +151,16 @@ public class Enemy : KinematicBody2D
     Sprite.Shader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
   }
 
-  public override void _Process(float delta)
+  public override void Process(float delta)
   {
-    base._Process(delta);
+    base.Process(delta);
 
     HandleDamage();
   }
 
-  public override void _Submit(Canvas2D canvas)
+  public override void Submit(Canvas2D canvas)
   {
-    base._Submit(canvas);
+    base.Submit(canvas);
   }
 
   public void Move(float delta)

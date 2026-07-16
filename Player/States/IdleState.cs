@@ -23,17 +23,17 @@ public class IdleState : State
     if (Axis.X != 0) 
       Transition?.Invoke("RunState");
 
-    if (Core.Input.IsActionJustPressed("Jump") || p.jumpBuffered)
+    if (Core.Input.IsActionJustPressed("Jump") || p.Properties.JumpBuffered)
       Transition?.Invoke("JumpState");
 
     if (!p.IsOnFloor)
       Transition?.Invoke("FallState");
   }
 
-  public override void PhysicsUpdate(float delta)
+  public override void Physics(float delta)
   {
     Axis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp");
 
-    p.Functions.HandleDeceleration(delta);
+    p.HandleDeceleration(delta);
   }
 }

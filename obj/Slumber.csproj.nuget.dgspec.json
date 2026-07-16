@@ -4,87 +4,6 @@
     "/Users/nilslauvstad/Git/Slumber/Slumber.csproj": {}
   },
   "projects": {
-    "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj",
-        "projectName": "Amethyst",
-        "projectPath": "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj",
-        "packagesPath": "/Users/nilslauvstad/.nuget/packages/",
-        "outputPath": "/Users/nilslauvstad/Git/Amethyst/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/nilslauvstad/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
-        "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.100"
-      },
-      "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "dependencies": {
-            "ImGui.NET": {
-              "target": "Package",
-              "version": "[1.91.6.1, )"
-            },
-            "MonoGame.Framework.DesktopGL": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.8.2.1105, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[9.0.12, 9.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[9.0.12, 9.0.12]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "/Users/nilslauvstad/Git/MonoTile/MonoTile.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -162,6 +81,87 @@
         }
       }
     },
+    "/Users/nilslauvstad/Git/Opal/Opal.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/nilslauvstad/Git/Opal/Opal.csproj",
+        "projectName": "Opal",
+        "projectPath": "/Users/nilslauvstad/Git/Opal/Opal.csproj",
+        "packagesPath": "/Users/nilslauvstad/.nuget/packages/",
+        "outputPath": "/Users/nilslauvstad/Git/Opal/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/nilslauvstad/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "ImGui.NET": {
+              "target": "Package",
+              "version": "[1.91.6.1, )"
+            },
+            "MonoGame.Framework.DesktopGL": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.8.2.1105, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.12, 9.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.12, 9.0.12]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/nilslauvstad/Git/Slumber/Slumber.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -185,11 +185,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj": {
-                "projectPath": "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj"
-              },
               "/Users/nilslauvstad/Git/MonoTile/MonoTile.csproj": {
                 "projectPath": "/Users/nilslauvstad/Git/MonoTile/MonoTile.csproj"
+              },
+              "/Users/nilslauvstad/Git/Opal/Opal.csproj": {
+                "projectPath": "/Users/nilslauvstad/Git/Opal/Opal.csproj"
               }
             }
           }

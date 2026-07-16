@@ -10,5 +10,5 @@ public class State : Node
 
   public virtual void Update(float delta) {}
 
-  public virtual void PhysicsUpdate(float delta) {}
+  public virtual void Physics(float delta) {}
 }

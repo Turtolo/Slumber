@@ -25,12 +25,14 @@ public class RunState : State
       Transition?.Invoke("JumpState");
     if (!p.IsOnFloor)
       Transition?.Invoke("FallState");
+    if (p.CanWall())
+      Transition?.Invoke("WallSlideState");
   }
 
-  public override void PhysicsUpdate(float delta)
+  public override void Physics(float delta)
   {
     Axis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp");
 
-    p.Functions.HandleMovementInput();
+    p.HandleMovementInput();
   }
 }

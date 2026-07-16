@@ -371,3 +371,6 @@
 
 #begin Maps/Gardens/gardens-1.tmx
 /copy:Maps/Gardens/gardens-1.tmx
+
+#begin Maps/Gardens/gardens-2.tmx
+/copy:Maps/Gardens/gardens-2.tmx

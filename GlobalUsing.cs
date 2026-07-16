@@ -1,13 +1,13 @@
-global using Amethyst;
-global using Amethyst.Geometry;
-global using Amethyst.Graphics;
-global using Amethyst.Tools;
-global using Amethyst.Input;
-global using Amethyst.IO;
-global using Amethyst.Managers;
-global using Amethyst.Hierarchy;
-global using Amethyst.Util;
-global using Amethyst.Params;
+global using Opal;
+global using Opal.Geometry;
+global using Opal.Graphics;
+global using Opal.Tools;
+global using Opal.Input;
+global using Opal.IO;
+global using Opal.Managers;
+global using Opal.Hierarchy;
+global using Opal.Util;
+global using Opal.Params;
 
 global using System;
 

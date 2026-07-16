@@ -1,3 +1,4 @@
+
 using System.IO;
 using System.Linq;
 using DotTiled.Serialization;
@@ -5,7 +6,7 @@ using MonoTile;
 
 namespace Slumber;
 
-public class Gardens : Node
+public class Gardens2 : Node
 {
   public Player Player;
 
@@ -14,20 +15,25 @@ public class Gardens : Node
     base.EnterTree();
 
     var root = new Node2D()
-      .Set("Position", new Vector2(0, 35));
+      .Set("Position", new Vector2(0, 35))
+      .Set(n => n.SetParent(this));
 
     Player = new Player()
-      .Set("Position", new Vector2(-50, 68));
+      .Set("Position", new Vector2(-176, 16))
+      .Set(n => n.SetParent(this));
 
-    var rect = new Rectangle(-864, -96, 1152, 288);
+    var rect = new Rectangle(-272, -464, 528, 512);
 
     new PixelCamera()
       .Set(n => n.Weight = 0.3f)
       .Set(n => n.TargetOffset = new Point(0, 65))
+      .Set(n => n.FollowY = true)
+      .Set(n => n.FollowX = false)
       .Set(n => n.Limit = rect)
       .Set(n => n.Deadzone = new Extent(30, 0))
       .Set(n => n.OffsetSmoothing = true)
-      .Set(n => n.Target = Player);
+      .Set(n => n.Target = Player)
+      .Set(n => n.SetParent(this));
 
 
     var loader = Loader.Default();
@@ -36,15 +42,20 @@ public class Gardens : Node
         "Content",
         "Maps",
         "Gardens",
-        "gardens-1.tmx"
+        "gardens-2.tmx"
     );
     
     new CanvasAnchor().Set(n =>
     {
       n.BackBufferColor = new Color(42, 63, 71);
+      n.AmbientColor = Color.Gray;
+      n.SetParent(this);
     });
     
-    DotTiledBridge.Load(mapPath, loader);
+    var t = DotTiledBridge.Load(mapPath, loader);
+
+    foreach (var map in t)
+      map.SetParent(this);
   }
 
   public override void ExitTree()
@@ -66,6 +77,8 @@ public class Gardens : Node
     if (Core.Input.Keyboard.WasKeyJustPressed(Keys.Y))
       new Enemy().Set("Position", Core.Token.Get<Player>()?.Transform.Global.Position + offset);
 
+    if (Core.Input.Keyboard.WasKeyJustPressed(Keys.K))
+      Core.Tree.SetScene(new Gardens());
   }
 
   public override void Submit(Canvas2D canvas)

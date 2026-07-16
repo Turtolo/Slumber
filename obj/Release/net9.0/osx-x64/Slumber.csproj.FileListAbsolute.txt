@@ -219,10 +219,10 @@
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/osx-x64/libhostpolicy.dylib
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/osx-x64/libmscordaccore.dylib
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/osx-x64/libmscordbi.dylib
-/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/osx-x64/Amethyst.dll
+/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/osx-x64/Opal.dll
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/osx-x64/MonoTile.dll
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/osx-x64/MonoTile.pdb
-/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/osx-x64/Amethyst.pdb
+/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/osx-x64/Opal.pdb
 /Users/nilslauvstad/Git/Slumber/obj/Release/net9.0/osx-x64/mgcb.tool.restore
 /Users/nilslauvstad/Git/Slumber/obj/Release/net9.0/osx-x64/Slumber.csproj.AssemblyReference.cache
 /Users/nilslauvstad/Git/Slumber/obj/Release/net9.0/osx-x64/Slumber.GeneratedMSBuildEditorConfig.editorconfig

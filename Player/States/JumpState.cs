@@ -6,9 +6,9 @@ public class JumpState : BaseAirState
 
   public override void OnEnter()
   {
-    Jump();
-
     base.OnEnter();
+
+    Jump();
   }
 
   public override void OnExit()
@@ -26,27 +26,27 @@ public class JumpState : BaseAirState
       Transition?.Invoke("FallState");
   }
 
-  public override void PhysicsUpdate(float delta)
+  public override void Physics(float delta)
   {
-    base.PhysicsUpdate(delta);
+    base.Physics(delta);
 
     HandleJump();
   }
 
   public void Jump()
   {
-    p.Velocity.Y = p.JumpForce;
-    p.jumpReleased = false;
-    p.canCoyoteJump = false;
-    p.jumpBuffered = false;
+    p.Velocity.Y = p.Properties.JumpForce;
+    p.Properties.JumpReleased = false;
+    p.Properties.CanCoyoteJump = false;
+    p.Properties.JumpBuffered = false;
   }
 
   public void HandleJump()
   {
-    if (!p.jumpReleased && Core.Input.IsActionJustReleased("Jump") && p.Velocity.Y < 0)
+    if (!p.Properties.JumpReleased && !Core.Input.IsActionPressed("Jump") && p.Velocity.Y < 0)
     {
       p.Velocity.Y /= 2f;
-      p.jumpReleased = true;
+      p.Properties.JumpReleased = true;
     }
   }
 }

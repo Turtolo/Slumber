@@ -1,9 +1,9 @@
 using System;
-using Amethyst;
-using Amethyst.Geometry;
-using Amethyst.Hierarchy;
-using Amethyst.Params;
-using Amethyst.Tools;
+using Opal;
+using Opal.Geometry;
+using Opal.Hierarchy;
+using Opal.Params;
+using Opal.Tools;
 using Microsoft.Xna.Framework;
 
 namespace Slumber;
@@ -21,6 +21,10 @@ public class PixelCamera : Camera2D
   private bool yLocked;
 
   private Vector2 _cameraPlayerTargetPos;
+  
+  public bool toggleShake;
+
+  private float shakeStrength;
 
   [Export]
   public Player Target { get; set; }
@@ -41,6 +45,12 @@ public class PixelCamera : Camera2D
   public float Weight { get; set; } = 0.1f;
 
   [Export]
+  public float RandomStrength { get; set; } = 30.0f;
+
+  [Export]
+  public float ShakeFade { get; set; } = 5.0f;
+
+  [Export]
   public Point TargetOffset { get; set; } = Point.Zero;
 
   [Export]
@@ -49,7 +59,7 @@ public class PixelCamera : Camera2D
   [Export]
   public Rectangle? Limit { get; set; }
 
-  public override void _EnterTree()
+  public override void EnterTree()
   {
     base._EnterTree();
     if (Target != null)
@@ -59,12 +69,27 @@ public class PixelCamera : Camera2D
     }
   }
 
-  public override void _PhysicsUpdate(float delta)
+  private Vector2 randomOffset()
+  {
+    return new Vector2(MathE.RandomFloat(-shakeStrength, shakeStrength), MathE.RandomFloat(-shakeStrength, shakeStrength));
+  }
+
+  public override void PhysicsUpdate(float delta)
   {
     base._PhysicsUpdate(delta);
 
     if (Target == null)
       return;
+
+    if (Core.Time.TimeScale != 0)
+    {
+		  if (toggleShake)
+			  shakeStrength = RandomStrength;
+    }
+	  if (shakeStrength > 0)
+		  shakeStrength = MathHelper.Lerp(shakeStrength, 0, ShakeFade * delta);
+		
+		Offset = randomOffset();
 
     Point axis = Core.Input.GetAxis("CamLeft", "CamRight", "CamUp", "CamDown");
 

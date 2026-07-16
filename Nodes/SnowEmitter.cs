@@ -10,9 +10,9 @@ public class SnowEmitter : Node2D
 
   EmitterParams Properties;
 
-  public override void _EnterTree()
+  public override void EnterTree()
   {
-    base._EnterTree();
+    base.EnterTree();
 
     Properties = EmitterParams.Identity with
     {
@@ -48,14 +48,14 @@ public class SnowEmitter : Node2D
     });
   }
 
-  public override void _PhysicsUpdate(float delta)
+  public override void PhysicsUpdate(float delta)
   {
-    base._PhysicsUpdate(delta);
+    base.PhysicsUpdate(delta);
   }
 
-  public override void _Process(float delta)
+  public override void Process(float delta)
   {
-    base._Process(delta);
+    base.Process(delta);
 
     var c = Core.Token.Get<Camera2D>();
 
@@ -63,13 +63,13 @@ public class SnowEmitter : Node2D
     Emitter2.Emit(new Vector2(MathE.Random.Next(c.Bounds.Right - 320, c.Bounds.Right + 320), c.Bounds.Top - 20), 3);
   }
 
-  public override void _Submit(Canvas2D canvas)
+  public override void Submit(Canvas2D canvas)
   {
-    base._Submit(canvas);
+    base.Submit(canvas);
   }
 
-  public override void _ExitTree()
+  public override void ExitTree()
   {
-    base._ExitTree();
+    base.ExitTree();
   }
 }

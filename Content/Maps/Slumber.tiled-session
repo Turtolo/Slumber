@@ -1,15 +1,15 @@
 {
-    "activeFile": "Gardens/gardens-1.tmx",
+    "activeFile": "Gardens/gardens-2.tmx",
     "expandedProjectPaths": [
+        ".",
         "Catacombs",
         "Termplates",
-        "Green",
-        ".",
-        "Gardens"
+        "Gardens",
+        "Green"
     ],
     "fileStates": {
         "Atlas.tsx": {
-            "scaleInDock": 0.9047,
+            "scaleInDock": 1.157,
             "scaleInEditor": 0.7423
         },
         "Big/Big.tmx": {
@@ -41,14 +41,14 @@
         },
         "Catacombs/catacombs-test-1.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
             "scale": 0.6776,
             "selectedLayer": 1,
             "viewCenter": {
                 "x": -384.4451003541913,
-                "y": 0
+                "y": -0.737898465171213
             }
         },
         "Catacombs/map.tmx": {
@@ -71,11 +71,19 @@
             }
         },
         "Gardens/gardens-1.tmx": {
-            "scale": 3.1047,
-            "selectedLayer": 0,
+            "scale": 0.3889,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": -772.5384095081652,
-                "y": -44.44873900859986
+                "x": -255.84983286191823,
+                "y": -1.2856775520699557
+            }
+        },
+        "Gardens/gardens-2.tmx": {
+            "scale": 1.5264,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 329.8611111111111,
+                "y": -262.3820754716981
             }
         },
         "Gardens/gardens-test-1.tmx": {
@@ -87,7 +95,7 @@
             "selectedLayer": 2,
             "viewCenter": {
                 "x": 256.5196197903973,
-                "y": -1.2186205215695622
+                "y": -0.6093102607848095
             }
         },
         "Green/Green.tmx": {
@@ -125,21 +133,21 @@
         }
     },
     "last.imagePath": "/Users/nilslauvstad/Git/Slumber/Content/Maps",
-    "last.objectTemplatePath": "/Users/nilslauvstad/Git/Slumber/Content/Termplates",
+    "last.objectTemplatePath": "/Users/nilslauvstad/Git/Slumber/Content/Maps/Termplates",
     "map.fixedSize": false,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
-        "Gardens/gardens-test-1.tmx",
         "Catacombs/catacombs-test-1.tmx",
-        "Gardens/gardens-1.tmx"
+        "Gardens/gardens-2.tmx"
     ],
     "project": "Slumber.tiled-project",
-    "property.type": "bool",
+    "property.type": "string",
     "recentFiles": [
-        "Gardens/gardens-test-1.tmx",
         "Catacombs/catacombs-test-1.tmx",
+        "Gardens/gardens-2.tmx",
+        "Gardens/gardens-test-1.tmx",
         "Gardens/gardens-1.tmx",
         "Green/Green.tmx",
         "Atlas.tsx",
@@ -148,8 +156,7 @@
         "Heights/Snow.tmx",
         "Caverns/Caverns-1.tmx",
         "Test/Test.tmx",
-        "Big/Big.tmx",
-        "Bricks/Bricks.tmx"
+        "Big/Big.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slumber", "Slumber.csproj", "{4E53A75F-0C26-AD73-A070-804BAAB344EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amethyst", "..\Amethyst\Amethyst.csproj", "{D30EF885-4471-41E3-887A-AD09CF0264CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opal", "..\Opal\Opal.csproj", "{D30EF885-4471-41E3-887A-AD09CF0264CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoTile", "..\MonoTile\MonoTile.csproj", "{A9FBDEAC-A502-46B1-8C43-D5136DCD4A5B}"
 EndProject

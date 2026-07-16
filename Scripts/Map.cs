@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using MonoTile;
-using Tileset = Amethyst.Graphics.Tileset;
+using Tileset = Opal.Graphics.Tileset;
 
 namespace Slumber
 {

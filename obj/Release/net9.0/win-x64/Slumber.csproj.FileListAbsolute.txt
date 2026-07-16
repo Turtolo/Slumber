@@ -218,10 +218,10 @@
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/mscordbi.dll
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/mscorrc.dll
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/msquic.dll
-/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/Amethyst.dll
+/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/Opal.dll
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/MonoTile.dll
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/MonoTile.pdb
-/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/Amethyst.pdb
+/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/Opal.pdb
 /Users/nilslauvstad/Git/Slumber/obj/Release/net9.0/win-x64/mgcb.tool.restore
 /Users/nilslauvstad/Git/Slumber/obj/Release/net9.0/win-x64/Slumber.csproj.AssemblyReference.cache
 /Users/nilslauvstad/Git/Slumber/obj/Release/net9.0/win-x64/Slumber.GeneratedMSBuildEditorConfig.editorconfig
@@ -256,3 +256,6 @@
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/Content/Maps/Green/Green.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/ImGui.NET.dll
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/cimgui.dll
+/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/Content/Maps/Catacombs/catacombs-test-1.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/Content/Maps/Gardens/gardens-1.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/win-x64/Content/Maps/Gardens/gardens-2.tmx

@@ -8,13 +8,19 @@ namespace Slumber;
 
 public static class DotTiledBridge
 {
-  public static List<Tilemap> Load(string path, Loader loader)
+  public static List<Node> Load(string path, Loader loader)
   {
     var map = loader.LoadMap(path);
 
-    HandleObjects(map);
+    var nodes = new List<Node>();
 
-    return map.Bridge(path);
+    var objects = HandleObjects(map);
+    var maps = map.Bridge(path);
+
+    nodes.AddRange(objects);
+    nodes.AddRange(maps);
+
+    return nodes;
   }
 
   public static List<CollisionNode2D> HandleObjects(this Map map)
@@ -26,7 +32,6 @@ public static class DotTiledBridge
       if (baseLayer is not ObjectLayer layer)
         continue;
 
-
       foreach (DotTiled.Object obj in layer.Objects)
       {
         if (obj is not RectangleObject rect)
@@ -36,6 +41,22 @@ public static class DotTiledBridge
         {
           n.Shape = new RectangleShape2D((int)rect.Width, (int)rect.Height);
         });
+
+        if (layer.Name == "SceneTransition")
+        {
+          if (obj.TryGetProperty("scene", out StringProperty name))
+          {
+            var sceneChange = new SceneChange().Set(n =>
+            {
+              n.SceneName = name.Value;
+              n.Area = new Area2D().Set(n =>
+              {
+                n.AddChild(shape);
+                n.Position = new Vector2(rect.X, rect.Y);
+              });
+            });
+          }
+        }
 
         if (layer.TryGetProperty("collision", out BoolProperty collision) && collision.Value == true)
         {
@@ -237,7 +258,7 @@ public static class DotTiledBridge
     return rects;
   }
 
-  private static (Amethyst.Graphics.Tileset tileset, uint firstGid)
+  private static (Opal.Graphics.Tileset tileset, uint firstGid)
     ResolveTileset(Map map, string mapPath)
   {
     foreach (var ts in map.Tilesets)
@@ -252,7 +273,7 @@ public static class DotTiledBridge
         imagePath.Replace(".png", "")
       );
 
-      var t = new Amethyst.Graphics.Tileset(
+      var t = new Opal.Graphics.Tileset(
         texture,
         ts.TileWidth,
         ts.TileHeight

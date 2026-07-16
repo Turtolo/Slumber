@@ -15,14 +15,14 @@ public class FallState : BaseAirState
     base.OnExit();
   }
 
-  public override void PhysicsUpdate(float delta)
+  public override void Physics(float delta)
   {
-    base.PhysicsUpdate(delta);
+    base.Physics(delta);
 
     if (Core.Input.IsActionJustPressed("Jump"))
     {
-      p.jumpBuffered = true;
-      Await.Span(p.JumpBufferTime, () => p.jumpBuffered = false);
+      p.Properties.JumpBuffered = true;
+      Await.Span(p.Properties.JumpBufferTime, () => p.Properties.JumpBuffered = false);
     }
   }
 
@@ -33,6 +33,9 @@ public class FallState : BaseAirState
     p.Sprite.PlayAnimation("Fall");
 
     if (p.IsOnFloor)
-      Transition?.Invoke("IdleState");
+      Transition?.Invoke("LandingState");
+
+    if (p.CanWall())
+      Transition?.Invoke("WallSlideState");
   }
 }

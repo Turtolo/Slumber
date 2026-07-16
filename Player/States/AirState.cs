@@ -6,11 +6,14 @@ public class BaseAirState : State
 
   Point Axis; 
 
-  public override void PhysicsUpdate(float delta)
+  public override void Physics(float delta)
   {
+    base.Physics(delta);
+
     Axis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp");
-    p.Functions.HandleMovementInput();
-    p.Functions.HandleDeceleration(delta);
-    p.Functions.ApplyGravity(delta);
+
+    p.HandleMovementInput();
+    p.HandleDeceleration(delta);
+    p.ApplyGravity(delta);
   }
 }

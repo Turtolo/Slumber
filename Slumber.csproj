@@ -37,6 +37,6 @@
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="../MonoTile/MonoTile.csproj" />
-      <ProjectReference Include="../Amethyst/Amethyst.csproj" />
+      <ProjectReference Include="../Opal/Opal.csproj" />
     </ItemGroup>
   </Project>

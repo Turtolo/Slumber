@@ -10,9 +10,9 @@ public class StateMachine : Node
 
   public Dictionary<string, State> States { get; } = new();
 
-  public override void _EnterTree()
+  public override void EnterTree()
   {
-    base._EnterTree();
+    base.EnterTree();
 
     var childStates = GetAll<State>();
     for (int i = 0; i < childStates.Count; i++)
@@ -29,18 +29,18 @@ public class StateMachine : Node
     }
   }
 
-  public override void _Process(float delta)
+  public override void Process(float delta)
   {
-    base._Process(delta);
+    base.Process(delta);
 
     Current?.Update(delta);
   }
 
-  public override void _PhysicsUpdate(float delta)
+  public override void PhysicsUpdate(float delta)
   {
-    base._PhysicsUpdate(delta);
+    base.PhysicsUpdate(delta);
 
-    Current?.PhysicsUpdate(delta);
+    Current?.Physics(delta);
   }
 
   public void ChangeState(string newStateName)
@@ -52,7 +52,7 @@ public class StateMachine : Node
 
     Current?.OnExit();
 
-    newState.OnEnter();
     Current = newState;
+    newState.OnEnter();
   }
 }

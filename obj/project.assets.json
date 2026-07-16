@@ -224,19 +224,6 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "Amethyst/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v9.0",
-        "dependencies": {
-          "ImGui.NET": "1.91.6.1"
-        },
-        "compile": {
-          "bin/placeholder/Amethyst.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Amethyst.dll": {}
-        }
-      },
       "MonoTile/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -245,6 +232,19 @@
         },
         "runtime": {
           "bin/placeholder/MonoTile.dll": {}
+        }
+      },
+      "Opal/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "ImGui.NET": "1.91.6.1"
+        },
+        "compile": {
+          "bin/placeholder/Opal.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Opal.dll": {}
         }
       }
     }
@@ -565,25 +565,25 @@
         "version.txt"
       ]
     },
-    "Amethyst/1.0.0": {
-      "type": "project",
-      "path": "../Amethyst/Amethyst.csproj",
-      "msbuildProject": "../Amethyst/Amethyst.csproj"
-    },
     "MonoTile/1.0.0": {
       "type": "project",
       "path": "../MonoTile/MonoTile.csproj",
       "msbuildProject": "../MonoTile/MonoTile.csproj"
+    },
+    "Opal/1.0.0": {
+      "type": "project",
+      "path": "../Opal/Opal.csproj",
+      "msbuildProject": "../Opal/Opal.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Amethyst >= 1.0.0",
       "DotTiled >= 1.0.0",
       "MonoGame.Content.Builder.Task >= 3.8.4.1",
       "MonoGame.Framework.DesktopGL >= 3.8.4.1",
       "MonoTile >= 1.0.0",
-      "Nopipeline.Task >= 2.3.0"
+      "Nopipeline.Task >= 2.3.0",
+      "Opal >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -612,11 +612,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj": {
-              "projectPath": "/Users/nilslauvstad/Git/Amethyst/Amethyst.csproj"
-            },
             "/Users/nilslauvstad/Git/MonoTile/MonoTile.csproj": {
               "projectPath": "/Users/nilslauvstad/Git/MonoTile/MonoTile.csproj"
+            },
+            "/Users/nilslauvstad/Git/Opal/Opal.csproj": {
+              "projectPath": "/Users/nilslauvstad/Git/Opal/Opal.csproj"
             }
           }
         }

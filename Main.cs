@@ -14,7 +14,7 @@ namespace Slumber
 
       ClassDB.Initialize(typeof(Main).Assembly);
 
-      Tree.SetScene(Core.Token.Create<Gardens>());
+      Tree.SetScene(Core.Token.Create<Gardens2>());
 
       Input.AddBind("MoveLeft", new InputAction(Keys.A), new InputAction(Buttons.LeftThumbstickLeft), new InputAction(Buttons.DPadLeft));
       Input.AddBind("MoveRight", new InputAction(Keys.D), new InputAction(Buttons.LeftThumbstickRight), new InputAction(Buttons.DPadRight));
@@ -62,8 +62,17 @@ namespace Slumber
         Tree.ReloadCurrentScene();
     }
 
-    private bool showCollision;
-    
+    bool showCollision;
+    float gravity;
+    float iniTermVel;
+    float secTermVel;
+    float fallGrav;
+    float movSpe;
+    float jmpFrc;
+
+    bool init;
+
+
     protected override void Draw(GameTime gameTime)
     {
 
@@ -72,63 +81,78 @@ namespace Slumber
       #if DEBUG
 
       var player = Core.Token.Get<Player>();
+
+      var camera = Core.Token.Get<PixelCamera>();
+
       
       if (player == null)
         return;
+
+      if (!init)
+      {
+        gravity = player.Properties.BaseGravity;
+        iniTermVel = player.Properties.InitialTerminalVelocity;
+        secTermVel = player.Properties.SecondaryTerminalVelocity;
+        fallGrav = player.Properties.FallGravity;
+        movSpe = player.Properties.MoveSpeed;
+        jmpFrc = player.Properties.JumpForce;
+
+        init = true;
+      }
 
       Core.Prefs.General.ShowCollision = showCollision;
       Core.Prefs.Apply();
 
       Core.ImGuiRenderer.BeforeLayout(gameTime);  
-      
       ImGui.Begin("Player");  
-      ImGui.Text($"Velocity: {player?.Velocity.ToString()}");
-      ImGui.Text($"State: {player?.Get<StateMachine>()?.Current}");
+      ImGui.Text($"Velocity: {player.Velocity.ToString()}");
+      ImGui.Text($"Term: {MathF.Round(player.Properties.CurrentTerminalVelocity / 100f) * 100f}");
+      ImGui.Text($"State: {player.Get<StateMachine>()?.Current}");
 
-      ImGui.PushItemWidth(150); 
+      ImGui.PushItemWidth(150);
 
-      ImGui.InputFloat("BaseGravity", ref player.BaseGravity);
+      ImGui.InputFloat("BaseGravity", ref gravity);
       ImGui.SameLine();
       if (ImGui.Button("Reset##BaseGravity")) 
       {
-          player.BaseGravity = 950f;
+          gravity = 950f;
       }
 
 
-      ImGui.InputFloat("InitialTerminal", ref player.InitialTerminalVelocity);
+      ImGui.InputFloat("InitialTerminal", ref iniTermVel);
       ImGui.SameLine();
       if (ImGui.Button("Reset##InitialTerminal")) 
       {
-          player.InitialTerminalVelocity = 300f;
+          iniTermVel = 250f;
       }
 
 
-      ImGui.InputFloat("SecondaryTerminal", ref player.SecondaryTerminalVelocity);
+      ImGui.InputFloat("SecondaryTerminal", ref secTermVel);
       ImGui.SameLine();
       if (ImGui.Button("Reset##SecondaryTerminal")) 
       {
-          player.SecondaryTerminalVelocity = 800f;
+          secTermVel = 6400f;
       }
 
-      ImGui.InputFloat("FallGravity", ref player.FallGravity);
+      ImGui.InputFloat("FallGravity", ref fallGrav);
       ImGui.SameLine();
       if (ImGui.Button("Reset##FallGravity")) 
       {
-          player.FallGravity = 1950f;
+          fallGrav = 1500f;
       }
 
-      ImGui.InputFloat("MoveSpeed", ref player.MoveSpeed);
+      ImGui.InputFloat("MoveSpeed", ref movSpe);
       ImGui.SameLine();
       if (ImGui.Button("Reset##MoveSpeed")) 
       {
-          player.MoveSpeed = 130f;
+        movSpe = 130f;
       }
 
-      ImGui.InputFloat("JumpForce", ref player.JumpForce);
+      ImGui.InputFloat("JumpForce", ref jmpFrc);
       ImGui.SameLine();
       if (ImGui.Button("Reset##JumpForce")) 
       {
-          player.JumpForce = -350;
+        jmpFrc = -360;
       }
 
       ImGui.PopItemWidth();
@@ -140,8 +164,17 @@ namespace Slumber
 
       ImGui.End();
 
-
       Core.ImGuiRenderer.AfterLayout();
+
+      player.Properties = player.Properties with
+      {
+        BaseGravity = gravity,
+        InitialTerminalVelocity = iniTermVel,
+        SecondaryTerminalVelocity = secTermVel,
+        FallGravity = fallGrav,
+        MoveSpeed = movSpe,
+        JumpForce = jmpFrc
+      };  
 
       #endif
     }

@@ -5,9 +5,9 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Amethyst.Params;
-using Amethyst.Tools;
-using Amethyst.Util;
+using Opal.Params;
+using Opal.Tools;
+using Opal.Util;
 
 namespace Slumber
 {
@@ -22,8 +22,8 @@ namespace Slumber
 
   public class RoomCamera : Camera2D
   {
-    private bool _entered;
-    private int _dir;
+    private bool entered;
+    private int dir;
 
     [Export]
     public Node2D TargetNode { get; set; }
@@ -35,9 +35,9 @@ namespace Slumber
 
     public RoomCamera() { }
 
-    public override void _EnterTree()
+    public override void EnterTree()
     {
-      base._EnterTree();
+      base.EnterTree();
 
       if (TargetNode is KinematicBody2D)
       {
@@ -46,14 +46,14 @@ namespace Slumber
       }
     }
 
-    public override void _ExitTree()
+    public override void ExitTree()
     {
-      base._ExitTree();
+      base.ExitTree();
     }
 
-    public override void _Process(float delta)
+    public override void Process(float delta)
     {
-      base._Process(delta);
+      base.Process(delta);
 
       if (TargetNode == null || TargetNode.Get<CollisionShape2D>() == null)
         return;
@@ -76,7 +76,7 @@ namespace Slumber
       else if (pos.Y + shape.Size.Height > camera.Bottom)
         side = CameraSide.Bottom;
 
-      if (!_entered)
+      if (!entered)
       {
         switch (side)
         {
@@ -89,17 +89,17 @@ namespace Slumber
         }
       }
 
-      _entered = side != CameraSide.None;
+      entered = side != CameraSide.None;
     }
 
-    public override void _Submit(Canvas2D canvas)
+    public override void Submit(Canvas2D canvas)
     {
-      base._Submit(canvas);
+      base.Submit(canvas);
     }
 
     private void ShiftRoom(int dir)
     {
-      _dir = dir;
+      dir = dir;
 
       var camera = GetWorldViewRectangle();
 
@@ -120,9 +120,9 @@ namespace Slumber
     {
       if (TargetNode is Player player)
       {
-        player.Position += new Vector2(10 * _dir, 0);
+        player.Position += new Vector2(10 * dir, 0);
         player.Velocity.X = 0;
-        player.AllowControl = false;
+        player.Properties.AllowControl = false;
       }
     }
 
@@ -130,7 +130,7 @@ namespace Slumber
     {
       if (TargetNode is Player player)
       {
-        player.AllowControl = true;
+        player.Properties.AllowControl = true;
       }
     }
 

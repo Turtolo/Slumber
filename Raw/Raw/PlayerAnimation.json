@@ -366,6 +366,46 @@
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 100
+   },
+   "KoalaAtlas 46.ase": {
+    "frame": { "x": 11776, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 50
+   },
+   "KoalaAtlas 47.ase": {
+    "frame": { "x": 12032, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 50
+   },
+   "KoalaAtlas 48.ase": {
+    "frame": { "x": 12288, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 50
+   },
+   "KoalaAtlas 49.ase": {
+    "frame": { "x": 12544, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 50
+   },
+   "KoalaAtlas 50.ase": {
+    "frame": { "x": 12800, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 50
    }
  },
  "meta": {
@@ -373,7 +413,7 @@
   "version": "1.3.12-dev",
   "image": "PlayerAnimation.png",
   "format": "RGBA8888",
-  "size": { "w": 11776, "h": 256 },
+  "size": { "w": 13056, "h": 256 },
   "scale": "1",
   "frameTags": [
    { "name": "Idle", "from": 0, "to": 5, "direction": "forward", "color": "#f7a547ff" },
@@ -383,7 +423,8 @@
    { "name": "RunAttack", "from": 24, "to": 30, "direction": "forward", "color": "#000000ff" },
    { "name": "Chain", "from": 31, "to": 41, "direction": "forward", "color": "#a798edff" },
    { "name": "Chain Charge", "from": 42, "to": 44, "direction": "forward", "color": "#d186dfff" },
-   { "name": "Dash", "from": 45, "to": 45, "direction": "forward", "color": "#feb0ffff" }
+   { "name": "Dash", "from": 45, "to": 45, "direction": "forward", "color": "#feb0ffff" },
+   { "name": "Landing", "from": 46, "to": 50, "direction": "forward", "color": "#d18767ff" }
   ],
   "layers": [
    { "name": "Sword", "opacity": 255, "blendMode": "normal" },

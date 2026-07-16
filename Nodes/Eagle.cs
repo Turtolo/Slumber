@@ -16,9 +16,9 @@ public class Eagle : Node2D
   private float pathTimer = 0f;
   private float pathInterval = 0.5f;
 
-  public override void _EnterTree()
+  public override void EnterTree()
   {
-    base._EnterTree();
+    base.EnterTree();
 
     Path = Core.Token.Create<Path2D>().Set(n =>
     {
@@ -38,9 +38,9 @@ public class Eagle : Node2D
     });
   }
 
-  public override void _PhysicsUpdate(float delta)
+  public override void PhysicsUpdate(float delta)
   {
-    base._PhysicsUpdate(delta);
+    base.PhysicsUpdate(delta);
 
     Sprite.PlayAnimation("Flying");
 
@@ -57,19 +57,19 @@ public class Eagle : Node2D
     }
   }
 
-  public override void _Process(float delta)
+  public override void Process(float delta)
   {
-    base._Process(delta);
+    base.Process(delta);
   }
 
-  public override void _Submit(Canvas2D canvas)
+  public override void Submit(Canvas2D canvas)
   {
-    base._Submit(canvas);
+    base.Submit(canvas);
   }
 
-  public override void _ExitTree()
+  public override void ExitTree()
   {
-    base._ExitTree();
+    base.ExitTree();
   }
 
 
