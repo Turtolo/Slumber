@@ -8,10 +8,10 @@
     ".NETCoreApp,Version=v9.0": {
       "Slumber/1.0.0": {
         "dependencies": {
-          "Opal": "1.0.0",
           "DotTiled": "1.0.0",
           "MonoGame.Framework.DesktopGL": "3.8.4.1",
-          "MonoTile": "1.0.0"
+          "MonoTile": "1.0.0",
+          "Opal": "1.0.0"
         },
         "runtime": {
           "Slumber.dll": {}
@@ -159,20 +159,20 @@
           }
         }
       },
+      "MonoTile/1.0.0": {
+        "runtime": {
+          "MonoTile.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Opal/1.0.0": {
         "dependencies": {
           "ImGui.NET": "1.91.6.1"
         },
         "runtime": {
           "Opal.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "MonoTile/1.0.0": {
-        "runtime": {
-          "MonoTile.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -228,12 +228,12 @@
       "path": "nvorbis/0.10.4",
       "hashPath": "nvorbis.0.10.4.nupkg.sha512"
     },
-    "Opal/1.0.0": {
+    "MonoTile/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "MonoTile/1.0.0": {
+    "Opal/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
