@@ -57,6 +57,18 @@ public static class DotTiledBridge
             });
           }
         }
+        
+        if (layer.Name == "Nodes")
+        {
+          if (obj.Name == "*")
+          {
+            var killZone = new KillZone().Set(n =>
+            {
+              n.Position = new Vector2(rect.X, rect.Y);
+              n.AddChild(shape);
+            });
+          }
+        }
 
         if (layer.TryGetProperty("collision", out BoolProperty collision) && collision.Value == true)
         {

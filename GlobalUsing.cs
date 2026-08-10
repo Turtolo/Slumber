@@ -6,7 +6,7 @@ global using Opal.Input;
 global using Opal.IO;
 global using Opal.Managers;
 global using Opal.Hierarchy;
-global using Opal.Util;
+global using Opal.Tools;
 global using Opal.Params;
 
 global using System;

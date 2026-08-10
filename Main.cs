@@ -14,7 +14,7 @@ namespace Slumber
 
       ClassDB.Initialize(typeof(Main).Assembly);
 
-      Tree.SetScene(Core.Token.Create<Gardens2>());
+      Token.Anchor.SetAnchor(new Gardens2());
 
       Input.AddBind("MoveLeft", new InputAction(Keys.A), new InputAction(Buttons.LeftThumbstickLeft), new InputAction(Buttons.DPadLeft));
       Input.AddBind("MoveRight", new InputAction(Keys.D), new InputAction(Buttons.LeftThumbstickRight), new InputAction(Buttons.DPadRight));
@@ -57,9 +57,6 @@ namespace Slumber
     protected override void Update(GameTime gameTime)
     {
       base.Update(gameTime);
-
-      if (Input.Keyboard.WasKeyJustPressed(Keys.R))
-        Tree.ReloadCurrentScene();
     }
 
     bool showCollision;

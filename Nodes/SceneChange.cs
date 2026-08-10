@@ -29,9 +29,9 @@ public class SceneChange : Node2D
       {
         var instance = Activator.CreateInstance(t);
 
-        if (instance is Node scene)
+        if (instance is Opal.Tools.Anchor a)
         {
-          Core.Tree.SetScene(scene);
+          Core.Token.Anchor.SetAnchor(a);
         }
         else
         {

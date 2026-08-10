@@ -3,13 +3,13 @@
     "expandedProjectPaths": [
         ".",
         "Catacombs",
-        "Termplates",
         "Gardens",
-        "Green"
+        "Green",
+        "Termplates"
     ],
     "fileStates": {
         "Atlas.tsx": {
-            "scaleInDock": 1.157,
+            "scaleInDock": 1.23,
             "scaleInEditor": 0.7423
         },
         "Big/Big.tmx": {
@@ -70,20 +70,42 @@
                 "y": -52.82212594219243
             }
         },
-        "Gardens/gardens-1.tmx": {
-            "scale": 0.3889,
-            "selectedLayer": 1,
+        "Caverns/caverns-1.tmx": {
+            "scale": 1.7801,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": -255.84983286191823,
-                "y": -1.2856775520699557
+                "x": 127.80180888714119,
+                "y": -127.80180888714118
+            }
+        },
+        "Gardens/gardens-1.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 1.0416,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 255.85637480798763,
+                "y": -0.4800307219662159
             }
         },
         "Gardens/gardens-2.tmx": {
-            "scale": 1.5264,
+            "expandedObjectLayers": [
+                4
+            ],
+            "scale": 0.6211,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 329.8611111111111,
-                "y": -262.3820754716981
+                "x": -0.8050233456770002,
+                "y": -0.8050233456770002
+            }
+        },
+        "Gardens/gardens-3.tmx": {
+            "scale": 0.8678,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 198.7785203964047,
+                "y": 133.09518322194054
             }
         },
         "Gardens/gardens-test-1.tmx": {
@@ -139,24 +161,25 @@
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
-        "Catacombs/catacombs-test-1.tmx",
-        "Gardens/gardens-2.tmx"
+        "Gardens/gardens-2.tmx",
+        "Gardens/gardens-1.tmx",
+        "Caverns/caverns-1.tmx"
     ],
     "project": "Slumber.tiled-project",
-    "property.type": "string",
+    "property.type": "int",
     "recentFiles": [
-        "Catacombs/catacombs-test-1.tmx",
-        "Gardens/gardens-2.tmx",
-        "Gardens/gardens-test-1.tmx",
+        "Caverns/caverns-1.tmx",
         "Gardens/gardens-1.tmx",
+        "Gardens/gardens-2.tmx",
+        "Catacombs/catacombs-test-1.tmx",
+        "Gardens/gardens-3.tmx",
+        "Gardens/gardens-test-1.tmx",
         "Green/Green.tmx",
         "Atlas.tsx",
         "Catacombs/map.tmx",
         "Catacombs/Catacombs-1.tmx",
         "Heights/Snow.tmx",
-        "Caverns/Caverns-1.tmx",
-        "Test/Test.tmx",
-        "Big/Big.tmx"
+        "Caverns/Caverns-1.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

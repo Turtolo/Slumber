@@ -363,14 +363,23 @@
 /processorParam:TextureFormat=Color
 /build:Graphics/Background/Gardens/Gardens-Layer-2.png
 
-#begin Maps/Gardens/gardens-test-1.tmx
-/copy:Maps/Gardens/gardens-test-1.tmx
-
-#begin Maps/Catacombs/catacombs-test-1.tmx
-/copy:Maps/Catacombs/catacombs-test-1.tmx
-
 #begin Maps/Gardens/gardens-1.tmx
 /copy:Maps/Gardens/gardens-1.tmx
 
 #begin Maps/Gardens/gardens-2.tmx
 /copy:Maps/Gardens/gardens-2.tmx
+
+#begin Maps/Caverns/caverns-1.tmx
+/copy:Maps/Caverns/caverns-1.tmx
+
+#begin Graphics/Background/Gardens-Layer-0.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphics/Background/Gardens-Layer-0.png

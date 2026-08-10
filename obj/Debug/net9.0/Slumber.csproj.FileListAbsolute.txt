@@ -91,3 +91,5 @@
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Catacombs/catacombs-test-1.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-1.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-2.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-3.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Background/Gardens-Layer-0.xnb

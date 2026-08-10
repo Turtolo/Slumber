@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Opal.Params;
 using Opal.Tools;
-using Opal.Util;
+using Opal.Tools;
 
 namespace Slumber
 {
@@ -23,7 +23,7 @@ namespace Slumber
   public class RoomCamera : Camera2D
   {
     private bool entered;
-    private int dir;
+    private Vector2 dir;
 
     [Export]
     public Node2D TargetNode { get; set; }
@@ -81,10 +81,16 @@ namespace Slumber
         switch (side)
         {
           case CameraSide.Left:
-            ShiftRoom(-1);
+            Shift(new Vector2(-1, 0));
             break;
           case CameraSide.Right:
-            ShiftRoom(1);
+            Shift(new Vector2(1, 0));
+            break;
+          case CameraSide.Top:
+            Shift(new Vector2(0, -1));
+            break;
+          case CameraSide.Bottom:
+            Shift(new Vector2(0, 1));
             break;
         }
       }
@@ -97,10 +103,27 @@ namespace Slumber
       base.Submit(canvas);
     }
 
+    private void Shift(Vector2 dir)
+    {
+      this.dir = dir;
+
+      var camera = GetWorldViewRectangle();
+
+      Vector2 targetPos = new Vector2(Transform.Global.Position.X + camera.Width * dir.X, Transform.Global.Position.Y + camera.Height * dir.Y);
+
+      TransitionStarted?.Invoke();
+
+      var cameraTween = Core.Token.CreateTween(t => Position = t, Transform.Global.Position, targetPos, 0.5f, Vector2.Lerp, EasingFunctions.Linear);
+
+      cameraTween.SetCallbackAction
+      (
+        () => TransitionEnded?.Invoke()
+      );
+    }
+
     private void ShiftRoom(int dir)
     {
-      dir = dir;
-
+      //this.dir = dir;
       var camera = GetWorldViewRectangle();
 
       Vector2 targetPos = new Vector2(Transform.Global.Position.X + camera.Width * dir, Transform.Global.Position.Y);
@@ -111,7 +134,7 @@ namespace Slumber
 
       cameraXTween.SetCallbackAction
       (
-          () => TransitionEnded?.Invoke()
+        () => TransitionEnded?.Invoke()
       );
 
     }
@@ -120,7 +143,7 @@ namespace Slumber
     {
       if (TargetNode is Player player)
       {
-        player.Position += new Vector2(10 * dir, 0);
+        player.Position += new Vector2(10, -20) * dir;
         player.Velocity.X = 0;
         player.Properties.AllowControl = false;
       }

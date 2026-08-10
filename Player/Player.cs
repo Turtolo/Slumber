@@ -35,7 +35,6 @@ namespace Slumber
         n.SetParent(this);
       });
 
-
       var animations = AsepriteLoader.LoadAnimations(
           Core.Resource.Load<MTexture>("Graphics/Atlas/PlayerAnimation"),
           PathTools.Combine("Raw/Raw/PlayerAnimation.json")
@@ -80,6 +79,14 @@ namespace Slumber
         n.SetParent(this);
         n.Shape = new RayCastShape2D(new Vector2(0, 20));
         n.Position = new Vector2(0, 10);
+      });
+
+      new PointLight2D().Set(n =>
+      {
+        n.Texture = Core.Resource.Load<MTexture>("Graphics/light");
+        n.Position = new Vector2(-90, -75);
+        n.Scale = new Vector2(2);
+        n.SetParent(this);
       });
 
       AddHealthIcons();

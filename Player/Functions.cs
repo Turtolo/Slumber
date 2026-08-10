@@ -169,11 +169,16 @@ public partial class Player : KinematicBody2D
 
   #region Attack
 
+  public void Kill()
+  {
+    Core.Token.Anchor.ReloadCurrentAnchor();
+  }
+
   public void HandleDamage()
   {
     if (Properties.Health <= 0)
     {
-      Core.Tree.ReloadCurrentScene();
+      Kill();
     }
 
     if (!Properties.CanTakeDamage)

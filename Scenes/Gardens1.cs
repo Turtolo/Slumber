@@ -1,3 +1,5 @@
+
+
 using System.IO;
 using System.Linq;
 using DotTiled.Serialization;
@@ -5,7 +7,7 @@ using MonoTile;
 
 namespace Slumber;
 
-public class Gardens : Node
+public class Gardens1 : Scene
 {
   public Player Player;
 
@@ -17,34 +19,39 @@ public class Gardens : Node
       .Set("Position", new Vector2(0, 35));
 
     Player = new Player()
-      .Set("Position", new Vector2(-50, 68));
+      .Set("Position", new Vector2(-176, 16));
 
-    var rect = new Rectangle(-864, -96, 1152, 288);
+    var rect = new Rectangle(-272, -464, 528, 512);
 
     new PixelCamera()
       .Set(n => n.Weight = 0.3f)
       .Set(n => n.TargetOffset = new Point(0, 65))
-      .Set(n => n.Limit = rect)
+      //.Set(n => n.Limit = rect)
       .Set(n => n.Deadzone = new Extent(30, 0))
       .Set(n => n.OffsetSmoothing = true)
       .Set(n => n.Target = Player);
 
-
-    var loader = Loader.Default();
-    var mapPath = Path.Combine(
-        AppContext.BaseDirectory,
-        "Content",
-        "Maps",
-        "Gardens",
-        "gardens-1.tmx"
-    );
     
     new CanvasAnchor().Set(n =>
     {
       n.BackBufferColor = new Color(42, 63, 71);
+      n.AmbientColor = Color.Gray;
     });
     
-    DotTiledBridge.Load(mapPath, loader);
+    new PointLight2D().Set(n =>
+    {
+      n.Texture = Core.Resource.Load<MTexture>("Graphics/light");
+      n.Position = new Vector2(-176, 16);
+      n.Scale = new Vector2(2);
+    });
+
+
+    new PointLight2D().Set(n =>
+    {
+      n.Texture = Core.Resource.Load<MTexture>("Graphics/light");
+      n.Position = new Vector2(-176, -64);
+      n.Scale = new Vector2(2);
+    });
   }
 
   public override void ExitTree()
