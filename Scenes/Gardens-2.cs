@@ -65,6 +65,7 @@ public class Gardens2 : Scene
       n.MotionScale = new Vector2(0.4f, 0f);
       n.RepeatTimes = 4;
       n.RepeatSize = new Extent(640, 0);
+      n.Position = new Vector2(0, -170);
       n.SetParent(root);
     });
 
