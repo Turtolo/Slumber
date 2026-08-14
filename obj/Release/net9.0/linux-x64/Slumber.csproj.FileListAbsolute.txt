@@ -259,3 +259,5 @@
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/linux-x64/Content/Maps/Catacombs/catacombs-test-1.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/linux-x64/Content/Maps/Gardens/gardens-1.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/linux-x64/Content/Maps/Gardens/gardens-2.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/linux-x64/Content/Graphics/Background/Gardens-Layer-0.xnb
+/Users/nilslauvstad/Git/Slumber/bin/Release/net9.0/linux-x64/Content/Maps/Gardens/gardens-3.tmx

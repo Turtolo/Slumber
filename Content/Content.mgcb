@@ -377,3 +377,9 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Graphics/Background/Gardens-Layer-0.png
+
+#begin Maps/Termplates/Template.tmx
+/copy:Maps/Termplates/Template.tmx
+
+#begin Maps/Gardens/gardens-3.tmx
+/copy:Maps/Gardens/gardens-3.tmx

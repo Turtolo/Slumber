@@ -85,14 +85,14 @@ public class Enemy : KinematicBody2D
     RayRight = Core.Token.Create<Raycast2D>().Set(n =>
     {
       n.SetParent(this);
-      n.TargetPosition = new Vector2(20, 50);
+      n.Shape = new RayCastShape2D(new Vector2(20, 50));
       n.Position = new Vector2(40, 0);
     });
 
     RayLeft = Core.Token.Create<Raycast2D>().Set(n =>
     {
       n.SetParent(this);
-      n.TargetPosition = new Vector2(-20, 50);
+      n.Shape = new RayCastShape2D(new Vector2(-20, 50));
       n.Position = new Vector2(-24, 0);
     });
 
@@ -113,10 +113,13 @@ public class Enemy : KinematicBody2D
     LeftArea.SetParent(this);
     RightArea.SetParent(this);
 
-
     SetNewTargetSpeed();
 
     Depth = 6;
+
+    AddMask(1);
+
+    AddLayer(2);
   }
 
   private void SetNewTargetSpeed()

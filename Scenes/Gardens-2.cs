@@ -15,20 +15,12 @@ public class Gardens2 : Scene
     base.EnterTree();
 
     var root = new Node2D()
-      .Set("Position", new Vector2(0, -120));
+      .Set("Position", new Vector2(0, -115));
 
     Player = new Player()
       .Set("Position", new Vector2(-176, 16));
 
-    var rect = new Rectangle(-272, -464, 528, 512);
-
-    new PixelCamera()
-      .Set(n => n.Weight = 0.3f)
-      .Set(n => n.TargetOffset = new Point(0, 65))
-      .Set(n => n.Limit = rect)
-      .Set(n => n.Deadzone = new Extent(30, 0))
-      .Set(n => n.OffsetSmoothing = true)
-      .Set(n => n.Target = Player);
+    var rect = new Rectangle(-272, -464, 736, 512);
 
     new PixelCamera()
       .Set(n => n.Weight = 0.3f)
@@ -65,19 +57,10 @@ public class Gardens2 : Scene
       n.MotionScale = new Vector2(0.4f, 0f);
       n.RepeatTimes = 4;
       n.RepeatSize = new Extent(640, 0);
-      n.Position = new Vector2(0, -170);
+      n.Position = new Vector2(0, -125);
       n.SetParent(root);
     });
 
-    new Parallax2D().Set(n =>
-    {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-0");
-      n.Depth = -11;
-      n.MotionScale = new Vector2(0.4f, 0f);
-      n.RepeatSize = new Extent(640, 360);
-      n.RepeatTimes = 4;
-      n.SetParent(root);
-    });
     var loader = Loader.Default();
     var mapPath = Path.Combine(
         AppContext.BaseDirectory,
@@ -89,7 +72,7 @@ public class Gardens2 : Scene
     
     new CanvasAnchor().Set(n =>
     {
-      n.BackBufferColor = new Color(42, 63, 71);
+      n.BackBufferColor = new Color(13, 22, 24);
       n.AmbientColor = Color.White;
     });
     
@@ -101,7 +84,6 @@ public class Gardens2 : Scene
       n.Position = new Vector2(-176, 16);
       n.Scale = new Vector2(2);
     });
-
 
     new PointLight2D().Set(n =>
     {

@@ -29,6 +29,8 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/lan.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/lan.xnb","TextureProcessor","Texture2DContent",4803,409685,0.009837
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/light.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/light.xnb","TextureProcessor","Texture2DContent",779,36949,0.075647
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Shader/WhiteEffect.fx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Shader/WhiteEffect.xnb","EffectProcessor","CompiledEffectContent",844,1063,14.115702
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.xnb","TextureProcessor","Texture2DContent",51749,1474645,0.104796
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.tsx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.tsx","CopyItem","File",224,224,0.000287
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-2.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-2.tmx","CopyItem","File",87600,87600,0.000269
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.xnb","TextureProcessor","Texture2DContent",70049,1474645,0.250477
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.tsx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.tsx","CopyItem","File",300,300,0.000868
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-2.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-2.tmx","CopyItem","File",90734,90734,0.000698
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-3.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-3.tmx","CopyItem","File",31717,31717,0.000714
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Termplates/Template.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Termplates/Template.tmx","CopyItem","File",1186,1186,0.000689

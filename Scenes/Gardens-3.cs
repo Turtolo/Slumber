@@ -1,5 +1,6 @@
 
 
+
 using System.IO;
 using System.Linq;
 using DotTiled.Serialization;
@@ -7,7 +8,7 @@ using MonoTile;
 
 namespace Slumber;
 
-public class Caverns1 : Scene
+public class Gardens3 : Scene
 {
   public Player Player;
 
@@ -16,34 +17,65 @@ public class Caverns1 : Scene
     base.EnterTree();
 
     var root = new Node2D()
-      .Set("Position", new Vector2(0, 35));
+      .Set("Position", new Vector2(0, -115));
 
     Player = new Player()
-      .Set("Position", new Vector2(-176, -80));
+      .Set("Position", new Vector2(32, -32));
 
-    var rect = new Rectangle(-272, -464, 528, 512);
+    var rect = new Rectangle(0, -160, 640, 224);
 
     new PixelCamera()
       .Set(n => n.Weight = 0.3f)
       .Set(n => n.TargetOffset = new Point(0, 65))
-      //.Set(n => n.Limit = rect)
+      .Set(n => n.Limit = rect)
       .Set(n => n.Deadzone = new Extent(30, 0))
       .Set(n => n.OffsetSmoothing = true)
       .Set(n => n.Target = Player);
+
+    new Parallax2D().Set(n =>
+    {
+      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-1");
+      n.Depth = -8;
+      n.MotionScale = new Vector2(0.2f, 0f);
+      n.RepeatSize = new Extent(640, 0);
+      n.RepeatTimes = 4;
+      n.SetParent(root);
+    });
+
+    new Parallax2D().Set(n =>
+    {
+      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-2");
+      n.Depth = -9;
+      n.MotionScale = new Vector2(0.3f, 0f);
+      n.RepeatTimes = 4;
+      n.RepeatSize = new Extent(640, 0);
+      n.SetParent(root);
+    });
+
+    new Parallax2D().Set(n =>
+    {
+      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-3");
+      n.Depth = -10;
+      n.MotionScale = new Vector2(0.4f, 0f);
+      n.RepeatTimes = 4;
+      n.RepeatSize = new Extent(640, 0);
+      n.Position = new Vector2(0, -125);
+      n.SetParent(root);
+    });
 
     var loader = Loader.Default();
     var mapPath = Path.Combine(
         AppContext.BaseDirectory,
         "Content",
         "Maps",
-        "Caverns",
-        "caverns-1.tmx"
+        "Gardens",
+        "gardens-3.tmx"
     );
     
     new CanvasAnchor().Set(n =>
     {
-      n.BackBufferColor = new Color(42, 63, 71);
-      n.AmbientColor = Color.Gray;
+      n.BackBufferColor = new Color(13, 22, 24);
+      n.AmbientColor = Color.White;
     });
     
     var t = DotTiledBridge.Load(mapPath, loader);
@@ -54,7 +86,6 @@ public class Caverns1 : Scene
       n.Position = new Vector2(-176, 16);
       n.Scale = new Vector2(2);
     });
-
 
     new PointLight2D().Set(n =>
     {

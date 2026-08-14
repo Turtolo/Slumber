@@ -32,6 +32,31 @@ public static class DotTiledBridge
       if (baseLayer is not ObjectLayer layer)
         continue;
 
+      if (layer.Name == "Node")
+      {
+        foreach (DotTiled.Object obj in layer.Objects)
+        {
+          if (obj is not RectangleObject rect)
+            continue;
+
+          var shape = new CollisionShape2D().Set(n =>
+          {
+            n.Shape = new RectangleShape2D((int)rect.Width, (int)rect.Height);
+          });
+
+          Console.WriteLine($"[Object:{obj.Name}] Detected!");
+
+          if (obj.Name == "*")
+          {
+            var killZone = new KillZone().Set(n =>
+            {
+              n.Position = new Vector2(rect.X, rect.Y);
+              n.AddChild(shape);
+            });
+          }
+        }
+      }
+
       foreach (DotTiled.Object obj in layer.Objects)
       {
         if (obj is not RectangleObject rect)
@@ -42,39 +67,13 @@ public static class DotTiledBridge
           n.Shape = new RectangleShape2D((int)rect.Width, (int)rect.Height);
         });
 
-        if (layer.Name == "SceneTransition")
-        {
-          if (obj.TryGetProperty("scene", out StringProperty name))
-          {
-            var sceneChange = new SceneChange().Set(n =>
-            {
-              n.SceneName = name.Value;
-              n.Area = new Area2D().Set(n =>
-              {
-                n.AddChild(shape);
-                n.Position = new Vector2(rect.X, rect.Y);
-              });
-            });
-          }
-        }
-        
-        if (layer.Name == "Nodes")
-        {
-          if (obj.Name == "*")
-          {
-            var killZone = new KillZone().Set(n =>
-            {
-              n.Position = new Vector2(rect.X, rect.Y);
-              n.AddChild(shape);
-            });
-          }
-        }
-
         if (layer.TryGetProperty("collision", out BoolProperty collision) && collision.Value == true)
         {
           var stat = new StaticBody2D().Set(n =>
           {
             n.Position = new Vector2(rect.X, rect.Y);
+            n.AddLayer(10);
+            n.AddLayer(1);
             n.AddChild(shape);
           });
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="8" nextobjectid="38">
+ <tileset firstgid="1" source="../Atlas.tsx"/>
+ <layer id="1" name="Main" width="30" height="20">
+  <properties>
+   <property name="layer" type="int" value="1"/>
+  </properties>
+  <data encoding="csv"/>
+ </layer>
+ <layer id="5" name="Grass" width="30" height="20">
+  <properties>
+   <property name="layer" type="int" value="10"/>
+  </properties>
+  <data encoding="csv"/>
+ </layer>
+ <layer id="7" name="Shrubbery" width="30" height="20">
+  <properties>
+   <property name="layer" type="int" value="2"/>
+  </properties>
+  <data encoding="csv"/>
+ </layer>
+ <layer id="6" name="Flowers" width="30" height="20">
+  <properties>
+   <property name="layer" type="int" value="11"/>
+  </properties>
+  <data encoding="csv"/>
+ </layer>
+ <objectgroup id="4" name="SceneTransition"/>
+ <objectgroup id="3" name="Node"/>
+ <objectgroup id="2" name="Collision">
+  <properties>
+   <property name="collision" type="bool" value="true"/>
+  </properties>
+ </objectgroup>
+</map>

@@ -109,6 +109,8 @@ namespace Slumber
         n.Initial = idleState;
         n.SetParent(this);
       });
+
+      AddMask(1);
     }
 
     public void AddHealthIcons()
