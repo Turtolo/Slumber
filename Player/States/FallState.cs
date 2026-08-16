@@ -21,8 +21,13 @@ public class FallState : BaseAirState
 
     if (Core.Input.IsActionJustPressed("Jump"))
     {
+      if (p.Properties.CanCoyoteJump)
+      {
+        Transition?.Invoke("JumpState");
+      }
+
       p.Properties.JumpBuffered = true;
-      Await.Span(p.Properties.JumpBufferTime, () => p.Properties.JumpBuffered = false);
+      Await.Span(p.Properties.JumpBufferTime, () => p?.Properties.JumpBuffered = false);
     }
   }
 

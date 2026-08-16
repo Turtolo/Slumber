@@ -13,7 +13,8 @@ public class KillZone : Area2D
     
     if (GetAnyBody() is Player p)
     {
-      Core.Token.Anchor.ReloadCurrentAnchor();
+      p.QueueFree();
+      Main.Transition.Reload();
     }
 
   }

@@ -8,6 +8,8 @@ namespace Slumber
   {
     public Main() { }
 
+    public static Transition Transition;
+
     protected override void Initialize()
     {
       base.Initialize();
@@ -15,6 +17,8 @@ namespace Slumber
       ClassDB.Initialize(typeof(Main).Assembly);
 
       Token.Anchor.SetAnchor(new Gardens3());
+
+      Transition = new Transition().Set(n => n.Detach());
 
       Input.AddBind("MoveLeft", new InputAction(Keys.A), new InputAction(Buttons.LeftThumbstickLeft), new InputAction(Buttons.DPadLeft));
       Input.AddBind("MoveRight", new InputAction(Keys.D), new InputAction(Buttons.LeftThumbstickRight), new InputAction(Buttons.DPadRight));
@@ -41,7 +45,6 @@ namespace Slumber
       Prefs.Graphics.MouseVisible = true;
 
       Prefs.Apply();
-
     }
 
     protected override void LoadContent()
@@ -57,6 +60,9 @@ namespace Slumber
     protected override void Update(GameTime gameTime)
     {
       base.Update(gameTime);
+
+      if (Core.Input.Keyboard.WasKeyJustPressed(Keys.G))
+        Transition.Out();
     }
 
     bool showCollision;
@@ -103,6 +109,7 @@ namespace Slumber
       Core.ImGuiRenderer.BeforeLayout(gameTime);  
       ImGui.Begin("Player");  
       ImGui.Text($"Velocity: {player.Velocity.ToString()}");
+      ImGui.Text($"Position: {player.Transform.Global.Position.ToString()}");
       ImGui.Text($"Term: {MathF.Round(player.Properties.CurrentTerminalVelocity / 100f) * 100f}");
       ImGui.Text($"State: {player.Get<StateMachine>()?.Current}");
 

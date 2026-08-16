@@ -44,5 +44,7 @@ public class LandingState : State
   public override void Physics(float delta)
   {
     base.PhysicsUpdate(delta);
+
+    p.HandleCoyoteTime();
   }
 }

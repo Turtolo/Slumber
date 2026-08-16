@@ -15,7 +15,10 @@ public class Scene : Anchor,
   public Rectangle CameraBounds { get; set; }
 
   public virtual void _EnterTree() { }
-  public virtual void EnterTree() { }
+  public virtual void EnterTree()
+  {
+    //Main.Transition = new Transition();
+  }
 
   public virtual void _Process(float delta) { }
   public virtual void Process(float delta) { }

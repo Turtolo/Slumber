@@ -36,23 +36,42 @@ public static class DotTiledBridge
       {
         foreach (DotTiled.Object obj in layer.Objects)
         {
-          if (obj is not RectangleObject rect)
-            continue;
-
-          var shape = new CollisionShape2D().Set(n =>
+          if (obj is PointObject point)
           {
-            n.Shape = new RectangleShape2D((int)rect.Width, (int)rect.Height);
-          });
-
-          Console.WriteLine($"[Object:{obj.Name}] Detected!");
-
-          if (obj.Name == "*")
-          {
-            var killZone = new KillZone().Set(n =>
+            if (obj.Name == "enemy")
             {
-              n.Position = new Vector2(rect.X, rect.Y);
-              n.AddChild(shape);
+              new Enemy().Set(n => n.Position = new Vector2(point.X, point.Y));
+            }
+          }
+
+          if (obj is RectangleObject rect)
+          {
+            var shape = new CollisionShape2D().Set(n =>
+            {
+              n.Shape = new RectangleShape2D((int)rect.Width, (int)rect.Height);
             });
+
+            if (obj.Name == "*")
+            {
+              var killZone = new KillZone().Set(n =>
+              {
+                n.Position = new Vector2(rect.X, rect.Y);
+                n.AddChild(shape);
+              });
+            }
+
+            if (obj.Name == "@")
+            {
+              if (obj.TryGetProperty("scene", out StringProperty sceneName))
+              {
+                var sceneTrans = new SceneChange().Set(n => 
+                {
+                  n.AddChild(shape);
+                  n.Position = new Vector2(rect.X, rect.Y);
+                  n.SceneName = sceneName.Value;
+                });
+              }
+            }
           }
         }
       }

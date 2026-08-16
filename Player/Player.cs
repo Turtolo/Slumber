@@ -27,6 +27,8 @@ namespace Slumber
     public override void EnterTree()
     {
       base.EnterTree();
+      
+      //Main.Transition.Out();
 
       var c = Core.Token.Create<CollisionShape2D>().Set(n =>
       {

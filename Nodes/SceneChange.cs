@@ -2,46 +2,16 @@ using System.Linq;
 
 namespace Slumber;
 
-public class SceneChange : Node2D
+public class SceneChange : Area2D
 {
-  public Area2D Area; 
-
   public string SceneName;
 
   public override void Process(float delta)
   {
-    if (Area.GetAnyBody() is Player)
+    if (GetAnyBody() is Player p)
     {
-      Type t = null;
-      
-      t = Type.GetType(SceneName);
-
-      if (t == null)
-      {
-        foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
-        {
-          t = assembly.GetTypes().FirstOrDefault(x => x.Name == SceneName || x.FullName == SceneName);
-          if (t != null) break; 
-        }
-      }
-
-      if (t != null)
-      {
-        var instance = Activator.CreateInstance(t);
-
-        if (instance is Opal.Tools.Anchor a)
-        {
-          Core.Token.Anchor.SetAnchor(a);
-        }
-        else
-        {
-          Console.WriteLine($"Error: {SceneName} is not a Node.");
-        }
-      }
-      else
-      {
-        Console.WriteLine($"Error: Could not find type matching '{SceneName}' in any assembly.");
-      }
+      p.QueueFree();
+      Main.Transition.Change(SceneName);
     }
   }
 }

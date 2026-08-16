@@ -14,6 +14,7 @@ public class BaseAirState : State
 
     p.HandleMovementInput();
     p.HandleDeceleration(delta);
+    p.HandleCoyoteTime();
     p.ApplyGravity(delta);
   }
 }

@@ -35,5 +35,6 @@ public class IdleState : State
     Axis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp");
 
     p.HandleDeceleration(delta);
+    p.HandleCoyoteTime();
   }
 }

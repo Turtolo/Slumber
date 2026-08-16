@@ -383,3 +383,21 @@
 
 #begin Maps/Gardens/gardens-3.tmx
 /copy:Maps/Gardens/gardens-3.tmx
+
+#begin Maps/Gardens/gardens-4.tmx
+/copy:Maps/Gardens/gardens-4.tmx
+
+#begin Maps/Gardens/gardens-5.tmx
+/copy:Maps/Gardens/gardens-5.tmx
+
+#begin Graphics/Transition.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphics/Transition.png

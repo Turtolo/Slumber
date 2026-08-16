@@ -9,37 +9,26 @@ namespace Slumber;
 
 public class Test : Scene
 {
-  RectangleShape2D Shape1;
-  RectangleShape2D Shape2;
-  RectangleShape2D Shape3;
-  RectangleShape2D Shape4;
-  RectangleShape2D Shape5;
-  RectangleShape2D Shape6;
 
-  RayCastShape2D LeftRay;
-  RayCastShape2D RightRay;
-
-  StaticBody2D S1;
-  Raycast2D LR;
+  public AnimatedSprite2D Transition;
 
   public override void EnterTree()
   {
     base.EnterTree();
 
-    Shape1 = new RectangleShape2D(new Extent(100, 10));
+    var transAn = AsepriteLoader.LoadAnimations(
+        Core.Resource.Load<MTexture>("Graphics/Transition"),
+        PathTools.Combine("Raw/Raw/Transition.json") 
+    );
 
-    S1 = new StaticBody2D().Set(n =>
+    Transition = Core.Token.Create<AnimatedSprite2D>().Set(n =>
     {
-      n.AddChild(new CollisionShape2D().Set(n => n.Shape = Shape1));
-      n.Position = new Vector2(-50, 0);
-    });
-
-    LeftRay = new RayCastShape2D(new Vector2(-10, 10));
-
-    LR = new Raycast2D().Set(n =>
-    {
-      n.Shape = LeftRay;
-      n.Position = new Vector2(-10, -5);
+      n.Atlas = transAn;
+      //n.Rounded = true;
+      n.Seperated = true;
+      n.Position = new Vector2(320, 180);
+      n.Scale = new Vector2(640, 360);
+      n.Depth = 20;
     });
   }
 
@@ -51,18 +40,14 @@ public class Test : Scene
   public override void PhysicsUpdate(float delta)
   {
     base.PhysicsUpdate(delta);
-
-    //Console.WriteLine((LeftRay.CheckIntersections(Shape1, new Vector2(-10, -5), new Vector2(-50, 0), out _, out _)));
-    
-    if (LR.IsColliding(out _, out _))
-      Console.WriteLine("True");
-    else
-      Console.WriteLine("False");
   }
 
   public override void Process(float delta)
   {
     base.Process(delta);
+
+    if (Core.Input.Keyboard.WasKeyJustPressed(Keys.T))
+      Transition.PlayAnimation("Out");
   }
 
   public override void Submit(Canvas2D canvas)

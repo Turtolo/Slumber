@@ -34,5 +34,6 @@ public class RunState : State
     Axis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp");
 
     p.HandleMovementInput();
+    p.HandleCoyoteTime();
   }
 }

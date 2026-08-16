@@ -94,3 +94,7 @@
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-3.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Background/Gardens-Layer-0.xnb
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Termplates/Template.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-4.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-5.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Transition.xnb
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Raw/Raw/Transition.json

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="8" nextobjectid="38">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="8" nextobjectid="41">
  <tileset firstgid="1" source="../Atlas.tsx"/>
  <layer id="1" name="Main" width="30" height="20">
   <properties>
@@ -1649,12 +1649,19 @@
 </chunk>
   </data>
  </layer>
- <objectgroup id="4" name="SceneTransition"/>
  <objectgroup id="3" name="Node">
   <object id="5" name="player" x="-176" y="16">
    <point/>
   </object>
-  <object id="16" x="-272" y="-464" width="736" height="512" visible="0"/>
+  <object id="16" x="-272" y="-464" width="736" height="512"/>
+  <object id="39" name="@" x="480" y="-288" width="16" height="48">
+   <properties>
+    <property name="scene" value="Gardens3"/>
+   </properties>
+  </object>
+  <object id="40" name="enemy" x="-32" y="32">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="2" name="Collision">
   <properties>
