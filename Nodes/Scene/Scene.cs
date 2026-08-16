@@ -14,6 +14,8 @@ public class Scene : Anchor,
 {
   public Rectangle CameraBounds { get; set; }
 
+  public Vector2 EntrancePosition { get; set; }
+
   public virtual void _EnterTree() { }
   public virtual void EnterTree()
   {

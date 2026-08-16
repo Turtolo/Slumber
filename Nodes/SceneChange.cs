@@ -11,7 +11,7 @@ public class SceneChange : Area2D
     if (GetAnyBody() is Player p)
     {
       p.QueueFree();
-      Main.Transition.Change(SceneName);
+      Main.Transition.Change(SceneName, Transform.Global.Position);
     }
   }
 }

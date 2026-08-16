@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="8" nextobjectid="41">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="8" nextobjectid="42">
  <tileset firstgid="1" source="../Atlas.tsx"/>
  <layer id="1" name="Main" width="30" height="20">
   <properties>
@@ -1660,6 +1660,9 @@
    </properties>
   </object>
   <object id="40" name="enemy" x="-32" y="32">
+   <point/>
+  </object>
+  <object id="41" name="player" x="408" y="-248">
    <point/>
   </object>
  </objectgroup>

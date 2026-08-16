@@ -16,7 +16,7 @@ namespace Slumber
 
       ClassDB.Initialize(typeof(Main).Assembly);
 
-      Token.Anchor.SetAnchor(new Gardens3());
+      Token.Anchor.SetAnchor(new Gardens2());
 
       Transition = new Transition().Set(n => n.Detach());
 
@@ -60,9 +60,6 @@ namespace Slumber
     protected override void Update(GameTime gameTime)
     {
       base.Update(gameTime);
-
-      if (Core.Input.Keyboard.WasKeyJustPressed(Keys.G))
-        Transition.Out();
     }
 
     bool showCollision;
@@ -112,6 +109,7 @@ namespace Slumber
       ImGui.Text($"Position: {player.Transform.Global.Position.ToString()}");
       ImGui.Text($"Term: {MathF.Round(player.Properties.CurrentTerminalVelocity / 100f) * 100f}");
       ImGui.Text($"State: {player.Get<StateMachine>()?.Current}");
+      ImGui.Text($"Count: {Core.Token.GetAll<Player>().Count}");
 
       ImGui.PushItemWidth(150);
 

@@ -27,6 +27,8 @@ public class RunState : State
       Transition?.Invoke("FallState");
     if (p.CanWall())
       Transition?.Invoke("WallSlideState");
+    if (Core.Input.IsActionJustPressed("Attack"))
+      Transition?.Invoke("FloorAttackState");
   }
 
   public override void Physics(float delta)

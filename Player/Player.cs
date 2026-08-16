@@ -99,6 +99,7 @@ namespace Slumber
       var jumpState = new JumpState();
       var landingState = new LandingState();
       var wallSlideState = new WallSlideState();
+      var floorAttackState = new FloorAttackState();
 
       new StateMachine().Set(n =>
       {
@@ -108,6 +109,7 @@ namespace Slumber
         n.AddChild(jumpState);
         n.AddChild(landingState);
         n.AddChild(wallSlideState);
+        n.AddChild(floorAttackState);
         n.Initial = idleState;
         n.SetParent(this);
       });

@@ -16,9 +16,20 @@ public class Gardens2 : Scene
 
     var root = new Node2D()
       .Set("Position", new Vector2(0, -115));
+    
+    var playerPos = new Vector2(-176, 16);
+    var playerDir = 1;
+
+    if (EntrancePosition == new Vector2(-16, -80))
+    {
+      playerPos = new Vector2(408, -248);
+      playerDir = -1;
+    }
 
     Player = new Player()
-      .Set("Position", new Vector2(-176, 16));
+      .Set("Position", playerPos);
+    
+    Player.Properties.PlayerDirection = playerDir;
 
     var rect = new Rectangle(-272, -464, 736, 512);
 
@@ -28,6 +39,7 @@ public class Gardens2 : Scene
       .Set(n => n.Limit = rect)
       .Set(n => n.Deadzone = new Extent(30, 0))
       .Set(n => n.OffsetSmoothing = true)
+      .Set(n => n.Smoothing = true)
       .Set(n => n.Target = Player);
 
     new Parallax2D().Set(n =>

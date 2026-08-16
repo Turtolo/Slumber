@@ -401,3 +401,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Graphics/Transition.png
+
+#begin Maps/Gardens/gardens-6.tmx
+/copy:Maps/Gardens/gardens-6.tmx

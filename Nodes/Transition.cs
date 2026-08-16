@@ -42,7 +42,7 @@ public class Transition : Node
     });
   }
 
-  public void Change(string nName)
+  public void Change(string nName, Vector2 entrancePosition)
   {
     In();
     Await.Until(() => Player.IsFinished, () =>
@@ -67,6 +67,10 @@ public class Transition : Node
         if (instance is Opal.Tools.Anchor a)
         {
           Core.Token.Anchor.SetAnchor(a);
+          if (a is Scene s)
+          {
+            s.EntrancePosition = entrancePosition;
+          }
         }
         else
         {

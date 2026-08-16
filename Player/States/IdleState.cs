@@ -28,6 +28,9 @@ public class IdleState : State
 
     if (!p.IsOnFloor)
       Transition?.Invoke("FallState");
+
+    if (Core.Input.IsActionJustPressed("Attack"))
+      Transition?.Invoke("FloorAttackState");
   }
 
   public override void Physics(float delta)
