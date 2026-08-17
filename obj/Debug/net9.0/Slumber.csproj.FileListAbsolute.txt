@@ -100,3 +100,4 @@
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Raw/Raw/Transition.json
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-6.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-7.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-8.tmx

@@ -134,11 +134,11 @@
                 3,
                 2
             ],
-            "scale": 0.5353,
-            "selectedLayer": 6,
+            "scale": 0.7208,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 382.0287689146273,
-                "y": -147.58079581543063
+                "x": 475.1664816870144,
+                "y": -133.18534961154273
             }
         },
         "Gardens/gardens-6.tmx": {
@@ -146,19 +146,23 @@
                 3,
                 2
             ],
-            "scale": 1.3251,
+            "scale": 1.5421,
             "selectedLayer": 6,
             "viewCenter": {
-                "x": -223.75669760772774,
-                "y": -113.95366387442459
+                "x": -32.09908566240841,
+                "y": 57.06504117761496
             }
         },
         "Gardens/gardens-7.tmx": {
-            "scale": 6.5832,
-            "selectedLayer": 0,
+            "expandedObjectLayers": [
+                3,
+                2
+            ],
+            "scale": 1.0971,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 6.1520233321181195,
-                "y": 20.35484262972415
+                "x": -1.367240907847986,
+                "y": -143.10454835475346
             }
         },
         "Gardens/gardens-test-1.tmx": {

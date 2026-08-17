@@ -32,13 +32,18 @@ public class Transition : Node
 
   }
 
+  private bool _isReloading;
   public void Reload()
   {
+    if (_isReloading) return;
+    _isReloading = true;
+
     In();
-    Await.Until(() => Player.IsFinished, () => 
+    Await.Until(() => Player.IsFinished, () =>  
     {
       Core.Token.Anchor.ReloadCurrentAnchor();
       Out();
+      _isReloading = false;
     });
   }
 
@@ -62,19 +67,12 @@ public class Transition : Node
 
       if (t != null)
       {
-        var instance = Activator.CreateInstance(t);
-
-        if (instance is Opal.Tools.Anchor a)
         {
-          Core.Token.Anchor.SetAnchor(a);
-          if (a is Scene s)
-          {
-            s.EntrancePosition = entrancePosition;
-          }
+        var n = Core.Token.Anchor.SetAnchor(t);
+        if (n is Scene s)
+        {
+          s.EntrancePosition = entrancePosition;
         }
-        else
-        {
-          Console.WriteLine($"Error: {nName} is not a Node.");
         }
       }
       else
@@ -86,12 +84,12 @@ public class Transition : Node
     });
   }
 
-  public void Change(Anchor n)
+  public void Change<T>() where T : Scene, new()
   {
     In();
     Await.Until(() => Player.IsFinished, () =>
     {
-      Core.Token.Anchor.SetAnchor(n);
+      Core.Token.Anchor.SetAnchor<T>();
       In();
     });
 

@@ -6,7 +6,7 @@ using MonoTile;
 
 namespace Slumber;
 
-public class Gardens6 : Scene
+public class Gardens8 : Scene
 {
   public Player Player;
 
@@ -17,27 +17,15 @@ public class Gardens6 : Scene
     var root = new Node2D()
       .Set("Position", new Vector2(0, -150));
     
-    var playerPos = new Vector2(-48, -16);
+    var playerPos = new Vector2(24, 0);
     var playerDir = 1;
-
-    if (EntrancePosition == new Vector2(744, -240))
-    {
-      playerPos = new Vector2(-48, -16);
-      playerDir = -1;
-    }
-
-    if (EntrancePosition == new Vector2(192, -288))
-    {
-      playerPos = new Vector2(-280, -160);
-      playerDir = 1;
-    }
 
     Player = new Player()
       .Set("Position", playerPos);
 
     Player.Properties.PlayerDirection = playerDir;
 
-    var rect = new Rectangle(-304, -368, 640, 416);
+    var rect = new Rectangle(-160, -192, 640, 272);
 
     new PixelCamera()
       .Set(n => n.Weight = 0.3f)
@@ -85,7 +73,7 @@ public class Gardens6 : Scene
         "Content",
         "Maps",
         "Gardens",
-        "gardens-6.tmx"
+        "gardens-8.tmx"
     );
     
     new CanvasAnchor().Set(n =>

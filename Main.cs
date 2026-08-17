@@ -16,7 +16,7 @@ namespace Slumber
 
       ClassDB.Initialize(typeof(Main).Assembly);
 
-      Token.Anchor.SetAnchor(new Gardens7());
+      Token.Anchor.SetAnchor<Gardens8>();
 
       Transition = new Transition().Set(n => n.Detach());
 
@@ -60,6 +60,9 @@ namespace Slumber
     protected override void Update(GameTime gameTime)
     {
       base.Update(gameTime);
+
+      if (Core.Input.Keyboard.WasKeyJustPressed(Keys.R))
+        Core.Token.Anchor.ReloadCurrentAnchor();
     }
 
     bool showCollision;
@@ -71,7 +74,6 @@ namespace Slumber
     float jmpFrc;
 
     bool init;
-
 
     protected override void Draw(GameTime gameTime)
     {
