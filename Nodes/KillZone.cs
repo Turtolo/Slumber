@@ -13,8 +13,11 @@ public class KillZone : Area2D
     
     if (GetAnyBody() is Player p)
     {
+      Core.Token.Get<PixelCamera>()?.toggleShake = true;
       p.QueueFree();
       Main.Transition.Reload();
+
+      Await.Span(TimeSpan.FromSeconds(0.1f), () => Core.Token.Get<PixelCamera>()?.toggleShake = false);
     }
 
   }
