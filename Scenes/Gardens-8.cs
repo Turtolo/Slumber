@@ -15,10 +15,16 @@ public class Gardens8 : Scene
     base.EnterTree();
 
     var root = new Node2D()
-      .Set("Position", new Vector2(0, -150));
+      .Set("Position", new Vector2(0, -100));
     
-    var playerPos = new Vector2(24, 0);
+    var playerPos = new Vector2(-128, 0);
     var playerDir = 1;
+
+    if (EntrancePosition == new Vector2(336, -208))
+    {
+      playerPos = new Vector2(-128, 0);
+      playerDir = 1;
+    }
 
     Player = new Player()
       .Set("Position", playerPos);

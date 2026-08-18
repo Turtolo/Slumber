@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="9" nextobjectid="70">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="10" nextobjectid="70">
+ <editorsettings>
+  <export target="../Gardens/gardens-1.tmx" format="tmx"/>
+ </editorsettings>
  <tileset firstgid="1" source="../Atlas.tsx"/>
  <layer id="1" name="Main" width="30" height="20">
   <properties>
    <property name="layer" type="int" value="1"/>
   </properties>
+  <data encoding="csv"/>
+ </layer>
+ <layer id="9" name="Wall" width="30" height="20">
   <data encoding="csv"/>
  </layer>
  <layer id="8" name="Spikes" width="30" height="20">

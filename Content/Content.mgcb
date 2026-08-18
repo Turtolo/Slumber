@@ -410,3 +410,6 @@
 
 #begin Maps/Gardens/gardens-8.tmx
 /copy:Maps/Gardens/gardens-8.tmx
+
+#begin Maps/Gardens/gardens-1.tmx
+/copy:Maps/Gardens/gardens-1.tmx

@@ -32,6 +32,12 @@ public class Gardens6 : Scene
       playerDir = 1;
     }
 
+    if (EntrancePosition == new Vector2(-176, -48))
+    {
+      playerPos = new Vector2(312, -160);
+      playerDir = -1;
+    }
+
     Player = new Player()
       .Set("Position", playerPos);
 

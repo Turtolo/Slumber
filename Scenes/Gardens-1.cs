@@ -1,4 +1,5 @@
 
+
 using System.IO;
 using System.Linq;
 using DotTiled.Serialization;
@@ -6,7 +7,7 @@ using MonoTile;
 
 namespace Slumber;
 
-public class Gardens2 : Scene
+public class Gardens1 : Scene
 {
   public Player Player;
 
@@ -15,29 +16,23 @@ public class Gardens2 : Scene
     base.EnterTree();
 
     var root = new Node2D()
-      .Set("Position", new Vector2(0, -115));
+      .Set("Position", new Vector2(0, -100));
     
-    var playerPos = new Vector2(-176, 16);
+    var playerPos = new Vector2(360, -80);
     var playerDir = 1;
 
-    if (EntrancePosition == new Vector2(-16, -80))
+    if (EntrancePosition == new Vector2(-336, -176))
     {
-      playerPos = new Vector2(408, -248);
+      playerPos = new Vector2(360, -80);
       playerDir = -1;
-    }
-
-    if (EntrancePosition ==  new Vector2(400, -128))
-    {
-      playerPos = new Vector2(-288, -128);
-      playerDir = 1;
     }
 
     Player = new Player()
       .Set("Position", playerPos);
-    
+
     Player.Properties.PlayerDirection = playerDir;
 
-    var rect = new Rectangle(-320, -464, 784, 512);
+    var rect = new Rectangle(-240, -248, 640, 360);
 
     new PixelCamera()
       .Set(n => n.Weight = 0.3f)
@@ -85,7 +80,7 @@ public class Gardens2 : Scene
         "Content",
         "Maps",
         "Gardens",
-        "gardens-2.tmx"
+        "gardens-1.tmx"
     );
     
     new CanvasAnchor().Set(n =>
