@@ -10,9 +10,6 @@
   </properties>
   <data encoding="csv"/>
  </layer>
- <layer id="9" name="Wall" width="30" height="20">
-  <data encoding="csv"/>
- </layer>
  <layer id="8" name="Spikes" width="30" height="20">
   <properties>
    <property name="Spikes" type="int" value="1"/>

@@ -18,13 +18,18 @@ public class Gardens1 : Scene
     var root = new Node2D()
       .Set("Position", new Vector2(0, -100));
     
-    var playerPos = new Vector2(360, -80);
+    var playerPos = new Vector2(-8, 32);
     var playerDir = 1;
 
     if (EntrancePosition == new Vector2(-336, -176))
     {
       playerPos = new Vector2(360, -80);
       playerDir = -1;
+    }
+    if (EntrancePosition == new Vector2(8, -48))
+    {
+      playerPos = new Vector2(16, 24);
+      playerDir = 1;
     }
 
     Player = new Player()

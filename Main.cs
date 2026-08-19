@@ -16,7 +16,7 @@ namespace Slumber
 
       ClassDB.Initialize(typeof(Main).Assembly);
 
-      Token.Anchor.SetAnchor<Gardens1>();
+      Token.Anchor.SetAnchor<Caverns1>();
 
       Transition = new Transition().Set(n => n.Detach());
 

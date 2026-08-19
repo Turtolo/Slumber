@@ -79,7 +79,7 @@ namespace Slumber
       GroundCheck = new Raycast2D().Set(n =>
       {
         n.SetParent(this);
-        n.Shape = new RayCastShape2D(new Vector2(0, 20));
+        n.Shape = new RayCastShape2D(new Vector2(0, 25));
         n.Position = new Vector2(0, 10);
       });
 

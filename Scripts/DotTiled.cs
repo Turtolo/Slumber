@@ -62,15 +62,16 @@ public static class DotTiledBridge
 
             if (obj.Name == "@")
             {
-              if (obj.TryGetProperty("scene", out StringProperty sceneName))
+              obj.TryGetProperty("scene", out StringProperty sceneName);
+              obj.TryGetProperty("trigger", out BoolProperty trigger);
+              
+              var sceneTrans = new SceneChange().Set(n => 
               {
-                var sceneTrans = new SceneChange().Set(n => 
-                {
-                  n.AddChild(shape);
-                  n.Position = new Vector2(rect.X, rect.Y);
-                  n.SceneName = sceneName.Value;
-                });
-              }
+                n.AddChild(shape);
+                n.Position = new Vector2(rect.X, rect.Y);
+                n.SceneName = sceneName != null ? sceneName.Value : String.Empty;
+                n.Trigger = trigger != null ? trigger.Value : false;
+              });
             }
           }
         }
