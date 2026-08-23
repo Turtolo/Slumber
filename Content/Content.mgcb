@@ -416,3 +416,33 @@
 
 #begin Maps/Caverns/caverns-1.tmx
 /copy:Maps/Caverns/caverns-1.tmx
+
+#begin Fonts/RainHearts.fnt
+/copy:Fonts/RainHearts.fnt
+
+#begin Fonts/RainHearts.png
+/copy:Fonts/RainHearts.png
+
+#begin Graphics/Bed.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphics/Bed.png
+
+#begin Graphics/BONFIRE.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphics/BONFIRE.png

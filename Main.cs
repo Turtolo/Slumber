@@ -1,6 +1,11 @@
 using System;
 
 using ImGuiNET;
+using Gum.Forms;
+using Gum.Forms.Controls;
+using MonoGameGum;
+using Gum.Converters;
+using RenderingLibrary.Graphics;
 
 namespace Slumber
 {
@@ -8,17 +13,33 @@ namespace Slumber
   {
     public Main() { }
 
-    public static Transition Transition;
+    public static GameManager GameManager;
+
+    public static Gum.GumService GumUI => Gum.GumService.Default;
 
     protected override void Initialize()
     {
       base.Initialize();
 
+      GumUI.Initialize(this);
+
+      GumUI.UseKeyboardDefaults();
+      GumUI.UseGamepadDefaults();
+
+      FrameworkElement.TabKeyCombos.Add(new KeyCombo()
+      {
+          PushedKey = Gum.Forms.Input.Keys.Down
+      });
+      FrameworkElement.TabReverseKeyCombos.Add(new KeyCombo()
+      {
+          PushedKey = Gum.Forms.Input.Keys.Up
+      });
+
       ClassDB.Initialize(typeof(Main).Assembly);
 
-      Token.Anchor.SetAnchor<Caverns1>();
+      Token.Anchor.SetAnchor<MainMenu>();
 
-      Transition = new Transition().Set(n => n.Detach());
+      GameManager = new GameManager();
 
       Input.AddBind("MoveLeft", new InputAction(Keys.A), new InputAction(Buttons.LeftThumbstickLeft), new InputAction(Buttons.DPadLeft));
       Input.AddBind("MoveRight", new InputAction(Keys.D), new InputAction(Buttons.LeftThumbstickRight), new InputAction(Buttons.DPadRight));
@@ -30,8 +51,10 @@ namespace Slumber
       Input.AddBind("CamDown", new InputAction(Keys.Down), new InputAction(Buttons.LeftThumbstickDown), new InputAction(Buttons.DPadDown));
       Input.AddBind("CamUp", new InputAction(Keys.Up), new InputAction(Buttons.LeftThumbstickUp), new InputAction(Buttons.DPadUp));
 
-      Input.AddBind("Jump", new InputAction(Keys.Space), new InputAction(Buttons.A));
+      Input.AddBind("Jump", new InputAction(Keys.Space), new InputAction(Buttons.X));
       Input.AddBind("Dash", new InputAction(Keys.E), new InputAction(Buttons.LeftShoulder));
+
+      Input.AddBind("Interact", new InputAction(Keys.E), new InputAction(Buttons.A));
 
       Input.AddBind("Attack", new InputAction(Keys.K), new InputAction(Buttons.Y));
 
@@ -42,7 +65,9 @@ namespace Slumber
 
       Prefs.General.ShowCollision = false;
 
-      Prefs.Graphics.MouseVisible = true;
+      Prefs.Graphics.MouseVisible = false;
+
+      ExitOnEsc = false;
 
       Prefs.Apply();
     }
@@ -59,10 +84,16 @@ namespace Slumber
 
     protected override void Update(GameTime gameTime)
     {
+
       base.Update(gameTime);
+
+      GumUI.Update(gameTime);
+
+      //GumUI.Root.HasEvents = false;
 
       if (Core.Input.Keyboard.WasKeyJustPressed(Keys.R))
         Core.Token.Anchor.ReloadCurrentAnchor();
+
     }
 
     bool showCollision;
@@ -77,9 +108,10 @@ namespace Slumber
 
     protected override void Draw(GameTime gameTime)
     {
-
       base.Draw(gameTime);
       
+      GumUI.Draw();
+
       #if DEBUG
 
       var player = Core.Token.Get<Player>();

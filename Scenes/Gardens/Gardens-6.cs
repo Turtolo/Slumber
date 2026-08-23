@@ -20,26 +20,7 @@ public class Gardens6 : Scene
     var playerPos = new Vector2(-48, -16);
     var playerDir = 1;
 
-    if (EntrancePosition == new Vector2(744, -240))
-    {
-      playerPos = new Vector2(-48, -16);
-      playerDir = -1;
-    }
-
-    if (EntrancePosition == new Vector2(192, -288))
-    {
-      playerPos = new Vector2(-280, -160);
-      playerDir = 1;
-    }
-
-    if (EntrancePosition == new Vector2(-176, -48))
-    {
-      playerPos = new Vector2(312, -160);
-      playerDir = -1;
-    }
-
-    Player = new Player()
-      .Set("Position", playerPos);
+    Player = new Player();
 
     Player.Properties.PlayerDirection = playerDir;
 
@@ -47,7 +28,6 @@ public class Gardens6 : Scene
 
     new PixelCamera()
       .Set(n => n.Weight = 0.3f)
-      .Set(n => n.TargetOffset = new Point(0, 65))
       .Set(n => n.Limit = rect)
       .Set(n => n.Deadzone = new Extent(30, 0))
       .Set(n => n.OffsetSmoothing = true)

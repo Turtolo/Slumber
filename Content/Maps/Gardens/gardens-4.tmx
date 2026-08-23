@@ -739,12 +739,13 @@
  </layer>
  <objectgroup id="3" name="Node">
   <object id="81" x="0" y="-64" width="816" height="192" visible="0"/>
-  <object id="82" name="player" x="32" y="64">
+  <object id="82" name="door_1" type="+" x="32" y="64">
    <point/>
   </object>
   <object id="85" name="@" x="-16" y="16" width="16" height="48">
    <properties>
     <property name="scene" value="Gardens3"/>
+    <property name="target" value="door_2"/>
    </properties>
   </object>
   <object id="86" name="enemy" x="112" y="112">
@@ -753,9 +754,10 @@
   <object id="87" name="@" x="816" y="0" width="16" height="64">
    <properties>
     <property name="scene" value="Gardens5"/>
+    <property name="target" value="door_1"/>
    </properties>
   </object>
-  <object id="88" name="player" x="784" y="64">
+  <object id="88" name="door_2" type="+" x="784" y="64">
    <point/>
   </object>
  </objectgroup>

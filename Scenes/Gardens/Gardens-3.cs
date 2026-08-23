@@ -20,17 +20,6 @@ public class Gardens3 : Scene
     
     Player.Position = new Vector2(288, -28);
 
-    if (EntrancePosition == new Vector2(480, -288))
-    {
-      Player.Position = new Vector2(32, -32);
-      Player.Properties.PlayerDirection = 1;
-    }
-    if (EntrancePosition == new Vector2(-16, 16))
-    {
-      Player.Position = new Vector2(608, -24);
-      Player.Properties.PlayerDirection = -1;
-    }
-
     var rect = new Rectangle(0, -160, 640, 224);
 
     new PixelCamera()

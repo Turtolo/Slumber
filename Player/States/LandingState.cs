@@ -17,7 +17,7 @@ public class LandingState : State
     }
     else
     {
-      Transition?.Invoke("IdleState");
+      ScreenEffects?.Invoke("IdleState");
       return;
     }
 
@@ -27,7 +27,7 @@ public class LandingState : State
 
     p.Properties.ThresholdReached = false;
 
-    Core.Token.Get<PixelCamera>()?.toggleShake = true;
+    Core.Token.Get<PixelCamera>()?.Shake(() => p.Sprite.IsFinished, 10, 9f);
   }
 
   public override void Update(float delta)
@@ -36,8 +36,7 @@ public class LandingState : State
 
     if (p.Sprite.IsFinished)
     {
-      Core.Token.Get<PixelCamera>()?.toggleShake = false;
-      Transition?.Invoke("IdleState");
+      ScreenEffects?.Invoke("IdleState");
     }
   }
 

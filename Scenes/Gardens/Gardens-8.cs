@@ -20,14 +20,7 @@ public class Gardens8 : Scene
     var playerPos = new Vector2(-128, 0);
     var playerDir = 1;
 
-    if (EntrancePosition == new Vector2(336, -208))
-    {
-      playerPos = new Vector2(-128, 0);
-      playerDir = 1;
-    }
-
-    Player = new Player()
-      .Set("Position", playerPos);
+    Player = new Player();
 
     Player.Properties.PlayerDirection = playerDir;
 
@@ -35,7 +28,6 @@ public class Gardens8 : Scene
 
     new PixelCamera()
       .Set(n => n.Weight = 0.3f)
-      .Set(n => n.TargetOffset = new Point(0, 65))
       .Set(n => n.Limit = rect)
       .Set(n => n.Deadzone = new Extent(30, 0))
       .Set(n => n.OffsetSmoothing = true)
@@ -71,6 +63,11 @@ public class Gardens8 : Scene
       n.RepeatSize = new Extent(640, 0);
       n.Position = new Vector2(0, -125);
       n.SetParent(root);
+    });
+
+    new Checkpoint().Set(n =>
+    {
+      n.Position = new Vector2(151, -38);
     });
 
     var loader = Loader.Default();

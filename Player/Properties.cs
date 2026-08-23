@@ -4,7 +4,7 @@ public record struct PlayerProperties
 {
   public float MoveSpeed { get; set; } = 130f;
   public float Acceleration { get; set; } = 3500f;
-  public float Deceleration  { get; set; } = 2500f;
+  public float Deceleration  { get; set; } = 2800f;
 
   public int Health { get; set; } = 5 ;
 

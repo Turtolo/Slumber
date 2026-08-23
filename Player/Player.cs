@@ -20,15 +20,20 @@ namespace Slumber
 
     public PlayerProperties Properties = new();
 
+    public PauseMenu PauseMenu;
+
     #endregion
 
-    public Player() { }
+    public Player()
+    {
+      Main.GameManager.Player = this;
+    }
 
     public override void EnterTree()
     {
       base.EnterTree();
       
-      //Main.Transition.Out();
+      PauseMenu = new PauseMenu();
 
       var c = Core.Token.Create<CollisionShape2D>().Set(n =>
       {
@@ -100,6 +105,7 @@ namespace Slumber
       var landingState = new LandingState();
       var wallSlideState = new WallSlideState();
       var floorAttackState = new FloorAttackState();
+      var nothingState = new NothingState();
 
       new StateMachine().Set(n =>
       {
@@ -110,6 +116,7 @@ namespace Slumber
         n.AddChild(landingState);
         n.AddChild(wallSlideState);
         n.AddChild(floorAttackState);
+        n.AddChild(nothingState);
         n.Initial = idleState;
         n.SetParent(this);
       });

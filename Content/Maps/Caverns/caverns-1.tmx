@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="4" nextobjectid="9">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="4" nextobjectid="10">
  <tileset firstgid="1" source="../Atlas.tsx"/>
  <layer id="1" name="Main" width="30" height="20">
   <properties>
@@ -440,7 +440,7 @@
 </chunk>
   </data>
  </layer>
- <objectgroup id="2" name="Collision" visible="0">
+ <objectgroup id="2" name="Collision">
   <properties>
    <property name="collision" type="bool" value="true"/>
   </properties>
@@ -449,18 +449,19 @@
   <object id="3" x="176" y="-96" width="16" height="96"/>
   <object id="4" x="-112" y="-96" width="16" height="96"/>
  </objectgroup>
- <objectgroup id="3" name="Node" visible="0">
-  <object id="5" name="player" x="104" y="-24">
+ <objectgroup id="3" name="Node">
+  <object id="5" name="door_1" type="+" x="104" y="-24">
    <point/>
   </object>
   <object id="6" x="-280" y="-232" width="640" height="360"/>
   <object id="7" name="@" x="8" y="-48" width="16" height="40">
    <properties>
     <property name="scene" value="Gardens1"/>
+    <property name="target" value="door_1"/>
     <property name="trigger" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="8" name="player" x="16" y="-24">
+  <object id="8" name="door_2" type="+" x="16" y="-24">
    <point/>
   </object>
  </objectgroup>

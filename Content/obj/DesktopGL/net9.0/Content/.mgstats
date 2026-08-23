@@ -1,4 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/Users/nilslauvstad/Git/Slumber/Content/Fonts/RainHearts.fnt","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Fonts/RainHearts.fnt","CopyItem","File",11025,11025,0.001255
+"/Users/nilslauvstad/Git/Slumber/Content/Fonts/RainHearts.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Fonts/RainHearts.png","CopyItem","File",5250,5250,0.000136
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/EagleAtlas.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Atlas/EagleAtlas.xnb","TextureProcessor","Texture2DContent",14923,1198165,0.014482
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/grassspidersheet.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Atlas/grassspidersheet.xnb","TextureProcessor","Texture2DContent",842,4181,0.00176
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/GreenBricks.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Atlas/GreenBricks.xnb","TextureProcessor","Texture2DContent",1356,9301,0.000754
@@ -23,6 +25,8 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/Heights/Tree4.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Background/Heights/Tree4.xnb","TextureProcessor","Texture2DContent",6041,921685,0.018759
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/HeightsBG.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Background/HeightsBG.xnb","TextureProcessor","Texture2DContent",7913,921685,0.019121
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Background/HeightsBGNoMain.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Background/HeightsBGNoMain.xnb","TextureProcessor","Texture2DContent",52467,921685,0.019516
+"/Users/nilslauvstad/Git/Slumber/Content/Graphics/Bed.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Bed.xnb","TextureProcessor","Texture2DContent",2158,15445,0.090228
+"/Users/nilslauvstad/Git/Slumber/Content/Graphics/BONFIRE.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/BONFIRE.xnb","TextureProcessor","Texture2DContent",4888,165973,0.074254
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/CatacombBG.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/CatacombBG.xnb","TextureProcessor","Texture2DContent",208,1109,0.001239
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Foreground/arches.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Foreground/arches.xnb","TextureProcessor","Texture2DContent",7111,248917,0.006314
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/HealthIcon.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/HealthIcon.xnb","TextureProcessor","Texture2DContent",470,2389,0.208217
@@ -30,15 +34,15 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/light.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/light.xnb","TextureProcessor","Texture2DContent",779,36949,0.075647
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Shader/WhiteEffect.fx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Shader/WhiteEffect.xnb","EffectProcessor","CompiledEffectContent",844,1063,14.115702
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Transition.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Transition.xnb","TextureProcessor","Texture2DContent",134,197,0.068304
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.xnb","TextureProcessor","Texture2DContent",90784,1474645,0.233139
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.xnb","TextureProcessor","Texture2DContent",91775,1474645,0.103308
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.tsx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.tsx","CopyItem","File",300,300,0.000423
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Caverns/caverns-1.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Caverns/caverns-1.tmx","CopyItem","File",23961,23961,0.000712
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-1.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-1.tmx","CopyItem","File",32242,32242,0.000487
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-2.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-2.tmx","CopyItem","File",92008,92008,0.000276
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-3.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-3.tmx","CopyItem","File",32820,32820,0.000941
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-4.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-4.tmx","CopyItem","File",33499,33499,0.000845
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-5.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-5.tmx","CopyItem","File",42297,42297,0.000451
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-6.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-6.tmx","CopyItem","File",37324,37324,0.00029
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-7.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-7.tmx","CopyItem","File",47622,47622,0.000361
-"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-8.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-8.tmx","CopyItem","File",42775,42775,0.000186
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Caverns/caverns-1.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Caverns/caverns-1.tmx","CopyItem","File",24001,24001,0.00091
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-1.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-1.tmx","CopyItem","File",32326,32326,0.000221
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-2.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-2.tmx","CopyItem","File",92044,92044,0.000999
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-3.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-3.tmx","CopyItem","File",33062,33062,0.000896
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-4.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-4.tmx","CopyItem","File",33607,33607,0.000308
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-5.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-5.tmx","CopyItem","File",42590,42590,0.0011
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-6.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-6.tmx","CopyItem","File",37487,37487,0.000223
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-7.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-7.tmx","CopyItem","File",47862,47862,0.000337
+"/Users/nilslauvstad/Git/Slumber/Content/Maps/Gardens/gardens-8.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Gardens/gardens-8.tmx","CopyItem","File",42801,42801,0.000203
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Termplates/Template.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Termplates/Template.tmx","CopyItem","File",1404,1404,0.00031

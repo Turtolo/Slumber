@@ -20,7 +20,7 @@ public class StateMachine : Node
       var state = childStates[i];
       States[state.GetType().Name.ToLower()] = state; 
 
-      state.Transition = ChangeState;
+      state.ScreenEffects = ChangeState;
     }
     if (Initial != null)
     {

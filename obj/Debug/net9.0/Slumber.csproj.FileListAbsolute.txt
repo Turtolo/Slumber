@@ -101,3 +101,16 @@
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-6.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-7.tmx
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-8.tmx
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/BrotliSharpLib.dll
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/CsvHelper.dll
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/GumCommon.dll
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/FlatRedBall.InterpolationCore.dll
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/MonoGameGum.dll
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/SharpCompress.dll
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/TextCopy.dll
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Fonts/RainHearts.fnt
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Fonts/RainHearts.png
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Bed.xnb
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/BONFIRE.xnb
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Raw/Raw/BONFIRE.json

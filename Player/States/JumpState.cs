@@ -23,7 +23,7 @@ public class JumpState : BaseAirState
     p.Sprite.PlayAnimation("Fall");
 
     if (p.Velocity.Y >= 0)
-      Transition?.Invoke("FallState");
+      ScreenEffects?.Invoke("FallState");
   }
 
   public override void Physics(float delta)

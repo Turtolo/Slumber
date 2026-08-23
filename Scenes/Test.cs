@@ -7,29 +7,39 @@ using MonoTile;
 
 namespace Slumber;
 
+public class PropTest
+{
+  public bool Alive = true;
+  public int Health = 5;
+  public float Pi = 3.14F;
+  public string Name = "Alice";
+  public Vector2 Pos = new Vector2(10, 20);
+}
+
 public class Test : Scene
 {
-
-  public AnimatedSprite2D Transition;
+  public PropTest Props;
 
   public override void EnterTree()
   {
     base.EnterTree();
 
-    var transAn = AsepriteLoader.LoadAnimations(
-        Core.Resource.Load<MTexture>("Graphics/Transition"),
-        PathTools.Combine("Raw/Raw/Transition.json") 
-    );
+    Props = new PropTest();
 
-    Transition = Core.Token.Create<AnimatedSprite2D>().Set(n =>
-    {
-      n.Atlas = transAn;
-      //n.Rounded = true;
-      n.Seperated = true;
-      n.Position = new Vector2(320, 180);
-      n.Scale = new Vector2(640, 360);
-      n.Depth = 20;
-    });
+    FileT.ToBinary(Props, "Saved/Test");
+
+    Props.Alive = false;
+    Props.Health = 4;
+    Props.Pi = 3.2F;
+    Props.Name = "Greg";
+    Props.Pos = new Vector2(15, 25);
+    
+    Console.WriteLine("[BEFORE LOAD]");
+    Console.WriteLine($"Alive: {Props.Alive}, Health: {Props.Health}, Pi: {Props.Pi}, Name: {Props.Name}, Pos: {Props.Pos.ToString()}");
+    
+    FileT.FromBinary(Props, "Saved/Test");
+    Console.WriteLine("[AFTER LOAD]");
+    Console.WriteLine($"Alive: {Props.Alive}, Health: {Props.Health}, Pi: {Props.Pi}, Name: {Props.Name}, Pos: {Props.Pos.ToString()}");
   }
 
   public override void ExitTree()
@@ -45,9 +55,6 @@ public class Test : Scene
   public override void Process(float delta)
   {
     base.Process(delta);
-
-    if (Core.Input.Keyboard.WasKeyJustPressed(Keys.T))
-      Transition.PlayAnimation("Out");
   }
 
   public override void Submit(Canvas2D canvas)

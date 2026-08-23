@@ -23,7 +23,7 @@ public class FallState : BaseAirState
     {
       if (p.Properties.CanCoyoteJump)
       {
-        Transition?.Invoke("JumpState");
+        ScreenEffects?.Invoke("JumpState");
       }
 
       p.Properties.JumpBuffered = true;
@@ -38,9 +38,9 @@ public class FallState : BaseAirState
     p.Sprite.PlayAnimation("Fall");
 
     if (p.IsOnFloor)
-      Transition?.Invoke("LandingState");
+      ScreenEffects?.Invoke("LandingState");
 
     if (p.CanWall())
-      Transition?.Invoke("WallSlideState");
+      ScreenEffects?.Invoke("WallSlideState");
   }
 }

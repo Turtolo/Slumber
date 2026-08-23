@@ -214,6 +214,10 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "Gum.MonoGame": {
+              "target": "Package",
+              "version": "[2026.8.3.1, )"
+            },
             "MonoGame.Content.Builder.Task": {
               "target": "Package",
               "version": "[3.8.4.1, )"

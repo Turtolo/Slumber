@@ -31,6 +31,7 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="DotTiled" Version="1.0.0" />
+        <PackageReference Include="Gum.MonoGame" Version="2026.8.3.1" />
         <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4.1" />
         <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.4.1" />
         <PackageReference Include="Nopipeline.Task" Version="2.3.0" />
@@ -38,5 +39,13 @@
     <ItemGroup>
       <ProjectReference Include="../MonoTile/MonoTile.csproj" />
       <ProjectReference Include="../Opal/Opal.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="Content/Fonts/*.fnt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Content/Fonts/*.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
   </Project>

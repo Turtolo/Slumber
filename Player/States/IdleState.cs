@@ -21,16 +21,16 @@ public class IdleState : State
     p.Sprite.PlayAnimation("Idle");
 
     if (Axis.X != 0) 
-      Transition?.Invoke("RunState");
+      ScreenEffects?.Invoke("RunState");
 
     if (Core.Input.IsActionJustPressed("Jump") || p.Properties.JumpBuffered)
-      Transition?.Invoke("JumpState");
+      ScreenEffects?.Invoke("JumpState");
 
     if (!p.IsOnFloor)
-      Transition?.Invoke("FallState");
+      ScreenEffects?.Invoke("FallState");
 
     if (Core.Input.IsActionJustPressed("Attack"))
-      Transition?.Invoke("FloorAttackState");
+      ScreenEffects?.Invoke("FloorAttackState");
   }
 
   public override void Physics(float delta)

@@ -54,6 +54,18 @@
             "path": "Maps/*.tmx",
             "recursive": true,
             "action": "copy"
+        },
+
+        "fonts_fnt": {
+            "path": "Fonts/*.fnt",
+            "recursive": true,
+            "action": "copy"
+        },
+
+        "fonts_png": {
+            "path": "Fonts/*.png",
+            "recursive": true,
+            "action": "copy"
         }
     }
 }

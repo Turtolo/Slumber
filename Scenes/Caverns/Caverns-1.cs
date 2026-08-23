@@ -22,15 +22,13 @@ public class Caverns1 : Scene
     var playerPos = new Vector2(104, -24);
     var playerDir = -1;
 
-    if (EntrancePosition == new Vector2(8, 0))
+    new Checkpoint().Set(n =>
     {
-      playerPos = new Vector2(16, -24);
-      playerDir = 1;
-    }
+      n.Position = new Vector2(111, -23);
+    });
 
 
-    Player = new Player()
-      .Set("Position", playerPos);
+    Player = new Player();
 
     Player.Properties.PlayerDirection = playerDir;
 
@@ -38,7 +36,6 @@ public class Caverns1 : Scene
 
     new PixelCamera()
       .Set(n => n.Weight = 0.3f)
-      .Set(n => n.TargetOffset = new Point(0, 65))
       .Set(n => n.Limit = rect)
       .Set(n => n.Deadzone = new Extent(30, 0))
       .Set(n => n.OffsetSmoothing = true)
@@ -57,10 +54,11 @@ public class Caverns1 : Scene
     new CanvasAnchor().Set(n =>
     {
       n.BackBufferColor = new Color(49, 49, 56);
-      n.AmbientColor = Color.Gray;
+      //n.AmbientColor = Color.Gray;
     });
     
     var t = DotTiledBridge.Load(mapPath, loader);
+
   }
 
   public override void ExitTree()
@@ -81,7 +79,6 @@ public class Caverns1 : Scene
 
     if (Core.Input.Keyboard.WasKeyJustPressed(Keys.Y))
       new Enemy().Set("Position", Core.Token.Get<Player>()?.Transform.Global.Position + offset);
-
   }
 
   public override void Submit(Canvas2D canvas)

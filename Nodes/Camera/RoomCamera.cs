@@ -29,9 +29,9 @@ namespace Slumber
     public Node2D TargetNode { get; set; }
 
     [Export]
-    public Action TransitionStarted { get; set; }
+    public Action ScreenEffectsStarted { get; set; }
     [Export]
-    public Action TransitionEnded { get; set; }
+    public Action ScreenEffectsEnded { get; set; }
 
     public RoomCamera() { }
 
@@ -41,8 +41,8 @@ namespace Slumber
 
       if (TargetNode is KinematicBody2D)
       {
-        TransitionStarted += LockBody;
-        TransitionEnded += UnlockBody;
+        ScreenEffectsStarted += LockBody;
+        ScreenEffectsEnded += UnlockBody;
       }
     }
 
@@ -111,13 +111,13 @@ namespace Slumber
 
       Vector2 targetPos = new Vector2(Transform.Global.Position.X + camera.Width * dir.X, Transform.Global.Position.Y + camera.Height * dir.Y);
 
-      TransitionStarted?.Invoke();
+      ScreenEffectsStarted?.Invoke();
 
       var cameraTween = Core.Token.CreateTween(t => Position = t, Transform.Global.Position, targetPos, 0.5f, Vector2.Lerp, EasingFunctions.Linear);
 
       cameraTween.SetCallbackAction
       (
-        () => TransitionEnded?.Invoke()
+        () => ScreenEffectsEnded?.Invoke()
       );
     }
 
@@ -128,13 +128,13 @@ namespace Slumber
 
       Vector2 targetPos = new Vector2(Transform.Global.Position.X + camera.Width * dir, Transform.Global.Position.Y);
 
-      TransitionStarted?.Invoke();
+      ScreenEffectsStarted?.Invoke();
 
       var cameraXTween = Core.Token.CreateTween(t => Position = t, Transform.Global.Position, targetPos, 0.5f, Vector2.Lerp, EasingFunctions.Linear);
 
       cameraXTween.SetCallbackAction
       (
-        () => TransitionEnded?.Invoke()
+        () => ScreenEffectsEnded?.Invoke()
       );
 
     }

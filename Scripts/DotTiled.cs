@@ -42,6 +42,13 @@ public static class DotTiledBridge
             {
               new Enemy().Set(n => n.Position = new Vector2(point.X, point.Y));
             }
+
+            if (obj.Type == "+")
+            {
+              var s = Core.Token.Anchor.GetCurrentAnchor() as Scene;
+
+              s.SpawnPoints.Add(obj.Name, new Vector2(obj.X, obj.Y));
+            }
           }
 
           if (obj is RectangleObject rect)
@@ -53,23 +60,34 @@ public static class DotTiledBridge
 
             if (obj.Name == "*")
             {
-              var killZone = new KillZone().Set(n =>
+              var killZone = new HazardZone().Set(n =>
               {
                 n.Position = new Vector2(rect.X, rect.Y);
                 n.AddChild(shape);
               });
             }
 
+            if (obj.Type == "_")
+            {
+              var hazardRespawnTrigger = new HazardRespawnTrigger().Set(n =>
+              {
+                n.Position = new Vector2(rect.X, rect.Y);
+                n.AddChild(shape);
+              }); 
+            }
+
             if (obj.Name == "@")
             {
               obj.TryGetProperty("scene", out StringProperty sceneName);
+              obj.TryGetProperty("target", out StringProperty target);
               obj.TryGetProperty("trigger", out BoolProperty trigger);
               
               var sceneTrans = new SceneChange().Set(n => 
               {
                 n.AddChild(shape);
                 n.Position = new Vector2(rect.X, rect.Y);
-                n.SceneName = sceneName != null ? sceneName.Value : String.Empty;
+                n.TargetSceneName = sceneName != null ? sceneName.Value : String.Empty;
+                n.TargetGateID = target != null ? target.Value : String.Empty;
                 n.Trigger = trigger != null ? trigger.Value : false;
               });
             }

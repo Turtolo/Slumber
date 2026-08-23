@@ -4,7 +4,8 @@ namespace Slumber;
 
 public class SceneChange : Area2D
 {
-  public string SceneName;
+  public string TargetSceneName { get; set; }
+  public string TargetGateID { get; set; }
 
   public bool Trigger;
 
@@ -12,11 +13,11 @@ public class SceneChange : Area2D
   {
     if (GetAnyBody() is Player p)
     {
-      if (Trigger && !Core.Input.Keyboard.WasKeyJustPressed(Keys.W))
+      if (Trigger && !Core.Input.IsActionJustPressed("Interact"))
         return;
 
       p.QueueFree();
-      Main.Transition.Change(SceneName, Transform.Global.Position);
+      Main.GameManager.Change(TargetSceneName, TargetGateID);
     }
   }
 }

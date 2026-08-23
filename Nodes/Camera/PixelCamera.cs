@@ -74,6 +74,24 @@ public class PixelCamera : Camera2D
     return new Vector2(MathE.RandomFloat(-shakeStrength, shakeStrength), MathE.RandomFloat(-shakeStrength, shakeStrength));
   }
 
+  public void Shake(Func<bool> action, float randomStrength = 30f, float shakeFade = 5f)
+  {
+    RandomStrength = randomStrength;
+    ShakeFade = shakeFade;
+    toggleShake = true;
+    
+    Await.Until(action, () => toggleShake = false);
+  }
+
+  public void Shake(TimeSpan length, float randomStrength = 30f, float shakeFade = 5f)
+  {
+    RandomStrength = randomStrength;
+    ShakeFade = shakeFade;
+    toggleShake = true;
+    
+    Await.Span(length, () => toggleShake = false);
+  }
+
   public override void PhysicsUpdate(float delta)
   {
     base._PhysicsUpdate(delta);

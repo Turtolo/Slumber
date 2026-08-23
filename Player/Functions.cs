@@ -171,7 +171,7 @@ public partial class Player : KinematicBody2D
 
   public void Kill()
   {
-    Core.Token.Anchor.ReloadCurrentAnchor();
+    Main.GameManager.TriggerDeath();
   }
 
   public void HandleDamage()
@@ -203,6 +203,28 @@ public partial class Player : KinematicBody2D
         }
       }
     }
+  }
+
+  public void SpikeDamage()
+  {
+    Core.Token.Get<PixelCamera>().Shake(TimeSpan.FromSeconds(0.05), 15, 10);
+
+    Visible = false;
+    Properties.CanTakeDamage = false;
+
+    Properties.Health -= 1;
+
+    HealthIcons.LastOrDefault().Frame = 1;
+    HealthIcons.RemoveAt(HealthIcons.Count - 1);
+
+    Properties.AllowControl = false;
+
+    Await.Span(TimeSpan.FromSeconds(0.6), () =>
+    {
+      Properties.AllowControl = true;
+      Properties.CanTakeDamage = true;
+      Visible = true;
+    });
   }
 
   public void TakeDamage(int damage, int dir)

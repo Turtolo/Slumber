@@ -2,7 +2,7 @@ namespace Slumber;
 
 public class State : Node
 {
-  public Action<string> Transition { get; set; }
+  public Action<string> ScreenEffects { get; set; }
 
   public virtual void OnEnter() {}
 

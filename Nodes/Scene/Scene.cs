@@ -1,4 +1,3 @@
-
 using System.Collections.Generic;
 using Opal.Managers;
 using Opal.Runtime;
@@ -6,21 +5,30 @@ using Opal.Runtime;
 namespace Slumber;
 
 public class Scene : Anchor,
+  IReady,
   IEnterTree, 
   IPhysicsUpdate, 
   IProcess, 
   ICall, 
   IExitTree
 {
-  public Rectangle CameraBounds { get; set; }
+  public Dictionary<string, Vector2> SpawnPoints { get; set; } = new();
 
-  public Vector2 EntrancePosition { get; set; }
+  public string EntranceGateID { get; set; }
+
+  public Vector2 SpawnPosition { get; set; }
+
+  public Scene()
+  {
+    _Ready();
+    Ready();
+  }
+  
+  public virtual void _Ready() { }
+  public virtual void Ready() { }
 
   public virtual void _EnterTree() { }
-  public virtual void EnterTree()
-  {
-    //Main.Transition = new Transition();
-  }
+  public virtual void EnterTree() { }
 
   public virtual void _Process(float delta) { }
   public virtual void Process(float delta) { }
