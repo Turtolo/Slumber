@@ -20,15 +20,15 @@ public class RunState : State
     p.Sprite.PlayAnimation("Run");
     
     if (Axis.X == 0)
-      ScreenEffects?.Invoke("IdleState"); 
+      Transition?.Invoke("IdleState"); 
     if (Core.Input.IsActionJustPressed("Jump"))
-      ScreenEffects?.Invoke("JumpState");
+      Transition?.Invoke("JumpState");
     if (!p.IsOnFloor)
-      ScreenEffects?.Invoke("FallState");
+      Transition?.Invoke("FallState");
     if (p.CanWall())
-      ScreenEffects?.Invoke("WallSlideState");
+      Transition?.Invoke("WallSlideState");
     if (Core.Input.IsActionJustPressed("Attack"))
-      ScreenEffects?.Invoke("FloorAttackState");
+      Transition?.Invoke("FloorAttackState");
   }
 
   public override void Physics(float delta)

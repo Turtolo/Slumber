@@ -22,6 +22,8 @@ namespace Slumber
 
     public PauseMenu PauseMenu;
 
+    public StateMachine STM;
+
     #endregion
 
     public Player()
@@ -106,8 +108,9 @@ namespace Slumber
       var wallSlideState = new WallSlideState();
       var floorAttackState = new FloorAttackState();
       var nothingState = new NothingState();
+      var spikeDamageState = new SpikeDamageState();
 
-      new StateMachine().Set(n =>
+      STM = new StateMachine().Set(n =>
       {
         n.AddChild(idleState);
         n.AddChild(runState);
@@ -117,6 +120,7 @@ namespace Slumber
         n.AddChild(wallSlideState);
         n.AddChild(floorAttackState);
         n.AddChild(nothingState);
+        n.AddChild(spikeDamageState);
         n.Initial = idleState;
         n.SetParent(this);
       });
@@ -134,7 +138,7 @@ namespace Slumber
 
       Vector2 startPosition = new Vector2(8, 8);
 
-      for (int i = 0; i < Properties.Health; i++)
+      for (int i = 0; i < Main.GameManager.Persistence.MaxHealthPoints; i++)
       {
         Vector2 offset = new Vector2(i * (iconSize + spacing), 0);
 
@@ -146,9 +150,16 @@ namespace Slumber
           n.Depth = 99;
           n.Name = "Health";
           n.Seperated = true;
+          n.Frame = 1;
         });
 
         HealthIcons.Add(s);
+      }
+      
+      for (int i = 0; i < Main.GameManager.Persistence.CurrentHealthPoints; i++)
+      {
+        var icon = HealthIcons[i];
+        icon.Frame = 0;
       }
     }
 
@@ -157,16 +168,7 @@ namespace Slumber
       base.PhysicsUpdate(delta);
 
       Properties.PlayerAxis = Core.Input.GetAxis("MoveLeft", "MoveRight", "MoveDown", "MoveUp").ToVector2();
-      Properties.PlayerDirection = (int)Properties.PlayerAxis.X != 0 ? (int)Properties.PlayerAxis.X : Properties.PlayerDirection;
-
-      //HandleCoyoteTime();
-      //HandleJump();
-      //HandleDash();
-      //HandleMovementInput();
-      //HandleWallSlide();
-      //HandleDeceleration(delta);
-      //HandleAttack();
-      //ApplyGravity(delta);
+      Main.GameManager.Persistence.PlayerViewDirection = (int)Properties.PlayerAxis.X != 0 ? (int)Properties.PlayerAxis.X : Main.GameManager.Persistence.PlayerViewDirection;
 
       MoveAndSlide(delta);
 

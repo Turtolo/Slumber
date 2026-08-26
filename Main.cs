@@ -37,7 +37,7 @@ namespace Slumber
 
       ClassDB.Initialize(typeof(Main).Assembly);
 
-      Token.Anchor.SetAnchor<MainMenu>();
+      Token.Anchor.SetAnchor<Test>();
 
       GameManager = new GameManager();
 
@@ -61,13 +61,13 @@ namespace Slumber
       Input.AddBind("Pause", new InputAction(Keys.Escape), new InputAction(Buttons.Start));
       Input.AddBind("Back", new InputAction(Keys.X), new InputAction(Buttons.B));
 
-      Prefs.Graphics.Fullscreen = false;
+      Prefs.Graphics.Fullscreen = true;
 
       Prefs.General.ShowCollision = false;
 
       Prefs.Graphics.MouseVisible = false;
 
-      ExitOnEsc = false;
+      ExitOnEsc = true;
 
       Prefs.Apply();
     }
@@ -89,7 +89,7 @@ namespace Slumber
 
       GumUI.Update(gameTime);
 
-      //GumUI.Root.HasEvents = false;
+      GumUI.Root.HasEvents = false;
 
       if (Core.Input.Keyboard.WasKeyJustPressed(Keys.R))
         Core.Token.Anchor.ReloadCurrentAnchor();

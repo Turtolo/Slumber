@@ -21,8 +21,6 @@ public class Gardens5 : Scene
 
     Player = new Player();
 
-    Player.Properties.PlayerDirection = playerDir;
-
     var rect = new Rectangle(-32, -192, 832, 320);
 
     new PixelCamera()

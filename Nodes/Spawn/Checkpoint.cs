@@ -48,10 +48,7 @@ public class Checkpoint : Node2D
 
     if (Area.GetAnyBody() is Player p)
     {
-      if (Core.Input.IsActionJustPressed("Interact"))
-      {
-        Light();
-      }
+      Light();
     }
   }
   

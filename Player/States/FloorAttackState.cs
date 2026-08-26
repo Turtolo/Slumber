@@ -30,7 +30,7 @@ public class FloorAttackState : State
         Attack();
       }
       else
-        ScreenEffects?.Invoke("IdleState");
+        Transition?.Invoke("IdleState");
     }
   }
 

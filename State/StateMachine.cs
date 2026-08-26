@@ -20,7 +20,7 @@ public class StateMachine : Node
       var state = childStates[i];
       States[state.GetType().Name.ToLower()] = state; 
 
-      state.ScreenEffects = ChangeState;
+      state.Transition = ChangeState;
     }
     if (Initial != null)
     {
@@ -43,7 +43,7 @@ public class StateMachine : Node
     Current?.Physics(delta);
   }
 
-  public void ChangeState(string newStateName)
+public void ChangeState(string newStateName)
   {
     var newState = States[newStateName.ToLower()];
 

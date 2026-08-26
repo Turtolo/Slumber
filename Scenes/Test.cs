@@ -20,6 +20,8 @@ public class Test : Scene
 {
   public PropTest Props;
 
+  public Player Player;
+
   public override void EnterTree()
   {
     base.EnterTree();
@@ -40,6 +42,20 @@ public class Test : Scene
     FileT.FromBinary(Props, "Saved/Test");
     Console.WriteLine("[AFTER LOAD]");
     Console.WriteLine($"Alive: {Props.Alive}, Health: {Props.Health}, Pi: {Props.Pi}, Name: {Props.Name}, Pos: {Props.Pos.ToString()}");
+
+    new ColorRect().Set(n =>
+    {
+      n.Scale = new Vector2(64);
+      n.Color = Color.Red;
+    });
+
+    new Player();
+
+    new CanvasAnchor().Set(n =>
+    {
+      n.BackBufferColor = new Color(13, 22, 24);
+      n.AmbientColor = Color.White;
+    });
   }
 
   public override void ExitTree()

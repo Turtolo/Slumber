@@ -17,7 +17,7 @@ public class LandingState : State
     }
     else
     {
-      ScreenEffects?.Invoke("IdleState");
+      Transition?.Invoke("IdleState");
       return;
     }
 
@@ -36,7 +36,7 @@ public class LandingState : State
 
     if (p.Sprite.IsFinished)
     {
-      ScreenEffects?.Invoke("IdleState");
+      Transition?.Invoke("IdleState");
     }
   }
 

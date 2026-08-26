@@ -6,8 +6,6 @@ public record struct PlayerProperties
   public float Acceleration { get; set; } = 3500f;
   public float Deceleration  { get; set; } = 2800f;
 
-  public int Health { get; set; } = 5 ;
-
   public float BaseGravity { get; set; } = 950f;
   public float FallGravity { get; set; } = 1500f;
 
@@ -35,7 +33,6 @@ public record struct PlayerProperties
   public bool AllowControl { get; set; } = true;
 
   public Vector2 PlayerAxis { get; set; }
-  public int PlayerDirection { get; set; } = 1;
 
   public bool CanTakeDamage { get; set; } = true;
 

@@ -14,7 +14,7 @@ public class WallSlideState : State
     base.Update(delta);
 
     if (!p.IsOnWall || p.IsOnFloor)
-      ScreenEffects?.Invoke("FallState");
+      Transition?.Invoke("FallState");
   }
 
   public override void Physics(float delta)

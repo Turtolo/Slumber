@@ -30,8 +30,6 @@ public class Caverns1 : Scene
 
     Player = new Player();
 
-    Player.Properties.PlayerDirection = playerDir;
-
     var rect = new Rectangle(-280, -232, 640, 360);
 
     new PixelCamera()

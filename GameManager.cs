@@ -8,11 +8,11 @@ public class GameManager : Object
 
   public Player Player { get; set; }
 
-  public ScreenEffects ScreenEffectss;
+  public ScreenEffects ScreenEffects;
 
   public GameManager()
   {
-    ScreenEffectss = new ScreenEffects().Set(n => n.Detach());
+    ScreenEffects = new ScreenEffects().Set(n => n.Detach());
   }
 
   public void Save(Checkpoint c)
@@ -45,8 +45,8 @@ public class GameManager : Object
 
   public void Transition(string targetScene, Action onNewScene)
   {
-    ScreenEffectss.In();
-    Await.Until(() => ScreenEffectss.Transition.IsFinished, () =>
+    ScreenEffects.In();
+    Await.Until(() => ScreenEffects.Transition.IsFinished, () =>
     {
       Type t = null;
       
@@ -54,9 +54,9 @@ public class GameManager : Object
 
       if (t == null)
       {
-        foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+        foreach (var asembly in AppDomain.CurrentDomain.GetAssemblies())
         {
-          t = assembly.GetTypes().FirstOrDefault(x => x.Name == targetScene || x.FullName == targetScene);
+          t = asembly.GetTypes().FirstOrDefault(x => x.Name == targetScene || x.FullName == targetScene);
           if (t != null) break; 
         }
       }
@@ -65,14 +65,14 @@ public class GameManager : Object
       {
         var n = Core.Token.Anchor.SetAnchor(t);
         
-        ScreenEffectss.Out();
+        ScreenEffects.Out();
       }
       else
       {
-        Console.WriteLine($"Error: Could not find type matching '{targetScene}' in any assembly.");
+        Console.WriteLine($"Error: Could not find type matching '{targetScene}' in any asembly.");
       }
 
-      ScreenEffectss.Out();
+      ScreenEffects.Out();
       Await.Until(() => Core.Token.Anchor.GetCurrentAnchor() != null, onNewScene);
     });
   }
@@ -86,14 +86,14 @@ public class GameManager : Object
 
     canBeHazard = false;
 
-    Player.SpikeDamage();
+    Player.STM.ChangeState("SpikeDamageState");
 
-    ScreenEffectss.In();
-    Await.Until(() => ScreenEffectss.Transition.IsFinished, () =>
+    ScreenEffects.In();
+    Await.Until(() => ScreenEffects.Transition.IsFinished, () =>
     {
       Player.Position = Persistence.LastSafePoint;
       canBeHazard = true;
-      ScreenEffectss.Out();
+      ScreenEffects.Out();
     });
   }
 
@@ -103,6 +103,7 @@ public class GameManager : Object
     cam?.toggleShake = true;
     Await.Span(TimeSpan.FromSeconds(0.1f), () => cam?.toggleShake = false);
     Player.QueueFree();
+    Persistence.CurrentHealthPoints = 5;
 
     Transition(Persistence.CurrentRespawnScene, () =>
     {

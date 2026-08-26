@@ -5,6 +5,7 @@ namespace Slumber;
 public class ScreenEffects : Node
 {
   public AnimatedSprite2D Transition;
+  public AnimatedSprite2D Mist;
 
   public override void EnterTree()
   {

@@ -17,7 +17,7 @@ public partial class Player : KinematicBody2D
   {
     Properties.IsDashing = true;
 
-    Velocity.X = Properties.DashVelocity * Properties.PlayerDirection;
+    Velocity.X = Properties.DashVelocity * Main.GameManager.Persistence.PlayerViewDirection;
     Velocity.Y = 0;
 
     Await.Span(Properties.DashDuration, () =>
@@ -42,12 +42,12 @@ public partial class Player : KinematicBody2D
 
   public void FlipSprite()
   {
-    if (Properties.PlayerDirection > 0)
+    if (Main.GameManager.Persistence.PlayerViewDirection > 0)
     {
       Sprite.SpriteEffects = SpriteEffects.None;
       AttackArea.Position = new Vector2(40, 5);
     }
-    else if (Properties.PlayerDirection < 0)
+    else if (Main.GameManager.Persistence.PlayerViewDirection < 0)
     {
       Sprite.SpriteEffects = SpriteEffects.FlipHorizontally;
       AttackArea.Position = new Vector2(-30, 5);
@@ -157,9 +157,9 @@ public partial class Player : KinematicBody2D
     Properties.AllowControl = false;
     Await.Span(TimeSpan.FromSeconds(0.06f), () => Properties.AllowControl = true);
 
-    if (Properties.PlayerDirection == 1)
+    if (Main.GameManager.Persistence.PlayerViewDirection == 1)
       Velocity.X = -Properties.WallJumpHorizontalSpeed;
-    else if (Properties.PlayerDirection == -1)
+    else if (Main.GameManager.Persistence.PlayerViewDirection == -1)
       Velocity.X = Properties.WallJumpHorizontalSpeed;
 
     Velocity.Y = -Properties.WallJumpVerticalSpeed;
@@ -176,7 +176,7 @@ public partial class Player : KinematicBody2D
 
   public void HandleDamage()
   {
-    if (Properties.Health <= 0)
+    if (Main.GameManager.Persistence.CurrentHealthPoints <= 0)
     {
       Kill();
     }
@@ -205,36 +205,14 @@ public partial class Player : KinematicBody2D
     }
   }
 
-  public void SpikeDamage()
-  {
-    Core.Token.Get<PixelCamera>().Shake(TimeSpan.FromSeconds(0.05), 15, 10);
-
-    Visible = false;
-    Properties.CanTakeDamage = false;
-
-    Properties.Health -= 1;
-
-    HealthIcons.LastOrDefault().Frame = 1;
-    HealthIcons.RemoveAt(HealthIcons.Count - 1);
-
-    Properties.AllowControl = false;
-
-    Await.Span(TimeSpan.FromSeconds(0.6), () =>
-    {
-      Properties.AllowControl = true;
-      Properties.CanTakeDamage = true;
-      Visible = true;
-    });
-  }
-
   public void TakeDamage(int damage, int dir)
   {
     Sprite.Shader.Parameters["enabled"].SetValue(1);
     Properties.CanTakeDamage = false;
 
-    Properties.Health -= damage;
+    Main.GameManager.Persistence.CurrentHealthPoints -= damage;
 
-    HealthIcons.LastOrDefault().Frame = 1;
+    HealthIcons.Where(n => n.Frame == 0).LastOrDefault().Frame = 1;
     HealthIcons.RemoveAt(HealthIcons.Count - 1);
 
     Properties.AllowControl = false;

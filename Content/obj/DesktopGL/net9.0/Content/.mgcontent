@@ -38,8 +38,10 @@
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Transition.png</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Bed.png</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/BONFIRE.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Foreground/mist.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
