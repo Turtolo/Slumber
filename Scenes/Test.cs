@@ -1,5 +1,6 @@
 
 
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using DotTiled.Serialization;
@@ -16,11 +17,139 @@ public class PropTest
   public Vector2 Pos = new Vector2(10, 20);
 }
 
+public class T2D : Node2D
+{
+  public Raycast2D GroundCheck;
+
+  public AnimatedSprite2D Sprite;
+
+  public Area2D AttackArea;
+
+  public Area2D TakeDamageArea;
+
+  public List<Sprite2D> HealthIcons = new();
+
+  public PlayerProperties Properties = new();
+
+  public PauseMenu PauseMenu;
+
+  public StateMachine STM;
+
+  public override void EnterTree()
+  {
+    base.EnterTree();
+    
+    PauseMenu = new PauseMenu();
+
+    var c = Core.Token.Create<CollisionShape2D>().Set(n =>
+    {
+      n.Shape = new RectangleShape2D(8, 20);
+      n.Position = new Vector2(0, 4);
+      n.SetParent(this);
+    });
+
+    var animations = AsepriteLoader.LoadAnimations(
+        Core.Resource.Load<MTexture>("Graphics/Atlas/PlayerAnimation"),
+        PathTools.Combine("Raw/Raw/PlayerAnimation.json")
+    );
+
+    Sprite = Core.Token.Create<AnimatedSprite2D>().Set(n =>
+    {
+      n.SetParent(this);
+      n.Atlas = animations;
+      n.Position = new Vector2(6, 9);
+      n.IsLooping = true;
+      n.Rounded = true;
+      n.Shader = Core.Resource.Load<Effect>("Graphics/Shader/WhiteEffect").Clone();
+    });
+
+    Depth = 5;
+
+    AttackArea = Core.Token.Create<Area2D>().Set(n =>
+    {
+      n.AddChild(Core.Token.Create<CollisionShape2D>().Set(c =>
+        {
+          c.Shape = new CircleShape2D(32);
+          c.Disabled = true;
+        }));
+      n.SetParent(this);
+      n.Name = "AttackArea";
+    });
+
+    var tC = c.Clone().Set(n =>
+    {
+      n.Position = new Vector2(0, 4);
+    });
+
+    TakeDamageArea = Core.Token.Create<Area2D>().Set(n =>
+    {
+      n.AddChild(tC);
+      n.SetParent(this);
+    });
+
+    GroundCheck = new Raycast2D().Set(n =>
+    {
+      n.SetParent(this);
+      n.Shape = new RayCastShape2D(new Vector2(0, 25));
+      n.Position = new Vector2(0, 10);
+    });
+
+    new PointLight2D().Set(n =>
+    {
+      n.Texture = Core.Resource.Load<MTexture>("Graphics/light");
+      n.Position = new Vector2(-90, -75);
+      n.Scale = new Vector2(2);
+      n.SetParent(this);
+    });
+
+    AddHealthIcons();
+
+    //AddMask(1);
+  }
+
+  public void AddHealthIcons()
+  {
+    foreach (var i in Core.Token.GetAll("Health"))
+      i.QueueFree();
+
+    float iconSize = 16;
+    float spacing = 2f;
+
+    Vector2 startPosition = new Vector2(8, 8);
+
+    for (int i = 0; i < Main.GameManager.Persistence.MaxHealthPoints; i++)
+    {
+      Vector2 offset = new Vector2(i * (iconSize + spacing), 0);
+
+      var s = new Sprite2D().Set(n =>
+      {
+        n.Texture = Core.Resource.Load<MTexture>("Graphics/Atlas/HealthIconSheetSmall");
+        n.HFrames = 2;
+        n.Position = startPosition + offset;
+        n.Depth = 99;
+        n.Name = "Health";
+        n.Seperated = true;
+        n.Frame = 1;
+      });
+
+      HealthIcons.Add(s);
+    }
+    
+    for (int i = 0; i < Main.GameManager.Persistence.CurrentHealthPoints; i++)
+    {
+      var icon = HealthIcons[i];
+      icon.Frame = 0;
+    }
+  }
+}
+
 public class Test : Scene
 {
   public PropTest Props;
 
   public Player Player;
+
+  public List<Sprite2D> HealthIcons = new();
 
   public override void EnterTree()
   {
@@ -49,7 +178,15 @@ public class Test : Scene
       n.Color = Color.Red;
     });
 
-    new Player();
+    //var p = new Plire().Set(n => n.Position = new Vector2(100, 50));
+    var p = new Player();
+
+    new PixelCamera()
+      .Set(n => n.Weight = 0.3f)
+      .Set(n => n.Deadzone = new Extent(30, 0))
+      .Set(n => n.OffsetSmoothing = true)
+      .Set(n => n.Smoothing = true)
+      .Set(n => n.Target = p);
 
     new CanvasAnchor().Set(n =>
     {

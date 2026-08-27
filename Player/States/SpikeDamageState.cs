@@ -22,7 +22,7 @@ public class SpikeDamageState : State
 
     p.Properties.AllowControl = false;
 
-    Await.Until(() => p.Position == Main.GameManager.Persistence.LastSafePoint, () =>
+    Await.Until(() => p?.Position == Main.GameManager.Persistence.LastSafePoint, () =>
     {
       p.Properties.AllowControl = true;
       p.Properties.CanTakeDamage = true;

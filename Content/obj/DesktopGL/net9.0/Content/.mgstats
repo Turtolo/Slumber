@@ -34,7 +34,7 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/lan.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/lan.xnb","TextureProcessor","Texture2DContent",4803,409685,0.009837
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/light.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/light.xnb","TextureProcessor","Texture2DContent",779,36949,0.075647
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Shader/WhiteEffect.fx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Shader/WhiteEffect.xnb","EffectProcessor","CompiledEffectContent",844,1063,14.115702
-"/Users/nilslauvstad/Git/Slumber/Content/Graphics/Transition.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Transition.xnb","TextureProcessor","Texture2DContent",134,197,0.068304
+"/Users/nilslauvstad/Git/Slumber/Content/Graphics/Transition.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Transition.xnb","TextureProcessor","Texture2DContent",134,197,0.196612
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.xnb","TextureProcessor","Texture2DContent",95464,1474645,0.106071
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Atlas.tsx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Atlas.tsx","CopyItem","File",300,300,0.000423
 "/Users/nilslauvstad/Git/Slumber/Content/Maps/Caverns/caverns-1.tmx","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Maps/Caverns/caverns-1.tmx","CopyItem","File",24001,24001,0.00091

@@ -37,7 +37,7 @@ namespace Slumber
 
       ClassDB.Initialize(typeof(Main).Assembly);
 
-      Token.Anchor.SetAnchor<Test>();
+      Token.Anchor.SetAnchor<MainMenu>();
 
       GameManager = new GameManager();
 
@@ -67,7 +67,7 @@ namespace Slumber
 
       Prefs.Graphics.MouseVisible = false;
 
-      ExitOnEsc = true;
+      ExitOnEsc = false;
 
       Prefs.Apply();
     }
@@ -117,9 +117,8 @@ namespace Slumber
       var player = Core.Token.Get<Player>();
 
       var camera = Core.Token.Get<PixelCamera>();
-
       
-      if (player == null)
+      if (player == null || Graphics.IsFullScreen)
         return;
 
       if (!init)

@@ -40,6 +40,8 @@ public class GameManager : Object
       var s = Core.Token.Anchor.GetCurrentAnchor() as Scene;
       s.EntranceGateID = targetID;
       Player.Position = s.SpawnPoints[targetID];
+      Player.Properties.AllowControl = false;
+      Await.Until(() => ScreenEffects.Transition.IsFinished, () => Player.Properties.AllowControl = true);
     });
   }
 

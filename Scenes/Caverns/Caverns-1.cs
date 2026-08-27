@@ -27,7 +27,6 @@ public class Caverns1 : Scene
       n.Position = new Vector2(111, -23);
     });
 
-
     Player = new Player();
 
     var rect = new Rectangle(-280, -232, 640, 360);
@@ -35,7 +34,7 @@ public class Caverns1 : Scene
     new PixelCamera()
       .Set(n => n.Weight = 0.3f)
       .Set(n => n.Limit = rect)
-      .Set(n => n.Deadzone = new Extent(30, 0))
+      .Set(n => n.Deadzone = new Extent(30, 30))
       .Set(n => n.OffsetSmoothing = true)
       .Set(n => n.Smoothing = true)
       .Set(n => n.Target = Player);

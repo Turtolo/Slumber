@@ -173,7 +173,6 @@ namespace Slumber
       MoveAndSlide(delta);
 
       Sprite.Shader.Parameters["overlayColor"].SetValue(Color.White.ToVector4());
-
     }
 
     public override void Process(float delta)
