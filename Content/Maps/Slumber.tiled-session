@@ -1,12 +1,12 @@
 {
-    "activeFile": "Gardens/gardens-7.tmx",
+    "activeFile": "Gardens/gardens-5.tmx",
     "expandedProjectPaths": [
+        ".",
+        "Termplates",
         "Green",
         "Caverns",
-        ".",
-        "Catacombs",
         "Gardens",
-        "Termplates"
+        "Catacombs"
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
@@ -100,14 +100,14 @@
         },
         "Gardens/gardens-2.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
             "scale": 2.0511,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 322.0223294817415,
-                "y": -258.3979328165375
+                "x": 381.0150650870265,
+                "y": -391.49724538052754
             }
         },
         "Gardens/gardens-3.tmx": {
@@ -124,62 +124,74 @@
         },
         "Gardens/gardens-4.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
             "scale": 1.2108,
             "selectedLayer": 5,
             "viewCenter": {
                 "x": 551.2884043607532,
-                "y": -2.4777006937561907
+                "y": -4.129501156260318
             }
         },
         "Gardens/gardens-5.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
-            "scale": 3.5908,
-            "selectedLayer": 3,
+            "scale": 1.7584,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 700.261780104712,
-                "y": -16.98785785897293
+                "x": 774.2834394904459,
+                "y": 39.240218380345766
             }
         },
         "Gardens/gardens-6.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
             "scale": 2.6098,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": -41.19089585408844,
-                "y": -47.89639052800982
+                "x": -0.1915855621120386,
+                "y": -127.97915549084222
             }
         },
         "Gardens/gardens-7.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
             "scale": 2.4117,
             "selectedLayer": 6,
             "viewCenter": {
-                "x": 25.9153294356678,
-                "y": -117.34461168470374
+                "x": -256.0434548243977,
+                "y": -384.3761661898246
             }
         },
         "Gardens/gardens-8.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
-            "scale": 0.8285,
-            "selectedLayer": 0,
+            "scale": 2.4484,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 105.6125528062764,
-                "y": 71.21303560651779
+                "x": -70.45417415454992,
+                "y": 28.181669661819967
+            }
+        },
+        "Gardens/gardens-9.tmx": {
+            "expandedObjectLayers": [
+                3,
+                2
+            ],
+            "scale": 0.8792,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 201.88808007279349,
+                "y": 12.5113739763421
             }
         },
         "Gardens/gardens-test-1.tmx": {
@@ -263,12 +275,12 @@
     "project": "Slumber.tiled-project",
     "property.type": "string",
     "recentFiles": [
+        "Gardens/gardens-7.tmx",
+        "Gardens/gardens-6.tmx",
+        "Gardens/gardens-4.tmx",
         "Gardens/gardens-2.tmx",
         "Gardens/gardens-8.tmx",
         "Gardens/gardens-5.tmx",
-        "Gardens/gardens-4.tmx",
-        "Gardens/gardens-6.tmx",
-        "Gardens/gardens-7.tmx",
         "Gardens/gardens-1.tmx",
         "Termplates/Template.tmx",
         "Caverns/caverns-1.tmx",

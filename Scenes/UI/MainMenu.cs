@@ -22,6 +22,9 @@ public class MainMenu : Scene
   {
     base.EnterTree();
 
+    Core.Prefs.Graphics.MouseVisible = true;
+    Core.Prefs.Apply();
+
     Core.Time.TimeScale = 1f; 
 
     BuildUI();
@@ -56,6 +59,8 @@ public class MainMenu : Scene
       {
         Main.GameManager.Change("Caverns1", "door_1");
         MainPanel.RemoveFromRoot();
+        Core.Prefs.Graphics.MouseVisible = false;
+        Core.Prefs.Apply();
       };
     }
     else
@@ -65,6 +70,8 @@ public class MainMenu : Scene
       {
         Main.GameManager.Load();
         MainPanel.RemoveFromRoot();
+        Core.Prefs.Graphics.MouseVisible = false;
+        Core.Prefs.Apply();
       };
     }
 
@@ -110,10 +117,29 @@ public class MainMenu : Scene
 
     contrBtn.Y = 5;
 
-    contrBtn.Text = "Control";
+    contrBtn.Text = "Controls";
     contrBtn.Click += (sender, args) =>
     {
-      Core.Quit();
+    };
+
+    var keybBtn = new CustomButton();
+    Settings.AddChild(keybBtn);
+
+    keybBtn.Y = 5;
+
+    keybBtn.Text = "Keyboard";
+    keybBtn.Click += (sender, args) =>
+    {
+    };
+
+    var audBtn = new CustomButton();
+    Settings.AddChild(audBtn);
+
+    audBtn.Y = 5;
+
+    audBtn.Text = "Audio";
+    audBtn.Click += (sender, args) =>
+    {
     };
 
     var backBtn = new CustomButton();

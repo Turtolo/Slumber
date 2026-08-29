@@ -7,6 +7,8 @@ namespace Slumber;
 public class PauseMenu : Node2D
 {
   public bool Open = false;
+
+  public StackPanel Settings;
   public StackPanel MainPanel;
 
   public override void EnterTree()
@@ -59,6 +61,61 @@ public class PauseMenu : Node2D
     {
       CloseMenu();
       Main.GameManager.Transition("MainMenu", () => {});
+    };
+
+
+    Settings = new StackPanel();
+    Settings.AddToRoot();
+
+    Settings.XUnits = GeneralUnitType.PixelsFromMiddle;
+    Settings.XOrigin = HorizontalAlignment.Center;
+    
+    Settings.YUnits = GeneralUnitType.PixelsFromMiddle;
+    Settings.YOrigin = VerticalAlignment.Center;
+
+    Settings.IsVisible = false;
+
+    var contrBtn = new CustomButton();
+    Settings.AddChild(contrBtn);
+
+    contrBtn.Y = 5;
+
+    contrBtn.Text = "Controls";
+    contrBtn.Click += (sender, args) =>
+    {
+    };
+
+    var keybBtn = new CustomButton();
+    Settings.AddChild(keybBtn);
+
+    keybBtn.Y = 5;
+
+    keybBtn.Text = "Keyboard";
+    keybBtn.Click += (sender, args) =>
+    {
+    };
+
+    var audBtn = new CustomButton();
+    Settings.AddChild(audBtn);
+
+    audBtn.Y = 5;
+
+    audBtn.Text = "Audio";
+    audBtn.Click += (sender, args) =>
+    {
+    };
+
+    var backBtn = new CustomButton();
+    Settings.AddChild(backBtn);
+
+    backBtn.Y = 40;
+
+    backBtn.Text = "Back";
+    backBtn.Click += (sender, args) =>
+    {
+      Settings.IsVisible = false;
+      MainPanel.IsVisible = true;
+      startBtn.IsFocused = true;
     };
   }
 

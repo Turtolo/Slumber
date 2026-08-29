@@ -87,6 +87,7 @@ public class CustomButton : Button
     {
       background.Color = new Color(0, 0, 0) * 0.6f;
       borderContainer.Visible = true;
+      IsFocused = true;
     };
 
     StateSave highlightedFocused = buttonVisual.States.HighlightedFocused;

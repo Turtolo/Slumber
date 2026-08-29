@@ -1,3 +1,5 @@
+
+
 using System.IO;
 using System.Linq;
 using DotTiled.Serialization;
@@ -5,7 +7,7 @@ using MonoTile;
 
 namespace Slumber;
 
-public class Gardens5 : Scene
+public class Gardens9 : Scene
 {
   public Player Player;
 
@@ -14,14 +16,11 @@ public class Gardens5 : Scene
     base.EnterTree();
 
     var root = new Node2D()
-      .Set("Position", new Vector2(0, -50));
-
-    var playerPos = new Vector2(184, -16);
-    var playerDir = 1;
-
+      .Set("Position", new Vector2(0, -100));
+    
     Player = new Player();
 
-    var rect = new Rectangle(-32, -208, 864, 344);
+    var rect = new Rectangle(-48, -192, 848, 288);
 
     new PixelCamera()
       .Set(n => n.Weight = 0.3f)
@@ -68,7 +67,7 @@ public class Gardens5 : Scene
         "Content",
         "Maps",
         "Gardens",
-        "gardens-5.tmx"
+        "gardens-9.tmx"
     );
     
     new CanvasAnchor().Set(n =>

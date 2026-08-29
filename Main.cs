@@ -54,7 +54,7 @@ namespace Slumber
       Input.AddBind("Jump", new InputAction(Keys.Space), new InputAction(Buttons.X));
       Input.AddBind("Dash", new InputAction(Keys.E), new InputAction(Buttons.LeftShoulder));
 
-      Input.AddBind("Interact", new InputAction(Keys.E), new InputAction(Buttons.A));
+      Input.AddBind("Interact", new InputAction(Keys.W),new InputAction(Buttons.LeftThumbstickUp), new InputAction(Buttons.DPadUp));
 
       Input.AddBind("Attack", new InputAction(Keys.K), new InputAction(Buttons.Y));
 
@@ -93,6 +93,8 @@ namespace Slumber
 
       if (Core.Input.Keyboard.WasKeyJustPressed(Keys.R))
         Core.Token.Anchor.ReloadCurrentAnchor();
+
+      Mouse.SetPosition(0, 0);
 
     }
 

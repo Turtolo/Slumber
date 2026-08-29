@@ -17,7 +17,7 @@ public class SpikeDamageState : State
 
     Main.GameManager.Persistence.CurrentHealthPoints -= 1;
 
-    p.HealthIcons.LastOrDefault().Frame = 1;
+    p.HealthIcons.Where(n => n.Frame == 0).LastOrDefault().Frame = 1;
     p.HealthIcons.RemoveAt(p.HealthIcons.Count - 1);
 
     p.Properties.AllowControl = false;

@@ -39,8 +39,10 @@
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Bed.png</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/BONFIRE.png</File>
     <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Foreground/mist.png</File>
+    <File>/Users/nilslauvstad/Git/Slumber/Content/Graphics/Interact.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

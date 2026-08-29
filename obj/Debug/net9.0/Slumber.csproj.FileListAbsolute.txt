@@ -115,3 +115,5 @@
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/BONFIRE.xnb
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Raw/Raw/BONFIRE.json
 /Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Foreground/mist.xnb
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Graphics/Interact.xnb
+/Users/nilslauvstad/Git/Slumber/bin/Debug/net9.0/Content/Maps/Gardens/gardens-9.tmx
