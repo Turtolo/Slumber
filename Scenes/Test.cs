@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using DotTiled.Serialization;
+using Gum.Forms.Controls;
 using MonoTile;
 
 namespace Slumber;
@@ -20,6 +21,8 @@ public class PropTest
 public class Test : Scene
 {
   public PropTest Props;
+
+  public AnimatedSprite2D Transition;
 
   public Player Player;
 
@@ -48,25 +51,30 @@ public class Test : Scene
 
     new ColorRect().Set(n =>
     {
-      n.Scale = new Vector2(64);
       n.Color = Color.Red;
+      n.Scale = new Vector2(100, 100);
     });
 
-    //var p = new Plire().Set(n => n.Position = new Vector2(100, 50));
-    var p = new Player();
+    var transAn = AsepriteLoader.LoadAnimations(
+        new TextureRegion(Core.Resource.Load<Texture2D>("Graphics/Transition"), new Rectangle(0, 0, 28, 1)),
+        PathTools.Combine("Raw/Raw/Transition.json") 
+    );
 
-    new PixelCamera()
-      .Set(n => n.Weight = 0.3f)
-      .Set(n => n.Deadzone = new Extent(30, 0))
-      .Set(n => n.OffsetSmoothing = true)
-      .Set(n => n.Smoothing = true)
-      .Set(n => n.Target = p);
-
-    new CanvasAnchor().Set(n =>
+    Transition = Core.Token.Create<AnimatedSprite2D>().Set(n =>
     {
-      n.BackBufferColor = new Color(13, 22, 24);
-      n.AmbientColor = Color.White;
+      n.Atlas = transAn;
+      //n.Rounded = true;
+      n.Seperated = true;
+      n.Position = new Vector2(320, 180);
+      n.Scale = new Vector2(640, 360);
+      n.Depth = 20;
     });
+
+    Transition.Detach();
+    
+    var b = new Keyboard();
+    b.AddToRoot();
+
   }
 
   public override void ExitTree()
@@ -82,6 +90,11 @@ public class Test : Scene
   public override void Process(float delta)
   {
     base.Process(delta);
+
+    if (Core.Input.Keyboard.WasKeyJustPressed(Keys.I))
+      Transition.PlayAnimation("In");
+    if (Core.Input.Keyboard.WasKeyJustPressed(Keys.O))
+      Transition.PlayAnimation("Out");
   }
 
   public override void Submit(Canvas2D canvas)

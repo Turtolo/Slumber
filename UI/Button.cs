@@ -15,7 +15,7 @@ public class CustomButton : Button
     
     NineSliceRuntime background = buttonVisual.Background;
 
-    buttonVisual.Background.Texture = Core.Resources.Pixel.ToTexture();
+    buttonVisual.Background.Texture = Core.Resources.Pixel.Source;
 
     TextRuntime text = buttonVisual.TextInstance;
 
@@ -100,7 +100,7 @@ public class CustomButton : Button
   public NineSliceRuntime CreateBorderLine()
   {
     var line = new NineSliceRuntime();
-    line.Texture = Core.Resources.Pixel.ToTexture();
+    line.Texture = Core.Resources.Pixel.Source;
     line.Color = Color.White;
     return line;
   }

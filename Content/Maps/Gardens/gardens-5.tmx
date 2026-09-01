@@ -1008,7 +1008,7 @@
 </chunk>
   </data>
  </layer>
- <objectgroup id="3" name="Node">
+ <objectgroup id="3" name="Node" visible="0">
   <object id="91" name="door_1" type="+" x="-12" y="0">
    <point/>
   </object>
@@ -1066,7 +1066,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="2" name="Collision">
+ <objectgroup id="2" name="Collision" visible="0">
   <properties>
    <property name="collision" type="bool" value="true"/>
   </properties>

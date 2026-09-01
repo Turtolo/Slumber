@@ -10,7 +10,7 @@ public class ScreenEffects : Node
   public override void EnterTree()
   {
     var transAn = AsepriteLoader.LoadAnimations(
-        Core.Resource.Load<MTexture>("Graphics/Transition"),
+        new TextureRegion(Core.Resource.Load<Texture2D>("Graphics/Transition"), new Rectangle(0, 0, 28, 1)),
         PathTools.Combine("Raw/Raw/Transition.json") 
     );
 
@@ -19,7 +19,6 @@ public class ScreenEffects : Node
       n.Atlas = transAn;
       //n.Rounded = true;
       n.Seperated = true;
-      n.Position = new Vector2(320, 180);
       n.Scale = new Vector2(640, 360);
       n.Depth = 20;
       n.SetParent(this);
@@ -35,6 +34,7 @@ public class ScreenEffects : Node
 
   public void Out()
   {
+    Console.WriteLine("Yes");
     Transition.PlayAnimation("Out");
   }
 }

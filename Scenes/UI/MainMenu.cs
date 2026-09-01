@@ -17,6 +17,7 @@ public class MainMenu : Scene
 {
   public StackPanel MainPanel;
   public StackPanel Settings;
+  public Keyboard Keyboard;
 
   public override void EnterTree()
   {
@@ -130,6 +131,8 @@ public class MainMenu : Scene
     keybBtn.Text = "Keyboard";
     keybBtn.Click += (sender, args) =>
     {
+      Keyboard.IsVisible = true;
+      //Settings.IsVisible = false;
     };
 
     var audBtn = new CustomButton();
@@ -154,6 +157,10 @@ public class MainMenu : Scene
       MainPanel.IsVisible = true;
       startBtn.IsFocused = true;
     };
+
+    Keyboard = new Keyboard();
+    Keyboard.IsVisible = false;
+    Settings.AddChild(Keyboard);
   }
 
 

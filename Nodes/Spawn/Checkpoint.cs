@@ -13,7 +13,7 @@ public class Checkpoint : Node2D
   public override void EnterTree()
   {
     var atlas = AsepriteLoader.LoadAnimations(
-        Core.Resource.Load<MTexture>("Graphics/BONFIRE"),
+        new TextureRegion(Core.Resource.Load<Texture2D>("Graphics/BONFIRE"), new Rectangle(0, 0, 864, 48)),
         PathTools.Combine("Raw/Raw/BONFIRE.json")
     );
 

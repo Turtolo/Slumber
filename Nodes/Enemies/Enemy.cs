@@ -18,7 +18,7 @@ public class Enemy : KinematicBody2D
   public Area2D LeftArea;
   public Area2D RightArea;
 
-  public MTexture MainTexture;
+  public TextureRegion MainTexture;
 
   public float Gravity = 1300f;
   public float TerminalVelocity = 1200f;
@@ -35,7 +35,7 @@ public class Enemy : KinematicBody2D
   {
     base.EnterTree();
 
-    MainTexture = new MTexture("Graphics/Atlas/grassspidersheet");
+    MainTexture = new TextureRegion(Core.Resource.Load<Texture2D>("Graphics/Atlas/grassspidersheet"), new Rectangle(0, 0, 64, 16));
 
     var animations = AsepriteLoader.LoadAnimations
     (

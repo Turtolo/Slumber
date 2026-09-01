@@ -35,7 +35,7 @@ public class Gardens7 : Scene
 
     new Parallax2D().Set(n =>
     {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-1");
+      n.Texture = new TextureRegion(Core.Resource.Load<Texture2D>("Graphics/Background/Gardens-Layer-1"), new Rectangle(0, 0, 640, 360));
       n.Depth = -8;
       n.MotionScale = new Vector2(0.2f, 0f);
       n.RepeatSize = new Extent(640, 0);
@@ -45,7 +45,7 @@ public class Gardens7 : Scene
 
     new Parallax2D().Set(n =>
     {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-2");
+      n.Texture = new TextureRegion(Core.Resource.Load<Texture2D>("Graphics/Background/Gardens-Layer-2"), new Rectangle(0, 0, 640, 360));
       n.Depth = -9;
       n.MotionScale = new Vector2(0.3f, 0f);
       n.RepeatTimes = 4;
@@ -55,7 +55,7 @@ public class Gardens7 : Scene
 
     new Parallax2D().Set(n =>
     {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/Background/Gardens-Layer-3");
+      n.Texture = new TextureRegion(Core.Resource.Load<Texture2D>("Graphics/Background/Gardens-Layer-3"), new Rectangle(0, 0, 640, 609));
       n.Depth = -10;
       n.MotionScale = new Vector2(0.4f, 0f);
       n.RepeatTimes = 4;
@@ -80,20 +80,6 @@ public class Gardens7 : Scene
     });
     
     var t = DotTiledBridge.Load(mapPath, loader);
-
-    new PointLight2D().Set(n =>
-    {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/light");
-      n.Position = new Vector2(-176, 16);
-      n.Scale = new Vector2(2);
-    });
-
-    new PointLight2D().Set(n =>
-    {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/light");
-      n.Position = new Vector2(-176, -64);
-      n.Scale = new Vector2(2);
-    });
   }
 
   public override void ExitTree()

@@ -30,13 +30,15 @@ namespace Slumber
 
         int result = match.Success ? int.Parse(match.Value) : 0;
 
+        var texture = Core.Resource.Load<Texture2D>(texturePath);
+
         var tMap = new Tilemap().Set(n =>
         {
           n.Name = result.ToString();
           n.Depth = result;
           n.IndexOffset = map.IndexOffset;
           n.Tileset = new Tileset(
-            Core.Resource.Load<MTexture>(texturePath),
+            new TextureRegion(texture, new Rectangle(0, 0, texture.Width, texture.Height)),
               16, 16
           );
           n.SetData(map.Grid);

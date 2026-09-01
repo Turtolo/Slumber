@@ -45,7 +45,7 @@ namespace Slumber
       });
 
       var animations = AsepriteLoader.LoadAnimations(
-          Core.Resource.Load<MTexture>("Graphics/Atlas/PlayerAnimation"),
+          new TextureRegion(Core.Resource.Load<Texture2D>("Graphics/Atlas/PlayerAnimation"), new Rectangle(0, 0, 13056, 256)),
           PathTools.Combine("Raw/Raw/PlayerAnimation.json")
       );
 
@@ -88,14 +88,6 @@ namespace Slumber
         n.SetParent(this);
         n.Shape = new RayCastShape2D(new Vector2(0, 25));
         n.Position = new Vector2(0, 10);
-      });
-
-      new PointLight2D().Set(n =>
-      {
-        n.Texture = Core.Resource.Load<MTexture>("Graphics/light");
-        n.Position = new Vector2(-90, -75);
-        n.Scale = new Vector2(2);
-        n.SetParent(this);
       });
 
       AddHealthIcons();
@@ -144,7 +136,7 @@ namespace Slumber
 
         var s = new Sprite2D().Set(n =>
         {
-          n.Texture = Core.Resource.Load<MTexture>("Graphics/Atlas/HealthIconSheetSmall");
+          n.Texture = new TextureRegion(Core.Resource.Load<Texture2D>("Graphics/Atlas/HealthIconSheetSmall"), new Rectangle(0, 0, 32, 16));
           n.HFrames = 2;
           n.Position = startPosition + offset;
           n.Depth = 99;

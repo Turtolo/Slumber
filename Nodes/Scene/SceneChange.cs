@@ -15,7 +15,7 @@ public class SceneChange : Area2D
   {
     EnterText = new Sprite2D().Set(n =>
     {
-      n.Texture = Core.Resource.Load<MTexture>("Graphics/Interact");
+      n.Texture = new TextureRegion(Core.Resource.Load<Texture2D>("Graphics/Interact"), new Rectangle(0, 0, 48, 16));
       n.Visible = false;
       n.SetParent(this);
     });

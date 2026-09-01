@@ -46,11 +46,6 @@ namespace Slumber
       Input.AddBind("MoveDown", new InputAction(Keys.S), new InputAction(Buttons.LeftThumbstickDown), new InputAction(Buttons.DPadDown));
       Input.AddBind("MoveUp", new InputAction(Keys.W), new InputAction(Buttons.LeftThumbstickUp), new InputAction(Buttons.DPadUp));
 
-      Input.AddBind("CamLeft", new InputAction(Keys.A), new InputAction(Buttons.LeftThumbstickLeft), new InputAction(Buttons.DPadLeft));
-      Input.AddBind("CamRight", new InputAction(Keys.D), new InputAction(Buttons.LeftThumbstickRight), new InputAction(Buttons.DPadRight));
-      Input.AddBind("CamDown", new InputAction(Keys.Down), new InputAction(Buttons.LeftThumbstickDown), new InputAction(Buttons.DPadDown));
-      Input.AddBind("CamUp", new InputAction(Keys.Up), new InputAction(Buttons.LeftThumbstickUp), new InputAction(Buttons.DPadUp));
-
       Input.AddBind("Jump", new InputAction(Keys.Space), new InputAction(Buttons.X));
       Input.AddBind("Dash", new InputAction(Keys.E), new InputAction(Buttons.LeftShoulder));
 
@@ -65,7 +60,7 @@ namespace Slumber
 
       Prefs.General.ShowCollision = false;
 
-      Prefs.Graphics.MouseVisible = false;
+      Prefs.Graphics.MouseVisible = true;
 
       ExitOnEsc = false;
 
@@ -94,7 +89,7 @@ namespace Slumber
       if (Core.Input.Keyboard.WasKeyJustPressed(Keys.R))
         Core.Token.Anchor.ReloadCurrentAnchor();
 
-      Mouse.SetPosition(0, 0);
+      //Mouse.SetPosition(0, 0);
 
     }
 

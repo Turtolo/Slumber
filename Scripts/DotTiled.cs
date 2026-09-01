@@ -318,12 +318,12 @@ public static class DotTiledBridge
       var cleanedSource = source.Value.Replace("../", "");
       var imagePath = Path.Combine(mapsRoot, cleanedSource);
 
-      var texture = Core.Resource.Load<MTexture>(
+      var texture = Core.Resource.Load<Texture2D>(
         imagePath.Replace(".png", "")
       );
 
       var t = new Opal.Graphics.Tileset(
-        texture,
+        new TextureRegion(texture, new Rectangle(0, 0, texture.Width, texture.Height)),
         ts.TileWidth,
         ts.TileHeight
       );
