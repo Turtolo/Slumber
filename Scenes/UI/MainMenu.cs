@@ -52,28 +52,33 @@ public class MainMenu : Scene
 
     startBtn.Y = 5;
 
+    Check();
+    
+    void Check()
+    {
 
-    if (!File.Exists("Saved/Persistence"))
-    {
-      startBtn.Text = "Start";
-      startBtn.Click += (sender, args) =>
+      if (!File.Exists(Path.Combine("Saved", "Persistence")))
       {
-        Main.GameManager.Change("Caverns1", "door_1");
-        MainPanel.RemoveFromRoot();
-        Core.Prefs.Graphics.MouseVisible = false;
-        Core.Prefs.Apply();
-      };
-    }
-    else
-    {
-      startBtn.Text = "Continue";
-      startBtn.Click += (sender, args) =>
+        startBtn.Text = "Start";
+        startBtn.Click += (sender, args) =>
+        {
+          Main.GameManager.Change("Caverns1", "door_1");
+          MainPanel.RemoveFromRoot();
+          Core.Prefs.Graphics.MouseVisible = false;
+          Core.Prefs.Apply();
+        };
+      }
+      else
       {
-        Main.GameManager.Load();
-        MainPanel.RemoveFromRoot();
-        Core.Prefs.Graphics.MouseVisible = false;
-        Core.Prefs.Apply();
-      };
+        startBtn.Text = "Continue";
+        startBtn.Click += (sender, args) =>
+        {
+          Main.GameManager.Load();
+          MainPanel.RemoveFromRoot();
+          Core.Prefs.Graphics.MouseVisible = false;
+          Core.Prefs.Apply();
+        };
+      }
     }
 
     startBtn.IsFocused = true;
@@ -99,7 +104,9 @@ public class MainMenu : Scene
     exitBtn.Text = "Quit";
     exitBtn.Click += (sender, args) =>
     {
-      Core.Quit();
+      MainPanel.IsVisible = false;
+      Main.GameManager.ScreenEffects.In();
+      Await.Until(() => Main.GameManager.ScreenEffects.Transition.IsFinished, () => Core.Quit());
     };
 
     Settings = new StackPanel();
@@ -143,6 +150,18 @@ public class MainMenu : Scene
     audBtn.Text = "Audio";
     audBtn.Click += (sender, args) =>
     {
+    };
+
+    var dltBtn = new CustomButton();
+    Settings.AddChild(dltBtn);
+
+    dltBtn.Y = 5;
+
+    dltBtn.Text = "Delete Save";
+    dltBtn.Click += (sender, args) =>
+    {
+      File.Delete(Path.Combine("Saved", "Persistence"));
+      Check();
     };
 
     var backBtn = new CustomButton();

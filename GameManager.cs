@@ -20,12 +20,12 @@ public class GameManager : Object
     Persistence.CurrentRespawnPoint = c.Transform.Global.Position;
     Persistence.CurrentRespawnScene = Core.Token.Anchor.GetCurrentAnchor().GetType().Name;
 
-    FileT.ToBinary(Persistence, "Saved/Persistence");
+    FileT.ToBinary(Persistence, System.IO.Path.Combine("Saved", "Persistence"));
   }
 
   public void Load()
   {
-    FileT.FromBinary(Persistence, "Saved/Persistence");
+    FileT.FromBinary(Persistence, System.IO.Path.Combine("Saved", "Persistence"));
 
     Transition(Persistence.CurrentRespawnScene, () =>
     {

@@ -26,7 +26,7 @@ public class SceneChange : Area2D
     if (GetAnyBody() is Player p)
     {
       if (Trigger)
-        EnterText.Visible = true;
+        EnterText.Visible = false;
       if (Trigger && !Core.Input.IsActionJustPressed("Interact"))
         return;
 

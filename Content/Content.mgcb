@@ -420,9 +420,6 @@
 #begin Fonts/RainHearts.fnt
 /copy:Fonts/RainHearts.fnt
 
-#begin Fonts/RainHearts.png
-/copy:Fonts/RainHearts.png
-
 #begin Graphics/Bed.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -485,3 +482,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Graphics/DPadUp.png
+
+#begin Fonts/RainHeartsSource.png
+/copy:Fonts/RainHeartsSource.png

@@ -1,6 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"/Users/nilslauvstad/Git/Slumber/Content/Fonts/RainHearts.fnt","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Fonts/RainHearts.fnt","CopyItem","File",11025,11025,0.001255
-"/Users/nilslauvstad/Git/Slumber/Content/Fonts/RainHearts.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Fonts/RainHearts.png","CopyItem","File",5250,5250,0.000136
+"/Users/nilslauvstad/Git/Slumber/Content/Fonts/RainHearts.fnt","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Fonts/RainHearts.fnt","CopyItem","File",11031,11031,0.00126
+"/Users/nilslauvstad/Git/Slumber/Content/Fonts/RainHeartsSource.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Fonts/RainHeartsSource.png","CopyItem","File",5250,5250,0.00012
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/EagleAtlas.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Atlas/EagleAtlas.xnb","TextureProcessor","Texture2DContent",14923,1198165,0.014482
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/grassspidersheet.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Atlas/grassspidersheet.xnb","TextureProcessor","Texture2DContent",842,4181,0.00176
 "/Users/nilslauvstad/Git/Slumber/Content/Graphics/Atlas/GreenBricks.png","/Users/nilslauvstad/Git/Slumber/Content/bin/DesktopGL/Content/Graphics/Atlas/GreenBricks.xnb","TextureProcessor","Texture2DContent",1356,9301,0.000754

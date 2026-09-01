@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gw5MCP9np/4=",
+  "dgSpecHash": "RzH5FI9wiU4=",
   "success": true,
   "projectFilePath": "/Users/nilslauvstad/Git/Slumber/Slumber.csproj",
   "expectedPackageFiles": [
@@ -27,9 +27,11 @@
     "/Users/nilslauvstad/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/nilslauvstad/.nuget/packages/system.valuetuple/4.5.0/system.valuetuple.4.5.0.nupkg.sha512",
     "/Users/nilslauvstad/.nuget/packages/textcopy/6.2.1/textcopy.6.2.1.nupkg.sha512",
+    "/Users/nilslauvstad/.nuget/packages/microsoft.netcore.app.ref/9.0.12/microsoft.netcore.app.ref.9.0.12.nupkg.sha512",
+    "/Users/nilslauvstad/.nuget/packages/microsoft.netcore.app.runtime.osx-arm64/9.0.12/microsoft.netcore.app.runtime.osx-arm64.9.0.12.nupkg.sha512",
     "/Users/nilslauvstad/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.12/microsoft.aspnetcore.app.ref.9.0.12.nupkg.sha512",
-    "/Users/nilslauvstad/.nuget/packages/microsoft.netcore.app.host.osx-arm64/9.0.12/microsoft.netcore.app.host.osx-arm64.9.0.12.nupkg.sha512",
-    "/Users/nilslauvstad/.nuget/packages/microsoft.netcore.app.ref/9.0.12/microsoft.netcore.app.ref.9.0.12.nupkg.sha512"
+    "/Users/nilslauvstad/.nuget/packages/microsoft.aspnetcore.app.runtime.osx-arm64/9.0.12/microsoft.aspnetcore.app.runtime.osx-arm64.9.0.12.nupkg.sha512",
+    "/Users/nilslauvstad/.nuget/packages/microsoft.netcore.app.host.osx-arm64/9.0.12/microsoft.netcore.app.host.osx-arm64.9.0.12.nupkg.sha512"
   ],
   "logs": []
 }

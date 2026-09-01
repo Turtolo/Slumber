@@ -40,12 +40,4 @@
       <ProjectReference Include="../MonoTile/MonoTile.csproj" />
       <ProjectReference Include="../Opal/Opal.csproj" />
     </ItemGroup>
-    <ItemGroup>
-      <None Update="Content/Fonts/*.fnt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Content/Fonts/*.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
   </Project>
